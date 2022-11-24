@@ -1,0 +1,26 @@
+Installing Visual Studio Code
+
+If you have chosen to use Visual Studio Code, download the installer 
+from https://code.visualstudio.com. No specific version is required, 
+and you should select the current stable build. Run the installer and
+ensure you check the Add to PATH option, as shown in Figure 2-5.
+
+Figure 2-5. Configuring the Visual Studio Code installation
+
+Installing the .NET SDK
+
+The Visual Studio Code installer does not include the .NET SDK, which 
+must be installed separately. Go to
+https://dotnet.microsoft.com/download/dotnet-core/6.0 and download 
+the installer for version 6.0.0 of the .NET SDK, which is the long-term 
+support release at the time of writing. Run the installer; once the
+installation is complete, open a new PowerShell command prompt from 
+the Windows Start menu and run the command shown in Listing 2-2, 
+which displays a list of the installed .NET SDKs.
+
+Listing 2-2. Listing the Installed SDKs
+
+dotnet --list-sdks
+
+Here is the output from a fresh installation on a Windows machine that has not 
+been used for .NET: 6.0.100 [C:\Program Files\dotnet\sdk]

@@ -1,0 +1,14 @@
+CHAPTER 1
+
+Putting ASP.NET Core in Context
+
+ASP.NET Core is Microsoft’s web development platform. The original ASP.NET was introduced 
+in 2002, and it has been through several reinventions and reincarnations to become 
+ASP.NET Core 6, which is the topic of this book.
+
+ASP.NET Core consists of a platform for processing HTTP requests, a series of principal 
+frameworks for creating applications, and secondary utility frameworks that provide 
+supporting features, as illustrated by Figure 1-1.
+
+Figure 1-1. The structure of ASP.NET Core
+

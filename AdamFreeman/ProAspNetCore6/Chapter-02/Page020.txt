@@ -1,0 +1,28 @@
+Listing 2-3. Creating a New Project
+
+dotnet new globaljson --sdk-version 6.0.403 --output FirstProject
+dotnet new mvc --no-https --output FirstProject --framework net6.0
+dotnet new sln -o FirstProject
+dotnet sln FirstProject add FirstProject
+
+The first command creates a folder named FirstProject and adds to it 
+a file named global.json, which specifies the version of .NET that 
+the project will use; this ensures you get the expected results when
+following the examples. The second command creates a new ASP.NET Core project. 
+The .NET SDK includes a range of templates for starting new projects, 
+and the mvc template is one of the options available for ASP.NET Core applications. 
+This project template creates a project that is configured for the MVC Framework,
+which is one of the application types supported by ASP.NET Core. Don’t be intimidated 
+by the idea of choosing a framework, and don’t worry if you have not heard of MVC—by 
+the end of the book, you will understand the features that each offers and how they 
+fit together. The remaining commands create a solution file, which allows multiple 
+projects to be used together. 
+
+Note
+This is one of a small number of chapters in which I use a project template 
+that contains placeholder content. I don’t like using predefined project templates 
+because they encourage developers to treat important features, such as authentication, 
+as black boxes. My goal in this book is to give you the knowledge to understand 
+and manage every aspect of your ASP.NET Core applications, and that’s why 
+I start with an empty ASP.NET Core project. This chapter is about getting 
+started quickly, for which the mvc template is well-suited.

@@ -1,0 +1,7 @@
+Work through the installation process, selecting the default options as 
+they are presented. When you reach the Feature Selection page, ensure that 
+the LocalDB option is checked, as shown in Figure 2-8. (You may want 
+to uncheck the options for R and Python, which are not used in this book 
+and take a long time to download and install.)
+
+Figure 2-8. Selecting the LocalDB feature

@@ -1,0 +1,8 @@
+Once you have selected the Custom option, you will be prompted to select 
+a download location for the installation files. Click the Install button, 
+and the download will begin.
+
+When prompted, select the option to create a new SQL Server installation, 
+as shown in Figure 2-7.
+
+Figure 2-7. Selecting an installation option

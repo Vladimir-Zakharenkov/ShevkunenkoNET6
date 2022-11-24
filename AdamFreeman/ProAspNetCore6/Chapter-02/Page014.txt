@@ -1,0 +1,33 @@
+Click the Install button, and the files required for the selected workload will 
+be downloaded and installed. To complete the installation, a reboot may be required.
+
+Installing the .NET SDK
+
+The Visual Studio installer will install the .NET Software Development Kit (SDK), 
+but it may not install the version required for the examples in this book. 
+Go to https://dotnet.microsoft.com/download/dotnet-core/
+6.0 and download the installer for version 6.0.0 of the .NET SDK, which is 
+the long-term support release at the time of writing. Run the installer; 
+once the installation is complete, open a new PowerShell command prompt 
+from the Windows Start menu and run the command shown in Listing 2-1, 
+which displays a list of the installed .NET SDKs.
+
+Listing 2-1. Listing the Installed SDKs
+
+dotnet --list-sdks
+
+Here is the output from a fresh installation on a Windows machine that has 
+not been used for .NET:
+
+6.0.100 [C:\Program Files\dotnet\sdk]
+
+If you have been working with different versions of .NET, you may see 
+a longer list, like this one:
+
+3.1.101 [C:\Program Files\dotnet\sdk]
+5.0.100 [C:\Program Files\dotnet\sdk]
+5.0.401 [C:\Program Files\dotnet\sdk]
+6.0.100 [C:\Program Files\dotnet\sdk]
+
+Regardless of how many entries there are, you must ensure there is one for 
+the 6.0.1xx version, where the last two digits may differ.

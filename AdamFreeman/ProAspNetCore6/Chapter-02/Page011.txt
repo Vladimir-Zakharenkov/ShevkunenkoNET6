@@ -1,0 +1,46 @@
+CHAPTER 2
+
+Getting Started
+
+The best way to appreciate a software development framework is to jump 
+right in and use it. In this chapter, I explain how to prepare for 
+ASP.NET Core development and how to create and run an ASP.NET Core
+application.
+
+UPDATES TO THIS BOOK
+
+Microsoft has an active development schedule for .NET and ASP.NET Core, 
+which means that there may be new releases available by the time you read 
+this book. It doesn’t seem fair to expect readers to buy a new book every 
+few months, especially since most changes are relatively minor. Instead, 
+I will post free updates to the GitHub repository for this book 
+(https://github.com/apress/pro-asp.net-core-6) for breaking changes.
+
+This kind of update is an ongoing experiment for me (and for Apress), 
+and it continues to evolve—not least because I don’t know what the future 
+major releases of ASP.NET Core will contain—but the goal is
+to extend the life of this book by supplementing the examples it contains.
+
+I am not making any promises about what the updates will be like, what 
+form they will take, or how long I will produce them before folding them 
+into a new edition of this book. Please keep an open mind and check 
+the repository for this book when new ASP.NET Core versions are released. 
+If you have ideas about how the updates could be improved, then email 
+me at adam@adam-freeman.com and let me know.
+
+Choosing a Code Editor
+
+Microsoft provides a choice of tools for ASP.NET Core development: 
+Visual Studio and Visual Studio Code. Visual Studio is the traditional 
+development environment for .NET applications, and it offers an enormous
+range of tools and features for developing all sorts of applications. 
+But it can be resource-hungry and slow, and some of the features are 
+so determined to be helpful they get in the way of development.
+
+Visual Studio Code is a lightweight alternative that doesn’t have 
+the bells and whistles of Visual Studio but is perfectly capable 
+of handling ASP.NET Core development.
+
+All the examples in this book include instructions for both editors, 
+and both Visual Studio and Visual Studio Code can be used without charge, 
+so you can use whichever suits your development style.

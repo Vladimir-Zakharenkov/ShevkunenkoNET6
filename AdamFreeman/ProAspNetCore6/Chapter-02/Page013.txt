@@ -1,0 +1,10 @@
+Click the Continue button, and the installer will download 
+the installation files, as shown in Figure 2-2.
+
+When the installer files have been downloaded, you will be presented 
+with a set of installation options, grouped into workloads. Ensure that the 
+“ASP.NET and web development” workload is checked, as shown in Figure 2-3.
+
+Select the “Individual components” section at the top of the window and ensure 
+the SQL Server Express 2019 LocalDB option is checked, as shown in Figure 2-4. 
+This is the database component that I will be using to store data in later chapters.

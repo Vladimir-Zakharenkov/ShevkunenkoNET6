@@ -1,0 +1,62 @@
+Razor Pages can be used alongside the MVC Framework, which is how I tend 
+to use them. I write the main parts of the application using the MVC Framework 
+and use Razor Pages for the secondary features, such as administration 
+and reporting tools. You can see this approach in Chapters 7–11, where I develop a
+realistic ASP.NET Core application called SportsStore.
+
+Understanding Blazor
+
+The rise of JavaScript client-side frameworks can be a barrier for C# developers, 
+who must learn a different— and somewhat idiosyncratic—programming language. 
+I have come to love JavaScript, which is as fluid and expressive as C#. 
+But it takes time and commitment to become proficient in a new programming language,
+especially one that has fundamental differences from C#.
+
+Blazor attempts to bridge this gap by allowing C# to be used to write client-side 
+applications. There are two versions of Blazor: Blazor Server and Blazor WebAssembly. 
+Blazor Server is a stable and supported part of ASP.NET Core, and it works by using 
+a persistent HTTP connection to the ASP.NET Core server, where the application’s 
+C# code is executed. Blazor WebAssembly is an experimental release that goes one 
+step further and executes the application’s C# code in the browser. Neither version 
+of Blazor is suited for all situations, as I explain in Chapter 33, but they both 
+give a sense of direction for the future of ASP.NET Core development.
+
+Understanding the Utility Frameworks
+
+Two frameworks are closely associated with ASP.NET Core but are not used directly 
+to generate HTML content or data. Entity Framework Core is Microsoft’s object-relational 
+mapping (ORM) framework, which represents data stored in a relational database 
+as .NET objects. Entity Framework Core can be used in any .NET application, 
+and it is commonly used to access databases in ASP.NET Core applications.
+
+ASP.NET Core Identity is Microsoft’s authentication and authorization framework, 
+and it is used to validate user credentials in ASP.NET Core applications 
+and restrict access to application features.
+
+I describe only the basic features of both frameworks in this book, focusing 
+on the capabilities required by most ASP.NET Core applications. But these are 
+both complex frameworks that are too large to describe in
+detail in what is already a large book about ASP.NET Core.
+
+TOPICS FOR FUTURE EDITIONS
+
+I don’t have space in this book to cover every ASP.NET Core, Entity Framework Core, 
+and ASP.NET Core Identity feature, so I have focused on those aspects that most 
+projects require. If there are topics you think I should include in the next 
+edition or in new deep-dive books, then please send me your suggestions at 
+adam@adam-freeman.com.
+
+Understanding the ASP.NET Core Platform
+
+The ASP.NET Core platform contains the low-level features required to receive 
+and process HTTP requests and create responses. There is an integrated HTTP server, 
+a system of middleware components to handle requests, and core features that 
+the application frameworks depend on, such as URL routing and the Razor
+view engine.
+
+Most of your development time will be spent with the application frameworks, 
+but effective ASP.NET Core use requires an understanding of the powerful capabilities 
+that the platform provides, without which the higher-level frameworks could not function. 
+I demonstrate how the ASP.NET Core platform works in detail in Part 2 of this 
+book and explain how the features it provides underpin every aspect of ASP.NET Core
+development.

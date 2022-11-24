@@ -1,0 +1,20 @@
+If you have been working with different versions of .NET, you may see a longer list, 
+like this one:
+
+3.1.101 [C:\Program Files\dotnet\sdk]
+5.0.100 [C:\Program Files\dotnet\sdk]
+5.0.401 [C:\Program Files\dotnet\sdk]
+6.0.100 [C:\Program Files\dotnet\sdk]
+
+Regardless of how many entries there are, you must ensure there is one for the 6.0.1xx 
+version, where the last two digits may differ.
+
+Installing SQL Server LocalDB
+
+The database examples in this book require LocalDB, which is a zero-configuration version of SQL Server
+that can be installed as part of the SQL Server Express edition, which is available for use without charge from
+https://www.microsoft.com/en-in/sql-server/sql-server-downloads.
+Download and run the Express edition installer and select the Custom option, as shown 
+in Figure 2-6. 
+
+Figure 2-6. Selecting the installation option for SQL Server

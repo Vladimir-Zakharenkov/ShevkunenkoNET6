@@ -1,0 +1,10 @@
+Opening the Project Using Visual Studio
+
+Start Visual Studio and click the “Open a project or solution” button, as shown in Figure 2-10.
+
+Figure 2-10. Opening the ASP.NET Core project
+
+Navigate to the FirstProject folder, select the FirstProject.sln file, and click 
+the Open button. Visual Studio will open the project and display its contents 
+in the Solution Explorer window, as shown in Figure 2-11. The files in 
+the project were created by the project template.

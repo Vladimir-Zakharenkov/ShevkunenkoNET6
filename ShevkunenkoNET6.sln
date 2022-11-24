@@ -32,14 +32,23 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Chapter-02", "Chapter-02", 
 		AdamFreeman\ProAspNetCore6\Chapter-02\Page018.txt = AdamFreeman\ProAspNetCore6\Chapter-02\Page018.txt
 		AdamFreeman\ProAspNetCore6\Chapter-02\Page019.txt = AdamFreeman\ProAspNetCore6\Chapter-02\Page019.txt
 		AdamFreeman\ProAspNetCore6\Chapter-02\Page020.txt = AdamFreeman\ProAspNetCore6\Chapter-02\Page020.txt
+		AdamFreeman\ProAspNetCore6\Chapter-02\Page021.txt = AdamFreeman\ProAspNetCore6\Chapter-02\Page021.txt
+		AdamFreeman\ProAspNetCore6\Chapter-02\Page022.txt = AdamFreeman\ProAspNetCore6\Chapter-02\Page022.txt
+		AdamFreeman\ProAspNetCore6\Chapter-02\Page023.txt = AdamFreeman\ProAspNetCore6\Chapter-02\Page023.txt
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FirstProject", "adamfreeman\firstproject\FirstProject.csproj", "{972702B1-DEC6-48FA-82F1-9EB23324B68A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FirstProject", "adamfreeman\firstproject\FirstProject.csproj", "{972702B1-DEC6-48FA-82F1-9EB23324B68A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{972702B1-DEC6-48FA-82F1-9EB23324B68A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{972702B1-DEC6-48FA-82F1-9EB23324B68A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{972702B1-DEC6-48FA-82F1-9EB23324B68A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{972702B1-DEC6-48FA-82F1-9EB23324B68A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -51,11 +60,5 @@ Global
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5507A11F-FC14-46CA-B766-61BB183C82C7}
-	EndGlobalSection
-	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{972702B1-DEC6-48FA-82F1-9EB23324B68A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{972702B1-DEC6-48FA-82F1-9EB23324B68A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{972702B1-DEC6-48FA-82F1-9EB23324B68A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{972702B1-DEC6-48FA-82F1-9EB23324B68A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

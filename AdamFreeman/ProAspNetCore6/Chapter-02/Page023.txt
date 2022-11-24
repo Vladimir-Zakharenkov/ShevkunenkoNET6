@@ -1,0 +1,12 @@
+Figure 2-12. Opening the project in Visual Studio Code
+
+Additional configuration is required the first time you open a .NET project in 
+Visual Studio Code. The first step is to click the Program.cs file in the Explorer pane. 
+This will trigger a prompt from Visual Studio Code to install the features required 
+for C# development, as shown in Figure 2-13. If you have not opened a C# project before, 
+you will see a prompt that offers to install the required assets, also shown in Figure 2-13.
+
+Figure 2-13. Installing Visual Studio Code C# features
+
+Click the Install or Yes button, as appropriate, and Visual Studio Code will 
+ download and install the features required for .NET projects.

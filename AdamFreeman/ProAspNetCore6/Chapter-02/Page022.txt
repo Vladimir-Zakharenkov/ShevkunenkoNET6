@@ -1,0 +1,9 @@
+﻿Figure 2-11. Opening the project in Visual Studio
+
+Opening the Project with Visual Studio Code
+
+Start Visual Studio Code and select File ➤ Open Folder. Navigate to the FirstProject 
+folder and click the Select Folder button. Visual Studio Code will open the project 
+and display its contents in the Explorer pane, as shown in Figure 2-12. (The default 
+dark theme used in Visual Studio Code doesn’t show well on the page,
+so I have changed to the light theme for the screenshots in this book.)

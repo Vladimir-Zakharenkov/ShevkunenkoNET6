@@ -1,0 +1,63 @@
+view because I followed the standard naming convention, which is 
+to put view files in a folder whose name matched the controller 
+that contains the action method. In this case, this meant putting 
+the view file in the Views/Home folder, since the action method 
+is defined by the Home controller.
+
+I can return other results from action methods besides strings and 
+ViewResult objects. For example, if I return a RedirectResult, 
+the browser will be redirected to another URL. If I return an
+HttpUnauthorizedResult, I can prompt the user to log in. These 
+objects are collectively known as action results. The action result 
+system lets you encapsulate and reuse common responses in actions. 
+I’ll tell you more about them and explain the different ways 
+they can be used in Chapter 19.
+
+Adding Dynamic Output
+
+The whole point of a web application is to construct and display 
+dynamic output. The job of the action method is to construct data 
+and pass it to the view so it can be used to create HTML content 
+based on the data values. Action methods provide data to views 
+by passing arguments to the View method, as shown in Listing 2-9. 
+The data provided to the view is known as the view model.
+Listing 2-9. Providing a View Model in the HomeController.cs 
+File in the Controllers Folder
+
+using Microsoft.AspNetCore.Mvc;
+
+namespace FirstProject.Controllers {
+	public class HomeController : Controller {
+		public ViewResult Index() {
+			int hour = DateTime.Now.Hour;
+			string viewModel = hour < 12 ? "Good Morning" : "Good Afternoon";
+			return View("MyView", viewModel);
+		}
+	}
+}
+
+The view model in this example is a string, and it is provided to the 
+view as the second argument to the View method. Listing 2-10 updates 
+the view so that it receives and uses the view model in the HTML it
+generates.
+
+Listing 2-10. Using a View Model in the MyView.cshtml File in the Views/Home Folder
+
+@model string
+@{
+	Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+	<meta name="viewport" content="width=device-width" />
+	<title>Index</title>
+</head>
+<body>
+	<div>
+		@Model World (from the view)
+	</div>
+</body>
+</html>

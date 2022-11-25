@@ -39,6 +39,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Chapter-02", "Chapter-02", 
 		AdamFreeman\ProAspNetCore6\Chapter-02\Page025.txt = AdamFreeman\ProAspNetCore6\Chapter-02\Page025.txt
 		AdamFreeman\ProAspNetCore6\Chapter-02\Page026.txt = AdamFreeman\ProAspNetCore6\Chapter-02\Page026.txt
 		AdamFreeman\ProAspNetCore6\Chapter-02\Page027.txt = AdamFreeman\ProAspNetCore6\Chapter-02\Page027.txt
+		AdamFreeman\ProAspNetCore6\Chapter-02\Page028.txt = AdamFreeman\ProAspNetCore6\Chapter-02\Page028.txt
+		AdamFreeman\ProAspNetCore6\Chapter-02\Page029.txt = AdamFreeman\ProAspNetCore6\Chapter-02\Page029.txt
+		AdamFreeman\ProAspNetCore6\Chapter-02\Page030.txt = AdamFreeman\ProAspNetCore6\Chapter-02\Page030.txt
+		AdamFreeman\ProAspNetCore6\Chapter-02\Page031.txt = AdamFreeman\ProAspNetCore6\Chapter-02\Page031.txt
+		AdamFreeman\ProAspNetCore6\Chapter-02\Page032.txt = AdamFreeman\ProAspNetCore6\Chapter-02\Page032.txt
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FirstProject", "adamfreeman\firstproject\FirstProject.csproj", "{972702B1-DEC6-48FA-82F1-9EB23324B68A}"

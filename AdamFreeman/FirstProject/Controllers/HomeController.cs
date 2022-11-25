@@ -35,9 +35,31 @@ public class HomeController : Controller
 
     #region ReturnString
 
-    public string Index()
+    //public string Index()
+    //{
+    //    return "Hello World";
+    //}
+
+    #endregion
+
+    #region ReturnViewResult
+
+    //public ViewResult Index()
+    //{
+    //    return View("MyView");
+    //}
+
+    #endregion
+
+    #region DynamicReturn
+
+    public ViewResult Index()
     {
-        return "Hello World";
+        int hour = DateTime.Now.Hour;
+
+        string viewModel = hour < 12 ? "Good Morning" : "Good Afternoon";
+
+        return View("MyView", viewModel);
     }
 
     #endregion

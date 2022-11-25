@@ -1,0 +1,32 @@
+Listing 2-7. Rendering a View in the HomeController.cs File in the Controllers Folder
+
+using Microsoft.AspNetCore.Mvc;
+
+namespace FirstProject.Controllers {
+
+	public class HomeController : Controller {
+		public ViewResult Index() {
+			return View("MyView");
+		}
+	}
+}
+
+When I return a ViewResult object from an action method, I am instructing 
+ASP.NET Core to render a view. I create the ViewResult by calling the View method, 
+specifying the name of the view that I want to use, which is MyView.
+
+Use Control+C to stop ASP.NET Core and then use the dotnet run command to compile 
+and start it again. Use the browser to request http://localhost:5000, and you 
+will see ASP.NET Core trying to find the view, as shown by the error message 
+displayed in Figure 2-16.
+
+Figure 2-16. Trying to find a view
+
+This is a helpful error message. It explains that ASP.NET Core could not 
+find the view I specified for the action method and explains where it looked. 
+Views are stored in the Views folder, organized into subfolders.
+Views that are associated with the Home controller, for example, are stored 
+in a folder called Views/Home. Views that are not specific to a single controller 
+are stored in a folder called Views/Shared. The template used to create 
+the project added the Home and Shared folders automatically and added 
+some placeholder views to get the project started.

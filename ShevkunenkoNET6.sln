@@ -59,6 +59,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Chapter-03", "Chapter-03", 
 		AdamFreeman\ProAspNetCore6\Chapter-03\Page037.txt = AdamFreeman\ProAspNetCore6\Chapter-03\Page037.txt
 		AdamFreeman\ProAspNetCore6\Chapter-03\Page038.txt = AdamFreeman\ProAspNetCore6\Chapter-03\Page038.txt
 		AdamFreeman\ProAspNetCore6\Chapter-03\Page039.txt = AdamFreeman\ProAspNetCore6\Chapter-03\Page039.txt
+		AdamFreeman\ProAspNetCore6\Chapter-03\Page040.txt = AdamFreeman\ProAspNetCore6\Chapter-03\Page040.txt
+		AdamFreeman\ProAspNetCore6\Chapter-03\Page041.txt = AdamFreeman\ProAspNetCore6\Chapter-03\Page041.txt
+		AdamFreeman\ProAspNetCore6\Chapter-03\Page042.txt = AdamFreeman\ProAspNetCore6\Chapter-03\Page042.txt
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PartyInvites", "AdamFreeman\ProAspNetCore6\PartyInvites\PartyInvites.csproj", "{D5C7ED00-981C-4089-971F-FA0D4FA8784D}"

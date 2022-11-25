@@ -1,0 +1,54 @@
+Listing 3-10. Creating a Form View in the RsvpForm.cshtml File in the Views/Home Folder
+
+@model PartyInvites.Models.GuestResponse
+
+@{
+	Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+	<meta name="viewport" content="width=device-width" />
+	<title>RsvpForm</title>
+</head>
+<body>
+	<form asp-action="RsvpForm" method="post">
+		<div>
+			<label asp-for="Name">Your name:</label>
+			<input asp-for="Name" />
+		</div>
+		<div>
+			<label asp-for="Email">Your email:</label>
+			<input asp-for="Email" />
+		</div>
+		<div>
+			<label asp-for="Phone">Your phone:</label>
+			<input asp-for="Phone" />
+		</div>
+		<div>
+			<label asp-for="WillAttend">Will you attend?</label>
+			<select asp-for="WillAttend">
+				<option value="">Choose an option</option>
+				<option value="true">Yes, I'll be there</option>
+				<option value="false">No, I can't come</option>
+			</select>
+		</div>
+		<button type="submit">Submit RSVP</button>
+	</form>
+</body>
+</html>
+
+The @model expression specifies that the view expects to receive a GuestResponse object 
+as its view model. I have defined a label and input element for each property 
+of the GuestResponse model class (or, in the case of the WillAttend property, a select element). 
+Each element is associated with the model property using the asp-for attribute, 
+which is another tag helper attribute. The tag helper attributes configure the
+elements to tie them to the view model object. Here is an example of the HTML that 
+the tag helpers produce:
+
+<p>
+	<label for="Name">Your name:</label>
+	<input type="text" id="Name" name="Name" value="">
+</p>

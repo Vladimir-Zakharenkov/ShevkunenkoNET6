@@ -1,0 +1,57 @@
+﻿Notice that all the properties defined by the GuestResponse class are nullable. 
+I explain why this is important in the “Adding Validation” section later 
+in the chapter.
+
+If you are using Visual Studio Code, you will see a warning produced by the 
+dotnet watch command telling you that a hot reload cannot be applied. The dotnet 
+watch command can’t cope with every type of change, and when Visual Studio Code 
+is used to add an empty class file to the project and then used to define a class, 
+the automatic rebuild process fails. You will see this prompt at the command line:
+
+watch : Do you want to restart your app - Yes (y) / No (n) / Always (a) / Never (v)?
+
+Press a to always rebuild the project. This issue also affects Visual Studio, but not 
+for this listing because class files are created using a template by Visual Studio 
+that better suits the way that the dotnet watch command works. (You will also encounter 
+this issue with Visual Studio, but not until later in the chapter.)
+
+Creating a Second Action and View
+
+One of my application goals is to include an RSVP form, which means I need to define 
+an action method that can receive requests for that form. A single controller class 
+can define multiple action methods, and the convention is to group related actions 
+in the same controller. Listing 3-7 adds a new action method to the
+Home controller.
+
+Listing 3-7. Adding an Action Method in the HomeController.cs File in the Controllers Folder
+
+using Microsoft.AspNetCore.Mvc;
+
+namespace PartyInvites.Controllers {
+	public class HomeController : Controller {
+
+		public IActionResult Index() {
+			return View();
+		}
+
+		public ViewResult RsvpForm() {
+			return View();
+		}
+	}
+}
+
+Both action methods invoke the View method without arguments, which may seem odd, 
+but remember that the Razor view engine will use the name of the action method 
+when looking for a view file, as explained in Chapter 2. That means the result 
+from the Index action method tells Razor to look for a view called Index.cshtml, 
+while the result from the RsvpForm action method tells Razor to look for a view 
+called RsvpForm.cshtml.
+
+If you are using Visual Studio, right-click the Views/Home folder and select 
+Add ➤ New Item from the pop-up menu. Select the Razor View - Empty item, set 
+the name to RsvpForm.cshtml, and click the Add button to create the file. 
+Replace the contents with those shown in Listing 3-8.
+
+If you are using Visual Studio Code, right-click the Views/Home folder and select 
+New File from the pop-up menu. Set the name of the file to RsvpForm.cshtml and 
+add the contents shown in Listing 3-8.

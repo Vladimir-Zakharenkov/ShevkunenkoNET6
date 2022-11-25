@@ -1,0 +1,48 @@
+Listing 3-1. Creating a New Project
+
+dotnet new globaljson --sdk-version 6.0.100 --output PartyInvites
+dotnet new mvc --no-https --output PartyInvites --framework net6.0
+dotnet new sln -o PartyInvites
+dotnet sln PartyInvites add PartyInvites
+
+These are the same commands I used to create the project in Chapter 2. 
+These commands ensure you get the right project starting point that 
+uses the required version of .NET.
+
+Preparing the Project
+
+Open the project (by opening the PartyInvites.sln file with Visual Studio 
+or the PartyInvites folder in Visual Studio Code) and change the contents 
+of the launchSettings.json file in the Properties folder, as shown in 
+Listing 3-2, to set the port that will be used to listen for HTTP requests.
+
+Listing 3-2. Setting Ports in the launchSettings.json File in the Properties Folder
+
+{
+	"iisSettings": {
+		"windowsAuthentication": false,
+		"anonymousAuthentication": true,
+		"iisExpress": {
+			"applicationUrl": "http://localhost:5000",
+			"sslPort": 0
+			}
+		},
+		"profiles": {
+			"PartyInvites": {
+				"commandName": "Project",
+				"dotnetRunMessages": true,
+				"launchBrowser": true,
+				"applicationUrl": "http://localhost:5000",
+				"environmentVariables": {
+					"ASPNETCORE_ENVIRONMENT": "Development"
+			}
+		},
+		"IIS Express": {
+			"commandName": "IISExpress",
+			"launchBrowser": true,
+			"environmentVariables": {
+				"ASPNETCORE_ENVIRONMENT": "Development"
+			}
+		}
+	}
+}

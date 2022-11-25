@@ -1,0 +1,30 @@
+The addition to the listing is an a element that has an asp-action attribute. 
+The attribute is an example of a tag helper attribute, which is an instruction 
+for Razor that will be performed when the view is rendered. The asp-action attribute 
+is an instruction to add an href attribute to the a element that contains a URL for
+an action method. I explain how tag helpers work in Chapters 25–27, but this tag helper 
+tells Razor to insert a URL for an action method defined by the same controller 
+for which the current view is being rendered.
+
+Use the browser to request http://localhost:5000, and you will see the link that 
+the helper has created, as shown in Figure 3-3.
+
+Figure 3-3. Linking between action methods
+
+Roll the mouse over the RSVP Now link in the browser. You will see that the link 
+points to the following URL:
+
+http://localhost:5000/Home/RsvpForm
+
+There is an important principle at work here, which is that you should use the features 
+provided by ASP.NET Core to generate URLs, rather than hard-code them into your views. 
+When the tag helper created the href attribute for the a element, it inspected 
+the configuration of the application to figure out what the URL should be. This allows 
+the configuration of the application to be changed to support different URL formats
+without needing to update any views.
+
+Building the Form
+
+Now that I have created the view and can reach it from the Index view, I am going 
+to build out the contents of the RsvpForm.cshtml file to turn it into an HTML form 
+for editing GuestResponse objects, as shown in Listing 3-10.

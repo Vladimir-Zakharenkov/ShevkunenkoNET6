@@ -53,9 +53,15 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Chapter-03", "Chapter-03", "{B7A7C925-7F87-4D32-B328-A397537E758D}"
 	ProjectSection(SolutionItems) = preProject
 		AdamFreeman\ProAspNetCore6\Chapter-03\Page033.txt = AdamFreeman\ProAspNetCore6\Chapter-03\Page033.txt
+		AdamFreeman\ProAspNetCore6\Chapter-03\Page034.txt = AdamFreeman\ProAspNetCore6\Chapter-03\Page034.txt
+		AdamFreeman\ProAspNetCore6\Chapter-03\Page035.txt = AdamFreeman\ProAspNetCore6\Chapter-03\Page035.txt
+		AdamFreeman\ProAspNetCore6\Chapter-03\Page036.txt = AdamFreeman\ProAspNetCore6\Chapter-03\Page036.txt
+		AdamFreeman\ProAspNetCore6\Chapter-03\Page037.txt = AdamFreeman\ProAspNetCore6\Chapter-03\Page037.txt
+		AdamFreeman\ProAspNetCore6\Chapter-03\Page038.txt = AdamFreeman\ProAspNetCore6\Chapter-03\Page038.txt
+		AdamFreeman\ProAspNetCore6\Chapter-03\Page039.txt = AdamFreeman\ProAspNetCore6\Chapter-03\Page039.txt
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PartyInvites", "AdamFreeman\ProAspNetCore6\PartyInvites\PartyInvites.csproj", "{D5C7ED00-981C-4089-971F-FA0D4FA8784D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PartyInvites", "AdamFreeman\ProAspNetCore6\PartyInvites\PartyInvites.csproj", "{D5C7ED00-981C-4089-971F-FA0D4FA8784D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

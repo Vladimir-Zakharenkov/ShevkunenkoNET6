@@ -1,0 +1,55 @@
+Listing 3-8. The Contents of the RsvpForm.cshtml File in the Views/Home Folder
+
+@{
+	Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+	<meta name="viewport" content="width=device-width" />
+	<title>RsvpForm</title>
+</head>
+<body>
+	<div>
+		This is the RsvpForm.cshtml View
+	</div>
+</body>
+</html>
+
+This content is just static HTML for the moment. Use the browser to request 
+http://localhost:5000/home/rsvpform. The Razor view engine locates the RsvpForm.cshtml 
+file and uses it to produce a response, as shown in Figure 3-2.
+
+Figure 3-2. Rendering a second view
+
+Linking Action Methods
+
+I want to be able to create a link from the Index view so that guests can see 
+the RsvpForm view without having to know the URL that targets a specific action 
+method, as shown in Listing 3-9.
+
+Listing 3-9. Adding a Link in the Index.cshtml File in the Views/Home Folder
+
+@{
+	Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+	<meta name="viewport" content="width=device-width" />
+	<title>Party!</title>
+</head>
+<body>
+	<div>
+		<div>
+			We're going to have an exciting party.<br />
+			(To do: sell it better. Add pictures or something.)
+		</div>
+		<a asp-action="RsvpForm">RSVP Now</a>
+	</div>
+</body>
+</html>

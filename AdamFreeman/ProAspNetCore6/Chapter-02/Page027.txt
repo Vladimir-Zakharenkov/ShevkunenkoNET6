@@ -1,0 +1,44 @@
+The result is that the Home controller defines a single action, named Index. 
+These changes don’t produce a dramatic effect, but they make for a nice 
+demonstration. I have changed the method named Index so that it returns 
+the string Hello World. Using the PowerShell prompt, run the dotnet run command 
+in the FirstProject folder again and use the browser to request http://localhost:5000. 
+The configuration of the project created by the template in Listing 2-6 means 
+the HTTP request will be processed by the Index action defined by the Home 
+controller. Put another way, the request will be processed by the Index 
+method defined by the HomeController class. The string produced by the Index 
+method is used as the response to the browser’s HTTP request, as shown in Figure 2-15.
+
+Figure 2-15. The output from the action method
+
+Understanding Routes
+
+The ASP.NET Core routing system is responsible for selecting the endpoint that 
+will handle an HTTP request. A route is a rule that is used to decide how 
+a request is handled. When the project was created, a default rule
+was created to get started. You can request any of the following URLs, 
+and they will be dispatched to the Index action defined by the Home controller:
+
+/
+/Home
+/Home/Index
+
+So, when a browser requests http://yoursite/ or http://yoursite/Home, it gets 
+back the output from HomeController’s Index method. You can try this yourself 
+by changing the URL in the browser. At the moment, it will be http://localhost:5000/, 
+except that the port part may be different if you are using Visual Studio. 
+If you append /Home or /Home/Index to the URL and press Return, you will see 
+the same Hello World result from the application.
+
+Understanding HTML Rendering
+
+The output from the previous example wasn’t HTML—it was just the string 
+Hello World. To produce an HTML response to a browser request, I need a view, 
+which tells ASP.NET Core how to process the result produced by the Index 
+method into an HTML response that can be sent to the browser.
+
+Creating and Rendering a View
+
+The first thing I need to do is modify my Index action method, as shown 
+in Listing 2-7. The changes are shown in bold, which is a convention 
+I follow throughout this book to make the examples easier to follow.

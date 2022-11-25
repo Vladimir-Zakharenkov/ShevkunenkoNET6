@@ -1,0 +1,50 @@
+Find the HomeController.cs file in the Solution Explorer or Explorer pane and 
+click it to open it for editing. You will see the following code:
+
+using System.Diagnostics;
+using Microsoft.AspNetCore.Mvc;
+using FirstProject.Models;
+
+namespace FirstProject.Controllers;
+
+public class HomeController : Controller {
+	private readonly ILogger<HomeController> _logger;
+
+	public HomeController(ILogger<HomeController> logger) {
+		_logger = logger;
+	}
+
+	public IActionResult Index() {
+		return View();
+	}
+
+	public IActionResult Privacy() {
+		return View();
+	}
+
+	[ResponseCache(Duration = 0, Location = ResponseCacheLocation.None,
+		NoStore = true)]
+	public IActionResult Error() {
+		return View(new ErrorViewModel { RequestId = Activity.Current?.Id
+			?? HttpContext.TraceIdentifier });
+	}
+}
+
+Using the code editor, replace the contents of the HomeController.cs file so that 
+it matches Listing 2-6. I have removed all but one of the methods, changed 
+the result type and its implementation, and removed the using statements 
+for unused namespaces.
+
+Listing 2-6. Changing the HomeController.cs File in the Controllers Folder
+
+using Microsoft.AspNetCore.Mvc;
+
+namespace FirstProject.Controllers {
+
+	public class HomeController : Controller {
+
+		public string Index() {
+			return "Hello World";
+		}
+	}
+}

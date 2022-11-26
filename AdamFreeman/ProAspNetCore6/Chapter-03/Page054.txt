@@ -1,4 +1,22 @@
-﻿@model PartyInvites.Models.GuestResponse
+Figure 3-10. Styling a view
+
+It will be obvious to you that I am not a web designer. In fact, as a child, 
+I was excused from art lessons on the basis that I had absolutely no talent 
+whatsoever. This had the happy result of making more time for math lessons 
+but meant that my artistic skills have not developed beyond those of 
+the average 10-year-old. For a real project, I would seek a professional 
+to help design and style the content, but for this example, I am going it alone, 
+and that means applying Bootstrap with as much restraint and consistency as 
+I can muster.
+
+Styling the Form View
+
+Bootstrap defines classes that can be used to style forms. I am not going to go 
+into detail, but you can see how I have applied these classes in Listing 3-23.
+
+Listing 3-23. Adding Bootstrap to the RsvpForm.cshtml File in the Views/Home Folder
+
+@model PartyInvites.Models.GuestResponse
 
 @{
 	Layout = null;
@@ -18,22 +36,22 @@
 
 	<form asp-action="RsvpForm" method="post" class="m-2">
 		<div asp-validation-summary="All"></div>
-
+		
 		<div class="form-group">
 			<label asp-for="Name" class="form-label">Your name:</label>
 			<input asp-for="Name" class="form-control" />
 		</div>
-
+		
 		<div class="form-group">
 			<label asp-for="Email" class="form-label">Your email:</label>
 			<input asp-for="Email" class="form-control" />
 		</div>
-
+		
 		<div class="form-group">
 			<label asp-for="Phone" class="form-label">Your phone:</label>
 			<input asp-for="Phone" class="form-control" />
 		</div>
-
+		
 		<div class="form-group">
 			<label asp-for="WillAttend" class="form-label">
 				Will you attend?

@@ -98,6 +98,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Chapter-04", "Chapter-04", 
 		AdamFreeman\ProAspNetCore6\Chapter-04\Page070.txt = AdamFreeman\ProAspNetCore6\Chapter-04\Page070.txt
 		AdamFreeman\ProAspNetCore6\Chapter-04\Page071.txt = AdamFreeman\ProAspNetCore6\Chapter-04\Page071.txt
 		AdamFreeman\ProAspNetCore6\Chapter-04\Page072.txt = AdamFreeman\ProAspNetCore6\Chapter-04\Page072.txt
+		AdamFreeman\ProAspNetCore6\Chapter-04\Page073.txt = AdamFreeman\ProAspNetCore6\Chapter-04\Page073.txt
+		AdamFreeman\ProAspNetCore6\Chapter-04\Page074.txt = AdamFreeman\ProAspNetCore6\Chapter-04\Page074.txt
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShevkunenkoSite", "ShevkunenkoSite\ShevkunenkoSite.csproj", "{F3B29056-7920-455C-8F37-39E5F022F008}"

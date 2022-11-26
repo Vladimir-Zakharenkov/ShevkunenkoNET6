@@ -1,0 +1,30 @@
+﻿Debugging Projects
+
+Visual Studio and Visual Studio Code both provide debuggers that can be used 
+to control and inspect the execution of an ASP.NET Core application. Open 
+the Program.cs file in the MyProject folder, and click this
+statement in the code editor:
+
+...
+app.MapGet("/", () => "Hello World!");
+...
+
+Select Debug ➤ Toggle Breakpoint in Visual Studio or select Run ➤ Toggle Breakpoint 
+in Visual Studio Code. A breakpoint is shown as a red dot alongside the code statement, 
+as shown in Figure 4-7, and will interrupt execution and pass control to the user.
+
+Figure 4-7. Setting a breakpoint
+
+Start the project by selecting Debug ➤ Start Debugging in Visual Studio or selecting 
+Run ➤ Start Debugging in Visual Studio Code. (Choose .NET if Visual Studio Code 
+prompts you to select an environment and then select the Start Debugging menu item again.)
+
+The application will be started and continue normally until the statement to which 
+the breakpoint is reached, at which point execution is halted. Execution can be 
+controlled using the Debug or Run menu or the controls that Visual Studio and 
+Visual Studio Code display. Both debuggers are packed with features — more so 
+if you have a paid-for version of Visual Studio — and I don’t describe them 
+in depth in this book. The Visual Studio debugger is described at 
+https://docs.microsoft.com/en-us/visualstudio/debugger,
+and the Visual Studio Code debugger is described at 
+https://code.visualstudio.com/docs/editor/ debugging.

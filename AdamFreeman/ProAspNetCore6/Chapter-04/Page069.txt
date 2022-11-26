@@ -1,0 +1,55 @@
+﻿Regardless of which editor you use, you will see output similar to the following 
+when you save the class file:
+
+watch : File changed: C:\MySolution\MyProject\MyClass.cs.
+watch : Unable to apply hot reload because of a rude edit.
+watch : Do you want to restart your app - Yes (y) / No (n) / Always (a) / Never (v)?
+
+There are some changes that the dotnet watch command can’t handle with a hot reload. 
+Pressing the a key tells the dotnet watch command to restart the application 
+when this type of change is detected.
+
+The hot reload feature is useful during the development of real projects, especially 
+when it comes to iterative adjustments to the HTML an application produces. But 
+I don’t use it in most of the chapters in this book because the examples require 
+many changes that are not handled with hot reloads and that can prevent changes 
+from taking effect.
+
+Building and Running Projects Using Visual Studio Code
+
+Visual Studio Code can build and execute the project for you if you prefer not 
+to use the command line. Select Terminal ➤ Run Build Task, select “build,” 
+and Visual Studio Code will compile the project.
+
+To build and run the project in a single step, select Debug Run ➤ Without Debugging. 
+Visual Studio Code will compile and run the project and open a new browser window 
+that will send an HTTP request to the ASP.NET Core server and produce the placeholder 
+response. Request http://localhost:5000/demo. html, and you will receive 
+the response shown in Figure 4-5.
+
+Building and Running Projects Using Visual Studio
+
+Visual Studio is also capable of building and executing the project. To build 
+the project, select Build Solution or Build MyProject from the Build menu. 
+To build and run the project, select Debug ➤ Start Without Debugging. Once 
+the project has been compiled, Visual Studio will open a new browser window. Request
+http://localhost:5000/demo.html, and you will see the response shown in Figure 4-5.
+
+Managing Packages
+
+Most projects require additional features beyond those set up by the project templates, 
+such as support for accessing databases or for making HTTP requests, neither of which 
+is included in the standard ASP.NET Core packages added to the project by the template 
+used to create the example project. In the sections that follow, I describe the tools 
+available to manage the different types of packages that are used in ASP.NET Core 
+development.
+
+Managing NuGet Packages
+
+.NET packages are added to a project with the dotnet add package command. Use 
+a PowerShell command prompt to run the command shown in Listing 4-11 in 
+the MyProject folder to add a package to the example project.
+
+Listing 4-11. Adding a Package to the Example Project
+
+dotnet add package Microsoft.EntityFrameworkCore.SqlServer --version 6.0.0

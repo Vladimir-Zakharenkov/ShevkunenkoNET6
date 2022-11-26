@@ -1,0 +1,48 @@
+This command installs version 6.0.0 of the Microsoft.EntityFrameworkCore.SqlServer 
+package. The package repository for .NET projects is nuget.org, where you can search 
+for the package and see the versions available. The package installed in Listing 4-11, 
+for example, is described at 
+https://www.nuget.org/packages/Microsoft.EntityFrameworkCore.SqlServer/6.0.0.
+
+You can see the packages installed in a project by running the command shown 
+in Listing 4-12.
+
+Tip
+The project file — which is the file with the .csproj extension — is used to keep 
+track of the packages added to a project. You can examine this file by opening 
+it for editing in Visual Studio Code or by right-clicking the project item in 
+the Visual Studio Solution Explorer and selecting Edit Project File from 
+the pop-up menu.
+
+Listing 4-12. Listing the Packages in a Project
+
+dotnet list package
+
+This command produces the following output when it is run in the MyProject folder, 
+showing the package added in Listing 4-11:
+
+Project 'MyProject' has the following package references
+[net6.0]:
+Top-level Package							Requested	Resolved
+> Microsoft.EntityFrameworkCore.SqlServer	6.0.0		6.0.0
+
+Packages are removed with the dotnet remove package command. To remove 
+the package from the example project, run the command shown in Listing 4-13 
+in the MyProject folder.
+
+Listing 4-13. Removing a Package from the Example Project
+
+dotnet remove package Microsoft.EntityFrameworkCore.SqlServer
+
+Managing Tool Packages
+
+Tool packages install commands that can be used from the command line to perform 
+operations on .NET projects. One common example is the Entity Framework Core tools 
+package that installs commands that are used to manage databases in ASP.NET Core 
+projects. Tool packages are managed using the dotnet tool command. To install 
+the Entity Framework Core tools package, run the commands shown in Listing 4-14.
+
+Listing 4-14. Installing a Tool Package
+
+dotnet tool uninstall --global dotnet-ef
+dotnet tool install --global dotnet-ef --version 6.0.0

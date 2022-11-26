@@ -1,0 +1,49 @@
+The first command removes the dotnet-ef package, which is named dotnet-ef. 
+This command will produce an error if the package has not already been installed, 
+but it is a good idea to remove existing versions before installing a package. 
+The dotnet tool install command installs version 3.1.1 of the dotnet-ef package, 
+which is the version I use in this book. The commands installed by tool packages are
+used through the dotnet command. To test the package installed in Listing 4-14, 
+run the command shown in Listing 4-15 in the MyProject folder.
+
+Tip
+The --global arguments in Listing 4-14 mean the package is installed for global use 
+and not just for a specific project. You can install tool packages into just one 
+project, in which case the command is accessed with dotnet tool run <command>. 
+The tools I use in this book are all installed globally.
+
+Listing 4-15. Running a Tool Package Command
+
+dotnet ef --help
+
+The commands added by this tool package are accessed using dotnet ef, and you will 
+see examples in later chapters that rely on these commands.
+
+Managing Client-Side Packages
+
+Client-side packages contain content that is delivered to the client, such as images, 
+CSS stylesheets, JavaScript files, and static HTML. Client-side packages are added 
+to ASP.NET Core using the Library Manager (LibMan) tool. To install the LibMan 
+tool package, run the commands shown in Listing 4-16.
+
+Listing 4-16. Installing the LibMan Tool Package
+
+dotnet tool uninstall --global Microsoft.Web.LibraryManager.Cli
+dotnet tool install --global Microsoft.Web.LibraryManager.Cli --version 2.1.113
+
+These commands remove any existing LibMan package and install the version that 
+is used throughout this book. The next step is to initialize the project, 
+which creates the file that LibMan uses to keep track of the client packages 
+it installs. Run the command shown in Listing 4-17 in the MyProject folder 
+to initialize the example project.
+
+Listing 4-17. Initializing the Example Project
+
+libman init -p cdnjs
+
+LibMan can download packages from different repositories. The -p argument 
+in Listing 4-17 specifies the repository at https://cdnjs.com, which is 
+the most widely used. Once the project is initialized, clientside
+packages can be installed. To install the Bootstrap CSS framework that I use 
+to style HTML content throughout this book, run the command shown in 
+Listing 4-18 in the MyProject folder.

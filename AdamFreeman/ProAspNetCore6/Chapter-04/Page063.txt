@@ -1,0 +1,21 @@
+Figure 4-1. Opening a project in Visual Studio Code and Visual Studio
+
+There are buttons at the top of the Visual Studio Solution Explorer that 
+disable file nesting and show the hidden items in the project. When you open 
+a project for the first time in Visual Studio Code, you may be
+prompted to add assets for building and debugging the project. 
+Click the Yes button.
+
+Adding Code and Content to Projects
+
+If you are using Visual Studio Code, then you add items to the project 
+by right-clicking the folder that should contain the file and selecting 
+New File from the pop-up menu (or selecting New Folder if you are adding a
+folder).
+
+Note
+You are responsible for ensuring that the file extension matches the type 
+of item you want to add; for example, an HTML file must be added with 
+the .html extension. I give the complete file name and the name
+of the containing folder for every item added to a project throughout 
+this book, so you will always know exactly what files you need to add.

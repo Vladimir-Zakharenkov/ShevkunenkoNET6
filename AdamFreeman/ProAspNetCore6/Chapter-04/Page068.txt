@@ -1,0 +1,42 @@
+﻿The dotnet watch command monitors the project for changes. When a change is 
+detected, the project is automatically recompiled, and the browser is reloaded. 
+To see this process in action, make the change shown in Listing 4-9 to the 
+demo.html file in the wwwroot folder.
+
+Listing 4-9. Changing the Message in the demo.html File in the wwwroot Folder
+
+<!DOCTYPE html>
+
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title></title>
+</head>
+<body>
+	<h3>New Message</h3>
+</body>
+</html>
+
+When you save the changes to the HTML file, the dotnet watch tool will detect 
+the change and automatically update the browser, as shown in Figure 4-5.
+
+Figure 4-5. The hot reload feature
+
+The dotnet watch command is a clever feat of engineering, and it has good support 
+for ASP.NET Core applications, allowing changes to be easily applied. But not 
+all changes can be handled with a hot reload.
+
+If you are using Visual Studio, right-click the MyProject item in the Solution 
+Explorer, select Add ➤ Class from the pop-up menu, and set the name of the new 
+class file to MyClass.cs. When Visual Studio opens the file for editing, change 
+the namespace as shown in Listing 4-10.
+
+Listing 4-10. Changing a Namespace in the MyClass.cs File in the MyProject Folder
+
+namespace MyProject.MyNamespace {
+	public class MyClass {
+	}
+}
+
+If you are using Visual Studio, add a file named MyClass.cs to the MyProject folder 
+with the content shown in Listing 4-10.

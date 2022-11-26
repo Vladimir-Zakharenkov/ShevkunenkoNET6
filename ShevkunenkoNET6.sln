@@ -87,7 +87,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Chapter-04", "Chapter-04", 
 		AdamFreeman\ProAspNetCore6\Chapter-04\Page059.txt = AdamFreeman\ProAspNetCore6\Chapter-04\Page059.txt
 		AdamFreeman\ProAspNetCore6\Chapter-04\Page060.txt = AdamFreeman\ProAspNetCore6\Chapter-04\Page060.txt
 		AdamFreeman\ProAspNetCore6\Chapter-04\Page061.txt = AdamFreeman\ProAspNetCore6\Chapter-04\Page061.txt
+		AdamFreeman\ProAspNetCore6\Chapter-04\Page062.txt = AdamFreeman\ProAspNetCore6\Chapter-04\Page062.txt
 	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShevkunenkoSite", "ShevkunenkoSite\ShevkunenkoSite.csproj", "{F3B29056-7920-455C-8F37-39E5F022F008}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -103,6 +106,10 @@ Global
 		{D5C7ED00-981C-4089-971F-FA0D4FA8784D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D5C7ED00-981C-4089-971F-FA0D4FA8784D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D5C7ED00-981C-4089-971F-FA0D4FA8784D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F3B29056-7920-455C-8F37-39E5F022F008}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F3B29056-7920-455C-8F37-39E5F022F008}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F3B29056-7920-455C-8F37-39E5F022F008}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F3B29056-7920-455C-8F37-39E5F022F008}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

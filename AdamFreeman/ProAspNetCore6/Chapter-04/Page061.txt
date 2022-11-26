@@ -1,0 +1,45 @@
+UNDERSTANDING THE LIMITATIONS OF PROJECT TEMPLATES
+
+The project templates described in Table 4-2 are intended to help jump-start 
+development by taking care of basic configuration settings and adding 
+placeholder content.
+
+These templates can give you a sense of rapid progress, but they contain assumptions 
+about how a project should be configured and developed. If you don’t understand 
+the impact of those assumptions, you won’t be able to get the results you require 
+for the specific demands of your project.
+
+The web template creates a project with the minimum configuration required for ASP.NET Core
+development. This is the project template I use for most of the examples in this book 
+so that I can explain how each feature is configured and how the features 
+can be used together.
+
+Once you understand how ASP.NET Core works, the other project templates can be useful 
+because you will know how to adapt them to your needs. But, while you are learning, 
+I recommend sticking to the web template, even though it can take a little more 
+effort to get results.
+
+To create a project, open a new PowerShell command prompt and run the commands shown in
+Listing 4-2.
+
+Table 4-3. The Configuration Item Templates
+
+Name						Description
+
+globaljson					This template adds a global.json file to a project, 
+							specifying the version of .NET that will be used.
+
+sln							This template creates a solution file, which is used 
+							to group multiple projects and is commonly used by 
+							Visual Studio. The solution file is populated with 
+							the dotnet sln add command, as shown in Listing 4-2.
+
+gitignore					This template creates a .gitignore file that excludes 
+							unwanted items from Git source control.
+
+Listing 4-2. Creating a New Project
+
+dotnet new globaljson --sdk-version 6.0.403 --output MySolution/MyProject
+dotnet new web --no-https --output MySolution/MyProject --framework net6.0
+dotnet new sln -o MySolution
+dotnet sln MySolution add MySolution/MyProject

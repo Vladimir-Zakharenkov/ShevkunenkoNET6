@@ -1,0 +1,52 @@
+I use the command-line tools throughout this book because they are simple 
+and concise. The Visual Studio integrated support is awkward and makes 
+it easy to unintentionally create a project with the wrong configuration, 
+as the volume of emails from confused readers of earlier editions of this 
+book has demonstrated.
+
+Tip
+You can download the example project for this chapter — and for all the other 
+chapters in this book—from https://github.com/apress/pro-asp.net-core-6. 
+See Chapter 1 for how to get help if you have problems running the examples.
+
+Creating a Project Using the Command Line
+
+The dotnet command provides access to the .NET command-line features. The dotnet 
+new command is used to create a new project, configuration file, or solution file. 
+To see the list of templates available for creating new items, open a PowerShell 
+command prompt and run the command shown in Listing 4-1.
+
+Listing 4-1. Listing the .NET Templates
+
+dotnet new --list
+
+Each template has a short name that makes it easier to use. There are many 
+templates available, but Table 4-2 describes the ones that are most useful 
+for creating ASP.NET Core projects.
+
+Table 4-2. Useful ASP.NET Core Project Templates
+
+Name			Description
+
+web				This template creates a project that is set up with the minimum code 
+				and content required for ASP.NET Core development. This is the template 
+				I use for most of the chapters in this book.
+
+mvc				This template creates an ASP.NET Core project configured to use the MVC 
+				Framework.
+
+webapp			This template creates an ASP.NET Core project configured to use Razor Pages.
+
+blazorserver	This template creates an ASP.NET Core project configured to use Blazor Server.
+
+angular			This template creates an ASP.NET Core project that contains client-side
+				features using the Angular JavaScript framework.
+
+react			This template creates an ASP.NET Core project that contains client-side 
+				features using the React JavaScript framework.
+
+reactredux		This template creates an ASP.NET Core project that contains client-side 
+				features using the React JavaScript framework and the popular Redux library.
+
+There are also templates that create commonly required files used to configure projects, 
+as described in Table 4-3.

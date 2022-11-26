@@ -1,0 +1,45 @@
+CHAPTER 4
+
+Using the Development Tools
+
+In this chapter, I introduce the tools that Microsoft provides for ASP.NET Core 
+development and that are used throughout this book.
+
+Unlike earlier editions of this book, I rely on the command-line tools provided 
+by the .NET SDK and additional tool packages that Microsoft publishes. In part, 
+I have done this to help ensure you get the expected results from the examples 
+but also because the command-line tools provide access to all the features 
+required for ASP.NET Core development, regardless of which editor/IDE 
+you have chosen.
+
+Visual Studio — and, to a lesser extent, Visual Studio Code — offers access 
+to some of the tools through user interfaces, which I describe in this chapter, 
+but Visual Studio and Visual Studio Code don’t support all the features that are 
+required for ASP.NET Core development, so there are times that using the command
+line is inevitable.
+
+As ASP.NET Core has evolved, I have gradually moved to using just the command-line 
+tools, except for when I need to use a debugger (although, as I explain later 
+in the chapter, this is a rare requirement). Your preferences may differ, especially 
+if you are used to working entirely within an IDE, but my suggestion is to
+give the command-line tools a go. They are simple, concise, and predictable, 
+which cannot be said for all the equivalent functionality provided by Visual Studio 
+and Visual Studio Code. Table 4-1 summarizes the chapter.
+
+Table 4-1. Chapter Summary
+
+Problem							Solution										Listing
+
+Creating a project				Use the dotnet new commands.					1–3
+Building and running projects	Use the dotnet build and dotnet run commands.	4–10
+Adding packages to a project	Use the dotnet add package command.				11–12
+Installing tool commands		Use the dotnet tool command.					14, 15
+Managing client-side packages	Use the libman command or the Visual Studio
+								client-side package manager.					16–19
+
+Creating ASP.NET Core Projects
+
+The .NET SDK includes a set of command-line tools for creating, managing, building, 
+and running projects. Visual Studio provides integrated support for some of these 
+tasks, but if you are using Visual Studio Code, then the command line 
+is the only option.

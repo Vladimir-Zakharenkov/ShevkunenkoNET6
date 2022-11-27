@@ -9,18 +9,34 @@ public class HomeController : Controller
     {
         Product?[] products = Product.GetProducts();
 
-        Product? p = products[0];
+        #region Example1
 
-        string val;
+        //Product? p = products[0];
 
-        if (p != null)
+        //string val;
+
+        //if (p != null)
+        //{
+        //    val = p.Name;
+        //}
+        //else
+        //{
+        //    val = "No value";
+        //}
+        //return View(new string[] { val });
+
+        #endregion
+
+        #region Example2
+
+        string? val = products[0]?.Name;
+
+        if (val != null)
         {
-            val = p.Name;
+            return View(new string[] { val });
         }
-        else
-        {
-            val = "No value";
-        }
-        return View(new string[] { val });
+        return View(new string[] { "No Value" });
+
+        #endregion
     }
 }

@@ -5,12 +5,22 @@ namespace LanguageFeatures.Controllers;
 
 public class HomeController : Controller
 {
-	public ViewResult Index()
-	{
-        //return View(new string[] { "C#", "Language", "Features" });
+    public ViewResult Index()
+    {
+        Product?[] products = Product.GetProducts();
 
-        Product[] products = Product.GetProducts();
-        return View(new string[] { products[0].Name });
+        Product? p = products[0];
 
+        string val;
+
+        if (p != null)
+        {
+            val = p.Name;
+        }
+        else
+        {
+            val = "No value";
+        }
+        return View(new string[] { val });
     }
 }

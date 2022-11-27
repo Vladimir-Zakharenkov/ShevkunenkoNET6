@@ -88,12 +88,64 @@ public class HomeController : Controller
 
         #region Example9
 
-        Dictionary<string, Product> products2 = new Dictionary<string, Product>
+        //Dictionary<string, Product> products2 = new Dictionary<string, Product>
+        //{
+        //    ["Kayak"] = new Product { Name = "Kayak", Price = 275M },
+        //    ["Lifejacket"] = new Product { Name = "Lifejacket", Price = 48.95M }
+        //};
+        //return View("Index", products2.Keys);
+
+        #endregion
+
+        #region Example10
+
+        //Dictionary<string, Product> products2 = new()
+        //{
+        //    ["Kayak"] = new Product { Name = "Kayak", Price = 275M },
+        //    ["Lifejacket"] = new Product { Name = "Lifejacket", Price = 48.95M }
+        //};
+        //return View("Index", products2.Keys);
+
+        #endregion
+
+        #region Example11
+
+        //object[] data = new object[] { 275M, 29.95M, "apple", "orange", 100, 10 };
+
+        //decimal total = 0;
+
+        //for (int i = 0; i < data.Length; i++)
+        //{
+        //    if (data[i] is decimal d)
+        //    {
+        //        total += d;
+        //    }
+        //}
+
+        //return View("Index", new string[] { $"Total: {total:C2}" });
+
+        #endregion
+
+        #region Example12
+
+        object[] data = new object[] { 275M, 29.95M, "apple", "orange", 100, 10 };
+
+        decimal total = 0;
+
+        for (int i = 0; i < data.Length; i++)
         {
-            ["Kayak"] = new Product { Name = "Kayak", Price = 275M },
-            ["Lifejacket"] = new Product { Name = "Lifejacket", Price = 48.95M }
-        };
-        return View("Index", products2.Keys);
+            switch (data[i])
+            {
+                case decimal decimalValue:
+                    total += decimalValue;
+                    break;
+                case int intValue when intValue > 50:
+                    total += intValue;
+                    break;
+            }
+        }
+
+        return View("Index", new string[] { $"Total: {total:C2}" });
 
         #endregion
     }

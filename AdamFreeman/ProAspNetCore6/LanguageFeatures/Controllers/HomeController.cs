@@ -29,13 +29,25 @@ public class HomeController : Controller
 
         #region Example2
 
-        string? val = products[0]?.Name;
+        //string? val = products[0]?.Name;
 
-        if (val != null)
-        {
-            return View(new string[] { val });
-        }
-        return View(new string[] { "No Value" });
+        //if (val != null)
+        //{
+        //    return View(new string[] { val });
+        //}
+        //return View(new string[] { "No Value" });
+
+        #endregion
+
+        #region Example3
+
+        //return View(new string[] { products[0]?.Name ?? "No Value" });
+
+        #endregion
+
+        #region Example4
+
+        return View(new string[] { products[0]!.Name });
 
         #endregion
     }

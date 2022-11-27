@@ -128,24 +128,34 @@ public class HomeController : Controller
 
         #region Example12
 
-        object[] data = new object[] { 275M, 29.95M, "apple", "orange", 100, 10 };
+        //object[] data = new object[] { 275M, 29.95M, "apple", "orange", 100, 10 };
 
-        decimal total = 0;
+        //decimal total = 0;
 
-        for (int i = 0; i < data.Length; i++)
-        {
-            switch (data[i])
-            {
-                case decimal decimalValue:
-                    total += decimalValue;
-                    break;
-                case int intValue when intValue > 50:
-                    total += intValue;
-                    break;
-            }
-        }
+        //for (int i = 0; i < data.Length; i++)
+        //{
+        //    switch (data[i])
+        //    {
+        //        case decimal decimalValue:
+        //            total += decimalValue;
+        //            break;
+        //        case int intValue when intValue > 50:
+        //            total += intValue;
+        //            break;
+        //    }
+        //}
 
-        return View("Index", new string[] { $"Total: {total:C2}" });
+        //return View("Index", new string[] { $"Total: {total:C2}" });
+
+        #endregion
+
+        #region Example13
+
+        ShoppingCart cart = new ShoppingCart { Products = Product.GetProducts() };
+
+        decimal cartTotal = cart.TotalPrices();
+
+        return View("Index", new string[] { $"Total: {cartTotal:C2}" });
 
         #endregion
     }

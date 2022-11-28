@@ -274,9 +274,11 @@ public class HomeController : Controller
             .Filter(p => p?.Name?[0] == 'S')
             .TotalPrices();
 
-        return View("Index", new string[] {
-                $"Price Total: {priceFilterTotal:C2}",
-                $"Name Total: {nameFilterTotal:C2}" });
+        //return View("Index", new string[] {
+        //        $"Price Total: {priceFilterTotal:C2}",
+        //        $"Name Total: {nameFilterTotal:C2}" });
+
+        return View(Product.GetProducts().Select(p => p?.Name));
 
         #endregion
     }

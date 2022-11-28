@@ -10,7 +10,8 @@ public class HomeController : Controller
     //    return (p?.Price ?? 0) >= 20;
     //}
 
-    public ViewResult Index()
+    //public ViewResult Index()
+    public async Task<ViewResult> Index()
     {
         //Product?[] products = Product.GetProducts();
 
@@ -326,15 +327,68 @@ public class HomeController : Controller
 
         #region Example22
 
-        IProductSelection cart = new ShoppingCart(
-                new Product { Name = "Kayak", Price = 275M },
-                new Product { Name = "Lifejacket", Price = 48.95M },
-                new Product { Name = "Soccer ball", Price = 19.50M },
-                new Product { Name = "Corner flag", Price = 34.95M }
-            );
+        //IProductSelection cart = new ShoppingCart(
+        //        new Product { Name = "Kayak", Price = 275M },
+        //        new Product { Name = "Lifejacket", Price = 48.95M },
+        //        new Product { Name = "Soccer ball", Price = 19.50M },
+        //        new Product { Name = "Corner flag", Price = 34.95M }
+        //    );
 
-        return View(cart.Names);
+        //return View(cart.Names);
 
         #endregion
+
+        #region Example23
+        //long? length = await MyAsyncMethods.GetPageLength();
+
+        //return View(new string[] { $"Length: {length}" });
+        #endregion
+
+        #region Example24
+        //List<string> output = new List<string>();
+
+        //foreach (long? len in await MyAsyncMethods.GetPageLengths(output,
+        //    "apress.com", "microsoft.com", "amazon.com"))
+        //{
+        //    output.Add($"Page length: {len}");
+        //}
+
+        //return View(output);
+        #endregion
+
+        #region Example25
+        //List<string> output = new List<string>();
+
+        //await foreach (long? len in MyAsyncMethods.GetPageLengths(output,
+        //        "apress.com", "microsoft.com", "amazon.com"))
+        //{
+        //    output.Add($"Page length: {len}");
+        //}
+
+        //return View(output);
+        #endregion
+
+        #region Example26
+        //var products = new[] {
+        //        new { Name = "Kayak", Price = 275M },
+        //        new { Name = "Lifejacket", Price = 48.95M },
+        //        new { Name = "Soccer ball", Price = 19.50M },
+        //        new { Name = "Corner flag", Price = 34.95M }
+        //    };
+        //return View(products.Select(p => $"Name: {p.Name}, Price: {p.Price}"));
+        #endregion
+
+        #region Example26
+        var products = new[] {
+                new { Name = "Kayak", Price = 275M },
+                new { Name = "Lifejacket", Price = 48.95M },
+                new { Name = "Soccer ball", Price = 19.50M },
+                new { Name = "Corner flag", Price = 34.95M }
+            };
+        return View(products.Select(p =>
+                $"{nameof(p.Name)}: {p.Name}, {nameof(p.Price)}: {p.Price}"));
+        #endregion
+
+
     }
 }

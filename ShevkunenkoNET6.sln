@@ -155,6 +155,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Chapter-05", "Chapter-05", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LanguageFeatures", "AdamFreeman\ProAspNetCore6\LanguageFeatures\LanguageFeatures.csproj", "{8FC8773E-E182-49BF-B62C-B4374971C4FC}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AndrewLock", "AndrewLock", "{7CABF0E9-17DB-4713-BC8F-291256460378}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AspNetCoreInAction3Ed", "AspNetCoreInAction3Ed", "{4802915D-3B44-4CC4-8928-23ABC1A66FB3}"
+	ProjectSection(SolutionItems) = preProject
+		AndrewLock\AspNetCoreInAction3Ed\GETTING STARTED WITH ASP NET CORE.txt = AndrewLock\AspNetCoreInAction3Ed\GETTING STARTED WITH ASP NET CORE.txt
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -191,6 +198,7 @@ Global
 		{66199345-5E13-419C-BBD2-E5C0E8CCC31B} = {74C9DA5B-4F3F-42CE-BC38-4BECB38F1F39}
 		{A680EFB8-DD89-4F37-8D14-B9F3CDB3A63E} = {74C9DA5B-4F3F-42CE-BC38-4BECB38F1F39}
 		{8FC8773E-E182-49BF-B62C-B4374971C4FC} = {74C9DA5B-4F3F-42CE-BC38-4BECB38F1F39}
+		{4802915D-3B44-4CC4-8928-23ABC1A66FB3} = {7CABF0E9-17DB-4713-BC8F-291256460378}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5507A11F-FC14-46CA-B766-61BB183C82C7}

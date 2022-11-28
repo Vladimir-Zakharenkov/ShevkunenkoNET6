@@ -91,5 +91,18 @@ public static class MyExtensionMethods
             }
         }
     }
+
+    public static IEnumerable<Product?> Filter(
+            this IEnumerable<Product?> productEnum,
+                Func<Product?, bool> selector)
+    {
+        foreach (Product? prod in productEnum)
+        {
+            if (selector(prod))
+            {
+                yield return prod;
+            }
+        }
+    }
 }
 #endregion

@@ -7,14 +7,14 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AdamFreeman", "AdamFreeman"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Chapter-01", "Chapter-01", "{8DD55174-F10A-4059-9544-10DB303D6BFE}"
 	ProjectSection(SolutionItems) = preProject
-		AdamFreeman\ProAspNetCore6\Chaper-01\Page003.txt = AdamFreeman\ProAspNetCore6\Chaper-01\Page003.txt
-		AdamFreeman\ProAspNetCore6\Chaper-01\Page004.txt = AdamFreeman\ProAspNetCore6\Chaper-01\Page004.txt
-		AdamFreeman\ProAspNetCore6\Chaper-01\Page005.txt = AdamFreeman\ProAspNetCore6\Chaper-01\Page005.txt
-		AdamFreeman\ProAspNetCore6\Chaper-01\Page006.txt = AdamFreeman\ProAspNetCore6\Chaper-01\Page006.txt
-		AdamFreeman\ProAspNetCore6\Chaper-01\Page007.txt = AdamFreeman\ProAspNetCore6\Chaper-01\Page007.txt
-		AdamFreeman\ProAspNetCore6\Chaper-01\Page008.txt = AdamFreeman\ProAspNetCore6\Chaper-01\Page008.txt
-		AdamFreeman\ProAspNetCore6\Chaper-01\Page009.txt = AdamFreeman\ProAspNetCore6\Chaper-01\Page009.txt
-		AdamFreeman\ProAspNetCore6\Chaper-01\Page010.txt = AdamFreeman\ProAspNetCore6\Chaper-01\Page010.txt
+		AdamFreeman\ProAspNetCore6\Chapter-01\Page003.txt = AdamFreeman\ProAspNetCore6\Chapter-01\Page003.txt
+		AdamFreeman\ProAspNetCore6\Chapter-01\Page004.txt = AdamFreeman\ProAspNetCore6\Chapter-01\Page004.txt
+		AdamFreeman\ProAspNetCore6\Chapter-01\Page005.txt = AdamFreeman\ProAspNetCore6\Chapter-01\Page005.txt
+		AdamFreeman\ProAspNetCore6\Chapter-01\Page006.txt = AdamFreeman\ProAspNetCore6\Chapter-01\Page006.txt
+		AdamFreeman\ProAspNetCore6\Chapter-01\Page007.txt = AdamFreeman\ProAspNetCore6\Chapter-01\Page007.txt
+		AdamFreeman\ProAspNetCore6\Chapter-01\Page008.txt = AdamFreeman\ProAspNetCore6\Chapter-01\Page008.txt
+		AdamFreeman\ProAspNetCore6\Chapter-01\Page009.txt = AdamFreeman\ProAspNetCore6\Chapter-01\Page009.txt
+		AdamFreeman\ProAspNetCore6\Chapter-01\Page010.txt = AdamFreeman\ProAspNetCore6\Chapter-01\Page010.txt
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Chapter-02", "Chapter-02", "{1A721275-584C-41AD-BFFB-DDC4F5AF3C32}"
@@ -170,7 +170,16 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Chapter-06", "Chapter-06", "{415F96B4-5D89-48C9-B456-AC175F45C22E}"
 	ProjectSection(SolutionItems) = preProject
 		AdamFreeman\ProAspNetCore6\Chapter-06\Page121.txt = AdamFreeman\ProAspNetCore6\Chapter-06\Page121.txt
+		AdamFreeman\ProAspNetCore6\Chapter-06\Page122.txt = AdamFreeman\ProAspNetCore6\Chapter-06\Page122.txt
+		AdamFreeman\ProAspNetCore6\Chapter-06\Page123.txt = AdamFreeman\ProAspNetCore6\Chapter-06\Page123.txt
+		AdamFreeman\ProAspNetCore6\Chapter-06\Page124.txt = AdamFreeman\ProAspNetCore6\Chapter-06\Page124.txt
+		AdamFreeman\ProAspNetCore6\Chapter-06\Page125.txt = AdamFreeman\ProAspNetCore6\Chapter-06\Page125.txt
+		AdamFreeman\ProAspNetCore6\Chapter-06\Page126.txt = AdamFreeman\ProAspNetCore6\Chapter-06\Page126.txt
 	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Testing", "Testing", "{0536B644-6BF4-4764-A882-C53ED72DC006}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimpleApp", "AdamFreeman\ProAspNetCore6\Testing\SimpleApp\SimpleApp.csproj", "{70F4B469-2C1A-4B73-9AF8-1684AF40E17B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -194,6 +203,10 @@ Global
 		{8FC8773E-E182-49BF-B62C-B4374971C4FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8FC8773E-E182-49BF-B62C-B4374971C4FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8FC8773E-E182-49BF-B62C-B4374971C4FC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{70F4B469-2C1A-4B73-9AF8-1684AF40E17B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{70F4B469-2C1A-4B73-9AF8-1684AF40E17B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{70F4B469-2C1A-4B73-9AF8-1684AF40E17B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{70F4B469-2C1A-4B73-9AF8-1684AF40E17B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -211,6 +224,8 @@ Global
 		{4802915D-3B44-4CC4-8928-23ABC1A66FB3} = {7CABF0E9-17DB-4713-BC8F-291256460378}
 		{E283DE1B-151C-4E75-8AC3-04F8B1037B0E} = {4802915D-3B44-4CC4-8928-23ABC1A66FB3}
 		{415F96B4-5D89-48C9-B456-AC175F45C22E} = {74C9DA5B-4F3F-42CE-BC38-4BECB38F1F39}
+		{0536B644-6BF4-4764-A882-C53ED72DC006} = {74C9DA5B-4F3F-42CE-BC38-4BECB38F1F39}
+		{70F4B469-2C1A-4B73-9AF8-1684AF40E17B} = {0536B644-6BF4-4764-A882-C53ED72DC006}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5507A11F-FC14-46CA-B766-61BB183C82C7}

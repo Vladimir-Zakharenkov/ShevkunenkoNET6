@@ -1,0 +1,38 @@
+CHAPTER 6
+
+Testing ASP.NET Core Applications
+
+In this chapter, I demonstrate how to unit test ASP.NET Core applications. 
+Unit testing is a form of testing in which individual components are isolated 
+from the rest of the application so their behavior can be thoroughly validated. 
+ASP.NET Core has been designed to make it easy to create unit tests, and there 
+is support for a wide range of unit testing frameworks. I show you how to set 
+up a unit test project and describe the process for writing and running tests. 
+Table 6-1 summarizes the chapter.
+
+DECIDING WHETHER TO UNIT TEST
+
+Being able to easily perform unit testing is one of the benefits of using 
+ASP.NET Core, but it isn’t for everyone, and I have no intention 
+of pretending otherwise.
+
+I like unit testing, and I use it in my own projects, but not all of them and 
+not as consistently as you might expect. I tend to focus on writing unit tests 
+for features and functions that I know will be hard to write and likely will 
+be the source of bugs in deployment. In these situations, unit testing helps 
+structure my thoughts about how to best implement what I need. I find that 
+just thinking about what I need to test helps produce ideas about potential 
+problems, and that’s before I start dealing with actual bugs and defects.
+
+That said, unit testing is a tool and not a religion, and only you know how 
+much testing you require. If you don’t find unit testing useful or if you have 
+a different methodology that suits you better, then don’t feel you need to unit 
+test just because it is fashionable. (However, if you don’t have a better
+methodology and you are not testing at all, then you are probably letting 
+users find your bugs, which is rarely ideal. You don’t have to unit test, 
+but you really should consider doing some testing of some kind.)
+
+If you have not encountered unit testing before, then I encourage you to give 
+it a try to see how it works. If you are not a fan of unit testing, then you 
+can skip this chapter and move on to Chapter 7, where I start to build 
+a more realistic ASP.NET Core application.

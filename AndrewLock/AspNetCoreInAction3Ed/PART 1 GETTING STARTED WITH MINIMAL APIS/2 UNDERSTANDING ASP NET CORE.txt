@@ -1,0 +1,41 @@
+2 Understanding ASP.NET Core
+
+This chapter covers
+Why ASP.NET Core was created
+
+The many application paradigms of ASP.NET Core
+
+Approaches to migrating an existing application to ASP.NET Core
+
+In this chapter, I provide some background on ASP.NET Core: why web frameworks 
+are useful, why ASP.NET Core was created, and how to choose when to use 
+ASP.NET Core.
+
+If you’re new to .NET development, this chapter will help you to understand 
+the .NET landscape. For existing .NET developers, I provide guidance on whether 
+now is the right time to consider moving your focus to .NET Core and 
+.NET 7, and on the advantages ASP.NET Core can offer over previous versions of ASP.NET.
+
+2.1 Using a web framework
+
+If you’re new to web development, it can be daunting moving into an area with so many 
+buzzwords and a plethora of ever-changing products. You may be wondering if 
+they’re all necessary—how hard can it be to return a file from a server?
+
+Well, it’s perfectly possible to build a static web application without the use 
+of a web framework, but its capabilities will be limited. As soon as you want 
+to provide any kind of security or dynamism, you’ll likely run into difficulties, 
+and the original simplicity that enticed you will fade before your eyes.
+
+Just as desktop or mobile development frameworks can help you build native 
+applications, ASP.NET Core makes writing web applications faster, easier, 
+and more secure than trying to build everything from scratch. It contains 
+libraries for common things like
+
+Creating dynamically changing web pages
+
+Letting users log in to your web app
+
+Letting users use their Facebook account to log in to your web app using OAuth
+
+Providing a common structure for building maintainable applications

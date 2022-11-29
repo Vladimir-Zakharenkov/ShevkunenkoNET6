@@ -185,6 +185,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Chapter-06", "Chapter-06", 
 		AdamFreeman\ProAspNetCore6\Chapter-06\Page134.txt = AdamFreeman\ProAspNetCore6\Chapter-06\Page134.txt
 		AdamFreeman\ProAspNetCore6\Chapter-06\Page135.txt = AdamFreeman\ProAspNetCore6\Chapter-06\Page135.txt
 		AdamFreeman\ProAspNetCore6\Chapter-06\Page136.txt = AdamFreeman\ProAspNetCore6\Chapter-06\Page136.txt
+		AdamFreeman\ProAspNetCore6\Chapter-06\Page137.txt = AdamFreeman\ProAspNetCore6\Chapter-06\Page137.txt
+		AdamFreeman\ProAspNetCore6\Chapter-06\Page138.txt = AdamFreeman\ProAspNetCore6\Chapter-06\Page138.txt
+		AdamFreeman\ProAspNetCore6\Chapter-06\Page139.txt = AdamFreeman\ProAspNetCore6\Chapter-06\Page139.txt
+		AdamFreeman\ProAspNetCore6\Chapter-06\Page140.txt = AdamFreeman\ProAspNetCore6\Chapter-06\Page140.txt
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Testing", "Testing", "{0536B644-6BF4-4764-A882-C53ED72DC006}"

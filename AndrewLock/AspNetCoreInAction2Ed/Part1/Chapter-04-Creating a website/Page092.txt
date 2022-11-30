@@ -1,0 +1,47 @@
+﻿An API designed for consumption by another machine or in code — The other main
+possibility for a web application is to serve as an API to backend server processes,
+to a mobile app, or to a client framework for building single-page applications
+(SPAs). In this case, your application serves data in machine-readable
+formats such as JSON or XML instead of the human-focused HTML output.
+
+Both an HTML web application and an API — It is also possible to have applications
+that serve both needs. This can let you cater to a wider range of clients
+while sharing logic in your application.
+
+In this chapter you’ll learn how ASP.NET Core uses Razor Pages to handle the first of
+these options, creating server-side rendered HTML pages. You’ll start by looking at
+the Model-View-Controller (MVC) design pattern to see the benefits that can be
+achieved through its use and learn why it’s been adopted by so many web frameworks
+as a model for building maintainable applications.
+
+Next you’ll learn how the MVC design pattern applies to ASP.NET Core. The MVC
+pattern is a broad concept that can be applied in a variety of situations, but the use
+case in ASP.NET Core is specifically as a UI abstraction. You’ll see how Razor Pages
+implements the MVC design pattern, how it builds on top of the ASP.NET Core MVC
+framework, and compare the two approaches.
+
+Next you’ll see how to add Razor Pages to an existing application, and how to create
+your first Razor Pages. You’ll learn how to define page handlers to execute when
+your application receives a request and how to generate a result that can be used to
+create an HTTP response to return.
+
+I won’t cover how to create Web APIs in this chapter. Web APIs still use the ASP.NET
+Core MVC framework, but they’re used in a slightly different way to Razor Pages.
+Instead of returning web pages that are directly displayed in a user’s browser, they
+return data formatted for consumption in code. Web APIs are often used for providing
+data to mobile and web applications, or to other server applications. But they still follow
+the same general MVC pattern. You’ll see how to create a Web API in chapter 9.
+
+NOTE
+This chapter is the first of several on Razor Pages and MVC in ASP.NET
+Core. As I’ve already mentioned, these frameworks are often responsible for
+handling all the business logic and UI code for your application, so, perhaps
+unsurprisingly, they’re large and somewhat complicated. The next five chapters
+all deal with a different aspect of the MVC pattern that makes up the
+MVC and Razor Pages frameworks.
+
+In this chapter I’ll try to prepare you for each of the upcoming topics, but you may
+find that some of the behavior feels a bit like magic at this stage. Try not to become
+too concerned with exactly how all the pieces tie together; focus on the specific concepts
+being addressed. It should all become clear as we cover the associated details in
+the remainder of this first part of the book.

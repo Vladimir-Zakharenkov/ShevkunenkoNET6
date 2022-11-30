@@ -1,0 +1,58 @@
+﻿4.1 An introduction to Razor Pages
+
+The Razor Pages programming model was introduced in ASP.NET Core 2.0 as a way to
+build server-side rendered “page-based” websites. It builds on top of the ASP.NET
+Core infrastructure to provide a streamlined experience, using conventions where
+possible to reduce the amount of boilerplate code and configuration required.
+
+DEFINITION
+A page-based website is one in which the user browses between
+multiple pages, enters data into forms, and generally consumes content. This
+contrasts with applications like games or single-page applications (SPAs),
+which are heavily interactive on the client side.
+
+You’ve already seen a very basic example of a Razor Page in chapter 2. In this section
+we’ll start by looking at a slightly more complex Razor Page, to better understand the
+overall design of Razor Pages. I will cover
+
+An example of a typical Razor Page
+
+The MVC design pattern and how it applies to Razor Pages
+
+How to add Razor Pages to your application
+
+At the end of this section, you should have a good understanding of the overall design
+behind Razor Pages and how they relate to the MVC pattern.
+
+4.1.1 Exploring a typical Razor Page
+
+In chapter 2 we looked at a very simple Razor Page. It didn’t contain any logic and
+instead just rendered the associated Razor view. This pattern may be common if
+you’re building a content-heavy marketing website, for example, but more commonly
+your Razor Pages will contain some logic, load data from a database, or use forms to
+allow users to submit information.
+
+To give you more of a flavor of how typical Razor Pages work, in this section we’ll
+look briefly at a slightly more complex Razor Page. This page is taken from a to-do list
+application and is used to display all the to-do items for a given category. We’re not
+focusing on the HTML generation at this point, so the following listing shows only the
+PageModel code-behind for the Razor Page.
+
+Listing 4.1 A Razor Page for viewing all to-do items in a given category
+
+public class CategoryModel : PageModel
+{
+	private readonly ToDoService _service;
+	public CategoryModel(ToDoService service)
+	{
+		_service = service;
+	}
+
+	public ActionResult OnGet(string category)
+	{
+		Items = _service.GetItemsForCategory(category);
+		return Page();
+	}
+
+	public List<ToDoListModel> Items { get; set; }
+}

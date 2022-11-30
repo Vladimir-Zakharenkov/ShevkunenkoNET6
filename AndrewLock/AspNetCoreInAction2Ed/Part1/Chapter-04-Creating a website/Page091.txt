@@ -1,0 +1,30 @@
+Chapter 4
+
+Creating a website with Razor Pages
+
+This chapter covers
+
+Introducing Razor Pages and the Model-View-Controller (MVC) design pattern
+
+Using Razor Pages in ASP.NET Core
+
+Choosing between Razor Pages and MVC controllers
+
+Controlling application flow using action results
+
+In chapter 3 you learned about the middleware pipeline, which defines how an
+ASP.NET Core application responds to a request. Each piece of middleware can
+modify or handle an incoming request before passing the request to the next 
+middleware in the pipeline.
+
+In ASP.NET Core web applications, your middleware pipeline will normally
+include the EndpointMiddleware. This is typically where you write the bulk 
+of your application logic, calling various other classes in your app. 
+It also serves as the main entry point for users to interact with your app. 
+It typically takes one of three forms:
+
+An HTML web application designed for direct use by users — If the application is
+consumed directly by users, as in a traditional web application, then Razor
+Pages is responsible for generating the web pages that the user interacts with.
+It handles requests for URLs, it receives data posted using forms, and it generates
+the HTML that users use to view and navigate your app.

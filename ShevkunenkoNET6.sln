@@ -197,6 +197,31 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimpleApp", "AdamFreeman\Pr
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimpleApp.Tests", "AdamFreeman\ProAspNetCore6\Testing\SimpleApp.Tests\SimpleApp.Tests.csproj", "{6F54E407-EE92-425B-96BB-92B21C6A7872}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MikeBrind", "MikeBrind", "{34DBE4FB-844B-49F5-87B7-AD1414ACE35B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AspNetCoreRazorPagesInAction", "AspNetCoreRazorPagesInAction", "{482A7CC1-FFF3-442D-B231-69BB1687E04C}"
+	ProjectSection(SolutionItems) = preProject
+		MikeBrind\AspNetCoreRazorPagesInAction\01 Getting started with Razor Pages.txt = MikeBrind\AspNetCoreRazorPagesInAction\01 Getting started with Razor Pages.txt
+		MikeBrind\AspNetCoreRazorPagesInAction\02 Your first application.txt = MikeBrind\AspNetCoreRazorPagesInAction\02 Your first application.txt
+		MikeBrind\AspNetCoreRazorPagesInAction\03 Working with Razor Pages.txt = MikeBrind\AspNetCoreRazorPagesInAction\03 Working with Razor Pages.txt
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AspNetCoreInAction2Ed", "AspNetCoreInAction2Ed", "{C3D88FDB-EE3C-403B-B832-4FF71DAF29DC}"
+	ProjectSection(SolutionItems) = preProject
+		AndrewLock\AspNetCoreInAction2Ed\Lock A. - ASP.NET Core in Action, 2nd Edition - 2021.pdf = AndrewLock\AspNetCoreInAction2Ed\Lock A. - ASP.NET Core in Action, 2nd Edition - 2021.pdf
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Part1", "Part1", "{FF0E367A-664A-4B97-A8CB-A753503528AD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Chapter-04-Creating a website", "Chapter-04-Creating a website", "{C9C6E31A-BC0B-44BC-AE82-0DB6B4FD6B35}"
+	ProjectSection(SolutionItems) = preProject
+		AndrewLock\AspNetCoreInAction2Ed\Part1\Chapter-04-Creating a website\Page091.txt = AndrewLock\AspNetCoreInAction2Ed\Part1\Chapter-04-Creating a website\Page091.txt
+		AndrewLock\AspNetCoreInAction2Ed\Part1\Chapter-04-Creating a website\Page092.txt = AndrewLock\AspNetCoreInAction2Ed\Part1\Chapter-04-Creating a website\Page092.txt
+		AndrewLock\AspNetCoreInAction2Ed\Part1\Chapter-04-Creating a website\Page093.txt = AndrewLock\AspNetCoreInAction2Ed\Part1\Chapter-04-Creating a website\Page093.txt
+		AndrewLock\AspNetCoreInAction2Ed\Part1\Chapter-04-Creating a website\Page094.txt = AndrewLock\AspNetCoreInAction2Ed\Part1\Chapter-04-Creating a website\Page094.txt
+		AndrewLock\AspNetCoreInAction2Ed\Part1\Chapter-04-Creating a website\Page095.txt = AndrewLock\AspNetCoreInAction2Ed\Part1\Chapter-04-Creating a website\Page095.txt
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -247,6 +272,10 @@ Global
 		{0536B644-6BF4-4764-A882-C53ED72DC006} = {74C9DA5B-4F3F-42CE-BC38-4BECB38F1F39}
 		{70F4B469-2C1A-4B73-9AF8-1684AF40E17B} = {0536B644-6BF4-4764-A882-C53ED72DC006}
 		{6F54E407-EE92-425B-96BB-92B21C6A7872} = {0536B644-6BF4-4764-A882-C53ED72DC006}
+		{482A7CC1-FFF3-442D-B231-69BB1687E04C} = {34DBE4FB-844B-49F5-87B7-AD1414ACE35B}
+		{C3D88FDB-EE3C-403B-B832-4FF71DAF29DC} = {7CABF0E9-17DB-4713-BC8F-291256460378}
+		{FF0E367A-664A-4B97-A8CB-A753503528AD} = {C3D88FDB-EE3C-403B-B832-4FF71DAF29DC}
+		{C9C6E31A-BC0B-44BC-AE82-0DB6B4FD6B35} = {FF0E367A-664A-4B97-A8CB-A753503528AD}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5507A11F-FC14-46CA-B766-61BB183C82C7}

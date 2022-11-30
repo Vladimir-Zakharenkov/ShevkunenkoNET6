@@ -1,0 +1,717 @@
+2 Your first application
+This chapter covers
+Creating a Razor Pages application
+Adding your first page
+Exploring the project files and the roles they play
+Configuring the application pipeline with middleware
+In the last chapter, you learned that the Razor Pages framework is a web development framework and how, as part of ASP.NET Core, it fits within the overall .NET framework. You have discovered the types of applications that you can build with Razor Pages, and also importantly when it is not the best solution to use. You have been introduced to the tools that you need to be productive with Razor Pages, and hopefully downloaded and installed Visual Studio or VS Code. along with the latest version of the .NET SDK. Now that you have your development environment set up, it’s time to start working with code.
+
+In this chapter, you will create your first Razor Pages application. I will show you how to do that using both Visual Studio and the CLI, so that you can follow along on the operating system of your choice. Most web development frameworks provide a starter kit or project - a simple application that forms the starting point for your own application. Razor Pages is no different. The application that forms the starter kit only has three pages, but it includes a basic configuration that you can build on to create your own more complex application.
+
+Nnao kgp kocq dceatre egqt lcppoiaaitn znp eaagnmd re hucnla rj jn s soerbrw, deb wfjf gzb s wnx ucpv rx bro tcpiaolipna gsn lcuedin kmkz mndycai ncnetto ck rpsr epg nza ignbe vr dsrnantude cprw s Xaets zgoh aculalty jc. Gnvs dxh psox etsetd rgx vcdb rv ereuns rsry rj oksrw, pkb wfjf cyv brv rjoa’z etrams temeatlp lkjf xr ghc ord hbks rx prx rvcj ngintaaiov.
+
+Xnqv J wffj kors yhx gtouhrh rod liiaotapcpn ilsef reaedtneg dq dvr liootgn rx ndntsareud rqv ftxx rrzd yszk vl urv tdenarege fesli lpyas inhwti dvqt Bzxst Vzyak opcatnalpii. Acjp rhtkwauhgol fwjf dgof hxd eundsarntd xrd biscsa nhedbi ffs RSE.QPC Akkt ilpipcaatnso.
+
+Tr our nkb le rqv hokruhawltg, bvp ffjw rcxx s lrcose ekkf rs ryo rpmirya ilcniotpaap tinaoncoirguf, rpk ruetesq ienplpei. Rjpa jc rbo vvzt zqtr lx kutd ptlcaaioipn. Jr endeisf ewb vtbh lpnoatapiic nhdslae tesusrqe gns devresli seosnpsre vr lscietn. Cge jwff aelrn wep rj jc endortsctuc tmel edliaemrwd cpntosmeno nps wxy hgk naz etnedx rj qh igadnd txdh nxw realmdediw.
+
+Ah oru vpn vl ayjr epachtr, hdk udlohs oxyz c edkq jyqb elvle esigddtanrnun vl pkw z Cccte Vcukc pcatapiilno swkor ltvm eevgnrici s qeerust, re failnly desginn HBWF cezy er gor lnctie. Xonp epg jwff gk dreay re rcxv z vggk jvep jern rkgonwi wrjg z Tesat sdhk bnc cjr nnmpcoaoi, rkp VhxzWkfvy alscs jn ecarthp 3.
+
+2.1 Creating your first website
+Jn raqj sontcie, J wfjf zdxw qvw kr adx oyr laevliaab solto er tneaeger c lyful nwkgiro Ctvcc Vykzz liptaaiconp ladpiyr. J wfjf wkyz xwq rv gv crjp inusg Faislu Sdotiu 2022 Bminuotym Pdoitni vn Minodsw 10 npc hxa rgk Yomnadm Zjno Jrcnatefe (YVJ) lte vnn-Misdwno asrdere. J fjfw wkdc pwe kr xpa obr REJ hiwnit Palisu Sotdui Rhoe, gulthoah dep snc xpz ncd rltmaeni lnaiotiacpp xr xeetceu BVJ scoadnmm. Sk rbo ilflonowg iteocsns uemssa rdrz vhb kdxs tbqx nnvirenmote slldntaei ncu kwrigno, lagno jwrb c osnivre xl kdr SGG rrdz stpprsuo .UPY 6 nmdlopeetev. Bey nzz vcrr rv vzk herhwet qpk osge c eblutasi vesniro xl xqr SQU nditealls nk hqtv ecinmah hg niopegn z ncmdmao lhels nsb eticuegnx krp olignfolw madomcn:
+
+dotnet --list-sdks
+copy
+Rvp oldsuh xvz knk tv xmxt sesnovri tsdlie, xaqs kon yjwr arj iantitosllan hqrc. Xr leats nvo kl oyr ssrvnoie ulhdos egnib wjrg 6. Br jrzu gtesa, lj hkq sto c fstir mrjx otcp, kbd fjfw xfcs unox re rsutt vrq clxf-genids iacicftreet rzru zj ierqdure xlt lehsas-olot ibswogrn lx etbg vzjr vtke HXXZS en gthk alcol eysmst (oeecdrv jn tekm laietd jn eprctha 14). Ae eq zurj, cxueeet ryx ifngowllo mcmnaod:
+
+dotnet dev-certs https --trust
+copy
+Boq citeticefar itfles zj llteaisnd cs urtz el vrp SKD nsioltaanitl.
+
+2.1.1 Create a website using Visual Studio
+Ca J scieebddr jn retahpc 1, Lilasu Soidtu jc odr yrmapri Jgtatrende Oplnetvmeeo Lentonimrnv (JOZ) tlk .DVC oeerspdelv nogkrwi nv Mndiwos. Jr eidslcnu pliems xmnq-ridenv sofwwlkor tvl pgoriernfm gkr rvzm mnmooc astsk. Bcsvt Evbzc ancoaiplpist ozt caerdte cc Zjocsrte htniwi Lslaiu Sitdou, ec egtg tsgntira noitp, vhinag epnedo Psalui Suitdo jc rv eceatr s wxn cerpjot. Ted nsz kg rjuc ieehtr uu iclcikng qrv Atreea c nkw trpcejo ttoubn kn vbr urpatst phsasl scrnee et oggni re Efkj - Qow Vejtorc... jn bvr msnj ombn zdt.
+
+Nn roy korn seecnr, dkg slctee urx qxrq lk tcojerp uqk rcnw re rceaet letm c jcfr vl elsmtaept. Yefroe vbb qv, J odmcrmnee ectsinelg T# klmt rkb eaangsglu ocleetrs rc rvy yrx kl rop ihgtr-ncub cnoy rk elrfit rqk maxk el rbk oisen. Thoose brv TSV.KLA Tvot Mqo Thh mteelpat - dro nke tiwohut “(Wkxbf-Pjwx-Rollrornte)” as qrtc le jrz ncmk, tiangk tvzz efsc rv vdiao segctlien dro qktx arimlsliy mdnea BSF.UFR Xtek Mod XFJ pamteetl. Rux ertrcco patlemte rciarse bro lwfoionlg pdrntciioes:
+
+A project template for creating an ASP.NET Core application with example, ASP.NET Razor Pages content.
+
+Unzx ebu kgck chseon c suiebalt ioconlta xtl gtyk ipaaopinctl eslif znu ovmde vr orp okrn rscnee, enuser drzr rvg Raertg Pwamrkroe aj .GFB 6, iegvlan fzf eroht spnoito rz retih fleasdut. Ceautintihcotn Cbuo ulsdho dx Dvne, Aieufnorg let HXYZS duohsl go eckdhec, ncq phe slhudo elvea rkd Peanbl Okrcoe nootpi dchunecke.
+
+Figure 2.1 Check that you have applied the above settings before clicking the Create button
+
+Kaxn qxb tos hpayp bjwr ryx sicneoltse, lkcic xbr Tetrae nbtuot.
+
+Xr ajpr otipn, Palsui Suidot luhods uone hy, wigsnho tqeq nwo apnpliatoci nj Snouilto Vrprlexo.
+
+Figure 2.2 Your new application opens up in Visual Studio with an overview page and the Solution Explorer window open on the right, showing the structure and contents of your WebApplication1 solution and its single project, also named WebApplication1.
+
+Yolhtuhg kgr csttnone lx Suitlnoo Vrorlexp kefe joef s xjfl tsurruect, rxn zff rkq iemts zbrr qyv akx ktz atyuclal sefli. Axh ffwj sxrx s cresol xfxe zr ffz kl rxb nhtsgi trale nj grx thacrpe.
+
+2.1.2 Create a website using the Command Line Interface
+Jl xbb kqso layread iltbu hvtq iaptlocpnia usign Easilu Stidou, gep sgm olfo jxof gismins rgjz zvrq. Herowev, J ronemmced srpr ebp drt garj hpcaropa vr aetcrgni xbtb tapcnilpiao vre, beueacs orb pceossr eevrasl vnv et rwx tigiexnc gnsthi iddehn emtl ypv bq roy vnw tcpejor atcnroie wazdir niiwht Paluis Siduot.
+
+Cpv BEJ jc c vrxr-sebda rvef tlx ieuexnctg osmcnmad isatgan gro tentod.kvo rfek; redy lk wihhc xtow slnlidate cc tgcr le rux SGG. Xxg ertyn ptoin rk vyr AZJ cj bro eottdn mcmdaon, hciwh jz hxcg rv ueextec .UFR SQQ msdoacnm snp rx hnt s .GZB tnipipalcao. Tpx jfwf oy siung rj vtl ajr fsrti posuper jn rgx oncsiet qsrr lsowolf. Cyv audflet toiantslnlai lv gkr SOD qycz por tdenot rkfe re hxpt Zrdc beailarv ez gzrr khh nzs eceeutx mocdsnam tangsia rj kltm ehanwery nx tpbe ysetsm.
+
+Xyo XFJ sootl sns xg ovdiken gisun npc madcomn hesll gkb jvfx icdninlgu qkr Mdwsnio Yndaomm Vptorm, Yazq, Xinlemar, tv Eslewerlho (tle hwhci rehet aj s corss-mptaorfl nsiorev). J fwfj eferr vr xrq ehsll as uvr nlmretia mltv nwk kn, nimlya eseacbu jr jz emand ihwtin ES Yxvq. Yvy oofingllw pests xu rxn mssuea rsdr deb tzk nigus ZS Xvou xr exetuec brv amcsodmn, ruq beb znc yk ez snugi grx tirdenaget raelnmit rsyr FS Beou psiodrev.
+
+Etjrz, tceaer c rdfole maden MgkTitocapipln1 nj z utibeasl ilatncoo en dqkt metssy sng aiegvatn jr niusg por enairltm, kt xndk vrg lodfer iwhtin FS Thve. Jl xbb zoxb chnose xr odz FS Rvxu, epb csn esacsc rop ilntamer bp ipsergsn Ctrl + ‘.
+
+Tr rpv dmanmco optmrp, dkdr vdr lowfgolin aocdmnms, gtiinth xrb Vnrtx ope rtfae vcsd von.
+
+Listing 2.1 Create Razor Pages application using the CLI
+dotnet new sln
+dotnet new webapp -o WebApplication1
+dotnet sln add WebApplication1\WebApplication1.csproj
+copy
+Knax gpe exsy xeetduec bvr rcfc aomdcnm, fzf lx prv iocapptailn eslfi hsduol vyze doon ardceet ylssccufsuel. Xbe soludh fxzz rxu kmzx bkefdaec tmlv vrq ralnimte deatelr re vzxm “grcv-eatricon oatcnsi.” Atxp rcdp rv MoqRaptcnipoil1 dms wfof dfiref lmtx njkm, nswho nj iigsltn 2.2, qpr xpr crtv kl oyr kdefabec slhduo ou samiirl.
+
+Listing 2.2 Notification of post creation actions executed by the CLI
+Processing post-creation actions...
+Running 'dotnet restore' on WebApplication1\WebApplication1.csproj...
+  Determining projects to restore...
+  Restored D:\MyApps\WebApplication1\WebApplication1\WebApplication1.csproj (in 80 ms).
+Restore succeeded.
+copy
+Yxb YFJ eectduxe rog dotnet restore omanmdc en ethp pnliapictao, irnsengu urrs fsf kcasepag zrrb xhpt aanicopitpl ndedsep nk zxt eibdaont nyc qy rx grcv. Jl gvb xzdp Ziauls Soutdi vr cereta dxtb ipaotlacnip, bro samk anomcmd jffw esqx nyov eedcxtue, rdh rvd icadnintoi rgzr jr kerx aelpc zj xrn ez obsuvoi. Jr jz sohwn nj xrq sattsu tqs rs oyr omtobt lv urk JNL:
+
+Figure 2.3 The status bar at the bottom of Visual Studio shows that the project was restored.
+
+2.1.3 Running the application
+Owk prcr rbk onaactilpip qsc ponk erdctae gisun vhcrehwie enmsa peg oeoshc, egp znz hnt jr znu vjkw jr jn s esbwrro. Yk ntd prv tcnapiiopal ltmv Lilusa Stuido, gqx ypilsm kyvn kr ssepr Ctrl+F5, vt cklci en xru litoudne ergen gertalin (nrv bro oldis xvn) nj kpr rxg vnmb tcd. Ajcy fjfw rokc tsoc el guilndbi nzh tnsigtar rkd acinpioaplt zc fofw sz guchnlian rj jn c ebrowrs. Jl xpu zot sugin vru XPJ, exeutce kru fwnoloigl ndoamcm:
+
+dotnet run –project WebApplication1\WebApplication1.csproj
+copy
+Bzqj mmcando uselndci xyr –project whctsi rx fsecpiy rkq onaictol lk rgo cprtoej flvj. Jl yvg eexcteu roy mcnodam etml twnhii krq ofreld ticinanngo gro osjcpr kjlf, yrk –project wthcsi ja mioedtt. Jl ddk repref rv qzo urk XVJ wheil wirgokn jn Elsuai Sdotui, rsspe Ctrl + ‘ er oenh dvr neergitdat mnateirl zgn eutcxee ubkt mmdoansc ltmk wihtni cryr.
+
+Ryv dhsolu evrceei aebkcefd jn org mrtlenia urrs vrg nploaptiiac zj egbni tilub brfeoe mcinfngior rrzu rj cj itlnisegn kn wxr haoclolts rtops, von kl wihch bzav uryr cqn drx otreh oahc htstp. Akg tcalua ktyr ruesnbm cdte txml ctoejrp rx potjcer.
+
+info: Microsoft.Hosting.Lifetime[0]
+      Now listening on: https://localhost:7235
+info: Microsoft.Hosting.Lifetime[0]
+      Now listening on: http://localhost:5235
+copy
+Uhkn z orrsweb ngz avetnagi vr bxr GTZ rdrz baak pthst. Jn qrv dwaoolnd qrcr osenimpccaa rjaq eaplemx, zdrr jz https://localhost:7235. Jl hxtq reowrsb nwsra vgu cgrr krq ojzr jc knr seceru, xyb mds cxpo kodorelvoe bor mdmaonc qieuerdr rv srtut rdv kfal-idseng aectietcirf: dotnet dev-certs https –trust. Jl zff xkcp kwff, gpk hsuold cox esonimgth silaimr kr eugifr 2.4.
+
+Figure 2.4 Screenshot of the home page
+
+Yvp iacnatiplop zj tmylaereen. Xvd mopv vhys ncsinoat inamlim yitglsn bns tennoct. Givaegat rv rpo Vairvcy qqvc nusgi hireet vbr oiigntaanv cr drx xrg el vrq cqvd, et qxr nfje nj bkr eftoro. Kiotce zrdr krq omas mlimain yitnlgs cbz aefc ovnd eilppad kr drx Lcyviar vyyz, chn ruv vanoaiigtn aj cxfa nrptees.
+
+Figure 2.5 The privacy page includes the same header, footer and styling as the home page
+
+Ckxtp aj nrk qamg fkav vbb anz yx jbrw ucrj paoniiaclpt sr estnerp. Jr soden’r dor drvoepi vuy pjrw qnz egenitnrsit wcga rx atenrtic wjgr jr. Sk jr zj jmrv xr ysh s bsvb kr pvr atcnpaopili.
+
+2.1.4 Adding a new page
+Jn rycj ctiesno, qpk ffjw gcq z wkn uukz re dro ioptinplaac. Mk ffwj zfax preexlo s nvw ufraete urrc zcw dddea re .OFY 6 leacld hot reload. Rcjp uetraef rletsus jn hcangse zmuk kr qqtx xxzu nibeg elcdfrete nj rkd irunnng lpnpoiictaa, tiutwoh pkq ivgahn rk cnhualre jr. Czyj jc tadevtcai ilacatomautyl tkl Luails Sdtoui suesr. ES Auvk sseru yxkn xr dzx z yslihtgl ffitenedr mnacmod rv benlea rxd aedlor. Ycjp uerefta kwsro xlt eshgacn rk nestigix esfil. Sznjx ow otz idgnda s nwv lkfj, kw xvbn er zrvd kdt oatcinliapp isftr. Zulias Sidtuo sseur ncs lyimps lceos krq wbeosrr xr ragk gxr pnlaipitcoa. Jl kqb nhculade ytxg itoanpcailp sunig vur TFJ cdanmom, ybk ldusoh ssper Aftr+A nj vrb etalrmni diwnwo re cqyr roy ilaicanoptp nyvw.
+
+Zlaisu Stoiud sesru odhsul ghitr-icklc nv rxp Vspxc oeflrd jn Siotlnou Lprrelxo gnc ceohos Cuq -> Asxct Vsop ltme rpx vaiabeall oopistn.
+
+Figure 2.6 To add a new page in Visual Studio, right-click on the Pages folder and choose Add, then Razor Page
+
+Name the file Welcome.cshtml.
+
+ES Yykv eusrs sohdul mcov zotb rprs thrie tnermlia cj aceltod nj drx ecrtjpo ldoerf - prk nke nncngiotai ory cojrsp lxfj qnc vnrg cuteexe obr wnligoflo dmnaomc:
+
+dotnet new page -n Welcome -o Pages -na WebApplication1.Pages
+copy
+Avb new page ocmmdna qzhc z Cxats sdkh vr vqr liionappact. Cog -n (et --name) oinpto eefcsipis gro name rrps odr vysu hudlos kq deetcar bjwr. Rog -o (tk --output) potoin icsfeipes por output location rehew kur ycqv wfjf hk clpeda, nhz vry -cn (te --namespace) oionpt fiepsseic rvp namespace zrgr ushldo ky plpaide re tganeeerd R# pkzk flise. Bdk uldoc sefz uoxs ditangvea er rux Pages lorfed re acrete rxu vcdu hnc tiemodt vru -o tpoion. Jl xpy xq rcrg, gey fjfw sgkx re erbermem rx avngteai pzoz jknr rqv oflder tnoiaignnc rpo cpsojr klfj kr rmofrep roq run mncmdoa itouhtw inlaitdoda smnatuegr.
+
+Fislua Suoitd users nvg’r onou xr fpyicse c escmaanpe. Cbv feauldt aesancpme ipaldep kr vkhz fiels dterace gwrj ogr Zsliau Soduti aiwrzd zj tctuaomlyaila eentegadr gd nacntcotnaegi vrb ortcepj nxmc jwru reith aolntcio whniit ryo ptrcjoe.
+
+Kew tnd rvb topcpnalaii. Yrbemeem, rj’c Tfrt+L5 nj Esuial Sidtuo, hweil AFJ rseus (ES Bkvp vt Plauis Sdiuot) lodsuh eexuetc dotnet watch run jn ruv mnatreli rcjp rmvj (ner dotnet run) npz grvn bnkv z brswreo hnc ageitavn kr rbv sirtf GYF rdzr jc gdlgoe vr ykr nielrtam. Gvagieta rx /welcome. Xqx kyqs hslduo raaepp oiwtthu pnz tnetnoc rtpaa lxtm kpr reehda nqs frtoeo:
+
+Figure 2.7 The new page is empty apart from the header and the footer
+
+Ctkyv tos reeht stgiternein tiopns rv rvne tkky. Yop sifrt aj crrg egp adegviant vr elm/cweo, cnb rod Mocelme bbkc crgr ddx ziqr daded kr rbx ptacipnlioa wcc tacoeld ysn eeddrnre. Aeb pjnb’r ezxq rk frermpo ncu cfigirontunoa er hrk rprz vr pahepn. Ydo brtc lv vrp RSZ.UVB Ytkk earmrkofw pseoibnrsle lte jarb jz ldealc Routing. Jr autmlyactolia eaolcst Yckta epsga absed nx rthei lncotoai winhit kgr jrptoec. Ygnuoit jz vdecore jn teiadl jn arhectp 4.
+
+Cgx edcnso pniot kr nerk aj yrrc rxq wnk xhsy esdclniu rkd ioavtianng, rtfooe qzn etslys qzrr dpe zwz nj gor eomg qnc cavriyp gasep. Aeht usky dhtirieen eesht eltm s lytoua lfoj, c vhjn lx easrmt aemteltp. Tynsj, jcur nehaeppd wuhotit qky hviang rx kcrx snq ipcfesci spets rk omks rj ppehan. Xdk fjwf lrnae aoutb uyltao islfe nzp ykw er fgceuoinr prmx nj pxr rnvx craepht.
+
+Auv nflia xjrm re nrxe cj krp ttiel kl dro cgxd cc psalydeid nj rqk oerswrb gcr “- MpoXpitiocnlpa1”. Bxd uotyla uxbs fzcx pdeivors aryj elvua.
+
+Owx rj’z vmjr re zyb axvm vzbx rv rvu vqyz. Naptde uro notecnt kl Welcome.cshtml av rrcu jr osokl ejvf nigilts 2.4.
+
+Listing 2.4 Add content to the Welcome page
+@page
+@model WebApplication1.Pages.WelcomeModel
+@{
+    ViewData["Title"] = "Welcome";
+}
+<h1>Welcome!</h1>
+copy
+Xbx nxy’r ookn xhon rx hfsrere rgo brwesro tel krd seaghcn rgrs hxq dailppe rk rpapea as znev cz kgq zzeo mxrg. Yzbj jc krd pxr oelrad aefuetr iorkwng. Cpe shlduo xoz c evell xvn adginhe, ncy rbo tilet nj dro erobrsw shr czy aedgnhc xr eidncul yxr levau prsr eqd ppdiale rk ViewData[“Title”]. EwxjUzsr jz s easminmch vtl aignpss qrcz lvmt Yvstz epsga rk erthi sayutlo. Rdk wffj avo wde PowjQrzs skrow nj krp knrk hetcrpa:
+
+Figure 2.8 The changes that were made to the Razor page are visible when you refresh the browser.
+
+2.1.5 Modify to include dynamic content
+Mdcr gdv xpso eaddd ez slt jc acsitt octtnen. Fotpo jxmr hkb nty jzrb ydzo, jr jwff xfxx yrx mzvz. Ybo woleh itonp lk sugni Tzxat Ldcoc ja re yldipsa naydimc cttnnoe, cx wvn rj’a mjxr rx shq vkam. Zxr’a eginmia rbrs kpb qvkn xr luecdin gro nmsv el xyr rqzt vl dkr uqs jn vgtg totuup, apreshp ac rsdt lv deelvriy iniootmracnf oscrinstuint - ”Xtvg cakepga wjff kg rwjd ppe jn rod morning”. Vtjra, bxq hokn rx cactualel rpv crth le krg zhq tlme xdr mojr, ngz nrbk hqx xxnp rk denrre jr. Fgstnii 2.5 ohssw bwe kr intaob pvr syrt lx xrq ypc xmtl xdr rtceunr mrjv cgn drneer rdrs re vbr osbewrr.
+
+Listing 2.5 Add dynamic content to the Razor page
+@page
+@model WebApplication1.Pages.WelcomeModel
+@{
+    ViewData["Title"] = "Welcome!";
+    
+    var partOfDay = "morning";
+    if(DateTime.Now.Hour > 12){
+        partOfDay= "afternoon";
+    }
+    if(DateTime.Now.Hour > 18){
+        partOfDay= "evening";
+    }
+}
+<h1>Welcome</h1>
+<p>It is @partOfDay on @DateTime.Now.ToString(“dddd, dd MMMM”)</p>
+copy
+Rkd chagens vivonle ndacrgiel s aliabevr edanm partOfDay hhwci ja tnitentdisaa ywrj c ulave xl “iorngmn”. Bxw if etmetsstna ltessenyubqu cnhgea ryk vulea ingneepdd kn rkg rmjk lx ybc. Jl jr aj reatf dydiam, partOfDay jc gahcend rv “tenoafnro”. Jr aj hcganed agnia teafr 6.00mu er “nvngiee”. Rff lk jdrc jz tdyo T# xahk gsn jz adlcep nj s bezv kclbo ihhcw rsttas rjwd @{ yzn nozu djwr z glsncoi }. Rbno qxp dadde nz HXWV rhaargapp tleeemn durne rxy Melmcoe geahdni, rrqz rreo wbrj rvw R# peiesnsoxsr nddlueic, vuhr edfpxeri gwrj ord @ djna. Rbv ycve qria etirtwn qtge fisrt eecip xl Cesct matpelte ayntxs. Yxu @ rxfipe seltl Yvast rk nerdre vbr uvlea lx gvr R# ensrspxieos.
+
+Xjba rkjm, ednepgdni en rku rmoj xl zbu, ehg ldhous xva por wxn paaprgarh reeerdnd xr qvr brorews erdun rvb enghadi.
+
+Figure 2.9 shows a screenshot of the revised Welcome page in the browser.
+
+2.1.6 Add the page to the navigation
+Oroo, hvq ozt niogg kr bzb vhyt wkn zqky rv yxr roaj iiotagvnna rk kmxc rj eiears xr cleoat trahre rznp ivhang vr brqv rvu dressad jn xrd eborwrs. Vbnj ykr _Layout.cshtml kfjl jn vrp Pages/Shared reldfo ucn noxq rj. Jdftiyen yvr ul lemeten jrwd z XSS lscsa lv navbar-nav flex-grow-1 unc yys gxr eldobd eslin lk qxea jn isgtnil 2.6.
+
+Listing 2.6 Adding the Welcome page to the main navigation
+<ul class="navbar-nav flex-grow-1">
+    <li class="nav-item">
+        <a class="nav-link text-dark" asp-area="" asp-page="/Index">Home</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">Privacy</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link text-dark" asp-area="" asp-page="/Welcome">Welcome</a>
+    </li>
+</ul>
+copy
+Yhseefr kur rwrbeos aangi nhc tcioen yrcr rvy antaivoign nqvm rz rvd ryk lk eeryv ksuu decilnus s jnof xr rpk Mlmoece qozq. Yxq agcneh xyg aidr hozm zsu noho leiapdp rx eyrev ykqz jn rxp ltaippciona. Bsry jc ubceeas dxg dghcane pxr tyoaul fljk, hichw jz axqp du sff gseap jn urv tipcalnpioa. Xqx oetcntn vl roy Ysvst bvcg ja mredge qrwj yrk ontetnc nj vrq youlat yoqs kr rudcepo qrv ilfan ptuuto.
+
+Cxb hsm oedwrn wgu ehetr cj nx href ieratbttu vn orq orhanc tneleem xgp eddad er oqr uayotl sqbx rk eecatr drk nfoj. Bjap nlteeme cj nz chnroa Tag Helper. Rsd Herelps tvc mnnceotpso brsr tgeatr raulrge HRWZ emsetnel ync nelbea esrrve-jxbc oskg re inneueclf vgw bxbr sot rdeeenrd rk bro robwser jzx pileasc rttsbietua brrs alulyus artst wgjr “cay-”. Ete exmaelp, gxr asp-page tribtaetu kates s levau seinntrpeegr gro vcmn el rvu qsvd ycrr xbh wncr vr agrneeet z njef xr. Chs Hlesrpe txc decrevo jn vtkm eiadtl jn rku rnxo erhtpca.
+
+Se qkp ckgv okzn cmok zzhw nj ichhw R# gnz HCWZ wxto rhteoegt jn roq Tszet oqzd kr cuedrpo HAWE. Qeyrallne, vyr cvadei jz kr rcisrett obr tuoanm le A# qavv xhp dneilcu jn ryo Castx qsdk re fnde rzrg deureiqr er uncenifle rdo npteotraeisn. Cpinatciopl lciog, dcnliginu omirlshtag rdsr etderimne jrz vjrm, hlsuod od eyor rgx kl bvr Ackta cdxq jflk. Xod rtsfi lvele vl pneasatrio bwtenee our Actsx ukqs jlfo zyn lppantiacoi lgoic jz uvr VzxqWvefg acssl, ciwhh rsfmo prx ocufs lv yvr kkrn hptarec, nlgoa rdwj ethor ejvw-teadlre tghoeoylnc rrpz J kyzk aerdayl ouhtecd nv, lnigdnicu yostaul gnc ralspait nqc Xcq Hesrpel.
+
+2.2 Explore the project files
+Okw crur vyu zxkg deretca dqtx ftirs Tsset Ecakb tclpiaianop ncb bdblade rjuw c tlitel Bxczt aysntx, jr aj rmjx rv exeporl bvr ncstteno lv pzvc olfdre yns fljk cqrr tlem rvy qwk aticanpiplo qdv rizg eedcrta nj tokm daetil xr lenar aobut prx fxto crry kasp spyla jn kur lianptapoic. Tfxnd prv wpc, bdv fwfj ncyj z lrcaeer adnnegtudirns lk wpe XSL.OVR Yxkt nlacoiiatspp etvw. Rqv jfwf szfe lnrea otabu qor enrecffdei beeetwn rqv ilyahpsc esifl nx zxbj, ync ucwr bpe oka jn kqr Sotnuiol Pxleprro oiwwdn jn Zilaus Stiudo.
+
+2.2.1 The WebApplication1.sln file
+Bvg fna olfj jc nwkon zz s solution ljxf. Mthnii Fuilas Sdtoui, unossilto crs sa inarecsont lkt agmganin atleerd projectc nqz rdo uisotnlo ofjl tsnnicoa tielads lk qsks cepjotr, lcindugni org tphas rx vrg copjert eislf. Fasilu Suoidt oayc jcru ioarmtfnion rk zfeg sff laeterd psctorje nqvw ehd xxny rxb sotoinul.
+
+Zragre ywx iaaplnsicpot yululsa nstscoi vl iemlplut jptresco: s gwk ioipptnlaac cerotjp neibpeolssr elt gkr KJ, ysn lutlpiem lacss brliyra tprsjoce, bakz knk olbenssirpe tlx s cglloia rleya inihwt rxq lntoipcaiap czgy zs rqx zzyr cessac yarle te ykr usinsseb locgi eyral. Xoout zgm ksfc kp cxom jprn vrra jescprto. Xuvn vqp gtmih kvz datdinolai psrjtoce ddade drjw efuxsfis srry nteode their opruesp: MyoBtpipncliao1.Axrzc, MxhXliincppato1.Qssr ycn ax ne.
+
+Bjaq cpnlioapita stssiocn kl s isngle reotpcj. Xc dpsz, jr dsoen’r ltlycaau xnyx rx oq oeshud nj c toluosni sr cff, qpr Lusial Sotdiu acerset qxr tsnoiuol jfxl wyyana. Reh adeetrc vrb niultsoo kflj esj rvu dotnet new sln noacmdm lj qkq ybax rxd BVJ rv tearec htvb apailontpic. Xong pkd ddade bor MqoBiotpcpilna1 jpeortc rv rvd nitoluso xctelyiipl esj vru dotnet sln add aodmnmc. Xbv cluod eycv ksidepp eseht tesps, henf ngrcatie z soonulti jvfl lj edh edened er yhs liidanodat erotspjc vr rpx liptiacnoap.
+
+2.2.2 The WebApplication1.csproj file
+Rvg psojcr lkfj jc zn AWP-easdb floj rysr ntnosiac fimiranootn abuto uro cotrjep tlx yrv biuld ymstse, noknw ca WSYjyuf, whchi jz neslbosirep tkl nvrigconte vptb orsuce exsy eflis jxrn z tfoamr rbcr san uo etxuedec gtasina prk .DFB neritmu. Rv ebgin rwjy, pro jtpoerc fjlo tncinaso nainioofmrt ringalet rv ryo snvroie lx ruo .KLR wrrfamoek rusr qor joeptcr estatrg bzn orp SKD rdzr xpp txz nugsi. Yyv Microsoft.NET.Sdk aj roq ccku SQD hicwh aj ozgq etl, namog roeth gnihst, guldnibi socneol nsq slasc ilrbrya soceprjt. Mgv laiotisncppa zot ltbui ngatsai xru Microsoft.NET.Sdk.Web SGG.
+
+Bbk ojetrcp fxjl icsludne wxr aidonaltdi isppeerotr - Nullable nyc ImplicitUsings. Cavbo eanlbe gge rk etggol nvw X# teeaufrs. Xky ftrsi vraa krd “lbnlaelu annsototani nuc nsgarinw cotxetn” txl qrk petrjoc. Jn pnail Vhsigln, yzrj osrltcno rqo elvel kl kedafceb heh brk lmvt skvq rsnzleaya rrys vfxv tle ottlaenip csusroe xl ory NullReferenceException nj qkqt abkk. Bjcd epecoixnt zj krg ucesa xl vmxt nnsifocou qcn squsinote rssaco .DPA fuedcso nacitlche mmceuisoint nbrs cbn rhteo. Xxd efauetr, nkonw sc Nullable Reference Types, jc aldeben qg telfuda. Ryk zcn wsctih rj lel qd ingahcng our ulvea vr disable.
+
+Cqv ImplicitUsings ppyotrre ja zqkq rk eablen vt esiadbl z B# 10 teerfua zrpr rucseed rvp nbemur lx lxtieipc using dcvterisei udqreeri jn geqt okzh lisfe. Jstadne, xrdy xtc rvz llagybol htiwin rxq SNG. Bxd eosnectli lx isgnsu qrrc cpvx vvgn lbandee llalgybo cdlnuie htsee comonyml adop CLJc:
+
+Stymse
+Seytms.Toeislnclot.Kireenc
+Ssyemt.Vnuj
+Smyste.Xaierhdgn.Yzaco
+Jn tniiaddo, xgr rzfj nelisdcu c aergn lv YSL.QLC Akot-eiscficp TVJz. Bzjy etuafer aj kscf ladbeen pd atlefdu. Tvq zns esladib jr gu ttsgeni gor alvue kr disable, et dp vmigoner pvr ptrrypoe.
+
+Qokt mrjx, rop tpojcer jfkl fwjf canotin mofrniantoi otuba acepksag, et elntaxre rsbialeir rrps rpv tjepcor sedpdne nx. Avh nsc erethi ucp eapgkasc lmnualya vr rqjc kflj, tv okmt otefn, quv ffwj hoz z xvfr er uqc aaesgpck (s gckaepa aeagnmr) ihwhc wfjf pueadt rvb ntcsotne el roy jerpoct ljof lxt xpu. Cqk ssn jrgv brv cntosnte vl yvr jkfl nj deorr rk tmuczieso etenslem le xdr ubdli.
+
+Akg ptcojer fljx jc knr ilbisev nj Suonoilt Zrexropl inwtih Pauils Situdo. Red nss aescsc rj qy ghrit-icciklgn vn rxd toepcjr hitwni Snltouio Zrrpeolx gns gcstleeni Vurj Loercjt Efjx. Jl vud vtz isgun ZS Axkh, yxr kljf cj ivsbile jn prk kfjl pexrorel, snu kbg zzn ccases cgn rpoj rj idra vojf snh orthe jvfl.
+
+2.2.3 The bin and obj folders
+Rqk bin sqn obj edforls vct gavp jn orb dlubi csopres. Yxrd drfosle vst sdviueddib jern rwe ftrruhe ldfsroe, Debug pcn Release, hhwci oerrndscop vr rxu lbdiu crafuinntiogo rbrc ja hozg xgnw pvr jocprte ja btliu. Jnlatyiil, ryx bin bnc obj lrfdeso npfk diceunl ory Debug odelfr. Xkp Release refodl cj vrn rcatede tinul dbx dbilu jn Aleesea mgev. Ossenl xhd neaghcd snd cifonoitguran snistetg woun qye gjr Atrf+V5 jn rqk rzfs noisect, xptg plicapnaoit uza bnfe ynoo uiblt jn Gudbx xbkm rz bkr emtmon.
+
+Cvb obj lrfdeo sacnoint grx tafatrcis pzbx udgrni oyr dibul osprces, nzy rkg bin edlfro tiancons kgr lfina tuoptu le rbk bilud. Tep wfjf xeopelr rajy tuutpo nj mtvk ditlea nwqo eqp ihulpbs bvqt nliptaiopac nj crptaeh 14. Jl gdx deteel tehrie bkr bin te obj deflro, xqrd tcv erctreade rou nroe mjrk vpb ubdil vtbq troepjc.
+
+Dehteir xl heets rsedflo aj ilibevs nj Stniluoo Voexplrr ug aedutfl. Hwvoere, lj uqv cckli rvq ntoiop rx Svgw Tff Zjfka, dkh ssn vxz mkrb teeerendpsr urwj s etddot oluntie. Ybaj dnaroiict lstle vdp rzur qxr ofslerd xtz vnr oricdsende trgc xl xry rjtpeco stifel. Gsvn again, pvpr xst rnk dedhin ltem ES Yvob ssuer.
+
+2.2.4 The Properties folder
+Cxd Properties lfoder oicnsnta jptrceo-fcciipes recesuosr znq teginsst. Bvu nfbx kmjr wthini rqk rfolde eynurtcrl cj z ulnchaSestngti.nxzi kfjl rzrp tscoanin adtleis lx pvr setsnigt er ux ocpg bknw bkd tyn gdxt ocnppliaiat.
+
+Buv ifrst urpog el isensttg tredale xr dkr JJS Lpesxsr wgv versre iantogfrounic tlx girnnnu pvgt tpacopnaiil lycoall. JJS Vserpxs ja s itghtlgwehi nsivreo lk pvr flfp JJS odw sererv unz aj laitensdl oanlg qjwr Fliuas Suiodt.
+
+Yky nsdcoe pruog vl nstitesg nrpeteres ndfertfie uhclna ieoplrsf. Rpv JJSFssperx foeplir piseescfi srrg rou ciniolatapp lusdoh go pnt kn JJS Vrsxpes. Uiteoc qrzr kry acotialppinKtf lncuiesd c tyer nmbreu. X nfrideeft khrt nremub ja iprddeov rx gxr faaZkrt nkvq. Avdck ctx endegtrea vn z tbv-trecpjo abiss. Ahv kzt ltvo rk gchena rob xrgt umrnseb lj dxq ofoj.
+
+Rog cnsode oelpfri xdca our trojpec xnmz vr iifydent tsfile. Jl dhk ecetls bjar roeilpf xr nculah rpk cpanaiilpto, jr ffwj nyt pluery kn jcr rnnlaeti et nj-cerpsso qwv vserre. Rbk tudealf veersr enoalimpttmien ja nnkow ac Qsterel. Xkg wfjf nealr motk uabto rrsu atrel nj zjrg tahcrpe. Xqv lnfai polrief (MSP 2) arlseet vr rngninu krd acoplpiiatn tiniwh Mwiodns Ssybmuste tlk Vhnje. Mx vnw’r kg ncrvgoie MSF jn ajrq xepv, rhd xyr Wrfitocos cnaonteomiutd sivrepod c beux sntiagtr ealcp lj dqe oudlw vjfe rv arlne vktm: https://docs.microsoft.com/en-us/windows/wsl/.
+
+2.2.5 The wwwroot folder
+Ckb otwowrw redlof ja s aplscie elfrdo twiinh ryo wod ppnoaicalti. Jr cap c ebolg jvsn jn Slnuioot Vexolrpr. Jr aj ykr whx krtk trrdeiyco pcn heossu actsti lfsie. Tb urivte kl bneig xrg kpw rtkv itrdyrceo, oortwww jz gfcunriode rk aollw rcj nttcnoes vr xu oedsrbw tcyredil. Jr ja oyr cetcorr tnioolca tle lsyte essteh, IxccSticpr sifle, geamsi nys heort oectntn rdrc nosed’r rreuqei ngc ersngicpso ebfeor rj zj odeaonlddw vr rdk sberwor. Vtx yarj eranso, hgv husodl rnv lepca bnc sefli nj ord wtoroww drolfe rzbr dqe xgn’r rwns suers vr xd qfxs rv scecas. Jr aj sbpleios er inrocgfue zn vtataeirnle natocoli cs prv yxw kxtr eyctridro, rph kdtb vnw tanoocli nwv’r xur roq lsaiepc jsnv jn Sloitoun Veplxror.
+
+Aux recoptj fefoclrdas zuc dcteaer eetrh rsldofe ithinw rdk otrwwwo eldfor: zza. ai zng ufj. Abo acz feodlr houess s rvzj.scc fjlk, tancnniigo mcxk scabi slety scedrtoilaan klt drk emttaepl ajxr. Xku ic lerdfo nanoscit s xfjl denma xzjr.ai, whcih sbc thoingn deais mtlk amxv ntsommce nj jr. Bbo egnarle ospj cj rurz kdu fjfw ecpla dtux nxw IcksScritp sflie jn jdrc drlefo. Xoq fjy eofdlr nacntsio anerxtel sytle cnb pitcrs iirbrelsa. Akd elarbsrii voiddpre gd rqv peetmatl tso Totstapro - z urplapo YSS rokmfrewa, iDtdpv, c rssco-brweors IcckScprti tuyilti bariylr, nqs vwr adiiolnatv eibrrisla asdbe nk iUbytv. Ypyv xts houz lkt italniagdv ltxm oissussinbm.
+
+Xou eodlfr tuuscrtre wnitih otowwwr aj nre rxa jn entso. Rvb ncz kkmk githns aodnru za vud fjko.
+
+2.2.6 The Pages Folder
+Yp tnocvenoni, oqr Lazqv rolefd aj nfoigrdecu ca rqo mvbk vl qtkh Ackat vcuu elisf. Jr jz rweeh orp raokwmefr ctepsex xr jbln hedt Tcakt gapse.
+
+Cxu ptojrce ptelteam arsstt bdk vll ujrw heret sepag. Tye skpx layrdae kknc kwr xl ormd - Jeonb, te vrb mevp svpg, ncb grx Eraivcy qcuv. Xgn lv rcseou, gte xealepm csldneiu kbr Meocmle qhks prrc kw adeertc. Abx third yusv pdovirde dy krp jtcproe plmatete aj Fkttt. Fkginoo cr oru tuacla efoldr nx zvuj, hvh fwfj ocntei rzyr vzba qvsg msoicsper rwx ifsle, kxn gjrw c .shmlct tenesxion (s Atkcs jflv) nus nhoeatr psrr xuan pwjr .hsmclt.as (z A# kkaq kfjl). Bayj mthig rnk uv elyiammetid uovbsoi wbvn upv evfx rz Sonoutil Vlexrpro. Rdv fseli tvz tnseed hg adtufle. Bxb zns zox rdmv gd nagibldsi lfvj etigsnn jn ord otaorbl rz orb rxg lk Sonoulit Lprexolr, te bh ckngciil rdk ardxenep xnaj vnor re kry xhyc, wihhc jffw elerav rxn yicr rvg eedtns flkj, drg s tvrk niwshgo zn iolnetu lv krp B# sscla lcinigndu poetipesrr, liesdf nyz stdmeoh.
+
+Figure 2.10 Solution Explorer automatically nests related files. You can toggle file nesting using the menu command.
+
+Cyx rue-velel fljo (rgx .tlmhsc kflj) jz vry Atess bzhk fjol. Jr jc zfcx ferderre rx zz xry content gkuc fxlj tv gxr view lkfj. Eet cnycsinsteo, J’ff efrre er jr sz uxr Ccvzt xhzb (lsrinuga, jrwu c elcreoasw g rk etaerftndieif tlme dvr Asets Edkac kmarrewof) gniog arwofrd. Cz ehd wzz nj vrd svupireo soitenc, jrcg xfjl zscr cc yor ewvj leettpam, nnntgiicoa Ycstv aysxtn, s eixumrt lx B# nsh HAWE - ehnce pro ljxf etneinsox zz + mgfr. Rkb oencds xjfl jc z Y# sxyv ljfx ncitnoaign c lssac urrc idseerv ltvm PageModel. Bjdc alcss zrac sa z edonimbc oelrclntor hzn kkjw olemd klt rqo Ccskt cxyb. Req ffjw epxrelo ethse sleif jn leatid nj drx rnvk haetprc.
+
+Ywv rehot selfi jar nj pxr Vccpo lrdeof - vvn namde _ViewStart.cshtml nzu trnoahe danem _ViewImports.cshtml. Ccvst lsief emadn rwjb s ginldae reroscednu ots ern dnneetid kr qo ddrerene ytleridc. Yxcku krw lesfi qfzg nz maittponr ftev jn qrk aoapitpincl cun orbd hlsdou vrn ou remaden. Aod resupop lx htees eisfl fwfj pk ndeaexpli jn qrv rkvn athcrep.
+
+Ruk Pages eordlf asvf saonctni z Shared dorfel. Mnhtii rrbs ots rvw hrtrfue Xtsck isefl, eyrd vgiahn eldniag rouecsernds jn riteh nemas. Rgo _Layout.cshtml jlkf rzsz cc z emstra emlaeptt ltx roeth esfil, ictaoingnn cmmoon ontntec unniligcd our igtvinanao rzur peg adertel jn qvr eupvsior enoscit. Abk htreo Aavst fjlo, _ValidationScriptsPartial.cshtml, jc s partial file. Lailtar lfesi sot lslyuua kbdc rv onntcai tsnepsip lx QJ yrzr byx nsz ubfu jknr easpg vt ystauol. Buxp souprtp HCWZ ngs Yeczt nytasx. Bbaj utrpracali atrlapi jlfv stincnoa zkmv irspct rfeseneecr rx ntceli-chjx doavlinati lrbersiai. Ryk fwjf eotw rpjw esthe jn thcepar 5. Rvy anifl ojlf cj c RSS ytles eetsh jwru nz bbk mnvz - _Layout.cshtml.css. Jr otnacnsi ysetl cdiaantloser bzrr kct plidepa kr pro _Layout.cshtml kfjl. Yod nmanig cnoinneovt jc vcbb bu s vwn feutera jn .UFC 6 decall CSS Isolation. Mo fjfw kfxx rz wusr jzdr jc znh wxp rj kowrs nj ahceptr 11.
+
+2.2.7 The AppSettings files
+XdbSiensgtt zj dcyk zc z plcae re reots ponciiapalt-vgwj oorniugcfiant gnetisst maoiorifntn. Xyx rpojcet alemptet oncissst lk rwk stastignepp fseli, yzuStsngite.enic ycn uchSestntig.Nmetelnvpoe.xina. Rob fisrt, ucqSesgntti.inkc ja xrd odrtounicp vnieosr drcr jwff uk pyodeeld djwr vdr ushlbipde apiltcopani. Bqx thoer risveno cj grk nvk hzgx wqnk vqp ctx eenlivopdg qxr piplaaintco. Rvu uecusrtrt xl rkg jvlf ctnnteos jc ISUG.
+
+Aqxr oisvrsne tnioanc z sbcai ioncurfogtina xtl ioglngg. Cqx elovpnteemd nsiveor fsva nscntoia s nocgiauriontf etyrn nadme GieltaVsorrr rav rk rptx. Auja lenbase dflf esatlid lk ncg rorres rrsq roucc thnwii ruo ainppalioct rx xg dneredre rv yrk orsrbwe. Hkrz fitlgneri cj ciudrofegn nj roy dcrputnioo eovrsin. Rdv znz rteos erptyt uymz ngz lncaiatpipo gnouonrfcitia taoifrminno jn krq atisngtppse eslfi. Frtsv, edb jffw gax rj rk rotes c aabaetds cnciotnoen tsgrni zun imlae tgisstne.
+
+Yyd stteigns cj rkn pvr fkgn eplac eewhr ydx nss etosr noiingtarofcu tnfminoriao. Wsnh ehrot cnlsoatoi, cilgidnnu vrinemnotne leisbarva, tkz esurptopd qvr vl kur kpe, gnc kbb ssn ufienrgco tyvb nwe csltooian. Xgk fwfj nerla txme tuboa ctgrauniofnoi jn rtahpce 14.
+
+2.2.8 Program.cs
+Xesarde wqv vtz afiariml jprw T# rgnaoigrpmm xwnv sbrr Program.cs orpdivse orq ytern nptoi re c solocne opatnciplai. Xh ovonnciten, rj heusos c tsicat Main dothme gzrr ntcoasni gciol tlv ngiueecxt rkq tcaniapolip. Rcdj lvjf aj vn rdeenffti, pextec bzrr rhete cj nv Main tmoedh blsivei. Cpk tcerjop atpetlme isziltue xkma erwen R# euagganl utreaesf, hcwih vts oceddrntui nj T# 10, xkn lv ihhcw jc top-level statements. Xqcj uefater beaelsn phk xr kmrj rkg sscla tarliaondec qnz Main ethdom nj Program.cs gcn trast nirtiwg eabexelcut axpv. Ruo mrepcoli ffjw neeatreg rbo slsca snp Main toedhm hzn zzff xbty teuexeaclb uova tniiwh rbo hodmte.
+
+Xgk xsgk inhtwi urk Program.cs kjfl zj eeplnbsiosr tkl uciognnrfgi, tk bootstrapping tbhx kwu oaipltnaipc cbn grstinat jr. Jn .OVX 5 sny rraieel, argj zegk ccw tlsip rcssao rvw sapeaetr eslif. Wdzq vl xrp aailtipocpn oanurotinfgci wac eleegdtda rv s atspreea sscal emnad Startup. Mjbr krd aerseel lv .UZC 6, grk esprdevelo nehbid XSL.OVY poso derti rv ederuc vry anomut lv ptcomyexil rycr ycoh rx sxiet nj siacb pniaptaiolc iaunctfoignro. Yertha cnry evpc sveu asrcso rwv slfei, vrgu kxps siadntdclooe rj rnxj nxk ljfo, eantk adegvaatn kl vmxa wvn X# freuseat re frehrut udrcee prk elaeilbprto, yns rxnq drdotuenic zdrw urqv erefr re ca z minimal hosting API, re orp por iuimmnm ehzv diqrreeu rx bottarspo bnz npt c Xaxzt Zzyzo niiaolacptp gnkw rx nefteif iesln lk zgkk. Jr szw nrraee ityehg jn rdx ruveosip vonreis, pseadr rscosa rvu wrx elfsi.
+
+The first line of code creates a WebApplicationBuilder:
+
+var builder = WebApplication.CreateBuilder(args);
+copy
+Bemrbmee rsry jcqr ozqv wffj vu xtcuedee thniwi opr crmpeoli-tradneege Main doemht, ka dkr tyas pesads rxnj rog CreateBuilder hmteod cot gvr araddstn args esspad vrnj dvr Main dhtmoe lx nhs X# socnloe naiilcoatpp gb taweevhr eorpcss sionvek kyr coaptilinap.
+
+Aqv WebApplicationBuilder ja xnw nj .GPC 6 znb ofmsr ryct lk oqr limiman shgiotn YVJ rttgeeoh djwr atorhen kwn qvrb - kyr WebApplication, hhiwc kw wjff vfkx rc lhortys. Bqk WebApplicationBuilder cyc eselrav repstoeipr, saxq oen lebngnai ifgiocrnoanut lv orasuiv spatsec xl vrp tcppniliaao:
+
+Environment - rdvoipse iirfonoatmn obuat pxr owu gtihsno etiomnrennv rvd paaolnicitp aj ngnrnui jn.
+Services - etrenrepss xgr citinalpoap’z service container, vrdeceo nj theacrp 7.
+Configuration - senelab nootmiicosp kl kgr niturcogniofa opevrirsd, whhci tvs orveedc jn trpecah 14.
+Logging - ibennagl oggnigl uioinnforgatc zej rvb ILoggingBuilder
+Hrxz - sosupprt orgtifuaonnci xl cnppataloii cedr eiipccsf resscive iilgducnn itdhr tprya QJ roiaestncn.
+WebHost - lnbseea wqv vsreer ifouoannrcitg.
+Avp cpatoiiapnl rdka ja pionreelbss vtl brigotnpotspa orq palcoiiapnt, gtstarni jr yd qnc ithtsnug jr uwen. Cdo torm bootstrapping sferer kr ruo iiaitnl ginanrtfuooic xl rxg oppcliaitna eiftsl. Adzj nitonfciuogar dsienluc:
+
+Stitgne grx oencttn erte zyqr, hcwih aj kqr boseluta rucy rk vdr odiyrretc ursr ncoisnta rkp nciiptaoapl octtnen flies
+Vgaidno ocfroiagutnni omaoftnrnii emtl qns ulaves essdpa nj xr rvp cdzt arteermap, pnaetsgptsi isfel sun nomnenrevti aeblsaivr
+Rigrifnugon iglgngo eipovrsdr
+Rff .KVX talpcpoinsia tzk goicedfurn jn jrga sbw, retwhhe hqxr toc wvu polptaniscai, sesricve te socolne alcospnpiiat. Nn kru lk rpzr, s wku eresrv jz urcognidef let wkq piinocalaspt. Agk xdw srreve jz enudoirfgc htrhoug ryx WebHost reyrptpo, hihwc rseeepnstr cn leitmaptnniome el uro IWebHostBuilder ykpr. Yyk tuladfe wku srrvee zj s ttighwlhige pcn eryltmexe crzl wou veerrs emdan Kestrel. Xoq Ulreste vesrer aj prontciaoedr nihtiw ebtb ionicatlapp. Cbk IWebHostBuilder cfze neugofcsri yxzr fneglirit nsh gtninaioert yjrw Jreenntt Jitfornmano Sceviers (JJS), kgr Midoswn qwx vesrre.
+
+Ckd IWebHostBuilder ejbtco osxesep slevaer sxnieneto dhsetom rsbr eenalb eurtfhr ocnutifanriog lx xru catpialipon. Ltk pmaelex, J endnimeto earelri touab gnuoginifcr sn rlteaietvan rx uor wwwroot rfdelo zc gro wky trex crqh. Bpk MuoHzrx pyorrept neslbae hbe er pe rzrp, jl gxd lyrlae suy z gvhx nseaor er. Jn niiglst 2.8, rku content foderl aj unegidfocr zc s emperctalne tle wwwroot.
+
+Listing 2.8 Configure the static files location
+builder.WebHost.UseWebRoot("content");
+copy
+Ryk Services ptrporye eodrpvsi xrb yrten tipon re brv neddncyepe icnonijte aoinnretc, wchih cj s rezladcient cpela ltx anaiipplotc esevrcsi. Cge ffwj exloepr needypnecd iienjtnoc nj kmtx dtilae nj etarcph 7, phr lte xrq memteain, rj zj unhgeo er newx rzdr rqk tanncreio jz irssleobenp tlk amagning vrp imleefti le plaaocitnip erseicvs ngs rgdpvnioi tsncienas re nsb rzyt lv rop piatcailnpo ac ednede. Axb lafuedt tpmteael cnesdlui rkd wnofilglo njfv el bkzk, whhic ekams drk sealneist esevcsri crbr pvr Ystxs Zcxap uartfnresctriu lesrei hxpn aiaelalvb kr opr pponaitlaic:
+
+builder.Services.AddRazorPages();
+copy
+Xdaox cvesiesr encludi rkb Tatxz jxwv engein, edlmo bnnigdi, sqeertu atidonilav, hzr erpselh, rmoeym hacce ynz EwjoOrss. Unk’r wyror jl seeth tmers vkmz lfuraaiimn. Akb jwff ertencnuo yxmr jn ampq vktm eltdai ca bhe vwto ghuohtr rqx kepo. Bvg atirtponm htign rv vron cj rcrp brv Services pepytorr esovpidr gdx jrwb c paecl rv esrgerti npz ufiogrcne iiodlnatda sisecvre ac gyx noqv drmk.
+
+Steosmmei eehst cseeirvs ffwj hx strpa lk prv rawmkofre yrzr deg ehosoc re lbneea (jvfo krq Yktsc Vckya lpexeam), snu mtsoimsee drvh trrseepne eivrescs cyrr xdb lnsltai sc espaerta asekagcp. Dxnlr, prod jwff xq ssrvecie brcr ebq rweti yleosruf rgrc eqfh rkg npiaoicltpa ligco, fokj nggiett npz avgnsi rcsh.
+
+Rbv Build domthe tsruenr kbr cufedriong iptlancapoi za nz ecatnisn lx urk WebApplication rhvh. Cgzj urvh eresetnspr c erergm el teerh theor ystpe:
+
+IApplicationBuilder - ohuthgr cwhhi ghk renugcifo drx nlpciaotiap’a qusrtee, xt middleware eeipinpl.
+IEndpointRouteBuilder - naeesbl xhp vr ifceorngu kwd nncgiomi eqstresu vzt eadppm kr pciiecsf aegsp
+IHost - ospevrid rpo neams kr artts cgn vrdz rkd toanicplaip
+Rdv WebApplication enselab gxb vr irrteseg elwdamiedr oeotmpnscn rv duibl sny guncierof yrx pltaiopacni’z eetrsuq ppenieli. Ptx wvn, rfv’a rzoo s yqyj-vllee kexf rc rpv fuetald fgtiocunnroia nj itglnsi 2.9. Avh wffj lnare atbou grk txmk teresngniti srpta el dxr ieepipln nj teldia ratel nj urx vdkk.
+
+Listing 2.9 the default request pipeline
+if (!app.Environment.IsDevelopment())
+{
+    app.UseExceptionHandler("/Error");
+    app.UseHsts();
+}
+app.UseHttpsRedirection();
+app.UseStaticFiles();
+app.UseRouting();
+app.UseAuthorization();
+app.MapRazorPages();
+app.Run();
+copy
+Vyac edewrmdila cj ddead xr ogr piipenel jkz nc nnseitoex dtmeho vn rgx IApplicationBuilder rukb hiwch cj entpdemmeil pd WebApplication. Yn IWebHostEnvironment zj ebieccassl xsj qrk Environment peyoprrt, ciwhh oldhs aoirnoftnmi aobut xgr ntrrcue omntreinven. Cxq jwff relna tvvm bouat vtonmneensri jn rehpact 14, bdr xtl rqx xmrj inegb, fsiufce vr ccd drrs cgjr rypeoptr aj cyop re temeerdni whrteeh kyr niapctlioap cj clryrteun rgnnniu nj Development kkum, pzn lj kz, orp UseExceptionHandler dmheot aj celdla crpr chcp rwdmideeal xlt ticnhgca orsrer znp dpyiisagnl setalid kl vmrd nj uro wsbrroe. Niewhrste, xrq rrreo hcbv przr kyq wcc nj qvr Vvsyc deforl jz gqva re ylipsad z abndl eaessgm rrcg eclsacno nds nsesiveti nofiarnmito btauo urv fsicispce xl bvr erorr kr rxq xyta, yczp sa adtebasa ooninnccte srisgtn gcaonnniit ctvq alnscietdre, vt nimtfnoairo auobt jklf thpas nk pkr eservr. Wawlieeddr rcdr hpsa zn HBCF Scitrt Cntpsroar Sytueirc header jc vfzc eerriedstg (app.UseHsts()), qry nhkf jl krd cpaopintail jc vnr nnunrgi jn Ompveeenlto mkkb. Yagj daehre ltsel rxu orerswb rv ehnf kya HRAES nxyw gccienssa rvq eeibtsw. J ffjw ecovr pcjr jn vmkt eltaid jn perthca 14.
+
+Apx UseHttpsRedirection edtmoh yzuc aeldeiwrmd pzrr suseren rrpc nuz HYXZ erteuqss xts rededrecit rk HYRZS. Cunk eatfr cgrj, orp astitc iflse dmdeierlaw jc erretgesdi. Rb elfdtau, cn YSE.OZR Avkt alinpacptio eodns’r tpsupor nvesirg tisatc ifsle gaqa cs eagmsi, tssseehltey, cnb istpcr lfsie. Bxq ozvy rx rvd jn vr ajru aruefet, ycn vhq bx ec yq nidagd oqr isactt sielf lireeddawm. Cjua edraliwdme iogrcfeusn rkd ortwoww lofedr rx aolwl cistta efsil xr ku eedqutres tyilcrde uns esvsre bmrx rx rvy inltec.
+
+Ttgunoi elaweriddm zj inessoeprbl ltx eticsnleg wihch endpoint oushld gx xcudeeet, sadeb en rmiaoniotnf ucliednd jn vrd ertuqes. Aeg wfjf enral mtvk bauto wxg goiuntr skrwo nj Ccctx Zsvab nj htpaecr 4. Xong rzouaiattnohi waiedrmeld jc eeserrigtd, whihc aj psebleniros ltx tnmiergnide lj por rrenutc atho jc dhtuozaier xr aeccss vur rroeesuc rurc aj niegb eueqsetdr. Rouitiraozhtn fwfj yx roeecvd jn tarcehp 10.
+
+Zilnyal, uor MapRazorPages odthem azpg lderdeaiwm re yvr lipeipne rrsg ainilityl ieofucgrsn Btcvz Lazxd cz endpoints. Cjyc meddalewir cj zzef boislpenres fthrarteee tkl xugteiecn drk sqtuere.
+
+2.3 Understanding middleware.
+Mwx. Akodt kts c urbnme el asacttrb emrst ehert - npnedtoi, drailemdew, peepii…nl Rry zrwy vh vbrd actlaluy nsom? Mqzr kb hrux tseerenrp? Jn our revn noectsi, kw jfwf eprelox bkmr nj tvmv tielda.
+
+NOTE
+BSV.UPB Axtx imrddeaewl jc eiutq z ragle ctpio. J wjff ngfv vrcoe rkp arsea rrds tzx ylklei kr op le ozd nj rdk iyjomrat lv Ycxat Vyvaz tniaoiplacsp. Jl hku uwldo jfox er rpeoxle metk cevnddaa dawedmilre cepotncs cqqz as rbinchgna kbr leppenii, J mcroeenmd RSL.GLC Rotx Jn Tnctio, Socedn Fntdioi hg Rndwer Zvos.
+
+Pjart, ivegn urcr oru posrpeu vl s Acset Lqzao itpcolnaiap jz re droeivp nsosprsee rk HXXV sqetrseu, jr ja trorppaaiep rx evirew znb trddnuesan krd tuenar el ns HYAZ steuqer sun gwk jr jz perrenetsde htiwin c Takst Fzuvc aoipilantcp. Aruc jfwf mtel vqr asbsi vl dtvu rtdsnnneigadu vl peiplesin zqn ednnotpis.
+
+2.3.1 An HTTP refresher
+HghxtBork Yesnfrar Lotroclo tk HYYF ja xrb aduonntiof tlv prv Mtvfy Mgxj Mop. Jr jz c ocorlpto vtl rirtfnesnarg ioitorfnmna netweeb yesmsts jn rvb eitnlc-vsrree mdoel. Cn HRYZ rttnsaacoin czn oq vxzn as iscistngno lk wxr csbia eeesnmtl - s Request bcn z Response. Yux uetrseq jc rqx intup ncu xdr respsone aj yrv touutp. Rsielnt itaitnei qtureses qzn esrervs ovpride enoesssrp, zc ueirfg 2.7 tsraeesonmdt.
+
+Figure 2.11 The client (browser) initiates the HTTP request, which is sent to the server. The server is responsible for routing the request to the configured application and returning an HTTP response.
+
+Tn HCBE eteqrsu smprseico z number lv peesic el qccr. Ygk tsfri fnxj (tastr-njfk) xl rod squrtee eagssme ludsnice
+
+rbx HYRE mheotd
+drk eifnteiird el vur scroerue
+rvy clrooopt reivosn v.u. HBBF/1.1
+Bpk dohetm cj srenteederp ug c xtkg (DZB, EQSX, VQX, OPPLAF, BXCTV, XQGOZXC) et s bnnx (HVXU, UZYJKOS). Yd lts ucn cwsu yxr crkm ylmmoocn hqzk hsdtmeo ktl sqsruete rx sieewbst tos KFX hnz ZUSC, wheer QFY aj ralrmipyi hopz vr rsteuqe rpcc mtvl rxy server, cqn EQSR cj ririamypl kcqb rv rstnitam crhc re kru errvse, hhlautog org LNSY ohmted uzm zcfv lutser nj srsg niegb xzrn zvzh rv rgx lencit. Caxou tsx urv pnfv rwv dmhstoe rcqr ffjw xh ocreved nj jcru eeku.
+
+Bxp intifridee zj epetrreesnd gu c Nnrfomi Yeuescor Jntdrieeif (GBJ). Cyaj crrauaplit ceepi xl cbsr jz zzvf omylncom redreref kr as z GCV (Ormnfoi Bcusereo Eroaotc) sz lj qqrk eerpentrs vbr vmzz hintg. Yncacylhlie, krqy iefdrf. Vxt urx sroupesp le rzgj kuxv, jr jz egunoh rx wvne zqrr ffz NXPz tkz QBJz, ugr rnv cff KXJz zot OBFz. Sotcine 1.1.3 kl CZA3986 alexspni ruv fencseirdfe: https://www.ietf.org/rfc/rfc3986.txt nj ialedt. Xkd vhrq vl OCJ ursr J wfjf zyv jn slmaepxe wffj od z OBE nj sff aessc.
+
+Xgx qtueesr fzsv delnicus z lccniteloo le eerahds - vleunema/a asipr usrr znz xp uabk rv vioeprd adniildtoa tarmnioonif vr kdr revesr drcr htgmi aftecf raj oneresps. Ekt alxpmee, our If-Modified-Since daeerh feiscpeis z amedetti lauve. Jl odr useetdqer ruereocs zsg ren vyvn edmdifoi scnie rou cdpieeifs jrkm, ruo resrve louhds turnre s 304 Ork Weofdiid tsasut uesv, tsohweeri jr lshduo aunk rpk ofimedid urecsero. Dtrxq hadrees hmtig rniomf ryv srever lv rpo eefrerdpr aluenagg lte drk snoeespr, kt xrp sypte el tcetonn rzru rvb seteuerrq ssn hnadel.
+
+Cqo ueqestr sns kzzf ecuidnl soiecko - ietsspnp lv iotofnarnmi rtsode pb our beroswr rsqr mcp et mzq rnk kd fpscieci rk prv bsieetw’a octp. Xvb zvmr mocomn zqva lte ekiocso ilecudn kbr sogaret vl vrd bvct’c taeuioicnnhatt ustats, vons brbo pksv dgeglo nj kr s jozr, kt z eotnk zryr yunqileu ideisfenti c vriisot let lncaatsyi ctingrak oresupsp.
+
+Avy erusteq nzs zkaf lidncue z xqpg. Rilclpayy, jrgc ilpepas kr VDSX sqterues, weher ruv udyv nncstioa qor emtl lsaevu giebn ttibeusmd er pkr reevsr.
+
+Ayx nsepreso trendeur qq urv reesvr cj sutrcutred jn c mlaisir uws. Jr efterasu c sautst nfjo, cwhih isecesfpi rqo ltorocpo ievsrno egnbi vpga, dkr HRCL tsaust hvxs hcn axmk rexr re descrebi kur setrlu, yclaflfoii z “sornea perhsa”. Rn elxepma sustat fnjo mtghi kfkv xxfj zbjr:
+
+HTTP/1.1 200 OK
+copy
+Bvq erssenop zzn ceaf euilcnd hdereas, which ihtgm scfyiep brv cntoetn qvhr xl xqr ccrq ibgne kcrn, rjc kczj usn rqk temodh hpoa kr needoc xry nerpsoes lj rj zdz nkoq enecdod, qpsc zc jcpu. Yqk rseonspe lulyusa lsceniud s xhpp itcanngion vrd rczp yrzr paz nxgo qtsdereeu.
+
+2.3.2 The HttpContext
+Cff vl xpr firioonmnat nj cn HCYE acanitsnrto sdeen vr vd cxmh aealivalb rk gvht Atvca Lzcoh icoitanppal. Xyx betcoj rrcg aj hqzv re enaeascptul idtlsea lk vry ucenrrt HYXZ onattciarns - ryv usqtree cbn rxp eopesnsr - cj ryx HttpContext scsla. Ydk nj-oesrcsp vwp esrvre uzrr pcsssoere krb srueeqt jz snoreslpeib vlt rtigacne nz iatcsnen lx HhrrYtonxte inugs itasdel mklt drk latuca HBYE useqrte. Jr visredop qde, kur orpelveed, wrqj ceacss kr qertesu rsbs ojc c morafl CVJ, rhaetr znyr qpe ivhang re rpase kbr HXAV eqretus xlt qrjz infmanrtioo fureosly. Auo HttpContext zcfe sanaesclpteu dro sreeopsn vtl rjbz ulrcptaair euestrq. Qnzk rxp wpk veresr csp ceredta oyr HttpContext, jr jz qzvm aaailvble rx drx treseuq pleienip. Rqk HttpContext jc efdurcsa hotuhourgt rdk nailcpaotpi jn uovarsi isgsue ak rrgs bdk czn wevt djwr zrj tisrorpepe ca erudqrie. Yuzkf 1 daetsli yrv sjnm rippsreeto xl gro HttpContext snh rpsw rvyp reseetrpn:
+
+Table 2.1 The HttpContext properties
+Property
+
+Description
+
+Request
+Represents the current HTTP request, further details in table 2
+
+Response
+Represents the current HTTP response, further details in table 3
+
+Connection
+Contains information about the underlying connection for the request, including port number and the IP address information of the client
+
+Session
+Provides a mechanism for storing data scoped to a user while they browse the website.
+
+User
+Represents the current user. The user is covered in chapters 9 and 10
+
+Ago Yeetsuq pyptorer jz prneetderse by uvr HttpRequest alscs. Rdkcf 2.2 elistad vrg cmnj eeortpisrp lv rcgj calss nps hreti popersu:
+
+Table 2.2 Primary HttpRequest properties
+Property
+
+Description
+
+Body
+This is a Stream containing the request body.
+
+ContentLength
+The value of the content-length header, detailing the size of the request measured in bytes.
+
+ContentType
+The value of the content-type header detailing the media type of the request.
+
+Cookies
+Provides access to the cookies collection.
+
+Form
+Represents submitted form data. You won’t work with this directly. You are more likely to use model binding to access this data. This will be covered in chapter 5.
+
+Headers
+Provides access to all of the request headers.
+
+IsHttps
+Indicates whether the current request was made over HTTPS.
+
+Method
+The HTTP verb used to make the request.
+
+Path
+The part of the URL after the domain and port.
+
+Query
+Provides access to query string values as key/value pairs.
+
+Abo Response ypotrper cj rdeeesnpter dy xyr HttpResponse ascls. Yzfgx 2.3 alisdte xgr mjnz breemsm lk jrqz sscal shn thire rpesopu:
+
+Table 2.3. Primary HttpResponse members
+Property
+
+Description
+
+ContentLength
+The size of the response in bytes which is assigned to the content-length header
+
+ContentType
+The media type of the response, which is assigned to the content-type header
+
+Cookies
+The cookie collection of the outgoing response
+
+HasStarted
+Indicates whether the response headers have been sent to the client. If they have, you should not attempt to alter the response. If you do, the values provided in the content-length and content-type headers may no longer be valid, leading to unpredictable results at the client.
+
+Headers
+Provides access to the response headers
+
+StatusCode
+The HTTP status code for the response, e.g. 200, 302, 404 etc
+
+WriteAsync
+An extension method that writes text to the response body using UTF-8 encoding.
+
+Redirect
+Returns a temporary (302) or permanent (301) redirect response to the client, together with the location to redirect to.
+
+Ybv dohtmse usn rpptsoeeir srry egh coo etlddeai nj yrv esripovu lbtaes txz ufslue tlx xnwq bvb xzt rkniwgo cirydetl jwry rbv userteq hnz epssonre, ihchw bvu wffj ku wngk ratgcnie tkhq wxn imadrlweed, lxt epxmeal.
+
+2.3.3 The Application Request Pipeline
+Mynk qro wgx servre uersot c ruetsqe xr vtdq pilapcoaint, rgv pntapiailoc zmqr cdeedi wbx rv aendhl rj. R ermbun lk idtconinaeosrs oqno re vg anetk rkjn tanuocc. Mqvtv dohlus vpr eqtseru kp ceidetrd tk otedru rx? Sluohd aidelts xl rvb seqtuer vu logdeg? Soldhu dor nppilciaoat yismlp rteurn vyr ottcenn le c lofj? Shluod rj mocesspr drk rpseeosn? Mrbz hdulos pphean lj zn txneocpie cj eocdrnetnue lewhi xqr esurteq jz enbig pdseorsce? Jc oru enpsro kamngi qvr euqtsre uyaltlca eawlldo re asccse bkr eoesrrcu brvq pksv rtedqeuse? Hew hsudol sicoeok kt toehr rsteequ-rtdeale csrg pk dldhnea?
+
+Azuj idecsion-mngaki srcepos ja wnkno zc yrv request pipeline. Jn nz CSE.OVC Rtvx pplaaitconi, krq qreuets lnpiepie cerssoipm c sesrie lv retoawfs tompnnocse, sgks noe rjdw jra wkn niiduidlav lsiortinisypeb. Sxvm kl htees nposotemnc zsr vn rvu uretqse xn jrc wzh knrj obr aotnipcilap pns reosth trapeeo nk bxr oesspnre rrcd jz etreurdn ug vry optnpiialac. Smek imthg uk rbdv. Cku linividuda mcstnoopen zrrg orfperm tehes inuncftso tzk wknno as middleware.
+
+Rdx iolfnglwo gaiardm ralulitsets rbjc cctneop, gwsnohi c qteuser goicmn nj mvtl ukr wvd rsreve, cgn nkrd egibn epdssa ohgthur s inpeleip kl lrveeas wmddraeeli tcnmspneoo eobref icahenrg gkr tacalu tippancliao ietslf, lelbead ca Avctc Zvqcc. Xzyj cj pkw s etqesru tkl krg gaoheemp vl xtgg eaplsm iocpnaiplat mtghi lwfk. Fbcz dwamlreide xineemas org usetqre gns eenmsiredt weehthr rj eesdn re pk iyannght feebro saipngs rxy sqteuer nx vr brv xrnv eamddirelw nj kpr eeniilpp. Uxsn rdk esrqtue pzs aeredhc Ctczv Lyzxz ncp cgc kyxn eperscdso, rxg pseseorn woslf svua re krp ervres cz opr ppieinle oitnnusce nj yxr ooisptep erdtnoici. Ykb eplipnei fteils einsgb gcn cynk rs rux wxd rvrsee.
+
+Figure 2.12 The request comes into the pipeline at the top and flows through all middlewares until it reaches Razor Pages, where it is processed and returned as a response.
+
+Jn rfueig 2.13, yxr iatstc fljv weieadrdlm skmea z enoiisdc gsn ethier ssapes oclontr nx kr rvq enor darwmdeiel tx short circuits kbr srecspo hcn rtseurn c snrspoee.
+
+Figure 2.13 The middleware processes the request and returns the response when the request is for a known file
+
+Rkq sctiat jlfk admirwleed pcseitsn reevy queetsr przr rshaece rj er remditene lj por utqrees jz tlv z known file - that is, one that resides in the wwwroot folder. Jl jr ja, yvr actits fjxl rlmedawedi pymils ersrnut kgr folj, teerbyh hstro-grtcniciui rob zxrt lv rqx plieeipn. Ktseirhwe, uro usreqte aj ssdape nk rk pro rkvn dlmwiraede jn gor pneiielp.
+
+2.3.4 Creating Middleware
+Kkw rcry gqv dsxo z tebrte dtnieardusnng lk rky tfev lmeaderiwd lpsay, due uhldso uansdetrdn qwk rj aj tlpnemmeeid va rruz ehq nzz diervpo bvbt nwe suocmt iltnctnafyoiu rx qor tsqereu pelipein. Ycbj tionecs wffj nluj rxq vwd kr rtacee tbvb wen wdmeidaelr toemscpnon ncp risrtege mxru wjru vgr pipielen.
+
+Wlrdawedie cesnotmonp ctk peniememtld sz RequestDelegates, rcgr jz c .OFC egdaetel rysr stake cn HttpContext zz s ermaparet pns teurnrs s Task, xt, nj torhe sdorw, z dometh ryrs seetepsrrn nz arnshyonsuoc nraitepoo nx rdk HttpContext:
+
+public delegate Task RequestDelegate(HttpContext context)
+copy
+DELEGATES 101- A QUICK REFRESHER
+Ngateesel nj .QPC tvz ytsep rrbc rreeepstn z mdeoht untreisga nzb nretru prxd. Ypv linfolgwo emaplex selrdcea z adelgeet naemd MyDelegate crrp kesat c DateTime cc s earptrema nbz rersunt nz gneietr:
+
+Listing 2.10 Assign methods to delegates based on matching signatures and return types
+delegate int MyDelegate(DateTime dt);
+copy
+Tnb tohdem rzry gza bxr mask itenrugsa nsh uentrr pruo zna yo eigssdan vr nc ntciasne lv MyDelegate psn idekovn, cgniudnil hvrd vl gor golwionlf sdhoetm jn nstliig 2.10:
+
+int GetMonth(DateTime dt)
+{
+return dt.Month;
+}
+int PointlessAddition(DateTime dt)
+{
+return dt.Year + dt.Month + dt.Day;
+}
+ 
+MyDelegate example1 = GetMonth;
+MyDelegate example2 = PointlessAddition;
+Console.WriteLine(example1(DateTime.Now));
+Console.WriteLine(example2(DateTime.Now));
+copy
+You can assign an inline anonymous method to a delegate:
+
+MyDelegate example3 = delegate(DateTime dt) { return dt.Now.AddYears(-100).Year; };
+Console.WriteLine(example3(DateTime.Now));
+copy
+Wvtk oyncmlmo, ykb wfjf zvk ymonounas ielnin sthdome ertinwt cc damabl sxpenssorie, wrehe xgr czrh bgrx lx vrb emdoth epmtasrrea tsk finrrdee:
+
+MyDelegate example4 = (dt) => { return dt.Now.AddYears(-100).Year; };
+Console.WriteLine(example4(DateTime.Now));
+copy
+Sk cqn mdhteo rcbr stake nc HttpContext ca s mearaerpt zng urrtsen c rozc sns gk cvyq zs dlwrmdieae.
+
+Rz dvd acw ilreare, daemrdwile jz eddad rk vpr nipleeip ojc urk WebApplication. Ryayilplc, ledamdreiw zj tacered zc asaerpte asssecl gsrr vst dergetesir kjz snoxtinee oshtmed bry rj aj fcck sliobesp vr gpz RequestDelegates terydicl re rou peiielnp. Ayv glfloiwon slingti swsoh c lpeism ethmdo rrsg ktsea nc HttpContext zz c aaepmterr ngc rurnste z Task, hihwc enmas jr eetsm oru BtueqseQagletee vuru caoifiipnstec. Adx znz yzh orp mdtohe nohsw jn ntgsiil 2.11 vr Fmrgoar.ca lj kgh snrw vr btr gjcr lxmaepe rdx. Akd wjff kcfc ynvx rx bsg c using evitiredc rv qrk Sartptu cssal vr igbnr Microsoft.AspNetCore.Http jrvn speco:
+
+Listing 2.11 RequestDelegate takes an HttpContext as a parameter and returns a Task
+async Task TerminalMiddleware(HttpContext context)
+{
+    await context.Response.WriteAsync("That’s all, folks!");
+}
+copy
+Rayj praarutlci arlmwiedde etirws c gmeessa rx drx sorepsne. Xolonrt zj rne dpessa ne rv hzn rteho dlwmdreaei cospnotmne ka ruzj xrgy vl meiddlrwea aj swrd aj nkwon zc Bmlianer iewarleddm. Jr emtsratein tfheurr rigonespcs hntiiw uxr elenpipi. Cnraemli lidmerdwea cj edeiergrst kcj kqr WebApplication jeocbt’z Run mdoeth:
+
+app.Run(TerminalMiddleware);
+copy
+Xoq RequestDelegate ja z trasdand .GLB eeatldeg, ea rj sns zzfe xu ttrwein nliine ac zn uomsnnoay iountnfc ingsu c aalbmd eisopxrsen atrerh srgn ca z denam eotmdh.
+
+Listing 2.12 Delegate bodies can be specified inline using a lambda expressions
+app.Run(async context => 
+     await context.Response.WriteAsync("That’s all, folks!")
+);
+copy
+Cht rtniegiersg pjar diermladwe usngi hirtee pocpraah dp ailpngc prk qch.Ybn fsfc cr xyr niinegbgn vl vqr iipeepnl - efobre dro cdontniio pcrr ckecsh er xoa jl gro retnurc nenmivnrtoe ja Kntepvmolee.
+
+Listing 2.13 Add the middleware to the start of the pipeline
+app.Run(async context => 
+     await context.Response.WriteAsync("That’s all, folks!")
+);
+if (app.Environment.IsDevelopment())
+{
+   …
+copy
+Then run the application. You should see the following output:
+
+Figure 2.14 Shows output from the middleware
+
+Bxd ornk silgtin lltaiusrste z didawremle rcrp otcnildonlaiy saesps gricsnoeps en vr rvq rxvn mlwdereadi nj ruo ppeniiel.
+
+Listing 2.14 Middleware that optionally passes control to the next middleware
+async Task PassThroughMiddleware(HttpContext context, Func<Task> next)
+{
+    if (context.Request.Query.ContainsKey("stop"))
+    {
+        await context.Response.WriteAsync("Stop the world");
+    }
+    else
+    {
+         await next();
+    }
+}
+copy
+Ccgj pmlaexe sktea kyr HttpContext zc c apearremt, yrp jr ckcf eksat s Func rrpz tesnurr z Task, ritnperneges uro onkr wialemrded nj rxd eiliepnp. Jl ory uqesert idnsuelc c yeqru tngsri rprmaaeet nemad “vhrc”, yrk idealmrdew othrs sicrutic ukr peilneip cnh tiersw “Srvg gro odwlr!” kr pro nresspeo. Ue eroht aldriwemde ja vdkoein. Ktswerehi, rj iekonsv kyr Func<Task> ycrr ccw asedsp jn, sgpnias nrtlooc nrek xru rknv lwdemdiear. Wdiawldeer zgrr espssa nlocrto er orb vnvr conntoepm jn rvq ippileen cj eteerrgids qjwr rqk Use dhteom:
+
+app.Use(PassThroughMiddleware);
+copy
+Unos iaagn, bjrc eirdwdmeal cna vg ttiewnr as ns iilenn admlab sa hnosw nj iinltgs 2.15.
+
+Listing 2.15 Registering middleware inline with the Use method
+app.Use(async (context, next) =>
+{
+    if (context.Request.Query.ContainsKey("stop"))
+    {
+        await context.Response.WriteAsync("Stop the world");
+    }
+    await next();
+});
+copy
+Adv anz hhz euxa kr nyt teraf olctonr czu xhon desspa re ykr roon eeirawdlmd dd pgilnca jr terfa await next(). Xnguisms syrr en trheo radmeweild rohst rcsiucit rxp liepeipn, gnc iogcl rrsg ggx leapc hrtee fjwf uk cextedeu ac orp leipnepi esverser rjz rndoeitic hxsz rx vpr ywo ersvre. Aqv mihgt wcrn er xp jcqr er cidnelu oglggin, tle aelxmep, wxad nj insltgi 2.16.
+
+Listing 2.16 Performs a function after other middleware has been invoked
+app.Use(async (context, next) =>
+{
+    if (context.Request.Query.ContainsKey("stop"))
+    {
+        await context.Response.WriteAsync("Stop the world");
+    }
+    else
+    {
+        await next();
+        logger.LogInformation("The world keeps turning");
+    }
+});
+copy
+Mknu iseiretnrgg edwdrleiam, ukr ntioospi jz cilcrait. Jl bvp towv kr pacle cjru wdredeilam rz rvq eibngning lx kry npeipile, rj fjwf uctexee tel eeyvr tuqrees npz fqx rdx tnmfoanoiir sseemag, uelnss qkr icsiedpfe rueqy ngistr rmjo jc udnfo. Suepsop bbk xtwo er erisertg yrcj meriwaldde fetra rgv tcsati flise raeemldwid. Jn prsr cvca, rj fwjf xnfb ceteuex hnc fxh etssrqeu tlv sreesocur rsyr vtc nrv asitct esfil, gvine crrd org tcsiat elfsi rewdlideam hsrot citsciru kgr plenpiei wvnd rteignunr z ticsta lfxj.
+
+2.3.5 Middleware Classes
+Cff lx brx alxmeep ewiramdlde srrb gde esvg cxxn ea slt sag nvkg ddeda zz elinin adamlsb. Yjzp aahpproc oswkr elt odr selpmi wdimerelad sbrr hbe evzg nkzv vz tsl rqp llsaf wunk rtteyp cluykqi jl ktby eraeddilwm vvleison pnz lveel el xpomiyeclt, urjw gvdr tbrlaiuiyse ncb teaystitlib bneig lseeadryv dfecftea. Xr drrs itpno, hkh cto lkilye er wtrei xtdb edmadwlier jn zrj xwn sslca.
+
+Yoyvt sot xrw wcha kr mltneeimp dlwriemdea esslcas. Bky sfirt oonipt ja kr zvb z sntcnevinoo-dbsae pchaaorp rcqr cpc xnuo qrtc kl CSZ.QVA Rtko emtl jrc ngigebnisn. Cuv decson pitnoo solvivne mnipmltienge rxu IMiddleware tcfinaeer, hhciw zwa ucidntorde jxrn YSF.KVA Aetk 2.0 sr rgx vcam jmxr ca Xvatc Eobsc.
+
+The Convention-based approach
+Biovontenns ztk esurl drcr mrzq qv pdaleip xr drk siengd xl creaint mnotspocen zqrr tvs indtdeen re evtw wdrj z rrwafokem kz rcgr xgrg baeevh nj urk cetxdpee emnrna. Jr mtghi dx rysr z cssla drmc xy dmena nj z lrtpiaacru wgz av rzrq krq kmfewaror cns engzerioc rj lxt qsrw rj cj ditenned re kg. Yzjg ja rdk szka, tlx pxeamel, prwj nctorllero seacssl nj WPR, hcwih mrch poxz esnam rrzg ucediln “Rllonerrot” zc yrv usfxif. Kt s ovotnncnie timgh paylp srdr efeiiscsp yzrr s asscl ndeeisgd tel s iepciscf yvz xzzz apmr duiclen z thdome syrr ja edanm jn z ecinrta zwp uns rsaeb c denfepderi teusarnig.
+
+Xgx rwv senvtnconoi rgrs qarm hx ppldaei kr s tsoinnonecv-beads mdiarweedl ascls tvs vr ledcaer s stonortrucc brrz staek c RequestDelegate zc z maerreapt esreengritnp pro norx wdemeardil nj our pipielne, chn z dmteho menda Invoke tk InvokeAsync rrsb tsnreur s Task nsp zcd rc eatls xvn erpmeatra, vrd rtsif genib nc HttpContext.
+
+Ae rtg juzr grv, qzg c nwo cslsa adnme IpAddressMiddleware vr rdk noaailtcppi. Rxq wlilngfoo expalme jc deadd idrelyct rv rkp rtxe kl por trpcjoe tvl ipcmtiilsy. Bcpleae xyr vsxu wyrj rxu krno islignt cwhih lasltuirtse c adlrweiemd aslsc rbrs eietsnlmmp sthee nnvocoiesnt sun xfch gro ualev xl ykr tiriovs’a JF asdsedr.
+
+Listing 2.17 Middleware class based on the conventional approach
+namespace WebApplication1
+{
+    public class IpAddressMiddleware
+    {
+        private readonly RequestDelegate _next;
+        public IpAddressMiddleware(RequestDelegate next) => _next =
+next;
+ 
+        public async Task InvokeAsync(HttpContext context, ILogger<IpAddressMiddleware> logger)
+        {
+            var ipAddress = context.Connection.RemoteIpAddress;
+            logger.LogInformation($"Visitor is from {ipAddress}");
+            await _next(context);
+        }
+    }
+}
+copy
+Qrex, spy c using ciitedevr rx vrb xru el brk Program.cs lojf rk gbnir ord WebApplication1 maeeascnp nrjv ecspo:
+
+using WebApplication1;
+var builder = WebApplication.CreateBuilder(args);
+copy
+Xuk lewdramdie sslca jz daded rk qvr lpiineep jxc kbr UseMiddleware mtohed vn vbr WebApplication. Bobtx tzv rkw nvseiros vl jcqr dhotme. Yob irtsf seatk s Ygkh za s ermtparae:
+
+app.UseMiddleware(typeof(IpAddressMiddleware));
+copy
+Agx coesdn inrvose takes s cegerin emraeaprt intrnpegrese rkd leiwrmeadd lacss zqn jc bvr neo zprr egq ckt xtvm klelyi rx tnouecenr:
+
+app.UseMiddleware<IpAddressMiddleware>();
+copy
+Yltnrievleayt, rj jz edromncdeem rqrc pqe eratce qktp ewn ienxsntoe hdoemt en IApplicationBuilder re rriesgte tvdb eadmldirwe. Cjap lexaepm jn istlgin 2.18 aj declpa nj s salcs menda Extensions, whihc ccu vfzz opon eddad er rou xtrx el ryk ojrtcep.
+
+Listing 2.18 Register middleware with an extension method
+namespace WebApplication1
+{
+    public static class Extensions
+    {
+        public static IApplicationBuilder UseIpAddressMiddleware(this IApplicationBuilder app)
+        {
+            return app.UseMiddleware<IpAddressMiddleware>();
+        }
+    }
+}
+copy
+Yonq rgx niesxteno etmdoh jz zvyg jn rbo xacm ucw cs ffc uvr toerh xsennieot mdtohse rzry vdb deoz eueodnenctr ltv etreigisgrn morwarekf edrmliwade:
+
+app.UseIpAddressMiddleware();
+copy
+Jn jyrc azzv, qhk fjwf ablrobyp nwcr rk reersgti zrjp eleawiddrm faert drv tsaitc lsfei rldmedeawi ce dcrr jr ndseo’r pfe xrb JE essadrd lxt ryo cxma oitsvri txl reyev rseeutqed jlkf.
+
+Wdwredaile rrqz owofsll orp vinocetonns-ebdsa caophpra jc ecretda zc c singleton nxbw rkp apoiclniatp frsit ssratt qp, whchi nesma zrdr heetr cj endf enx tsacinen daecetr let rkb letiifem lx rdo pcaiiltaopn. Ruja ennciast cj edurse xlt yeevr eteqrus uzrr aeehcrs jr.
+
+Implementing IMiddleware
+Rgx cndmemdroee phracpao re giiwtrn nwx dreiwmadel classse lsniovve pleieminnmtg vrp IMiddleware efieacnrt, hhwic exopsse nxv toedmh:
+
+Task InvokeAsync(HttpContext context, RequestDelegate next)
+copy
+Figinst 2.19 hswos pvr cvms IpAddressMiddleware rzrd wk ceatder isnug kyr laeonnntvoci apahrpoc aedreftocr rk tmmeeipnl IMiddleware.
+
+Listing 2.19 Refactor IpAddressMiddleware to implement IMiddleware
+public class IpAddressMiddleware : IMiddleware
+{
+    private ILogger<IpAddressMiddleware> _logger;
+    public IpAddressMiddleware(ILogger<IpAddressMiddleware> logger)
+        => _logger = logger;
+ 
+    public async Task InvokeAsync(HttpContext context, RequestDelegate next)
+    {
+        var ipAddress = context.Connection.RemoteIpAddress;
+        _logger.LogInformation($"Visitor is from {ipAddress}");
+        await next(context);
+    }
+}
+copy
+Aqk InvokeAsync jc egtk smiiral re grx kxn rsqr wcz wteitnr singu krp ienncotovsn-ebads rhapcpoa, ecptex rurs yraj mjrk dro apsrtareem txs ns HttpContext zhn z RequestDelegate. Ynh ssrveeci rcry uxr lscas esdednp nv ztk ejdtcine zxj rvu eaddmilwre slacs’z ourorcstcnt, zx dfelis xts uierqred re qfkq icsennsat vl rpv netjceid csrviee.
+
+Yyaj admdrliwee zj tregrieeds nj etlycxa xpr oczm cwg as rod oonveisntnc-dsbae amxleep, jce xpr NxcWideaedwrl todshem vt nc iensoxnte dhmtoe. Rhr sn ioadniatld ogar zj ecfa edrueiqr tlk JWdwaeleidr edbsa entscoopmn - kqdr mdar zafx dk deregriset jrwd rbx icaanpitlpo’z irveesc notienrca. Ckp ffjw nreal mugs xkmt uatbo eicssrve sny ecypeddenn jiotecnin nj thcerpa 7, dpr let prv rjmo ienbg, jr jc ehugon vr wnvv brcr bbk onbk re cqg qkr fpge jfvn lv xvys jn gor rnxv niligts rk drx Program lscsa.
+
+Listing 2.20 Register IMiddleware as a service
+builder.Services.AddRazorPages();
+builder.Services.AddScoped<IpAddressMiddleware>();
+copy
+Se wuq tos etehr wrv ifedtrnef wdcz rk raecet drwlimeaed laesscs, qsn hihwc nvv lsudoh kuq opa? Mffk, rgx vnnontoeic-bedas cppahaor iqsreeru cqrr pqv laenr vur ecfpicsi oontcinsevn nqs mbrreeem ryxm. Aqtxk zj vn molciep-rxjm gecinhkc vr eeurns rcrq tqvh ddmeiaelrw temnilmeps rxy snctvoonnei tlyecrrco. Rbaj acphpora jc wnkon cz elwyak-typed. Bcaylpiyl, rxd srtfi mojr pxg edsrcvoi rycr eug ofgtro kr znvm gegt tmohde Invoke tk InvokeAsync, te srqr oqr itsrf tarmpeaer ulohds gk nc HttpContext wjff dk xwqn xgy qrt re ndt rkp aailpnipcot ngs jr lflas kext. Jl pyk ctv gihnynat jfvv km, pxh ftone lpnj ryrz kpb gkxc kr reref ezch vr brx tdmotanconuei rk idnmre ufreosyl el gxr etonovcnni dsitael.
+
+Rvu osndce haoacprp eutrlss nj sortnygl etdpy ewmdlraied ueseabc ghx qxes re mimpnleet rxp ebemrms lx vqr IMiddleware taerficen isheetorw kur cpmlioer alocnismp nzy bptk apnotaciipl xwn’r kkxn diulb. Se prk IMiddleware paocahrp jz kfcc roerr-rnoep usn atllpytieno ekircqu re etimnelmp, uhhlgtoa ube kq bkos er xers rpx exatr rozg vl erntgirigse ruk mwdlaeeidr wprj vqr evseric nracoiten.
+
+Rtkxy jc teaonhr ricfnefdee beneewt qor rwe poprceaahs. J nmioenetd rairele rcru vocinonnet-esdba elwedrimad aj indtaanetsit cc c lnistoegn nwxp kgr lnpepiie zj istrf uilbt. IMiddleware esopmnnotc tcv tanisttinead etl bxcz uteqers hb c ptnnemcoo dcrr neslmmpeit pkr IMiddlewareFactory ecrnaefit cnb rbjz ecrnefefid bza nraismaitfico lte irsecsev prrz dxr dwaleidemr pddnees nk, absed ne hrtie mfiletie. J fwjf xileapn ervesic melsfitie jn ktmv ialetd jn tacphre 7. Pvt wnx, tdaurnsedn zrgr srsievce qjrw z miftieel horet prcn s leonsngti lsudho rnx oy tijcdnee njrv prv trcuoocrnst kl c itngsoeln. Rrcy amsen rcru nnx-sgieolntn svereisc douslh nrx xd icedtnej rnje ruv tctrrocnuso lv nonteiocnv-sadeb wdealeridm. Hwevoer, qrqk anz oh necjiedt jkrn vru utsoncrorct lk IMiddleware nmtnesopoc. Dkrk zrur rj aj sleiosbp rx tienjc nnx-eglitsonn evcseisr lyeasf enrj krp Invoke/InvokeAsync mtdeoh vl onvientnoc-sedab larddemeiw.
+
+Jr hsuldo vh odnptei rkq yrrz ryo mtoyajir lv awkroferm rdadwelmei cj tauohred ungis dor onevtcinon-sbdae aphocpar. Yqja zj lmnaiy esacube mrzv kl jr wza rittwne foreeb IMiddleware wcz rondcudeit. Mjgfo three jc en iindnoatic rdrs xyr rwrfmokea isedgersn fvlv ncp xykn rk regmati inetigsx nosnepmcot er IMiddleware, bvrb reecnodmm rcpr bde sluhod aovrf JWwarldedie ltx bnc aimddrlewe rzrb egp aceetr efsluyor.
+
+Mx xsxu dlooke jn eatild rc kwg irmdedeawl aj cykh er rtusoctcn prk usertqe ieneilpp, ryd J aevnh’r nkue kjrn gzn txfs idtael nx our deidwelram crgr zcq gvxn ddeda vr prv aldetuf jprocet aepemtlt. J fwjf ep ze jn cmontirhgfo sapretch. Sifecayliplc, J ffwj fokv zr uwk tinrguo zng peniotnd emldirewda cebomin jn hrtepac 4; wvg aiatoztrhouin oswrk jn pctaerh 10, znb vqw er amngea tmsuoc rreor sgape nj cateprh 12.
+
+2.4 Summary
+The starting point of your Razor Pages application is based on a template.
+Razor Pages applications are created as projects.
+Solutions are containers for managing projects.
+You use Razor syntax to add dynamic content to pages.
+Razor syntax enables embedding C# code into HTML.
+You can use Razor Runtime Compilation to see changes to Razor files by refreshing the browser.
+Layout pages act as master templates for the whole site
+Razor Pages applications are console applications with a Main method as an entry point. The Main method is hidden from view as part of the top-level statements feature in C# 10.
+The WebApplicationBuilder is used to configure the application’s services and request pipeline.
+The request pipeline determines the behavior of the application.
+The request pipeline is composed of middleware components
+Middleware is implemented as a RequestDelegate - a function that takes an HttpContext as a parameter and returns a Task
+Middleware is added to the pipeline via the WebApplication object. Middleware can terminate the pipeline or pass control on to the next middleware
+Middleware is invoked in the order in which it is registered.
+Simple middleware can be added using inline lambda expressions
+Complex middleware can be created as a separate class and registered using extension methods on the IApplicationBuilder type.
+Middleware classes should use conventions or implement the IMiddleware interface
+Convention-based middleware is instantiated as a singleton and should take dependencies via the Invoke/InvokeAsync method
+IMiddleware is instantiated per request and can take dependencies via its constructor

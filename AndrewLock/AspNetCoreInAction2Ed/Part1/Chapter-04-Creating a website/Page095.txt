@@ -1,0 +1,27 @@
+web applications, so it uses terminology and paradigms associated with a GUI environment.
+Fundamentally, though, the pattern aims to separate the management and
+manipulation of data from its visual representation.
+
+Before I dive too far into the design pattern itself, let’s consider a typical request.
+Imagine that a user of your application requests the Razor Page from the previous section
+that displays a to-do list category. Figure 4.1 shows how a Razor Page handles different
+aspects of a request, all of which combine to generate the final response.
+
+Figure 4.1 Requesting a to-do list page for a Razor Pages application. A different “component” handles
+each aspect of the request.
+
+In general, three “components” make up the MVC design pattern:
+
+Model — This is the data that needs to be displayed, the global state of the application.
+It’s accessed via the ToDoService in listing 4.1.
+
+View — The template that displays the data provided by the model.
+
+Controller — This updates the model and provides the data for display to the view.
+This role is taken by the page handler in Razor Pages. This is the OnGet method
+in listing 4.1.
+
+Each component in the MVC design pattern is responsible for a single aspect of the
+overall system, which, when combined, can be used to generate a UI. The to-do list
+example considers MVC in terms of a web application using Razor Pages, but a
+request could also be equivalent to the click of a button in a desktop GUI application.

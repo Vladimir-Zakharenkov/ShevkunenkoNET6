@@ -1,0 +1,200 @@
+1 Getting started with Razor Pages
+This chapter covers
+Understanding what Razor Pages is
+Why you should use a web development framework
+What you can do with Razor Pages
+How Razor Pages works
+The technologies that Razor Pages is built on
+When and why you should choose Razor Pages
+The tools you require to work with Razor Pages
+Thank you for picking up this copy of Razor Pages In Action, whether physically or virtually. By doing so, you are about to learn what Razor Pages is, what you can do with Razor Pages and what you need to consider when deciding if Razor Pages is a good choice for building your next web application. Spoiler alert: if you want to develop page-focused interactive web applications, it is!
+
+This chapter will explore Razor Pages’ technologies and examine the similarities and differences between Razor Pages and other web development frameworks. By the time you have finished this chapter, you should know whether Razor Pages is an excellent choice for your next application, and be looking forward to building your first app with Razor Pages in the following chapter.
+
+I’m going to make some assumptions about you, if I may? I’m going to assume that you already know about the core technologies of the Web - HTTP, HTML, CSS and JavaScript and how they work together. I’m going to assume that you know that Bootstrap is not just a footwear fastening. And I’m presuming that you already know C# or a similar object oriented language, or that you are capable of learning C# while also learning about Razor Pages. Finally, I’m working on the premise that you understand the basics of relational databases. I mention all of this because I don’t cover any of these topics in detail within this book, although I might treat you to the odd refresher where I think it helps to provide context.
+
+Still with me? Good! Let’s go!
+
+1.1 What is Razor Pages?
+Razor Pages is a server-side cross-platform, open source web development framework from Microsoft that enables you to use your existing knowledge of HTML, CSS and JavaScript, together with the C# language to build modern page focused web applications.
+
+Now that’s a bit of a mouthful, so let's break it down a bit.
+
+1.1.1 Web development frameworks
+First, let’s look at what a web development framework is and why you might need one. Here’s the home page of this book’s publisher’s website, manning.com. Take a look at just some of the things you can do on this site (figure 1.1):
+
+Figure 1.1 Screenshot of Manning.com numbers indicating specific features
+
+You can search the site content
+You can buy things from this site
+You can create an account and log in
+You can sign up for newsletters
+You can see the latest book releases
+You can have a look at the items you viewed on previous visits
+You can read interviews with authors
+That’s a lot of complex functionality, and with so many books and authors at Manning, there must be a huge number of pages to maintain. Think of the work required to redesign the site to give it a new look, applying changes to all those countless pages!
+
+A web development framework makes light of these complexities by providing pre-built solutions to common tasks so that you can get on with building your application. Take the task of displaying the details of all those books, for example. Rather than having to create a page per book, a framework--like Razor Pages--will provide you with the capability to create a template for displaying any book. It also includes placeholders so that the details of a specific book such as its title, author, ISBN, and number of pages can be fetched from a central store (like a database) and plugged in on demand (much like how a mail merge document works). Now you only have one page to manage for all books instead of one page per book.
+
+Figure 1.2 workflow diagram showing how the process involving the use of templates works in Razor Pages. This workflow starts in the bottom left with a client requestinghttps://livebook.manning.com/book/razor-pages-in-action or similar. The white arrows show the direction of travel through the Internet to the web server, which locates the correct application, and then passes processing to the Razor Page (with func() in it). Control is then passed to the application service layer, which is responsible for retrieving the details from the database. The data is sent to the service layer (grey arrows, now) and then on to the Razor page, where it is merged with the view template (the one with the @ sign) to create HTML. The generated HTML is passed via the app out to the web server to be returned to the client.
+
+How about the task of managing user information? You will need some way to store this information and to match it against login details provided by the user. You also need to provide a mechanism to identify that the current user has already successfully logged in so that they don’t have to authenticate themselves again for every subsequent page that they want to view. And you need to do all of this securely, employing acceptable levels of cryptography. Again, a good framework will provide these features for you. All you have to do is learn how the features work and plug them into your application, leaving the mysteries of implementing low level specialist tasks like encryption and hashing to experts who know what they are doing.
+
+These examples touch on a couple of features provided by web development frameworks. (Figure 1.2). But the list doesn’t stop there. Think of any common repetitive task that developing a web application might require of you: processing an incoming request for data, mapping URLs that don’t include a file extension, communicating with databases, processing and validating form submissions, working with files, sending email. All of these tasks are made easier when using a framework that incorporates these features. And by the time you have finished this book, you will be able to use Razor Pages to accomplish all of these tasks easily.
+
+As well as providing solutions to functional requirements, frameworks typically offer a standard way to build and deploy applications. They might encourage you to adopt proven software design patterns when building your application to make the result easier to test and maintain.
+
+In essence, web development frameworks can speed up the process of developing web applications by providing pre-built and tested solutions to common repetitive tasks. They can help you produce consistent results by encouraging you to work to a set of standards.
+
+1.1.2 Server-side frameworks
+Next, we’ll take a look at what we mean when we say that Razor Pages is a server-side framework. When developing dynamic web applications, you must decide where your HTML is generated. You can choose to generate HTML on the user’s device (the client), or on the web server.
+
+Applications that generate HTML on the client, or Single Page Applications (SPAs) are restricted in terms of the technologies that can be used. Up until recently, you could only really use JavaScript to create these kinds of applications. This has changed now with the introduction of Blazor, which enables you to use C# as your application programming language. To learn more about this, see Chris Sainty’s Blazor In Action (Manning 2021). Since most of the application processing takes place on the user’s device, you have to be mindful of its resources, which you have no control over. You also have to take into account differences between browser capabilities when writing your code. On the other hand, client-side applications can result in rich user experiences and even closely emulate desktop applications. Great examples of applications rendered mainly on the client include Facebook and Google Docs.
+
+Applications that render their HTML on the server can take advantage of any framework or language supported by the server, and have as much processing power available to them as the server can provide. That means that the HTML generation is controllable and predictable. In addition, all application logic is deployed to the server itself, meaning that it is as secure as the server. And since the output of the processing should be standards-compliant HTML, you shouldn’t need to worry so much about browser quirks.
+
+1.1.3 Cross-platform
+Razor Pages applications can be created and deployed on a wide variety of platforms. Windows, Linux, macOS and Docker are all supported. If you want to create your application on your super thin and super expensive MacBook Air or Surface Pro, you can. Or, if you are more at home with a reconditioned ThinkPad running Debian or Ubuntu, no problem. And you can still share your source code with colleagues who are working with different platforms. Your deployment options are equally unrestricted, which means that you can take advantage of the best deals on offer from your web hosting company.
+
+1.1.4 Open source
+Back in the day, when I was first awarded as a Microsoft Most Valuable Professional (MVP), an annual award made to people who Microsoft judge to have made significant contributions to the community through sharing their “technical expertise,” one of the benefits of the award was to have direct access to the product group at Microsoft responsible for your area of expertise. In my case (which I am sure was one of mistaken identity), the area of expertise was ASP.NET, Microsoft’s web development framework.
+
+Having access to the ASP.NET product group was a privileged position. Bear in mind that in those days, Microsoft was very much a closed source company. As an MVP, you learned about some of Microsoft’s plans for new products in your area in advance of the rest of the community. You might even be invited to do a bit of beta testing on their new launch, or contribute suggestions for improvements, although all the major design decisions had usually been made at the point you were given access.
+
+Fast forward a few years, Microsoft has moved to being an open source company. The source code for their development platforms is on Github for all to see. More than that, everyone is encouraged to contribute to the source code, by filing possible bugs, providing improvements, new features, bug fixes or better documentation. Rather than being told what Microsoft is going to release at some point in the distant future, anyone can be a part of the conversation about the direction that a framework should take. Anyone can ask questions there about the framework, often getting answers from the Microsoft developers themselves.
+
+Microsoft wins with this approach because they get the benefit of experts outside of their company adding their technical expertise and even time, while users or the framework benefit because they get a better product that other real users have influenced. At the time of writing, the current version of ASP.NET, ASP.NET Core, which Razor Pages is part of, has over 1000 active contributors.
+
+1.1.5 Use your existing knowledge
+The server-side language supported by Razor Pages is C# while the view templates are mostly composed of the languages of the Web - HTML, CSS and JavaScript. The placeholders for dynamic content that we talked about earlier are C# code. You use Razor, a simple and easy-to-learn templating syntax to embed server-side expressions and code in the view template. You don’t need to learn any new languages to use Razor Pages. You don’t even really need to know SQL to access a database because .NET includes frameworks that you will use to generate that for you.
+
+1.2 What can you do with Razor Pages?
+Razor Pages is a page-focused framework. Its primary purpose is to generate HTML. Therefore it is suitable for creating any web application, or any part of a web-based application that consists of web pages. In fact, it’s probably easier to list the things you can’t do with Razor Pages!
+
+We looked at Manning’s website earlier. An online catalog and ecommerce site. I’m reliably informed that it hasn’t been built with Razor Pages, but it could have been. I’ve used Razor Pages for my blog and tutorial sites, where data is stored in databases or as Markdown files that need to be converted to HTML. I have also used Razor Pages in my day job for building magazine websites and internal web based tools for managing business-related workflows and reporting, and even a custom content management system. Any kind of web application that includes pages as part of the requirement is a candidate for Razor Pages, from a simple blog site, all the way up to the next Ebay.
+
+Razor Pages is particularly suitable for any type of forms-based application. Often referred to as CRUD applications - Create, Read, Update, Delete represent the four basic operations related to persistent storage of a model. Tools are available for quickly scaffolding a collection of forms for managing any entity, which you will use later in the book.
+
+1.3 The technologies that underpin Razor Pages
+Razor Pages sits at the top of a stack that starts with .NET 6, a huge framework from Microsoft that supports the development of a wide array of cross platform applications, including desktop, mobile, cloud, games and, of course, web. (Figure 1.3) The base layer, also referred to as the Base Class Library or BCL, includes the lower-level libraries common to most development types, such as those that provide data types or enable working with collections, files, data, threading exceptions, email and so on.
+
+Figure 1.3 The .NET stack. Razor Pages is a feature of the MVC framework, which in turn is part of the ASP.NET Core framework which represents the web development layer.
+
+The web layer of the stack is known as ASP.NET Core. It includes libraries for working with HTTP, routing, authentication, and the classes to support the Razor syntax and HTML generation. In addition to Blazor, which I mentioned previously, ASP.NET Core also includes SignalR, a framework for pushing data from the server to connected clients. The simplest example of a use case for SignalR is a chat application.
+
+Alongside SignalR and Blazor sits the ASP.NET Core MVC framework, with Razor Pages on top. Razor Pages is a feature of the MVC framework and it supports development of web applications that adhere to the MVC design pattern. To understand what this means, it is necessary to understand the nature of the ASP.NET Core MVC framework.
+
+1.3.1 The ASP.NET Core MVC framework
+ASP.NET Core MVC was the original cross platform web application framework from Microsoft. It is what is known as an opinionated framework. The framework designers have opinions about the architectural decisions, conventions, and best practices that users of the framework should apply to produce the best quality results. Then the framework designers produce a framework that steers users into adopting those architectural decisions, conventions and best practices. Developers throughout Microsoft describe this process as helping customers to fall into the “pit of success”.
+
+1.3.2 Model View Controller
+The developers’ main architectural decision behind the MVC framework was to support the development of web applications that implement the Model-View-Controller (MVC) pattern. Hence the name of the framework. This decision is because MVC is a well-known presentation design pattern in web development, whose purpose is to enforce a separation of concerns - specifically the concerns of the application model and its presentation.
+
+The V in MVC is the view, or the page. The M is the application model, which is a nebulous term that represents everything in the application that isn’t View or Controller. The model includes the data access code, the business or domain objects - the “things” your application is all about - books, authors and customers in Manning’s case - and the programming logic that is designed to manage them - the “business logic”. The application model is then subject to further separation according to other good software design practices, but that’s not the business of MVC, which is purely a presentation design pattern. The main reason behind enforcing a separation between the UI and the rest of the model is to improve maintenance and testability. It is very difficult to test application logic if it is mixed in with HTML.
+
+The Controller part of MVC is the primary means of separation between the model and the view. Its role is to take requests and then use the information in the request to perform commands on the model, and then take the result of that processing and pass it to the view for display.
+
+Controllers can be implemented in different ways. You can create something like a Front Controller to process requests for all of the application or a subset of the application, or you can use the Page Controller pattern to process the requests for individual pages. The original ASP.NET MVC framework implementation leverages the front controller approach where a single controller is responsible for coordinating the processing for multiple endpoints related to a feature or business area within the application - AuthorController, BookController and so on. Razor Pages implements the page controller approach, the controller being a class that derives from PageModel.
+
+Front controllers in the ASP.NET MVC framework are individually responsible for a lot more than page controllers (figure 1.4) They have to coordinate processing for all of the actions related to a specific business area - create, update, delete, get lists, get details and so on. Over time, front controllers can grow to hundreds, if not thousands of lines of code. The number of dependencies they take increases - a sure sign that the controller is doing too much. They become difficult to manage. Page controllers, on the other hand are a lot simpler, only having to manage processing for their individual page. Some of them barely have any code in them at all.
+
+Figure 1.4 The front controller used in MVC coordinates processing for multiple views and can get very busy and complex. In Razor Pages, each page has its own controller, keeping them lean and easier to work with.
+
+1.3.3 The design goals behind Razor Pages
+As we have already learned, the MVC framework is an opinionated framework. If you want to use it, you need to work with the framework authors’ conventions, or develop some kind of workaround. ASP.NET MVC includes a number of conventions in terms of how you name files and where you locate them within the application. For example, suppose your customer or boss wants you to add a new feature to an existing MVC application. Bearing in mind that front controller classes are feature-driven by convention, you would have to add a new class file representing the feature to your Models folder, a new controller class to the Controllers folder, a new folder for the feature in the Views folder, a new Razor view to that folder, and finally, a viewmodel class to represent the data for your view. If you want to make any changes to the feature, you have to dip in and out of folders and files all over the code base.
+
+Developers who are new to the MVC pattern can find the complexity of working with the ASP.NET implementation quite daunting. If you are not familiar with the structure of an ASP.NET MVC application and found yourself getting a bit lost with the workflow I just described, welcome to my target audience! Even Microsoft themselves have described the framework as having a “high concept count”. So the design goals behind Razor Pages (https://github.com/aspnet/mvc/issues/494) are set against that backdrop and implicitly compare working with Razor Pages to the MVC framework. They include (to quote from the referenced Github issue):
+
+Making dynamic HTML and forms with ASP.NET Core easier, e.g. how many files and concepts required to print Hello World in a page, build a CRUD form, etc.
+Reduce the number of files and folder-structure required for page-focused MVC scenarios
+Simplify the code required to implement common page-focused patterns, e.g. dynamic pages, CRUD forms, etc.
+Enable the ability to return non-HTML responses when necessary, e.g. 404s
+Use and expose the existing MVC primitives [components] as much as possible
+Ultimately, Razor Pages was introduced to make working with the MVC pattern simpler than the existing framework. That is not to say that Razor Pages is only suitable for simple scenarios - far from it, although that is a view you might find aired in various places across the Internet. However, when pressed, you find that most folk airing that view admit to not having tried Razor Pages.
+
+1.4 When should you use Razor Pages
+In keeping with my claim that it’s probably easier to list the things you can’t do with Razor Pages, I’ll start this section by looking at examples of when you shouldn’t consider using Razor Pages.
+
+Single Page Applications: being a server-side development framework, Razor Pages is not a suitable tool for building Single Page Applications, where the application is usually written in JavaScript and executes in the browser, except where server rendering is a requirement (https://developers.google.com/web/updates/2019/02/rendering-on-the-web).
+Static Content Sites: if your site consists exclusively of static content, there is nothing to be gained by starting a Razor Pages project. You just don’t need a framework whose primary purpose is to generate HTML dynamically on the server.
+Web APIs: Razor Pages is primarily a UI-generation framework. However, Razor page handlers can return any type of content including JSON. Nevertheless, if your application is primarily a web-based service, Razor Pages is not the correct tool to use. You should consider using MVC API controllers instead. It should be pointed out that it is perfectly possible (and easy) to mix Razor pages and API controllers in the same project, if your requirement is to generate HTML as well as to provide services over HTTP.
+Migrating from older versions of MVC: if you are looking to migrate an existing MVC application from previous versions of the .NET framework to ASP.NET Core, it might make more sense to port to ASP.NET Core MVC because much of your existing code can be reused without modification. Having migrated, you can use Razor Pages for all new page-focused features within the migrated application, because MVC controllers and Razor Pages happily sit together in the same application.
+Razor Pages is the default project type for building page-based web applications in Visual Studio, so in all other cases, you should use Razor Pages for all page-focused applications, regardless of complexity.
+
+ASP.NET Core has been designed with performance as a first class feature. The framework regularly features high up or even top of the widely regarded TechEmpower Performance Ratings for web frameworks (https://www.techempower.com/benchmarks). So if you need a high performance application that delivers HTML, Razor Pages has a great foundation.
+
+ASP.NET Core applications are designed to be modular. That is, you only include the features that your application needs. If you don’t need a feature, it is not included. This has the benefit of keeping the published application’s footprint as small as possible. If restricting the overall size of your deployed application is important to you, Razor Pages ticks that box too.
+
+Finally, the team behind ASP.NET Core must be doing something right because ASP.NET Core is the “most loved” web development framework according to Stackoverflow’s 2020 developer survey https://insights.stackoverflow.com/survey/2020#technology-most-loved-dreaded-and-wanted-web-frameworks.
+
+1.5 Working with Razor Pages
+At this point, you know what Razor Pages is, the basics of how it works, and what it can do for you. You should know by now whether it is the right option for your application. If it is, you need to know where to get Razor Pages from and what tools you can use to work with the framework. This next section provides answers to those questions. First, I’ll cover how you can get Razor Pages, then I’ll look at the tools that you need to be able to use the framework to develop your web application.
+
+1.5.1 How do you get Razor Pages?
+To begin developing Razor Pages applications, you need the .NET Software Development Kit (SDK). This is automatically included when you first install Visual Studio, Microsoft’s flagship software development environment. After that, you may need to install updated versions of the SDK manually. You will need to install the SDK manually if you use an editor that doesn’t include the SDK.
+
+SDKs are available at https://dotnet.microsoft.com/download.
+
+Figure 1.5 - an image of SDK download page
+
+Versions are available for Windows, Linux, macOS and Docker. (Figure 1.5) The current release is clearly marked and is recommended as it contains the latest bug fixes and other improvements. One version will also be flagged as the LTS release, This may or may not be the current release. LTS means Long Term Support. LTS versions continue to receive critical bug fixes for an extended period. The current release, .NET 6, is an LTS release and will continue to be supported for three years from its release date, which was in November 2021. Microsoft aims to make migrating from one LTS version to the next a relatively pain-free experience.
+
+The download page provides access to both an SDK and a Runtime for each version of .NET/.NET Core.. The SDK includes the runtime and a set of tools for developing applications, including the Command Line Interface (CLI) for .NET. The CLI provides access to a series of commands that enable you to develop, build, run and publish your .NET application.
+
+The runtime includes only those components required for running .NET applications. The runtime is primarily intended for deployment on machines where no development takes place. You can install multiple versions of the SDK and/or Runtime on your machine. They happily live side by side.
+
+1.5.2 Choosing a development environment
+In theory, you could develop Razor Pages applications using nothing but the command line and perhaps a basic text editor like Windows Notepad, but the reality is that you will want to use a tool that is designed to support .NET Core development, relieving you of much of the grunt work. The most powerful of these tools are Integrated Development Environments (IDEs) and will include source code editors that feature syntax highlighting, code completion, static code analysis, and features for debugging, compiling, and publishing your application. IDEs usually support common workflows such as creating applications and adding files of various types based on existing templates. They usually also include integration with databases and version control systems.
+
+The most popular IDE for .NET development is Visual Studio from Microsoft. To enjoy .NET 6 support, you will need to use the 2022 version. It comes in three editions: Community, Professional and Enterprise. The Community Edition is a full version of Visual Studio, differing from the Professional edition only in terms of its license. The Community edition is free for individuals and small companies as defined in the license terms (https://visualstudio.microsoft.com/vs/community/) or for academic use or contributing to open source projects. The Enterprise edition is intended for use by the largest teams, and is priced accordingly. All editions are only available for Windows. (Figure 1.6)
+
+There is a version of Visual Studio for Mac users but it is not a direct port of the Windows version. It is an adapted version of Xamarin Studios, which is primarily a mobile application development environment. However, it supports Razor Pages development. And there is a free Community Edition available .
+
+Visual Studio Code (VS Code) is a popular free cross platform code editor (as opposed to a development environment). A huge and growing number of extensions are available that make .NET Core development within VS Code quite easy, including C# language integration, debugging, and version control integration. VS Code doesn’t include the same kind of tooling integration for working with Razor Pages offered by Visual Studio, but it does feature an integrated terminal, providing easy access to the .NET CLI, and the awesome OmniSharp extension provides excellent support for C# development in VS Code. You will be shown how to use the VS Code terminal to execute CLI commands throughout this book. You can download VS Code from https://code.visualstudio.com/.
+
+Figure 1.6 Screen shot of https://visualstudio.microsoft.com/ where readers can obtain all three IDEs mentioned so far.
+
+If you want to develop on a Mac or Linux system, VS Code is a good option. Alternatively, Rider from JetBrains is a cross platform .NET IDE. It offers a 30 day free trial.
+
+Throughout this book, I will show you how to use Visual Studio Community Edition and VS Code to develop a Razor Pages application, so you should follow the examples regardless of which platform you choose to work with.
+
+1.5.3 Choosing a database system
+Web applications need a means by which they can persist data. ASP.NET Core doesn’t impose any technical limits on your options. You could store data as a series of text files if you wanted, but the most commonly used data store is a relational database of some kind. You also need a means to establish connections between your application and the database, execute database commands, and access any resulting data. .NET 6 includes a low-level data access technology called ADO.NET. It exposes data to the application in structures that are similar to in-memory database tables or views. If you want to access pieces of data, you have to use indexers and conversion or casting:
+
+var myInt = Convert.ToInt32(dataTable.Rows[1][4]);
+copy
+It is an ugly way to develop an application and prone to error. All it needs is for someone to change the order of the columns in a SQL statement for the above statement to fail, because the materialized value in the targeted location can no longer be converted to an int. These days, developers much prefer to work with data as objects (e.g. a Book class or an Author class), and will use an Object Relational Mapping tool (ORM) to manage the communication between the database and the application. The ORM takes care of (among other things) mapping data from a database query to a specified object or collection of objects for you, so you don’t have to worry about that.
+
+Several ORM tools are available to .NET developers. Most of them are owned and managed by third parties. The ORM that I have selected for this book is Entity Framework Core (EF Core). The reason for this choice is that it is a Microsoft technology and part of .NET. Figure 1.7 is an updated version of figure 1.3 and shows where EF Core fits within the .NET stack:
+
+Figure 1.7 Entity Framework Core is an optional component but it can be used to support data access in a wide variety of application types built on .NET 6, including ASP.NET, desktop, mobile, cloud and games.
+
+Using EF Core will improve your productivity but adds an element of restriction to the options available to you in terms of database system, based on the availability and/or cost of a specialized provider.
+
+DEFINITION
+A provider is a component that handles communication between your C# application code and the data store itself. One of the real benefits of an ORM like EF Core is that you don’t need to write commands in data store-specific languages. You express your data commands in C#, which is data store agnostic. Each individual provider is responsible for (among many other things) generating the Domain Specific Language or DSL that your chosen data store supports. In most cases, this DSL is SQL.
+
+Having said that, EF Core supports a large number of database systems, especially the more popular ones. To check if there is a provider for your preferred database system please refer to the official documentation: https://docs.microsoft.com/en-us/ef/core/providers/
+
+When you use an ORM like EF Core, the differences between database systems are more or less entirely hidden away from the application itself. The C# code you write for data storage and retrieval for one database system will work exactly the same against another system. The only real difference between one system and another is in initial configuration. I have chosen to feature two database systems in this book - a version of SQL Server for Windows-only developers, and SQLite for readers who want to follow along on other operating systems. I will highlight the rare differences in working with them when they arise.
+
+Working in the Microsoft world, you are more likely to encounter their flagship relational database system than any other option - SQL Server. A version of SQL Server, LocalDb, can be installed very easily when you install Visual Studio. It is not designed for production use and only includes the minimum set of files required to run a SQL Server database. For this reason, I have selected LocalDb as the edition to use for readers who want to work with Windows.
+
+Any databases that you create with LocalDb can also be used with the full version of SQL Server. Visual Studio includes a feature known as Server Explorer that enables you to connect to databases from within the IDE and perform basic database management tasks, such as modifying the tables and running queries. Alternatively, you can download and install Sql Server Management Studio (SSMS) free of charge (https://docs.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms). SSMS is a much more powerful tool that includes features for managing databases, profiling query performance and administering SQL Server installations.
+
+A large number of cross-platform database options are available, including the free and very popular MySQL. However, I selected the file-based SQLite database system for readers who want to develop on a non-Windows environment simply from the ease-of-use point of view. It is already installed on most versions of Linux and macOS. Having said that, there is no reason why you can’t use SQLite if you are developing on Windows. It’s a pretty good choice for smaller sites. It is deployed along with the rest of the application files, potentially simplifying deployment and reducing your hosting costs. In terms of managing a SQLite database, I use the free DB Browser For SQLite, which is cross platform and available at https://sqlitebrowser.org/.
+
+Whichever database system you choose to go with, you should now be ready to move forward with developing Razor Pages applications. You understand the role of Razor Pages in the web development diaspora, and the key features that make it a great choice. It is modern, fast and doesn’t get in the way of the development process. In the next chapter, you will waste no time producing your first working Razor Pages application and learning the fundamentals that you need to know to build more complex applications.
+
+1.6 Summary
+Razor Pages is a page-focused framework for developing dynamic web applications.
+Razor Pages is a Microsoft technology.
+Razor Pages is part of ASP.NET Core, which in turn is part of .NET 6.
+Razor Pages is cross-platform.
+Razor Pages is open source and free.
+Razor Pages builds on the best parts of ASP.NET Core MVC.
+Razor Pages is an implementation of MVC that uses the Page Controller pattern.
+Razor Pages is primarily concerned with generating HTML on the web server.
+You use C# to program Razor Pages applications.
+HTML is generated dynamically from templates based on the Razor syntax - a mixture of HTML and C#.
+Razor Pages works with databases.

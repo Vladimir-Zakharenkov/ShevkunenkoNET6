@@ -1,0 +1,43 @@
+This example is still relatively simple, but it demonstrates a variety of features compared
+to the basic example from chapter 2:
+
+The page handler, OnGet, accepts a method parameter, category. This parameter
+is automatically populated by the Razor Page infrastructure using values
+from the incoming request in a process called model binding. I discuss model
+binding in detail in chapter 6.
+
+The handler doesn’t interact with the database directly. Instead, it uses the
+category value provided to interact with the ToDoService, which is injected as
+a constructor argument using dependency injection.
+
+The handler returns Page() at the end of the method to indicate that the associated
+Razor view should be rendered. The return statement is actually optional
+in this case; by convention, if the page handler is a void method, the Razor view
+will still be rendered, behaving as if you had called return Page() at the end of
+the method.
+
+The Razor View has access to the CategoryModel instance, so it can access the
+Items property that is set by the handler. It uses these items to build the HTML
+that is ultimately sent to the user.
+
+The pattern of interactions in the Razor Page of listing 4.1 shows a common pattern.
+The page handler is the central controller for the Razor Page. It receives an input
+from the user (the category method parameter), calls out to the “brains” of the application
+(the ToDoService) and passes data (by exposing the Items property) to the
+Razor view, which generates the HTML response. If you squint, this looks like the
+Model-View-Controller (MVC) design pattern.
+
+Depending on your background in software development, you may have previously
+come across the MVC pattern in some form. In web development, MVC is a common
+paradigm and is used in frameworks such as Django, Rails, and Spring MVC. But as it’s
+such a broad concept, you can find MVC in everything from mobile apps to rich-client
+desktop applications. Hopefully that’s indicative of the benefits the pattern can bring
+if used correctly! In the next section we’ll look at the MVC pattern in general and how
+it’s used by ASP.NET Core.
+
+4.1.2 The MVC design pattern
+
+The MVC design pattern is a common pattern for designing apps that have UIs. The
+original MVC pattern has many different interpretations, each of which focuses on a
+slightly different aspect of the pattern. For example, the original MVC design pattern
+was specified with rich-client graphical user interface (GUI) apps in mind, rather than

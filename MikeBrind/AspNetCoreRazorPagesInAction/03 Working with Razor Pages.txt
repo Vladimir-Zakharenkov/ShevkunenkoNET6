@@ -1,0 +1,18 @@
+﻿3 Working with Razor Pages
+This chapter covers
+Generating HTML with Razor templates
+Learning the Razor syntax
+Working with layouts, partials and Tag Helpers
+Understanding the PageModel as a controller and view model
+Working with handler methods and IActionResult
+
+At this point, you should have a good understanding of the working parts of a Razor Pages application - how to create one, the role of the generated files, and how to configure the application’s behavior through the request pipeline. Now you are ready to take a deep dive into working with the principal actor within a Razor Pages application - the Razor page itself.
+
+As you work through the chapter, you will learn how to use Razor syntax to generate dynamic HTML and coordinate layouts and partial files to reduce your repetition of code and improve reuse. You have already had a brief introduction to layouts and partials, but to remind you, layouts act as a kind of master template for multiple pages, and partial files consist of snippets of UI that can be plugged into a host page or layout.
+
+You will also learn about the PageModel class - a fundamental feature of Razor Pages that acts as both an MVC controller and a view model - a container for data specific to a particular view or page. You will explore how to use the view model aspect of the PageModel to expose data to the Razor page in a strongly typed manner, which will improve your efficiency as a developer. Doing this will also enable you to work effectively with tag helpers - components that enable server-side code to participate in the HTML generation process. You will learn about some of the different types of tag helpers available within ASP.NET Core and how to use them.
+
+Finally, you will see how the PageModel object acts as a page controller, handling the request for a page and deciding which model and view to use. Handler methods play a significant role in the request processing, and you will learn the important conventions behind their use and the return types, or IActionResults, that they commonly work with.
+
+3.1 Working with Razor syntax
+

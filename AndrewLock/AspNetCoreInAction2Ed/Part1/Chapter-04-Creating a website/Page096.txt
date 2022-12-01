@@ -1,0 +1,53 @@
+In general, the order of events when an application responds to a user interaction
+or request is as follows:
+
+1 The controller (the Razor Page handler) receives the request.
+
+2 Depending on the request, the controller either fetches the requested data
+from the application model using injected services, or it updates the data that
+makes up the model.
+
+3 The controller selects a view to display and passes a representation of the model
+to it.
+
+4 The view uses the data contained in the model to generate the UI.
+
+When we describe MVC in this format, the controller (the Razor Page handler) serves
+as the entry point for the interaction. The user communicates with the controller to
+instigate an interaction. In web applications, this interaction takes the form of an
+HTTP request, so when a request to a URL is received, the controller handles it.
+
+Depending on the nature of the request, the controller may take a variety of
+actions, but the key point is that the actions are undertaken using the application
+model. The model here contains all the business logic for the application, so it’s able
+to provide requested data or perform actions.
+
+NOTE
+In this description of MVC, the model is considered to be a complex
+beast, containing all the logic for how to perform an action, as well as any
+internal state. The Razor Page PageModel class is not the model we’re talking
+about! Unfortunately, as in all software development, naming things is hard.
+
+Consider a request to view a product page for an e-commerce application. The controller
+would receive the request and would know how to contact some product service
+that’s part of the application model. This might fetch the details of the requested
+product from a database and return them to the controller.
+
+Alternatively, imagine that a controller receives a request to add a product to the
+user’s shopping cart. The controller would receive the request and most likely would
+invoke a method on the model to request that the product be added. The model
+would then update its internal representation of the user’s cart, by adding, for example,
+a new row to a database table holding the user’s data.
+
+TIP
+You can think of each Razor Page handler as a mini controller focused
+on a single page. Every web request is another independent call to a controller
+that orchestrates the response. Although there are many different controllers,
+the handlers all interact with the same application model.
+
+After the model has been updated, the controller needs to decide what response to
+generate. One of the advantages of using the MVC design pattern is that the model
+representing the application’s data is decoupled from the final representation of that
+data, called the view. The controller is responsible for deciding whether the response
+should generate an HTML view, whether it should send the user to a new page, or
+whether it should return an error page.

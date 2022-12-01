@@ -1,0 +1,33 @@
+﻿Figure 4.3 Routing a request to a controller and building a binding model. A request 
+to the /category/Simple URL results in the CategoryModel.OnGet page handler being 
+executed, passing in a populated binding model, category.
+
+binding model is passed to the page handler when it executes, so it can be used to
+decide how to respond. For this example, the page handler uses it to decide which todo
+items to display on the page.
+
+EXECUTING A HANDLER USING THE APPLICATION MODEL
+
+The role of the page handler as the controller in the MVC pattern is to coordinate the
+generation of a response to the request it’s handling. That means it should perform
+only a limited number of actions. In particular, it should
+
+Validate that the data contained in the binding model provided is valid for the
+request
+
+Invoke the appropriate actions on the application model using services
+
+Select an appropriate response to generate based on the response from the
+application model
+
+Figure 4.4 shows the page handler invoking an appropriate method on the application
+model. Here, you can see that the application model is a somewhat abstract concept
+that encapsulates the remaining non-UI parts of your application. It contains the
+domain model, a number of services, and the database interaction.
+
+DEFINITION
+The domain model encapsulates complex business logic in a series
+of classes that don’t depend on any infrastructure and can be easily tested.
+
+The page handler typically calls into a single point in the application model. In our
+example of viewing a to-do list category, the application model might use a variety of

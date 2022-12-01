@@ -1,0 +1,17 @@
+(continued)
+Some people consider the Razor Pages PageModel to be filling this role, but I’m not
+convinced. Razor Pages definitely seems based on the MVC pattern to me (it’s based
+on the ASP.NET Core MVC framework after all!), and it doesn’t have the same two-way
+binding that I would expect with MVVM.
+
+As you’ve seen in previous chapters, ASP.NET Core implements Razor Page endpoints
+using a combination of RoutingMiddleware and EndpointMiddleware, as shown in
+figure 4.2. Once a request has been processed by earlier middleware (and assuming
+none of them has handled the request and short-circuited the pipeline), the routing
+middleware will select which Razor Page handler should be executed, and the endpoint
+middleware executes the page handler.
+
+Figure 4.2 The middleware pipeline for a typical ASP.NET Core application. The
+request is processed by each middleware in sequence. If the request reaches the
+routing middleware, the middleware selects an endpoint, such as a Razor Page,
+to execute. The endpoint middleware executes the selected endpoint.

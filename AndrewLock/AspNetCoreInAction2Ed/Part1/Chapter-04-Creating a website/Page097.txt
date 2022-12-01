@@ -1,0 +1,50 @@
+One of the advantages of the model being independent of the view is that it
+improves testability. UI code is classically hard to test, as it’s dependent on the environment—
+anyone who has written UI tests simulating a user clicking buttons and typing
+in forms knows that it’s typically fragile. By keeping the model independent of the
+view, you can ensure the model stays easily testable, without any dependencies on UI
+constructs. As the model often contains your application’s business logic, this is clearly
+a good thing!
+
+The view can use the data passed to it by the controller to generate the appropriate
+HTML response. The view is only responsible for generating the final representation
+of the data; it’s not involved in any of the business logic.
+
+This is all there is to the MVC design pattern in relation to web applications. Much
+of the confusion related to MVC seems to stem from slightly different uses of the term
+for slightly different frameworks and types of applications. In the next section, I’ll
+show how the ASP.NET Core framework uses the MVC pattern with Razor Pages,
+along with more examples of the pattern in action.
+
+4.1.3 Applying the MVC design pattern to Razor Pages
+
+In the previous section I discussed the MVC pattern as it’s typically used in web applications;
+Razor Pages use this pattern. But ASP.NET Core also includes a framework called
+ASP.NET Core MVC. This framework (unsurprisingly) very closely mirrors the MVC
+design pattern, using controllers and action methods in place of Razor Pages and page
+handlers. Razor Pages builds directly on top of the underlying ASP.NET Core MVC
+framework, using the MVC framework under the hood for their behavior.
+
+If you prefer, you can avoid Razor Pages entirely and work with the MVC framework
+directly in ASP.NET Core. This was the only option in early versions of ASP.NET
+Core and the previous version of ASP.NET.
+
+TIP
+I look in greater depth at choosing between Razor Pages and the MVC
+framework in section 4.2.
+
+In this section we’ll look in greater depth at how the MVC design pattern applies to
+Razor Pages in ASP.NET Core. This will also help clarify the role of various features of
+Razor Pages.
+
+Do Razor Pages use MVC or MVVM?
+
+Occasionally I’ve seen people describe Razor Pages as using the Model-View-View
+Model (MVVM) design pattern, rather than the MVC design pattern. Personally, I don’t
+agree, but it’s worth being aware of the differences.
+
+MVVM is a UI pattern that is often used in mobile apps, desktop apps, and some
+client-side frameworks. It differs from MVC in that there is a bidirectional interaction
+between the view and the view model. The view model tells the view what to display,
+but the view can also trigger changes directly on the view model. It’s often used with
+two-way data binding where a view model is “bound” to a view.

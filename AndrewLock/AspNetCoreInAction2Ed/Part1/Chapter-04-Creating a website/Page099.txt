@@ -1,0 +1,51 @@
+Middleware often handles cross-cutting concerns or narrowly defined requests, such
+as requests for files. For requirements that fall outside of these functions, or that have
+many external dependencies, a more robust framework is required. Razor Pages
+(and/or ASP.NET Core MVC) can provide this framework, allowing interaction with
+your application’s core business logic and the generation of a UI. It handles everything
+from mapping the request to an appropriate controller to generating the
+HTML or API response.
+
+In the traditional description of the MVC design pattern, there’s only a single type
+of model, which holds all the non-UI data and behavior. The controller updates this
+model as appropriate and then passes it to the view, which uses it to generate a UI.
+
+One of the problems when discussing MVC is the vague and ambiguous terms that
+it uses, such as “controller” and “model.” Model, in particular, is such an overloaded
+term that it’s often difficult to be sure exactly what it refers to—is it an object, a collection
+of objects, an abstract concept? Even ASP.NET Core uses the word “model” to
+describe several related, but different, components, as you’ll see shortly.
+
+DIRECTING A REQUEST TO A RAZOR PAGE AND BUILDING A BINDING MODEL
+
+The first step when your app receives a request is routing the request to an appropriate
+Razor Page handler. Let’s think about the category to-do list page again, from listing
+4.1. On this page, you’re displaying a list of items that have a given category label.
+If you’re looking at the list of items with a category of “Simple,” you’d make a request
+to the /category/Simple path.
+
+Routing takes the headers and path of the request, /category/Simple, and maps it
+against a preregistered list of patterns. These patterns each match a path to a single
+Razor Page and page handler. You’ll learn more about routing in the next chapter.
+
+TIP
+I’m using the term Razor Page to refer to the combination of the Razor
+view and the PageModel that includes the page handler. Note that Page-
+Model class is not the “model” we’re referring to when describing the MVC
+pattern. It fulfills other roles, as you will see later in this section.
+
+Once a page handler is selected, the binding model (if applicable) is generated. This
+model is built based on the incoming request, the properties of the PageModel marked
+for binding, and the method parameters required by the page handler, as shown in figure
+4.3. A binding model is normally one or more standard C# objects, with properties
+that map to the requested data. We’ll look at binding models in detail in chapter 6.
+DEFINITION
+A binding model is one or more objects that act as a “container” for
+the data provided in a request—data that’s required by a page handler.
+
+In this case, the binding model is a simple string, category, which is bound to the
+"Simple" value. This value is provided in the request URL’s path. A more complex
+binding model could also have been used, where multiple properties were populated.
+
+The binding model in this case corresponds to the method parameter of the OnGet
+page handler. An instance of the Razor Page is created using its constructor, and the

@@ -1,0 +1,31 @@
+Figure 4.7 Creating an empty ASP.NET Core template. The empty template will create 
+a simple ASP.NET Core application that contains a small middleware pipeline 
+without Razor Pages.
+
+(in bold). For simplicity, also remove the existing error handler middleware
+from the Configure method of Startup.cs for now:
+
+public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+{
+	app.UseRouting();
+
+	app.UseEndpoints(endpoints =>
+	{
+		endpoints.MapRazorPages();
+	});
+}
+
+7 Right-click your project in Solution Explorer and choose Add > New Folder to
+add a new folder to the root of your project. Name the new folder “Pages”.
+You have now configured your project to use Razor Pages, but you don’t have
+any pages yet. The following steps add a new Razor Page to your application.
+You can create a similar Razor Page using the .NET CLI by running 
+
+dotnet new page -n Index -o Pages/ 
+
+from the project directory.
+
+8 Right-click the new pages folder and choose Add > Razor Page, as shown in figure 4.8.
+
+9 On the following page, select Razor Page – Empty and click Add. In the following
+dialog box, name your page Index.cshtml, as shown in figure 4.9.

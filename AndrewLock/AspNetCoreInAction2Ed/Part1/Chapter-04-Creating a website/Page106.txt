@@ -1,0 +1,25 @@
+Figure 4.8 Adding a new Razor Page to your project
+
+Figure 4.9 Creating a new Razor Page using the Add Razor Page dialog box
+
+10 After Visual Studio has finished generating the file, open the Index.cshtml file,
+and update the HTML to say Hello World! by replacing the file contents with
+the following:
+
+@page
+@model AddingRazorPagesToEmptyProject.IndexModel
+@{
+	Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+	<meta name="viewport" content="width=device-width" />
+<title>Index</title>
+</head>
+<body>
+	<h1>Hello World!</h1>
+</body>
+</html>

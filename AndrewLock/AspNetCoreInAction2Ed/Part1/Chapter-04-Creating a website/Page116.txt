@@ -1,0 +1,42 @@
+In this example, the OnGet handler doesn’t require any parameters, and the method is
+simple — it returns void, which means the associated Razor view will be rendered. It
+could also have returned a PageResult; the effect would have been the same. Note
+that this handler is for HTTP GET requests, so the Input property decorated with
+[BindProperty] is not bound.
+
+TIP
+To bind properties for GET requests too, use the SupportsGet property of
+the attribute; for example, 
+[BindProperty(SupportsGet = true)].
+
+The OnPost handler, conversely, accepts a parameter max as an argument. In this case
+it’s a simple type, int, but it could also be a complex object. Additionally, as this handler
+corresponds to an HTTP POST request, the Input property is also model-bound to
+the request.
+
+NOTE
+Unlike most .NET classes, you can’t use method overloading to have
+multiple page handlers on a Razor Page with the same name.
+
+When an action method uses model-bound properties or parameters, it should always
+check that the provided model is valid using ModelState.IsValid. The ModelState
+property is exposed as a property on the base PageModel class and can be used to
+check that all the bound properties and parameters are valid. You’ll see how the process
+works in chapter 6 when you learn about validation.
+
+Once a page handler establishes that the method parameters provided to an
+action are valid, it can execute the appropriate business logic and handle the request.
+In the case of the OnPost handler, this involves calling the provided SearchService
+and setting the result on the Results property. Finally, the handler returns a Page-
+Result by calling the base method
+
+return Page();
+
+If the model wasn’t valid, you don’t have any results to display! In this example, the
+action returns a RedirectToPageResult using the RedirectToPage helper method.
+When executed, this result will send a 302 redirect response to the user, which will
+cause their browser to navigate to the Index Razor Page.
+
+Note that the OnGet method returns void in the method signature, whereas the
+OnPost method returns an IActionResult. This is required in the OnPost method in
+order to allow the C# to compile (as the Page and RedirectToPage helper methods

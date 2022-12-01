@@ -1,0 +1,56 @@
+return different types), but it doesn’t change the final behavior of the methods. You
+could just as easily have called Page in the OnGet method and returned an IAction-
+Result, and the behavior would be identical.
+
+TIP
+If you’re returning more than one type of result from a page handler,
+you’ll need to ensure your method returns an IActionResult.
+
+In the next section we’ll look in more depth at action results and what they’re used for.
+
+4.3.2 Returning responses with ActionResults
+
+In the previous section, I emphasized that page handlers decide what type of response
+to return, but they don’t generate the response themselves. It’s the IActionResult
+returned by a page handler that, when executed by the Razor Pages infrastructure
+using the view engine, will generate the response.
+
+This approach is key to following the MVC design pattern. It separates the decision
+of what sort of response to send from the generation of the response. This allows you
+to easily test your action method logic to confirm that the right sort of response is sent
+for a given input. You can then separately test that a given IActionResult generates
+the expected HTML, for example.
+
+ASP.NET Core has many different types of IActionResult:
+
+PageResult — Generates an HTML view for an associated page in Razor Pages
+
+ViewResult — Generates an HTML view for a given Razor view when using MVC
+controllers
+
+RedirectToPageResult — Sends a 302 HTTP redirect response to automatically
+send a user to another page
+
+RedirectResult — Sends a 302 HTTP redirect response to automatically send a
+user to a specified URL (doesn’t have to be a Razor Page)
+
+FileResult — Returns a file as the response
+
+ContentResult — Returns a provided string as the response
+
+StatusCodeResult — Sends a raw HTTP status code as the response, optionally
+with associated response body content
+
+NotFoundResult — Sends a raw 404 HTTP status code as the response
+
+Each of these, when executed by Razor Pages, will generate a response to send back
+through the middleware pipeline and out to the user.
+
+TIP
+When you’re using Razor Pages, you generally won’t use some of these
+action results, such as ContentResult and StatusCodeResult. It’s good to be
+aware of them, though, as you will likely use them if you are building Web
+APIs with MVC controllers.
+
+In this section I’ll give a brief description of the most common IActionResult classes
+that you’ll use with Razor Pages.

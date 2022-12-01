@@ -1,0 +1,47 @@
+NOTE
+I look at how to build Web APIs in chapter 9.
+
+So what are the differences between Razor Pages and MVC, and when should you
+choose one or the other?
+
+If you’re new to ASP.NET Core, the answer is pretty simple — use Razor Pages for
+server-side rendered applications, and use the MVC framework for building Web APIs.
+There are nuances I’ll discuss in later sections, but that distinction will serve you very
+well initially.
+
+If you’re familiar with the previous version of ASP.NET or earlier versions of
+ASP.NET Core and are deciding whether to use Razor Pages, then this section should
+help you choose. Developers coming from those backgrounds often have misconceptions
+about Razor Pages initially (as I did!), incorrectly equating them to Web Forms
+and overlooking their underlying basis of the MVC framework.
+
+Before we can get to comparisons, though, we should take a brief look at the
+ASP.NET Core MVC framework itself. Understanding the similarities and differences
+between MVC and Razor Pages can be very useful, as you’ll likely find a use for MVC at
+some point, even if you use Razor Pages most of the time.
+
+4.2.1 MVC controllers in ASP.NET Core
+
+In section 4.1 we looked at the MVC design pattern, and at how it applies to Razor
+Pages in ASP.NET Core. Perhaps unsurprisingly, you can use the ASP.NET Core MVC
+framework in almost exactly the same way. To demonstrate the difference between
+Razor Pages and MVC, we’ll look at an MVC version of the Razor Page from listing 4.1,
+which displays a list of to-do items for a given category.
+
+Instead of a PageModel and page handler, MVC uses the concept of controllers and
+action methods. These are almost directly analogous to their Razor Pages counterparts,
+as you can see in figure 4.10, which shows an MVC equivalent of figure 4.6. On
+the other hand, MVC controllers use explicit view models to pass data to a Razor view,
+rather than exposing the data as properties on itself (as Razor Pages do with page
+models).
+
+DEFINITION
+An action (or action method) is a method that runs in response to a
+request. An MVC controller is a class that contains a number of logically
+grouped action methods.
+
+Listing 4.2 shows an example of how an MVC controller that provides the same functionality
+as the Razor Page in listing 4.1 might look. In MVC, controllers are often
+used to aggregate similar actions together, so the controller in this case is called ToDo-
+Controller, as it would typically contain additional action methods for working with
+to-do items, such as actions to view a specific item, or to create a new one.

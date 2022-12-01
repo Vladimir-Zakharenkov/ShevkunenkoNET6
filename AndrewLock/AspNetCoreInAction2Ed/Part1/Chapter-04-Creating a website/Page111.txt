@@ -1,0 +1,26 @@
+items, for creating new items, and for deleting items, for example. Unfortunately,
+you can often find that your controllers become very large and bloated, with many
+dependencies.(1)
+
+NOTE
+You don’t have to make your controllers very large like this. It’s just a
+common pattern. You could, for example, create a separate controller for
+every action instead.
+
+Another pitfall of the MVC controllers is the way they’re typically organized in your
+project. Most action methods in a controller will need an associated Razor view, and a
+view model for passing data to the view. The MVC approach traditionally groups
+classes by type (controller, view, view model), while the Razor Page approach groups by
+function—everything related to a specific page is co-located.
+
+Figure 4.11 compares the file layout for a simple Razor Pages project with the MVC
+equivalent. Using Razor Pages means much less scrolling up and down between the
+controller, views, and view model folders whenever you’re working on a particular
+page. Everything you need is found in two files, the .cshtml Razor view and the .cshtml.cs
+PageModel file.
+
+Figure 4.11 Comparing the folder structure for an MVC project to the folder structure for a Razor
+Pages project
+
+(1) Before moving to Razor Pages, the ASP.NET Core template that includes user login functionality contained
+two such controllers, each containing over 20 action methods and over 500 lines of code!

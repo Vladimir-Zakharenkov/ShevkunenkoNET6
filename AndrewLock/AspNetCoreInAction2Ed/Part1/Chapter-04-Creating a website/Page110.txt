@@ -1,0 +1,42 @@
+Aside from some naming differences, the ToDoController looks very similar to the
+Razor Page equivalent from listing 4.1. Indeed, architecturally, Razor Pages and MVC
+are essentially equivalent, as they both use the MVC design pattern. The most obvious
+differences relate to where the files are placed in your project, as I discuss in the
+next section.
+
+4.2.2 The benefits of Razor Pages
+
+In the previous section I showed that the code for an MVC controller looks very similar
+to the code for a Razor Page PageModel. If that’s the case, what benefit is there to
+using Razor Pages? In this section I discuss some of the pain points of MVC controllers
+and how Razor Pages attempts to address them.
+
+Razor Pages are not Web Forms
+
+A common argument I hear from existing ASP.NET developers against Razor Pages is
+“oh, they’re just Web Forms.” That sentiment misses the mark in many different
+ways, but it’s common enough that it’s worth addressing directly.
+
+Web Forms was a web-programming model that was released as part of .NET Framework
+1.0 in 2002. They attempted to provide a highly productive experience for developers
+moving from desktop development to the web for the first time.
+
+Web Forms are much maligned now, but their weakness only became apparent later.
+Web Forms attempted to hide the complexities of the web away from you, to give you
+the impression of developing with a desktop app. That often resulted in apps that
+were slow, with lots of interdependencies, and that were hard to maintain.
+
+Web Forms provided a page-based programming model, which is why Razor Pages
+sometimes gets associated with them. However, as you’ve seen, Razor Pages is
+based on the MVC design pattern, and it exposes the intrinsic features of the web
+without trying to hide them from you.
+
+Razor Pages optimizes certain flows using conventions (some of which you’ve seen),
+but it’s not trying to build a stateful application model over the top of a stateless web
+application, in the way that Web Forms did.
+
+In MVC, a single controller can have multiple action methods. Each action handles
+a different request and generates a different response. The grouping of multiple
+actions in a controller is somewhat arbitrary, but it’s typically used to group actions
+related to a specific entity: to-do list items in this case. A more complete version of
+the ToDoController in listing 4.2 might include action methods for listing all to-do

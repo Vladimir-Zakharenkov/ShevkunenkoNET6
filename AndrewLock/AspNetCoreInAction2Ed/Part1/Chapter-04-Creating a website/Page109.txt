@@ -1,0 +1,25 @@
+Figure 4.10 A complete MVC controller request for a category. The MVC controller 
+pattern is almost identical to that of Razor Pages, shown in figure 4.6. 
+The controller is equivalent to a Razor Page, and the action is equivalent 
+to a page handler.
+
+{
+	private readonly ToDoService _service;
+	public ToDoController(ToDoService service)
+	{
+		_service = service;
+	}
+
+	public ActionResult Category(string id)
+	{
+		var items = _service.GetItemsForCategory(id);
+		var viewModel = new CategoryViewModel(items);
+
+		return View(viewModel);
+	}
+
+	public ActionResult Create(ToDoListModel model)
+	{
+	// ...
+	}
+}

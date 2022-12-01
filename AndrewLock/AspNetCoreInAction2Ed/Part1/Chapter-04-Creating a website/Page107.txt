@@ -1,0 +1,45 @@
+Once you’ve completed all these steps, you should be able to restore, build, and run
+your application.
+
+NOTE
+You can run your project by pressing F5 from within Visual Studio (or
+by calling dotnet run at the command line from the project folder). This will
+restore any referenced NuGet packages, build your project, and start your
+application. Visual Studio will automatically open a browser window to access
+your application’s home page.
+
+When you make a request to the root "/" path, the application invokes the OnGet handler
+on the IndexModel due to the conventional way routing works for Razor Pages
+based on the filename. Don’t worry about this for now; we’ll go into it in detail in the
+next chapter.
+
+The OnGet handler is a void method, which causes the Razor Page to render the
+associated Razor view and send it to the user’s browser in the response.
+
+Razor Pages rely on a number of internal services to perform their functions,
+which must be registered during application startup. This is achieved with the call to
+AddRazorPages in the ConfigureServices method of Startup.cs. Without this, you’ll
+get exceptions when your app starts, reminding you that the call is required.
+
+The call to MapRazorPages in Configure registers the Razor Page endpoints with
+the endpoint middleware. As part of this call, the routes that are used to map URL
+paths to specific Razor Page handlers are registered automatically.
+
+NOTE
+I cover routing in detail in the next chapter.
+
+The instructions in this section described how to add Razor Pages to your application,
+but that’s not the only way to add HTML generation to your application. As I mentioned
+previously, Razor Pages builds on top of the ASP.NET Core MVC framework
+and shares many of the same concepts. In the next section, we’ll take a brief look at
+MVC controllers, see how they compare to Razor Pages, and discuss when you should
+choose to use one approach over the other.
+
+4.2 Razor Pages vs. MVC in ASP.NET Core
+
+In this book, I focus on Razor Pages, as that has become the recommended approach
+for building server-side rendered applications with ASP.NET Core. However, I also
+mentioned that Razor Pages uses the ASP.NET Core MVC framework behind the
+scenes, and that you can choose to use it directly if you wish. Additionally, if you’re
+creating a Web API for working with mobile or client-side apps, you will almost certainly
+be using the MVC framework directly.

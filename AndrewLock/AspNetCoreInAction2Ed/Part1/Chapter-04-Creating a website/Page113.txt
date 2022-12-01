@@ -1,0 +1,50 @@
+existing code, and perhaps to look at doing new development in the application
+with Razor Pages.
+
+When you’re doing a lot of partial page updates — It’s possible to use JavaScript in an
+application to avoid doing full page navigations by only updating part of the
+page at a time. This approach, halfway between fully server-side rendered and a
+client-side application may be easier to achieve with MVC controllers than
+Razor Pages.
+
+When not to use Razor Pages or MVC controllers
+
+Typically you’ll use either Razor Pages or MVC controllers to write most of your application
+logic for an app. You’ll use it to define the APIs and pages in your application
+and to define how they interface with your business logic. Razor Pages and MVC provide
+an extensive framework (as you’ll see over the next six chapters) that provide a
+great deal of functionality to help build your apps quickly and efficiently. But they’re
+not suited to every app.
+
+Providing so much functionality necessarily comes with a certain degree of performance
+overhead. For typical apps, the productivity gains from using MVC or Razor
+Pages strongly outweigh any performance impact. But if you’re building small, lightweight
+apps for the cloud, you might consider using custom middleware directly (see
+chapter 19) or an alternative protocol like gRPC 
+(https://docs.microsoft.com/aspnet/core/grpc). 
+You might want to also take a look at Microservices in .NET Core by Christian
+Horsdal Gammelgaard (Manning, 2017).
+
+Alternatively, if you’re building an app with real-time functionality, you’ll probably want
+to consider using WebSockets instead of traditional HTTP requests. ASP.NET Core
+SignalR can be used to add real-time functionality to your app by providing an abstraction
+over WebSockets. SignalR also provides simple transport fallbacks and a remote
+procedure call (RPC) app model. For details, see the documentation at 
+https://docs.microsoft.com/aspnet/core/signalr.
+
+Another option available in ASP.NET Core 5.0 is Blazor. This framework allows you to
+build interactive client-side web applications by either leveraging the WebAssembly
+standard to run .NET code directly in your browser, or by using a stateful model with
+SignalR. See the documentation for details, at 
+https://docs.microsoft.com/aspnet/core/blazor/.
+
+Hopefully by this point you’re sold on Razor Pages and their overall design. So far, all
+the Razor Pages we’ve looked at have used a single page handler. In the next section
+we’ll look in greater depth at page handlers: how to define them, how to invoke them,
+and how to use them to render Razor views.
+
+4.3 Razor Pages and page handlers
+
+In the first section of this chapter, I described the MVC design pattern and how it
+relates to ASP.NET Core. In the design pattern, the controller receives a request and is
+the entry point for UI generation. For Razor Pages, the entry point is a page handler

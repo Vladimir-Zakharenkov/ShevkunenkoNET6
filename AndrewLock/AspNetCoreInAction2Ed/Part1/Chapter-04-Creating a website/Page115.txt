@@ -1,0 +1,61 @@
+﻿4.3.1 Accepting parameters to page handlers
+
+Some requests made to page handlers will require additional values with details about
+the request. If the request is for a search page, the request might contain details of the
+search term and the page number they’re looking at. If the request is posting a form
+to your application, such as a user logging in with their username and password, those
+values must be contained in the request. In other cases, there will be no values, such as
+when a user requests the home page for your application.
+
+The request may contain additional values from a variety of different sources. They
+could be part of the URL, the query string, headers, or the body of the request itself.
+The middleware will extract values from each of these sources and convert them into
+.NET types.
+
+DEFINITION
+The process of extracting values from a request and converting
+them to .NET types is called model binding. I discuss model binding in chapter 6.
+
+ASP.NET Core can bind two different targets in Razor Pages:
+
+Method arguments — If a page handler has method arguments, the values from
+the request are used to create the required parameters.
+
+Properties marked with a [BindProperty] attribute — Any properties marked with
+the attribute will be bound. By default, this attribute does nothing for GET
+requests.
+
+Model-bound values can be simple types, such as strings and integers, or they can be a
+complex type, as shown in the following listing. If any of the values provided in the
+request are not bound to a property or page handler argument, the additional values
+will go unused.
+
+Listing 4.3 Example Razor Page handlers
+
+public class SearchModel : PageModel
+{
+	private readonly SearchService _searchService;
+	public SearchModel(SearchService searchService)
+	{
+		_searchService = searchService;
+	}
+
+	[BindProperty]
+	public BindingModel Input { get; set; }
+	public List<Product> Results { get; set; }
+
+	public void OnGet()
+	{
+	}
+
+	public IActionResult OnPost(int max)
+	{
+		if (ModelState.IsValid)
+		{
+			Results = _searchService.Search (Input.SearchTerm, max);
+			return Page();
+		}
+
+		return RedirectToPage("./Index");
+	}
+}

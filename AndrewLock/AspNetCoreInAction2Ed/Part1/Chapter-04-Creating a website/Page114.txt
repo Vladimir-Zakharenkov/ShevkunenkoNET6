@@ -1,0 +1,54 @@
+that resides in a Razor Page’s PageModel. A page handler is a method that runs in
+response to a request.
+
+By default, the path of a Razor Page on disk controls the URL path that the Razor
+Page responds to. For example, a request to the URL /products/list corresponds to
+the Razor Page at the path pages/Products/List.cshtml. Razor Pages can contain
+any number of page handlers, but only one runs in response to a given request.
+
+NOTE
+You’ll learn more about this process of selecting a Razor Page and handler,
+called routing, in the next chapter.
+
+The responsibility of a page handler is generally threefold:
+
+Confirm that the incoming request is valid.
+
+Invoke the appropriate business logic corresponding to the incoming request.
+
+Choose the appropriate kind of response to return.
+
+A page handler doesn’t need to perform all these actions, but at the very least it must
+choose the kind of response to return. Page handlers typically return one of three
+things:
+
+A PageResult object — This causes the associated Razor view to generate an HTML
+response.
+
+Nothing (the handler returns void or Task) — This is the same as the previous case,
+causing the Razor view to generate an HTML response.
+
+A RedirectToPageResult — This indicates that the user should be redirected to
+a different page in your application.
+
+These are the most commonly used results for Razor Pages, but I describe some additional
+options in section 4.3.2.
+
+It’s important to realize that a page handler doesn’t generate a response directly; it
+selects the type of response and prepares the data for it. For example, returning a
+PageResult doesn’t generate any HTML at that point; it merely indicates that a view
+should be rendered. This is in keeping with the MVC design pattern in which it’s the
+view that generates the response, not the controller.
+
+TIP
+The page handler is responsible for choosing what sort of response to
+send; the view engine in the MVC framework uses the result to generate the
+response.
+
+It’s also worth bearing in mind that page handlers should generally not be performing
+business logic directly. Instead, they should call appropriate services in the application
+model to handle requests. If a page handler receives a request to add a product
+to a user’s cart, it shouldn’t directly manipulate the database or recalculate cart totals,
+for example. Instead, it should make a call to another class to handle the details. This
+approach of separating concerns ensures your code stays testable and maintainable as
+it grows.

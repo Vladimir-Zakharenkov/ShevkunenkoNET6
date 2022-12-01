@@ -1,0 +1,50 @@
+There are additional differences between MVC and Razor Pages, which I’ll highlight
+throughout the book, but this layout difference is really the biggest win. Razor Pages
+embraces the fact that you’re building a page-based application and optimizes your
+workflow by keeping everything related to a single page together.
+
+TIP
+You can think of each Razor Page as a mini controller focused on a single
+page. Page handlers are functionally equivalent to MVC controller action
+methods.
+
+This layout also has the benefit of making each page a separate class. This contrasts
+with the MVC approach of making each page an action on a given controller. Each
+Razor Page is cohesive for a particular feature, such as displaying a to-do item. MVC
+controllers contain action methods that handle multiple different features for a more
+abstract concept, such as all the features related to to-do items.
+
+Another important point is that Razor Pages doesn’t lose any of the separation-ofconcerns
+that MVC has. The view part of Razor Pages is still only concerned with rendering
+HTML, and the handler is the coordinator that calls out to the application
+model. The only real difference is the lack of the explicit view model that you have in
+MVC, but it’s perfectly possible to emulate this in Razor Pages if that’s a deal breaker
+for you.
+
+The benefits of using Razor Pages are particularly noticeable when you have “content”
+websites, such as marketing websites, where you’re mostly displaying static data,
+and there’s no real logic. In that case, MVC adds complexity without any real benefits,
+as there’s not really any logic in the controllers at all. Another great use case is when
+you’re creating forms for users to submit data. Razor Pages is especially optimized for
+this scenario, as you’ll see in later chapters.
+
+Clearly, I’m a fan of Razor Pages, but that’s not to say they’re perfect for every situation.
+In the next section I discuss some of the cases when you might choose to use
+MVC controllers in your application. Bear in mind it’s not an either - or choice — it’s
+possible to use both MVC controllers and Razor Pages in the same application, and in
+many cases that may be the best option.
+
+4.2.3 When to choose MVC controllers over Razor Pages
+
+Razor Pages are great for building page-based server-side rendered applications. But
+not all applications fit that mold, and even some applications that do fall in that category
+might be best developed using MVC controllers instead of Razor Pages. These
+are a few such scenarios:
+
+When you don’t want to render views — Razor Pages are best for page-based applications,
+where you’re rendering a view for the user. If you’re building a Web API,
+you should use MVC controllers instead.
+
+When you’re converting an existing MVC application to ASP.NET Core — If you already
+have an ASP.NET application that uses MVC, it’s probably not worth converting
+your existing MVC controllers to Razor Pages. It makes more sense to keep your

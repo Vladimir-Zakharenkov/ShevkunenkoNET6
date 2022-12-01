@@ -21,7 +21,7 @@ a basic empty application and add Razor Pages to it from scratch.
 The result of your efforts won’t be exciting yet. We’ll display “Hello World” on a
 web page, but this will show how simple it is to convert an ASP.NET Core application
 to use Razor Pages. It will also emphasize the pluggable nature of ASP.NET
-Core—if you don’t need the functionality provided by Razor Pages, you don’t have
+Core — if you don’t need the functionality provided by Razor Pages, you don’t have
 to use it.
 
 Here’s how you add Razor Pages to your application:

@@ -1,0 +1,23 @@
+Figure 4.6 A complete Razor Pages request for the list of to-dos in the “Simple” category
+
+The dangers of tight coupling
+
+Generally speaking, it’s a good idea to reduce coupling between logically separate
+parts of your application as much as possible. This makes it easier to update your
+application without causing adverse effects or requiring modifications in seemingly
+unrelated areas. Applying the MVC pattern is one way to help with this goal.
+
+As an example of when coupling rears its head, I remember a case a few years ago
+when I was working on a small web app. In our haste, we had not properly decoupled
+our business logic from our HTML generation code, but initially there were no obvious
+problems — the code worked, so we shipped it!
+
+A few months later, someone new started working on the app and immediately
+“helped” by renaming an innocuous spelling error in a class in the business layer.
+Unfortunately, the names of those classes had been used to generate our HTML
+code, so renaming the class caused the whole website to break in users’ browsers!
+Suffice it to say, we made a concerted effort to apply the MVC pattern after that and
+ensure that we had a proper separation of concerns.
+
+The examples shown in this chapter demonstrate the bulk of the Razor Pages functionality.
+It has additional features, such as the filter pipeline, which I’ll cover later

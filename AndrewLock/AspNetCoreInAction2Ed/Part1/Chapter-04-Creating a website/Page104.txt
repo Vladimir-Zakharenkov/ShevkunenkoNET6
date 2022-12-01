@@ -1,0 +1,52 @@
+(chapter 13), and I’ll discuss binding models in greater depth in chapter 6, but the
+overall behavior of the system is the same.
+
+Similarly, in chapter 9 I’ll discuss how the MVC design pattern applies when you’re
+generating machine-readable responses using Web API controllers. The process is, for
+all intents and purposes, identical, apart from the final result generated.
+
+In the next section, you’ll see how to add Razor Pages to your application. Some
+templates in Visual Studio and the .NET CLI will include Razor Pages by default, but
+you’ll see how to add it to an existing application and explore the various options
+available.
+
+4.1.4 Adding Razor Pages to your application
+
+The MVC infrastructure, whether used by Razor Pages or MVC/API controllers, is a
+foundational aspect of all but the simplest ASP.NET Core applications, so virtually all
+templates include it configured by default in some way. But to make sure you’re comfortable
+with adding Razor Pages to an existing project, I’ll show you how to start with
+a basic empty application and add Razor Pages to it from scratch.
+
+The result of your efforts won’t be exciting yet. We’ll display “Hello World” on a
+web page, but this will show how simple it is to convert an ASP.NET Core application
+to use Razor Pages. It will also emphasize the pluggable nature of ASP.NET
+Core—if you don’t need the functionality provided by Razor Pages, you don’t have
+to use it.
+
+Here’s how you add Razor Pages to your application:
+
+1 In Visual Studio 2019, choose File > New > Project or choose Create a New Project
+from the splash screen.
+
+2 From the list of templates, choose ASP.NET Core Web Application, ensuring
+you select the C# language template.
+
+3 On the next screen, enter a project name, location, and solution name, and
+click Create.
+
+4 On the following screen, create a basic template without MVC or Razor Pages
+by selecting the ASP.NET Core Empty project template in Visual Studio, as
+shown in figure 4.7. You can create a similar empty project using the .NET CLI
+with the dotnet new web command.
+
+5 Add the necessary Razor Page services (shown in bold) in your Startup.cs file’s
+ConfigureServices method:
+
+public void ConfigureServices(IServiceCollection services)
+{
+	services.AddRazorPages();
+}
+
+6 Replace the existing basic endpoint configured in the EndpointMiddleware at
+the end of your middleware pipeline with the MapRazorPages() extension method

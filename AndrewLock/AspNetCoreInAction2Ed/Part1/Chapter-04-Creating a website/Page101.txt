@@ -1,0 +1,39 @@
+Figure 4.4 When executed, an action will invoke the appropriate methods in the application model.
+
+services to check whether the current user is allowed to view certain items, to search
+for items in the given category, to load the details from the database, or to load a picture
+associated with an item from a file.
+
+Assuming the request is valid, the application model will return the required
+details to the page handler. It’s then up to the page handler to choose a response to
+generate.
+
+BUILDING HTML USING THE VIEW MODEL
+
+Once the page handler has called out to the application model that contains the
+application business logic, it’s time to generate a response. A view model captures the
+details necessary for the view to generate a response.
+
+DEFINITION
+A view model in the MVC pattern is all the data required by the
+view to render a UI. It’s typically some transformation of the data contained
+in the application model, plus extra information required to render the page,
+such as the page’s title.
+
+The term view model is used extensively in ASP.NET Core MVC, where it typically refers
+to a single object that is passed to the Razor view to render. However, with Razor Pages,
+the Razor view can access the Razor Page’s page model class directly. Therefore, the Razor
+Page PageModel typically acts as the view model in Razor Pages, with the data required by
+the Razor view exposed via properties, as you saw previously in listing 4.1.
+
+NOTE
+Razor Pages use the PageModel class itself as the view model for the
+Razor view, by exposing the required data as properties.
+
+The Razor view uses the data exposed in the page model to generate the final HTML
+response. Finally, this is sent back through the middleware pipeline and out to the
+user’s browser, as shown in figure 4.5.
+
+It’s important to note that although the page handler selects whether to execute the
+view and the data to use, it doesn’t control what HTML is generated. It’s the view itself
+that decides what the content of the response will be.

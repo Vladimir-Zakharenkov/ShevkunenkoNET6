@@ -1,0 +1,31 @@
+Figure 4.5 The page handler builds a view model by setting properties on the PageModel. It’s the
+view that generates the response.
+
+PUTTING IT ALL TOGETHER: A COMPLETE RAZOR PAGE REQUEST
+
+Now that you’ve seen each of the steps that goes into handling a request in ASP.NET
+Core using Razor Pages, let’s put it all together from request to response. Figure 4.6
+shows how the steps combine to handle the request to display the list of to-do items
+for the “Simple” category. The traditional MVC pattern is still visible in Razor Pages,
+made up of the page handler (controller), the view, and the application model.
+
+By now, you might be thinking this whole process seems rather convoluted — so
+many steps to display some HTML! Why not allow the application model to create the
+view directly, rather than having to go on a dance back and forth with the page handler
+method?
+
+The key benefit throughout this process is the separation of concerns:
+
+The view is responsible only for taking some data and generating HTML.
+
+The application model is responsible only for executing the required business
+logic.
+
+The page handler (controller) is responsible only for validating the incoming
+request and selecting which response is required, based on the output of the
+application model.
+
+By having clearly defined boundaries, it’s easier to update and test each of the components
+without depending on any of the others. If your UI logic changes, you won’t
+necessarily have to modify any of your business logic classes, so you’re less likely to
+introduce errors in unexpected places.

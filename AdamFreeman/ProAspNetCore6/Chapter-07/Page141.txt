@@ -1,0 +1,42 @@
+CHAPTER 7
+
+SportsStore: A Real Application
+
+In the previous chapters, I built quick and simple ASP.NET Core applications. I described ASP.NET Core
+patterns, the essential C# features, and the tools that good ASP.NET Core developers require. Now it is time
+to put everything together and build a simple but realistic e-commerce application.
+
+My application, called SportsStore, will follow the classic approach taken by online stores everywhere.
+I will create an online product catalog that customers can browse by category and page, a shopping cart
+where users can add and remove products, and a checkout where customers can enter their shipping details.
+I will also create an administration area that includes create, read, update, and delete (CRUD) facilities for
+managing the catalog, and I will protect it so that only logged-in administrators can make changes.
+
+My goal in this chapter and those that follow is to give you a sense of what real ASP.NET Core
+development is by creating as realistic an example as possible. I want to focus on ASP.NET Core, of course,
+so I have simplified the integration with external systems, such as the database, and omitted others entirely,
+such as payment processing.
+
+You might find the going a little slow as I build up the levels of infrastructure I need, but the initial
+investment will result in maintainable, extensible, well-structured code with excellent support for unit
+testing.
+
+UNIT TESTING
+
+I include sections on unit testing different components in the SportsStore application throughout the
+development process, demonstrating how to isolate and test different ASP.NET Core components.
+
+I know that unit testing is not embraced by everyone. If you do not want to unit test, that is fine with
+me. To that end, when I have something to say that is purely about testing, I put it in a sidebar like this
+one. If you are not interested in unit testing, you can skip right over these sections, and the SportsStore
+application will work just fine. You do not need to do any kind of unit testing to get the technology
+benefits of ASP.NET Core, although, of course, support for testing is a key reason for adopting ASP.NET
+Core in many projects.
+
+Most of the features I use for the SportsStore application have their own chapters later in the book.
+Rather than duplicate everything here, I tell you just enough to make sense of the example application and
+point you to another chapter for in-depth information.
+
+I will call out each step needed to build the application so that you can see how the ASP.NET Core
+features fit together. You should pay particular attention when I create views. You will get some odd results if
+you do not follow the examples closely.

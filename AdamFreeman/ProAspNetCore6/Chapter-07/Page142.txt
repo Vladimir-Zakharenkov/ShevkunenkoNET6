@@ -1,0 +1,44 @@
+Creating the Projects
+
+I am going to start with a minimal ASP.NET Core project and add the features I require as 
+they are needed. Open a new PowerShell command prompt from the Windows Start menu 
+and run the commands shown in Listing 7-1 to get started.
+
+Tip
+You can download the example project for this chapter—and for all the other chapters in this book—
+from https://github.com/apress/pro-asp.net-core-6.
+See Chapter 1 for how to get help if you have problems running the examples.
+
+Listing 7-1. Creating the SportsStore Project
+
+dotnet new globaljson --sdk-version 6.0.100 --output SportsSln/SportsStore
+dotnet new web --no-https --output SportsSln/SportsStore --framework net6.0
+dotnet new sln -o SportsSln
+dotnet sln SportsSln add SportsSln/SportsStore
+
+These commands create a SportsSln solution folder that contains a SportsStore project folder created
+with the web project template. The SportsSln folder also contains a solution file, to which the SportsStore
+project is added.
+
+I am using different names for the solution and project folders to make the examples easier to follow,
+but if you create a project with Visual Studio, the default is to use the same name for both folders. There is no
+“right” approach, and you can use whatever names suit your project.
+
+Creating the Unit Test Project
+
+To create the unit test project, run the commands shown in Listing 7-2 in the same location you used for the
+commands shown in Listing 7-1.
+
+Listing 7-2. Creating the Unit Test Project
+
+dotnet new xunit -o SportsSln/SportsStore.Tests --framework net6.0
+dotnet sln SportsSln add SportsSln/SportsStore.Tests
+dotnet add SportsSln/SportsStore.Tests reference SportsSln/SportsStore
+
+I am going to use the Moq package to create mock objects. Run the command shown in Listing 7-3
+to install the Moq package into the unit testing project. Run this command from the same location as the
+commands in Listing 7-2.
+
+Listing 7-3. Installing the Moq Package
+
+dotnet add SportsSln/SportsStore.Tests package Moq --version 4.16.1

@@ -1,0 +1,54 @@
+﻿Listing 7-14. Installing the Entity Framework Core Tool Package
+
+dotnet tool uninstall --global dotnet-ef
+dotnet tool install --global dotnet-ef --version 6.0.0
+
+Defining the Connection String
+
+Configuration settings, such as database connection strings, are stored in 
+JSON configuration files. To describe the connection to the database that 
+will be used for the SportsStore data, add the entries shown in
+Listing 7-15 to the appsettings.json file in the SportsStore folder.
+
+The project also contains an appsettings.Development.json file that contains 
+configuration settings that are used only in development. This file is displayed 
+as nested within the appsettings.json file by Solution Explorer but is always visible 
+in Visual Studio Code. I use only the appsettings.json file for the development 
+of the SportsStore project, but I explain the relationship between the files and how 
+they are both used in detail in Chapter 15.
+
+Tip
+Connection strings must be expressed as a single unbroken line, which is fine in the code 
+editor but doesn’t fit on the printed page and is the cause of the awkward formatting 
+in Listing 7-15. When you define the connection string in your own project, make sure 
+that the value of the SportsStoreConnection item is on a single line.
+
+Listing 7-15. Adding a Configuration Setting in the appsettings.json File 
+in the SportsStore Folder
+
+{
+	"Logging": {
+		"LogLevel": {
+			"Default": "Information",
+			"Microsoft.AspNetCore": "Warning"
+		}
+	},
+	"AllowedHosts": "*",
+	"ConnectionStrings": {
+		"SportsStoreConnection": "Server=(localdb)\\MSSQLLocalDB;Database=SportsStore;
+		MultipleActiveResultSets=true"
+	}
+}
+
+This configuration string specifies a LocalDB database called SportsStore and enables 
+the multiple active result set (MARS) feature, which is required for some of the database 
+queries that will be made by the SportsStore application using Entity Framework Core.
+
+Pay close attention when you add the configuration setting. JSON data must be expressed 
+exactly as shown in the listing, which means you must ensure you correctly quote 
+the property names and values. You can download the configuration file from the GitHub 
+repository if you have difficulty.
+
+Tip
+Each database server requires its own connection string format. A helpful site for formulating
+connection strings is https://www.connectionstrings.com.

@@ -1,0 +1,50 @@
+The Razor View Start file tells Razor to use a layout file in the HTML that it generates, 
+reducing the amount of duplication in views. To create the view, add a Razor layout named 
+_Layout.cshtml to the Views/Shared folder, with the content shown in Listing 7-8.
+
+Listing 7-8. The Contents of the _Layout.cshtml File in the SportsStore/Views/Shared Folder
+
+<!DOCTYPE html>
+
+<html>
+<head>
+	<meta name="viewport" content="width=device-width" />
+	<title>SportsStore</title>
+</head>
+<body>
+	<div>
+		@RenderBody()
+	</div>
+</body>
+</html>
+
+This file defines a simple HTML document into which the contents of other views 
+will be inserted by the @RenderBody expression. I explain how Razor expressions 
+work in detail in Chapter 21.
+
+Creating the Controller and View
+
+Add a class file named HomeController.cs in the SportsStore/Controllers folder and 
+use it to define the class shown in Listing 7-9. This is a minimal controller that 
+contains just enough functionality to produce a response.
+
+Listing 7-9. The Contents of the HomeController.cs File in the SportsStore/Controllers Folder
+
+using Microsoft.AspNetCore.Mvc;
+
+namespace SportsStore.Controllers {
+public class HomeController: Controller {
+public IActionResult Index() => View();
+}
+}
+
+The MapDefaultControllerRoute method used in Listing 7-5 tells ASP.NET Core how 
+to match URLs to controller classes. The configuration applied by that method 
+declares that the Index action method defined by the Home controller will be used 
+to handle requests.
+
+The Index action method doesn’t do anything useful yet and just returns the result 
+of calling the View method, which is inherited from the Controller base class. 
+This result tells ASP.NET Core to render the default view associated with 
+the action method. To create the view, add a Razor View file named Index.cshtml 
+to the Views/Home folder with the content shown in Listing 7-10.

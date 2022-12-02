@@ -252,11 +252,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Chapter-07", "Chapter-07", 
 	ProjectSection(SolutionItems) = preProject
 		AdamFreeman\ProAspNetCore6\Chapter-07\Page141.txt = AdamFreeman\ProAspNetCore6\Chapter-07\Page141.txt
 		AdamFreeman\ProAspNetCore6\Chapter-07\Page142.txt = AdamFreeman\ProAspNetCore6\Chapter-07\Page142.txt
+		AdamFreeman\ProAspNetCore6\Chapter-07\Page143.txt = AdamFreeman\ProAspNetCore6\Chapter-07\Page143.txt
+		AdamFreeman\ProAspNetCore6\Chapter-07\Page144.txt = AdamFreeman\ProAspNetCore6\Chapter-07\Page144.txt
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SportsStore", "AdamFreeman\ProAspNetCore6\SportsStore\SportsStore.csproj", "{332CC7CC-A717-43BD-ABE4-E89B67370D70}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SportsStore", "AdamFreeman\ProAspNetCore6\SportsStore\SportsStore.csproj", "{332CC7CC-A717-43BD-ABE4-E89B67370D70}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SportsStore.Tests", "AdamFreeman\ProAspNetCore6\SportsStore.Tests\SportsStore.Tests.csproj", "{0DFD5A1F-1A2A-4817-9EB3-F5DA4E359D3E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SportsStore.Tests", "AdamFreeman\ProAspNetCore6\SportsStore.Tests\SportsStore.Tests.csproj", "{0DFD5A1F-1A2A-4817-9EB3-F5DA4E359D3E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

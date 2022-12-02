@@ -1,4 +1,15 @@
-﻿{
+Figure 7-1. Adding assets in Visual Studio Code
+
+Configuring the HTTP Port
+
+To configure the HTTP port that ASP.NET Core will use to listen for HTTP requests, 
+make the changes shown in Listing 7-4 to the launchSettings.json file in the 
+SportsStore/Properties folder.
+
+Listing 7-4. Setting the HTTP Port in the launchSettings.json File 
+in the SportsStore/Properties Folder
+
+{
   "iisSettings": {
     "windowsAuthentication": false,
     "anonymousAuthentication": true,

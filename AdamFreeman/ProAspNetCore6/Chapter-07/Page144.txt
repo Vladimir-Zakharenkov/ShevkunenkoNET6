@@ -1,0 +1,48 @@
+﻿Creating the Application Project Folders
+
+The next step is to create folders that will contain the application’s components. 
+Right-click the SportsStore item in the Visual Studio Solution Explorer or 
+Visual Studio Code Explorer pane and select Add ➤ New Folder or New Folder to create 
+the set of folders described in Table 7-1.
+
+Table 7-1. The Application Project Folders
+
+Name				Description
+
+Models				This folder will contain the data model and the classes that 
+					provide access to the data in the application’s database.
+
+Controllers			This folder will contain the controller classes that handle HTTP 
+					requests.
+
+Views				This folder will contain all the Razor files, grouped into 
+					separate subfolders.
+
+Views/Home			This folder will contain Razor files that are specific to the Home 
+					controller, which I create in the “Creating the Controller and View” 
+					section.
+
+Views/Shared		This folder will contain Razor files that are common to all controllers.
+
+Preparing the Application Services and the Request Pipeline
+
+The Program.cs file is used to configure the ASP.NET Core application. Apply the changes shown in
+Listing 7-5 to the Program.cs file in the SportsStore project to configure the basic application features.
+
+Note
+The Program.cs file is an important ASP.NET Core feature. I describe it in detail in Part 2.
+
+Listing 7-5. Configuring the Application in the Program.cs File in the SportsStore Folder
+
+var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddControllersWithViews();
+
+var app = builder.Build();
+
+//app.MapGet("/", () => "Hello World!");
+
+app.UseStaticFiles();
+app.MapDefaultControllerRoute();
+
+app.Run();

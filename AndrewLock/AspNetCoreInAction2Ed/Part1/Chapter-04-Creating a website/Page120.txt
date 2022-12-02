@@ -1,0 +1,50 @@
+By now, you should have an overall understanding of the MVC design pattern and
+how it relates to ASP.NET Core and Razor Pages. The page handler methods on a
+Razor Page are invoked in response to given requests and are used to select the type of
+response to generate by returning an IActionResult.
+
+It’s important to remember that the MVC and Razor Pages infrastructure in ASP.NET
+Core runs as part of the EndpointMiddleware pipeline, as you saw in the previous
+chapter. Any response generated, whether a PageResult or a RedirectToPageResult,
+will pass back through the middleware pipeline, providing a potential opportunity for
+middleware to observe the response before the web server sends it to the user.
+
+An aspect I’ve only vaguely touched on is how the RoutingMiddleware decides
+which Razor Page and handler to invoke for a given request. You don’t want to have a
+Razor Page for every URL in an app. It would be difficult to have, for example, a different
+page per product in an e-shop—every product would need its own Razor Page!
+Handling this and other scenarios is the role of the routing infrastructure, and it’s a
+key part of ASP.NET Core. In the next chapter, you’ll see how to define routes, how to
+add constraints to your routes, and how they deconstruct URLs to match a single
+Razor Page handler.
+
+Summary
+
+The MVC design pattern allows for a separation of concerns between the business
+logic of your application, the data that’s passed around, and the display of
+data in a response.
+
+Razor Pages are built on the ASP.NET Core MVC framework, and they use
+many of the same primitives. They use conventions and a different project layout
+to optimize for page-based scenarios.
+
+MVC controllers contain multiple action methods, typically grouped around a highlevel
+entity. Razor Pages groups all the page handlers for a single page in one
+place, grouping around a page/feature instead of an entity.
+
+Each Razor Page is equivalent to a mini controller focused on a single page,
+and each Razor Page handler corresponds to a separate action method.
+
+Razor Pages should inherit from the PageModel base class.
+
+A single Razor Page handler is selected based on the incoming request’s URL,
+the HTTP verb, and the request’s query string, in a process called routing.
+
+Page handlers should generally delegate to services to handle the business logic
+required by a request, instead of performing the changes themselves. This
+ensures a clean separation of concerns that aids testing and improves application
+structure.
+
+Page handlers can have parameters whose values are taken from properties of
+the incoming request in a process called model binding. Properties decorated
+with [BindProperty] can also be bound to the request.

@@ -1,0 +1,16 @@
+PAGERESULT AND REDIRECTTOPAGERESULT
+
+When you’re building a traditional web application with Razor Pages, usually you’ll be
+using PageResult, which generates an HTML response using Razor. We’ll look at how
+this happens in detail in chapter 7.
+
+You’ll also commonly use the various redirect-based results to send the user to a
+new web page. For example, when you place an order on an e-commerce website, you
+typically navigate through multiple pages, as shown in figure 4.12. The web application
+sends HTTP redirects whenever it needs you to move to a different page, such as
+when a user submits a form. Your browser automatically follows the redirect requests,
+creating a seamless flow through the checkout process.
+
+Figure 4.12 A typical POST, REDIRECT, GET flow through a website. A user sends their shopping basket to a
+checkout page, which validates its contents and redirects to a payment page without the user having to
+manually change the URL.

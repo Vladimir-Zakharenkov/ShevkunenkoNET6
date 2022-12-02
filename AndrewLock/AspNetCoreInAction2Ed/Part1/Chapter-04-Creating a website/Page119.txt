@@ -1,0 +1,49 @@
+In this flow, whenever you return HTML you use a PageResult; when you redirect to a
+new page, you use a RedirectToPageResult.
+
+TIP
+Razor Pages are generally designed to be stateless, so if you want to persist
+data between multiple pages, you need to place it in a database or similar
+store. If you just want to store data for a single request, you may be able to use
+TempData, which stores small amounts of data in cookies for a single request.
+See the documentation for details: http://mng.bz/XdXp.
+
+NOTFOUNDRESULT AND STATUSCODERESULT
+
+As well as HTML and redirect responses, you’ll occasionally need to send specific
+HTTP status codes. If you request a page for viewing a product on an e-commerce
+application, and that product doesn’t exist, a 404 HTTP status code is returned to the
+browser, and you’ll typically see a “Not found” web page. Razor Pages can achieve this
+behavior by returning a NotFoundResult, which will return a raw 404 HTTP status
+code. You could achieve a similar result using StatusCodeResult and setting the status
+code returned explicitly to 404.
+
+Note that NotFoundResult doesn’t generate any HTML; it only generates a raw 404
+status code and returns it through the middleware pipeline. But, as discussed in the
+previous chapter, you can use the StatusCodePagesMiddleware to intercept this raw
+404 status code after it’s been generated and provide a user-friendly HTML response
+for it.
+
+CREATING ACTIONRESULT CLASSES USING HELPER METHODS
+
+ActionResult classes can be created and returned using the normal new syntax of C#:
+
+return new PageResult()
+
+However, the Razor Pages PageModel base class also provides a number of helper
+methods for generating responses. It’s common to use the Page method to generate
+an appropriate PageResult, the RedirectToPage method to generate a RedirectTo-
+PageResult, or the NotFound method to generate a NotFoundResult.
+
+TIP
+Most ActionResult classes have a helper method on the base PageModel
+class. They’re typically named Type, and the result generated is called Type-
+Result. For example, the StatusCode method returns a StatusCodeResult
+instance.
+
+As discussed earlier, the act of returning an IActionResult doesn’t immediately generate
+the response—it’s the execution of an IActionResult by the Razor Pages infrastructure,
+which occurs outside the action method. After producing the response, Razor
+Pages returns it to the middleware pipeline. From there, it passes through all the registered
+middleware in the pipeline, before the ASP.NET Core web server finally sends
+it to the user.

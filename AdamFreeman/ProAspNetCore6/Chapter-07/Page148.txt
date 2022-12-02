@@ -1,0 +1,36 @@
+Request http://localhost:5000, and you will see the response shown in Figure 7-2.
+
+Figure 7-2. Running the example application
+
+Adding Data to the Application
+
+Now that the SportsStore contains some basic setup and can produce a simple response, 
+it is time to add some data so that the application has something more useful to display. 
+The SportsStore application will store its data in a SQL Server LocalDB database, 
+which is accessed using Entity Framework Core. Entity Framework Core is the Microsoft 
+object-to-relational mapping (ORM) framework, and it is the most widely
+used method of accessing databases in ASP.NET Core projects.
+
+Caution
+If you did not install LocalDB when you prepared your development environment 
+in Chapter 2, you must do so now. The SportsStore application will not work without 
+its database.
+
+Installing the Entity Framework Core Packages
+
+The first step is to add Entity Framework Core to the project. Use a PowerShell 
+command prompt to run the command shown in Listing 7-13 in the SportsStore folder. 
+If you receive an error asking you to specify a project, then delete 
+the SportsStore - Backup.csproj file in the SportsStore folder and try again.
+
+Listing 7-13. Adding the Entity Framework Core Packages to the SportsStore Project
+
+dotnet add package Microsoft.EntityFrameworkCore.Design --version 6.0.0
+dotnet add package Microsoft.EntityFrameworkCore.SqlServer --version 6.0.0
+
+These packages install Entity Framework Core and the support for using SQL Server. 
+Entity Framework Core also requires a tools package, which includes the command-line 
+tools required to prepare and create databases for ASP.NET Core applications. 
+Run the commands shown in Listing 7-14 to remove any existing version of the tools 
+package, if there is one, and install the version used in this book. (Since this 
+package is installed globally, you can run these commands in any folder.)

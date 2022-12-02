@@ -1,0 +1,56 @@
+﻿The builder.Service property is used to set up objects, known as services, 
+that can be used throughout the application and that are accessed through 
+a feature called dependency injection, which I describe in Chapter 14. 
+The AddControllersWithViews method sets up the shared objects required 
+by applications using the MVC Framework and the Razor view engine.
+
+ASP.NET Core receives HTTP requests and passes them along a request pipeline, 
+which is populated with middleware components registered using the app property. 
+Each middleware component is able to inspect requests, modify them, generate a response, 
+or modify the responses that other components have produced. The request pipeline 
+is the heart of ASP.NET Core, and I describe it in detail in Chapter 12, where
+I also explain how to create custom middleware components.
+
+The UseStaticFiles method enables support for serving static content from 
+the wwwroot folder and will be created later in the chapter.
+
+One especially important middleware component provides the endpoint routing feature, 
+which matches HTTP requests to the application features — known as endpoints — able 
+to produce responses for them, a process I describe in detail in Chapter 13. 
+The endpoint routing feature is added to the request pipeline automatically, 
+and the MapDefaultControllerRoute registers the MVC Framework as a source of
+endpoints using a default convention for mapping requests to classes and methods.
+
+Configuring the Razor View Engine
+
+The Razor view engine is responsible for processing view files, which have 
+the .cshtml extension, to generate HTML responses. Some initial preparation 
+is required to configure Razor to make it easier to create views for the application.
+
+Add a Razor View Imports file named _ViewImports.cshtml in the Views folder with 
+the content shown in Listing 7-6.
+
+Caution
+Pay close attention to the contents of this file. It is easy to make a mistake 
+that causes the application to generate incorrect HTML content.
+
+Listing 7-6. The Contents of the _ViewImports.cshtml File in the SportsStore/Views Folder
+
+@using SportsStore.Models
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+The @using statement will allow me to use the types in the SportsStore.Models namespace in views
+without needing to refer to the namespace. The @addTagHelper statement enables the built-in tag helpers,
+which I use later to create HTML elements that reflect the configuration of the SportsStore application and
+which I describe in detail in Chapter 15. (You may see a warning or error displayed by the code editor for the
+contents of this file, but this will be resolved shortly and can be ignored.)
+
+Add a Razor View Start file named _ViewStart.cshtml to the SportsStore/Views folder with the
+content shown in Listing 7-7. (The file will already contain this expression if you create the file using the
+Visual Studio item template.)
+
+Listing 7-7. The Contents of the _ViewStart.cshtml File in the SportsStore/Views Folder
+
+@{
+	Layout = "_Layout";
+}

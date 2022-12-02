@@ -1,0 +1,45 @@
+Listing 7-10. The Contents of the Index.cshtml File 
+in the SportsStore/Views/Home Folder
+
+<h4>Welcome to SportsStore</h4>
+
+Starting the Data Model
+
+Almost all projects have a data model of some sort. Since this is an e-commerce 
+application, the most obvious model I need is for a product. Add a class file named 
+Product.cs to the Models folder and use it to define the class shown in Listing 7-11.
+
+Listing 7-11. The Contents of the Product.cs File
+in the SportsStore/Models Folder
+
+using System.ComponentModel.DataAnnotations.Schema;
+
+namespace SportsStore.Models {
+
+	public class Product {
+		public long? ProductID { get; set; }
+
+		public string Name { get; set; } = String.Empty;
+
+		public string Description { get; set; } = String.Empty;
+
+		[Column(TypeName = "decimal(8, 2)")]
+		public decimal Price { get; set; }
+
+		public string Category { get; set; } = String.Empty;
+	}
+}
+
+The Price property has been decorated with the Column attribute to specify 
+the SQL data type that will be used to store values for this property. 
+Not all C# types map neatly onto SQL types, and this attribute
+ensures the database uses an appropriate type for the application data.
+
+Checking and Running the Application
+
+Before going any further, it is a good idea to make sure the application builds 
+and runs as expected. Run the command shown in Listing 7-12 in the SportsStore folder.
+
+Listing 7-12. Running the Example Application
+
+dotnet run

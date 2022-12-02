@@ -33,9 +33,10 @@ Listing 7-9. The Contents of the HomeController.cs File in the SportsStore/Contr
 using Microsoft.AspNetCore.Mvc;
 
 namespace SportsStore.Controllers {
-public class HomeController: Controller {
-public IActionResult Index() => View();
-}
+	public class HomeController: Controller {
+
+		public IActionResult Index() => View();
+	}
 }
 
 The MapDefaultControllerRoute method used in Listing 7-5 tells ASP.NET Core how 

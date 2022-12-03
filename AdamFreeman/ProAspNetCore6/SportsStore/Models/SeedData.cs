@@ -1,12 +1,4 @@
-Creating Seed Data
-
-To populate the database and provide some sample data, I added a class file called SeedData.cs 
-to the Models folder and defined the class shown in Listing 7-22.
-
-Listing 7-22. The Contents of the SeedData.cs File 
-in the SportsStore/Models Folder
-
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 
 namespace SportsStore.Models
 {

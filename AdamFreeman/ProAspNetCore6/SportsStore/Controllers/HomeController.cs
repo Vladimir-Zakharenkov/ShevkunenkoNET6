@@ -1,9 +1,31 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿#region Example1
 
-namespace SportsStore.Controllers
+//using Microsoft.AspNetCore.Mvc;
+
+//namespace SportsStore.Controllers
+//{
+//    public class HomeController : Controller
+//    {
+//        public IActionResult Index() => View();
+//    }
+//}
+
+#endregion
+
+#region Example2
+
+using Microsoft.AspNetCore.Mvc;
+using SportsStore.Models;
+
+public class HomeController : Controller
 {
-    public class HomeController : Controller
+    private IStoreRepository repository;
+    public HomeController(IStoreRepository repo)
     {
-        public IActionResult Index() => View();
+        repository = repo;
     }
+
+    public IActionResult Index() => View(repository.Products);
 }
+
+#endregion

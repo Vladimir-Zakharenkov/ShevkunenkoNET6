@@ -263,6 +263,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Chapter-07", "Chapter-07", 
 		AdamFreeman\ProAspNetCore6\Chapter-07\Page151.txt = AdamFreeman\ProAspNetCore6\Chapter-07\Page151.txt
 		AdamFreeman\ProAspNetCore6\Chapter-07\Page152.txt = AdamFreeman\ProAspNetCore6\Chapter-07\Page152.txt
 		AdamFreeman\ProAspNetCore6\Chapter-07\Page153.txt = AdamFreeman\ProAspNetCore6\Chapter-07\Page153.txt
+		AdamFreeman\ProAspNetCore6\Chapter-07\Page154.txt = AdamFreeman\ProAspNetCore6\Chapter-07\Page154.txt
+		AdamFreeman\ProAspNetCore6\Chapter-07\Page155.txt = AdamFreeman\ProAspNetCore6\Chapter-07\Page155.txt
+		AdamFreeman\ProAspNetCore6\Chapter-07\Page156.txt = AdamFreeman\ProAspNetCore6\Chapter-07\Page156.txt
+		AdamFreeman\ProAspNetCore6\Chapter-07\Page157.txt = AdamFreeman\ProAspNetCore6\Chapter-07\Page157.txt
+		AdamFreeman\ProAspNetCore6\Chapter-07\Page158.txt = AdamFreeman\ProAspNetCore6\Chapter-07\Page158.txt
+		AdamFreeman\ProAspNetCore6\Chapter-07\Page159.txt = AdamFreeman\ProAspNetCore6\Chapter-07\Page159.txt
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SportsStore", "AdamFreeman\ProAspNetCore6\SportsStore\SportsStore.csproj", "{332CC7CC-A717-43BD-ABE4-E89B67370D70}"

@@ -266,7 +266,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SportsStore", "AdamFreeman\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SportsStore.Tests", "AdamFreeman\ProAspNetCore6\SportsStore.Tests\SportsStore.Tests.csproj", "{0DFD5A1F-1A2A-4817-9EB3-F5DA4E359D3E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShevkunenkoSite.Services", "ShevkunenkoSite.Services\ShevkunenkoSite.Services.csproj", "{3C360527-92D2-4D78-8F0A-44C815298D1D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShevkunenkoSite.Services", "ShevkunenkoSite.Services\ShevkunenkoSite.Services.csproj", "{3C360527-92D2-4D78-8F0A-44C815298D1D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShevkunenkoSite.Models", "ShevkunenkoSite.Models\ShevkunenkoSite.Models.csproj", "{E154A271-D3A6-4AB1-8089-A319F600C240}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -310,6 +312,10 @@ Global
 		{3C360527-92D2-4D78-8F0A-44C815298D1D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3C360527-92D2-4D78-8F0A-44C815298D1D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3C360527-92D2-4D78-8F0A-44C815298D1D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E154A271-D3A6-4AB1-8089-A319F600C240}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E154A271-D3A6-4AB1-8089-A319F600C240}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E154A271-D3A6-4AB1-8089-A319F600C240}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E154A271-D3A6-4AB1-8089-A319F600C240}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

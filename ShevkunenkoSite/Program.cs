@@ -3,6 +3,13 @@ WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddRazorPages();
 
+builder.Services.AddDbContext<SiteDbContext>(opts =>
+{
+    opts.UseSqlServer(builder.Configuration["ConnectionStrings:ShevkunenkoSite"]);
+});
+
+builder.Services.AddScoped<IPageInfoRepository, PageInfoImplementation>();
+
 WebApplication app = builder.Build();
 
 // Configure the HTTP request pipeline.

@@ -260,6 +260,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Chapter-07", "Chapter-07", 
 		AdamFreeman\ProAspNetCore6\Chapter-07\Page148.txt = AdamFreeman\ProAspNetCore6\Chapter-07\Page148.txt
 		AdamFreeman\ProAspNetCore6\Chapter-07\Page149.txt = AdamFreeman\ProAspNetCore6\Chapter-07\Page149.txt
 		AdamFreeman\ProAspNetCore6\Chapter-07\Page150.txt = AdamFreeman\ProAspNetCore6\Chapter-07\Page150.txt
+		AdamFreeman\ProAspNetCore6\Chapter-07\Page151.txt = AdamFreeman\ProAspNetCore6\Chapter-07\Page151.txt
+		AdamFreeman\ProAspNetCore6\Chapter-07\Page152.txt = AdamFreeman\ProAspNetCore6\Chapter-07\Page152.txt
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SportsStore", "AdamFreeman\ProAspNetCore6\SportsStore\SportsStore.csproj", "{332CC7CC-A717-43BD-ABE4-E89B67370D70}"
@@ -268,9 +270,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SportsStore.Tests", "AdamFr
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShevkunenkoSite.Services", "ShevkunenkoSite.Services\ShevkunenkoSite.Services.csproj", "{3C360527-92D2-4D78-8F0A-44C815298D1D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShevkunenkoSite.Models", "ShevkunenkoSite.Models\ShevkunenkoSite.Models.csproj", "{E154A271-D3A6-4AB1-8089-A319F600C240}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShevkunenkoSite.Models", "ShevkunenkoSite.Models\ShevkunenkoSite.Models.csproj", "{E154A271-D3A6-4AB1-8089-A319F600C240}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShevkunenkoSite.Tests", "ShevkunenkoSite.Tests\ShevkunenkoSite.Tests.csproj", "{6CB062C1-A416-414C-8441-5AD259DDE2F3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShevkunenkoSite.Tests", "ShevkunenkoSite.Tests\ShevkunenkoSite.Tests.csproj", "{6CB062C1-A416-414C-8441-5AD259DDE2F3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

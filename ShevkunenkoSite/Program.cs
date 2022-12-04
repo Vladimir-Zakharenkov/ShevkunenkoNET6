@@ -1,3 +1,7 @@
+using Microsoft.Extensions.WebEncoders;
+using System.Text.Encodings.Web;
+using System.Text.Unicode;
+
 WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -7,6 +11,8 @@ builder.Services.AddDbContext<SiteDbContext>(opts =>
 {
     opts.UseSqlServer(builder.Configuration["ConnectionStrings:ShevkunenkoSite"]);
 });
+
+builder.Services.Configure<WebEncoderOptions>(options => options.TextEncoderSettings = new TextEncoderSettings(UnicodeRanges.All));
 
 builder.Services.AddScoped<IPageInfoRepository, PageInfoImplementation>();
 
@@ -23,6 +29,9 @@ if (!app.Environment.IsDevelopment())
 else
 {
     app.UseDeveloperExceptionPage();
+
+    SeedData.EnsurePopulated(app);
+
 }
 
 app.UseHttpsRedirection();

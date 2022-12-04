@@ -47,4 +47,8 @@ public class PageInfoModel
     [DataType(DataType.Date)]
     [Display(Name = "Дата изменения:")]
     public DateTime PageLastmod { get; set; } = DateTime.Today;
+
+    [Required(ErrorMessage = "Необходимо ввести адрес страницы")]
+    [Display(Name = "Адрес страницы:")]
+    public Uri PageLoc { get; set; } = new Uri("https://shevkunenko.site/index");
 }

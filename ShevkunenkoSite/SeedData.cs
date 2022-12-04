@@ -47,7 +47,9 @@ public static class SeedData
                     "шевкуненко сергей юрьевич криминал",
 
                 PageLastmod = DateTime.Today,
-        }
+
+                PageLoc = new Uri("https://shevkunenko.site/index")
+            }
             );
 
             context.SaveChanges();

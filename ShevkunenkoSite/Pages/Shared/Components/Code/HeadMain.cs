@@ -1,7 +1,7 @@
-﻿public class Head : ViewComponent
+﻿public class HeadMain : ViewComponent
 {
     private readonly IPageInfoRepository _pageInfoContext;
-    public Head(IPageInfoRepository pageInfoContext) => _pageInfoContext = pageInfoContext;
+    public HeadMain(IPageInfoRepository pageInfoContext) => _pageInfoContext = pageInfoContext;
 
     public async Task<IViewComponentResult> InvokeAsync()
     {

@@ -1,20 +1,42 @@
+using Microsoft.AspNetCore.Mvc.Razor;
 using Microsoft.Extensions.WebEncoders;
 using System.Text.Encodings.Web;
 using System.Text.Unicode;
+using WebMarkupMin.AspNetCore6;
 
 WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-builder.Services.AddRazorPages();
+IServiceCollection services = builder.Services;
 
-builder.Services.AddDbContext<SiteDbContext>(opts =>
+// Add services to the container.
+services.AddRazorPages();
+
+services.AddDbContext<SiteDbContext>(opts =>
 {
     opts.UseSqlServer(builder.Configuration["ConnectionStrings:ShevkunenkoSite"]);
 });
 
-builder.Services.Configure<WebEncoderOptions>(options => options.TextEncoderSettings = new TextEncoderSettings(UnicodeRanges.All));
+services.Configure<RazorViewEngineOptions>(options => options.PageViewLocationFormats.Add("/Pages/Shared/Partial/{0}" + RazorViewEngine.ViewExtension));
 
-builder.Services.AddScoped<IPageInfoRepository, PageInfoImplementation>();
+services.Configure<WebEncoderOptions>(options => options.TextEncoderSettings = new TextEncoderSettings(UnicodeRanges.All));
+
+services.AddWebMarkupMin(
+        options =>
+        {
+            options.AllowMinificationInDevelopmentEnvironment = false;
+            options.AllowCompressionInDevelopmentEnvironment = false;
+        })
+        .AddHtmlMinification(
+            options =>
+            {
+                options.MinificationSettings.RemoveRedundantAttributes = true;
+                options.MinificationSettings.RemoveHttpProtocolFromAttributes = true;
+                options.MinificationSettings.RemoveHttpsProtocolFromAttributes = true;
+            })
+        //.AddXmlMinification()
+        .AddHttpCompression();
+
+services.AddScoped<IPageInfoRepository, PageInfoImplementation>();
 
 WebApplication app = builder.Build();
 
@@ -41,6 +63,8 @@ app.UseStaticFiles();
 app.UseRouting();
 
 app.UseAuthorization();
+
+app.UseWebMarkupMin();
 
 app.MapRazorPages();
 

@@ -9,12 +9,16 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<Content Update="appsettings.Development.json" CopyToPublishDirectory="Never" />
+	  <Content Remove="compilerconfig.json" />
 	</ItemGroup>
 
 	<ItemGroup>
-		<Folder Include="wwwroot\css\" />
-		<Folder Include="wwwroot\js\" />
+	  <None Include="compilerconfig.json" />
+	  <None Include="wwwroot\sound\kortikogg.ogg" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Content Update="appsettings.Development.json" CopyToPublishDirectory="Never" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -22,6 +26,7 @@
 			<PrivateAssets>all</PrivateAssets>
 			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 		</PackageReference>
+		<PackageReference Include="WebMarkupMin.AspNetCore6" Version="2.13.4" />
 	</ItemGroup>
 
 	<ItemGroup>

@@ -20,6 +20,13 @@ services.Configure<RazorViewEngineOptions>(options => options.PageViewLocationFo
 
 services.Configure<WebEncoderOptions>(options => options.TextEncoderSettings = new TextEncoderSettings(UnicodeRanges.All));
 
+services.Configure<RouteOptions>(options =>
+{
+    options.LowercaseUrls = true;
+    options.LowercaseQueryStrings = true;
+    options.AppendTrailingSlash = true;
+});
+
 services.AddWebMarkupMin(
         options =>
         {

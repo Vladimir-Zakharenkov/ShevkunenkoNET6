@@ -1,0 +1,38 @@
+Adding Pagination
+
+You can see from Figure 7-3 that the Index.cshtml view displays the products in the database 
+on a single page. In this section, I will add support for pagination so that the view displays 
+a smaller number of products on a page and so the user can move from page to page to view 
+the overall catalog. To do this, I am going to add a parameter to the Index method in 
+the Home controller, as shown in Listing 7-26.
+
+Listing 7-26. Adding Pagination in the HomeController.cs File 
+in the SportsStore/Controllers Folder
+
+using Microsoft.AspNetCore.Mvc;
+using SportsStore.Models;
+
+namespace SportsStore.Controllers {
+	public class HomeController : Controller {
+
+		private IStoreRepository repository;
+		public int PageSize = 4;
+		public HomeController(IStoreRepository repo) {
+		repository = repo;
+		}
+
+		public ViewResult Index(int productPage = 1)
+			=> View(repository.Products
+				.OrderBy(p => p.ProductID)
+				.Skip((productPage - 1) * PageSize)
+				.Take(PageSize));
+	}
+}
+
+The PageSize field specifies that I want four products per page. I have added an optional 
+parameter to the Index method, which means that if the method is called without a parameter, 
+the call is treated as though I had supplied the value specified in the parameter definition, 
+with the effect that the action method displays the first page of products when it is invoked 
+without an argument. Within the body of the action method, I get the Product objects, 
+order them by the primary key, skip over the products that occur before the start of 
+the current page, and take the number of products specified by the PageSize field.

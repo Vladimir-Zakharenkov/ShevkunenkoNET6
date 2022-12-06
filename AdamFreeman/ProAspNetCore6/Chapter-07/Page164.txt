@@ -1,0 +1,20 @@
+This tag helper populates a div element with a elements that correspond to pages of products. 
+I am not going to go into detail about tag helpers now; it is enough to know that they are 
+one of the most useful ways that you can introduce C# logic into your views. The code for 
+a tag helper can look tortured because C# and HTML don’t mix easily. But using tag helpers 
+is preferable to including blocks of C# code in a view because a tag helper can be easily 
+unit tested.
+
+Most ASP.NET Core components, such as controllers and views, are discovered automatically, but tag
+helpers have to be registered. In Listing 7-29, I have added a statement to the _ViewImports.cshtml 
+file in the Views folder that tells ASP.NET Core to look for tag helper classes in the SportsStore 
+project. I also added an @using expression so that I can refer to the view model classes 
+in views without having to qualify their names with the namespace.
+
+Listing 7-29. Registering a Tag Helper in the _ViewImports.cshtml File 
+in the SportsStore/Views Folder
+
+@using SportsStore.Models
+@using SportsStore.Models.ViewModels
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@addTagHelper *, SportsStore

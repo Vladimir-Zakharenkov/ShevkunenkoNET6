@@ -1,0 +1,13 @@
+View Components in Razor Pages
+
+View Components perform a similar role to Tag Helpers and Partial Pages. 
+They generate HTML and are designed to represent reusable snippets of UI 
+that can help break up and simplify complex layouts, or that can be used 
+in multiple pages. View components are recommended instead of partial pages 
+or tag helpers whenever any form of logic is required to obtain data for inclusion 
+in the resulting HTML snippet, specifically calls to an external resource such as a file, 
+database or web service. View components also lend themselves to unit testing.
+
+View components are particularly useful for data-driven features in a layout page 
+where there is no related page model or controller class. Examples of use cases for 
+view components include data-driven menus, tag clouds and shopping basket widgets.

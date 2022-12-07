@@ -16,3 +16,17 @@
 .text_shadow {
     text-shadow: hsla(350,90%,40%,.6) 1px 2px 2px;
 }
+
+.footer-image img {
+    border-width: 0 !important;
+}
+
+.footer-image a:hover {
+    text-decoration: none;
+}
+
+.fotoplenka {
+    background-size: 100% auto;
+    background-repeat: repeat-y;
+    background-position: center;
+}

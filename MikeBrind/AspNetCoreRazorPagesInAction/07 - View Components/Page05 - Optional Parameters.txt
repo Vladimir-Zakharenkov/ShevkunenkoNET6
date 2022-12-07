@@ -1,0 +1,20 @@
+Optional Parameters
+
+From .NET 6, the view component tag helper supports optional parameters. 
+Consequently, you no longer need to specify a value for an optional parameter 
+when adding a view component to a page. For example, suppose that our UserViewComponent 
+took an optional boolean parameter to indicate whether full details of the user 
+are required for display:
+
+public async Task<IViewComponentResult> InvokeAsync(int id, bool showDetails = false)
+{
+    var user = showDetails ? 
+        await _userService.GetUserWithDetailsAsync(id) :
+        await _userService.GetUserAsync(id);
+    return View(user);
+}
+
+Prior to .NET 6, you needed to specify a value for the show-details parameter despite 
+it having a default value. Now you don't:
+
+<vc:user id="new Random().Next(1, 10)" />

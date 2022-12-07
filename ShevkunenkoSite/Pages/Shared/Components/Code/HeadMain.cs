@@ -1,4 +1,5 @@
-﻿public class HeadMain : ViewComponent
+﻿[ViewComponent]
+public class HeadMain : ViewComponent
 {
     private readonly IPageInfoRepository _pageInfoContext;
     public HeadMain(IPageInfoRepository pageInfoContext) => _pageInfoContext = pageInfoContext;

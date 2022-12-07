@@ -1,0 +1,37 @@
+﻿Elements of a view component link
+
+View components consist of a class file and a .cshtml view file. The class file contains 
+the logic for generating the model. It can be thought of as a mini-controller, 
+just as the Razor PageModel file is considered to be a controller. The view file contains 
+the template used to generate the HTML to be plugged in to the page that hosts 
+the view component.
+
+The class file must conform to the following rules:
+
+•	It must derive from the ViewComponent class
+
+•	It must have "ViewComponent" as a suffix to the class name or it must be decorated 
+	with the [ViewComponent] attribute (or derive from a class that's decorated with 
+	the [ViewComponent] attribute)
+
+It must implement a method named Invoke with a return type of IViewComponentResult 
+(or InvokeAsync returning Task<IViewComponentResult> if you need to call asynchronous 
+methods). Typically, this is satisfied by a return View(...) statement in the method.
+
+By default, the view file is named default.cshtml. You can specify an alternative name 
+for the view file by passing it to the return View(...) statement. The view file's placement 
+within the application's file structure is important, because the framework searches 
+pre-defined locations for it:
+
+/Pages/Shared/Components/<component name>/Default.cshtml
+/Views/Shared/Components/<component name>/Default.cshtml
+
+The framework will also search by walking up the directory tree from the location 
+of the calling page until it reaches the root Pages folder. This is the same search 
+pattern as for partials.
+
+The component name is the name of the view component class without the ViewComponent suffix 
+(if it is applied). For a Razor Pages only site, the recommended location for view component 
+views is the /Pages/Shared/Components/ directory. This is especially the case if you are 
+using Areas, which you will do if you use the Identity UI. The path that begins with /Views 
+should only really be used if you are creating a hybrid Razor Pages/MVC application.

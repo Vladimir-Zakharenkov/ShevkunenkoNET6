@@ -1,0 +1,204 @@
+Walkthrough
+
+The following walkthrough will result in two example view components being created. 
+One will call into an external web service to obtain a list of people, and will display 
+their names. The other will take a parameter representing the ID of one person 
+whose details will be obtained from an external web service and then displayed in a widget.
+
+The service APIs used in this example are hosted at JSONPlaceholder 
+https://jsonplaceholder.typicode.com/ which provides free JSON APIs for development 
+and testing purposes.
+
+The view components will not be responsible for making calls to the external APIs. 
+This task will be performed in a separate service class which will be injected into 
+the view components via the built-in Dependency Injection framework.
+
+1.	Create a new Razor Pages site named RazorPages using Visual Studio or the command line.
+
+2.	Add a new C# class file named Domain.cs to the root folder of the application and 
+	replace any existing content with the following:
+
+namespace RazorPages
+{
+    public class User
+    {
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public string UserName { get; set; }
+        public string Email { get; set; }
+        public string Phone { get; set; }
+        public string Website { get; set; }
+        public Address Address { get; set; }
+        public Company Company { get; set; }
+    }
+    public class Address
+    {
+        public string Street { get; set; }
+        public string Suite { get; set; }
+        public string City { get; set; }
+        public string Zipcode { get; set; }
+        public Geo Geo { get; set; }
+    }
+    public class Company
+    {
+        public string Name { get; set; }
+        public string Catchphrase { get; set; }
+        public string Bs { get; set; }
+    }
+    public class Geo
+    {
+        public float Lat { get; set;}
+        public float Lng { get; set; }
+    }
+}
+
+These classes map to the structure of the objects represented by the JSON 
+provided by the API being used for this example.
+
+3.  Add a new folder named Services to the root folder
+
+4.  Add a new C# class file named IUserService.cs to the Services folder. 
+    Replace any existing content with the following code:
+
+using System.Collections.Generic;
+using System.Threading.Tasks;
+namespace RazorPages.Services
+{
+    public interface IUserService
+    {
+        Task<List<User>> GetUsersAsync();
+        Task<User> GetUserAsync(int id);
+    }
+}
+
+This is the interface that specifies the operations offered by the service
+
+5.  Add another new C# class file named UserService.cs to the Services folder 
+    and replace any existing content with the following:
+
+using Newtonsoft.Json;
+using System.Collections.Generic;
+using System.Net.Http;
+using System.Threading.Tasks;
+namespace RazorPages.Services
+{
+    public class UserService : IUserService
+    {
+        public async Task<List<User>> GetUsersAsync()
+        {
+            using (var client = new HttpClient())
+            {
+                var endPoint = "https://jsonplaceholder.typicode.com/users";
+                var json = await client.GetStringAsync(endPoint);
+                return JsonConvert.DeserializeObject<List<User>>(json);
+            }
+        }
+        public async Task<User> GetUserAsync(int id)
+        {
+            using (var client = new HttpClient())
+            {
+                var endPoint = $"https://jsonplaceholder.typicode.com/users/{id}";
+                var json = await client.GetStringAsync(endPoint);
+                return JsonConvert.DeserializeObject<User>(json);
+            }
+        }
+    }
+}
+
+This class represents an implementation of the IUserService interface.
+
+6.  Add a folder named ViewComponents to the root of the application. Then add a new file 
+    to that folder, name it UsersViewComponent.cs and replace any existing content with 
+    the following:
+
+using Microsoft.AspNetCore.Mvc;
+using RazorPages.Services;
+using System.Threading.Tasks;
+namespace RazorPages.ViewComponents
+{
+    public class UsersViewComponent : ViewComponent
+    {
+        private IUserService _userService;
+        public UsersViewComponent(IUserService userService)
+        {
+            _userService = userService;
+        }
+        public async Task<IViewComponentResult> InvokeAsync()
+        {
+            var users = await _userService.GetUsersAsync();
+            return View(users);
+        }
+    }
+}
+
+This is the code part of the view component. It makes use of the built-in dependency 
+injection system to resolve the implementation of IUserService which is injected into 
+the constructor of the view component class. The InvokeAsync method obtains a List<User> 
+from the service and passes it to the view.
+
+7.  Create a folder named Components in the Pages folder and then add another folder 
+    named Users to the newly created Components folder. Add a new file named default.cshtml 
+    to the Users folder. The resulting folder and file hierarchy should look like this:
+
+8.  Replace the code in default.cshtml with the following:
+
+@model List<RazorPages.User>
+<h3>Users</h3>
+<ul>
+    @foreach (var user in Model)
+    {
+        <li>@user.Name</li>
+    }
+</ul>
+
+This is the view, and completes the view component. Notice that the view accepts 
+a model of type List<User> via the @model directive, which is type passed to 
+the view from the InvokeAsync method.
+
+9.  Open the Startup.cs file and add using RazorPages.Services; to the using 
+    directives at the top of the file. Then amend the ConfigureServices method 
+    so that the code looks like this:
+
+    public void ConfigureServices(IServiceCollection services)
+{
+    services.AddMvc();
+    services.AddTransient<IUserService, UserService>();
+}
+
+This step registers the IUserService with the dependency injection system, 
+and specifies that UserService is the actual implementation to use.
+
+10. Open the Layout.cshtml file and locate the content between the <nav> section 
+    and the <environment> tag helper that currently looks like this:
+
+<div class="container body-content">
+    @RenderBody()
+    <hr />
+    <footer>
+        <p>&copy; 2017 - RazorPages</p>
+    </footer>
+</div>
+
+Change the content as follows:
+
+<div class="container body-content">
+    <div class="col-md-9">
+        @RenderBody()
+    </div>
+    <div class="col-md-3">
+        @await  Component.InvokeAsync("Users")
+    </div>
+</div>
+<hr />
+<footer class="container">
+    <p>&copy; 2017 - RazorPages</p>
+</footer>
+
+This converts the layout for the site to 2 columns, with page content displayed 
+in the left hand column and a Users widget displayed in the right hand column. 
+It uses the Component.InvokeAsync method to render the output of the view component 
+to the page. The string which is passed to the method represents the name of 
+the view component (the class name without the "ViewComponent" suffix).
+
+11. Run the site to ensure that all is working. The list of users should appear 
+    on the right hand side of every page:

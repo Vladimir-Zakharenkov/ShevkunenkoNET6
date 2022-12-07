@@ -300,6 +300,19 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShevkunenkoSite.Tests", "Sh
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SandBox", "SandBox\SandBox.csproj", "{B245C6B7-6FFB-40EC-BC5E-2A4C0D712E5F}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01 - Home", "01 - Home", "{8F66E7C7-AE41-475E-827A-7D82425A5530}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "07 - View Components", "07 - View Components", "{E80C9E81-240F-46D3-B1FE-0AA966A3BB98}"
+	ProjectSection(SolutionItems) = preProject
+		MikeBrind\AspNetCoreRazorPagesInAction\07 - View Components\Page01.txt = MikeBrind\AspNetCoreRazorPagesInAction\07 - View Components\Page01.txt
+		MikeBrind\AspNetCoreRazorPagesInAction\07 - View Components\Page02 - Elements of a view component.txt = MikeBrind\AspNetCoreRazorPagesInAction\07 - View Components\Page02 - Elements of a view component.txt
+		MikeBrind\AspNetCoreRazorPagesInAction\07 - View Components\Page03 - Walkthrough.txt = MikeBrind\AspNetCoreRazorPagesInAction\07 - View Components\Page03 - Walkthrough.txt
+		MikeBrind\AspNetCoreRazorPagesInAction\07 - View Components\Page04 - Taghelper and passing parameters.txt = MikeBrind\AspNetCoreRazorPagesInAction\07 - View Components\Page04 - Taghelper and passing parameters.txt
+		MikeBrind\AspNetCoreRazorPagesInAction\07 - View Components\Page05 - Optional Parameters.txt = MikeBrind\AspNetCoreRazorPagesInAction\07 - View Components\Page05 - Optional Parameters.txt
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RazorPages", "MikeBrind\AspNetCoreRazorPagesInAction\07 - View Components\RazorPages\RazorPages.csproj", "{9030AF40-A67F-43FB-BCC8-3DE0CAB0A5EE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -354,6 +367,10 @@ Global
 		{B245C6B7-6FFB-40EC-BC5E-2A4C0D712E5F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B245C6B7-6FFB-40EC-BC5E-2A4C0D712E5F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B245C6B7-6FFB-40EC-BC5E-2A4C0D712E5F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9030AF40-A67F-43FB-BCC8-3DE0CAB0A5EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9030AF40-A67F-43FB-BCC8-3DE0CAB0A5EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9030AF40-A67F-43FB-BCC8-3DE0CAB0A5EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9030AF40-A67F-43FB-BCC8-3DE0CAB0A5EE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -381,6 +398,9 @@ Global
 		{E6D7E5FE-0A1E-4B13-B767-76811BF03845} = {74C9DA5B-4F3F-42CE-BC38-4BECB38F1F39}
 		{332CC7CC-A717-43BD-ABE4-E89B67370D70} = {74C9DA5B-4F3F-42CE-BC38-4BECB38F1F39}
 		{0DFD5A1F-1A2A-4817-9EB3-F5DA4E359D3E} = {74C9DA5B-4F3F-42CE-BC38-4BECB38F1F39}
+		{8F66E7C7-AE41-475E-827A-7D82425A5530} = {482A7CC1-FFF3-442D-B231-69BB1687E04C}
+		{E80C9E81-240F-46D3-B1FE-0AA966A3BB98} = {482A7CC1-FFF3-442D-B231-69BB1687E04C}
+		{9030AF40-A67F-43FB-BCC8-3DE0CAB0A5EE} = {E80C9E81-240F-46D3-B1FE-0AA966A3BB98}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5507A11F-FC14-46CA-B766-61BB183C82C7}

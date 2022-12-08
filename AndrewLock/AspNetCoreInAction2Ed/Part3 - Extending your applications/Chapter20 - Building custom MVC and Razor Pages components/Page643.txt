@@ -1,0 +1,47 @@
+Figure 20.1 The SystemInfoTagHelper displays the machine name and operating
+system on which the application is running. It can be useful for identifying which instance
+of your app handled the request when running in a web farm scenario.
+
+TIP
+You probably don’t want to expose this sort of information in production,
+so you could also wrap it in an <environment> Tag Helper, as you saw in
+chapter 8.
+
+The easiest way to create a custom Tag Helper is to derive from the TagHelper base
+class and override the Process() or ProcessAsync() function that describes how the
+class should render itself. The following listing shows your complete custom Tag
+Helper, SystemInfoTagHelper, which renders the system information to a <div>. You
+could easily extend this class if you wanted to display additional fields or add additional
+options.
+
+public class SystemInfoTagHelper : TagHelper
+{
+private readonly HtmlEncoder _htmlEncoder;
+public SystemInfoTagHelper(HtmlEncoder htmlEncoder)
+{
+_htmlEncoder = htmlEncoder;
+}
+[HtmlAttributeName("add-machine")]
+public bool IncludeMachine { get; set; } = true;
+[HtmlAttributeName("add-os")]
+public bool IncludeOS { get; set; } = true;
+public override void Process(
+TagHelperContext context, TagHelperOutput output)
+{
+output.TagName = "div";
+output.TagMode = TagMode.StartTagAndEndTag;
+var sb = new StringBuilder();
+if (IncludeMachine)
+{
+sb.Append(" <strong>Machine</strong> ");
+sb.Append(_htmlEncoder.Encode(Environment.MachineName));
+}
+if (IncludeOS)
+{
+sb.Append(" <strong>OS</strong> ");
+sb.Append(
+_htmlEncoder.Encode(RuntimeInformation.OSDescription));
+}
+output.Content.SetHtmlContent(sb.ToString());
+}
+}

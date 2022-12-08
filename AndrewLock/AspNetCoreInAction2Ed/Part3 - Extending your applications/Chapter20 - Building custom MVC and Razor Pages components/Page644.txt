@@ -1,0 +1,23 @@
+There’s a lot of new code in this example, so we’ll work through it line by line. First,
+the class name of the Tag Helper defines the name of the element you must create in
+your Razor template, with the suffix removed and converted to kebab-case. As this Tag
+Helper is called SystemInfoTagHelper, you must create a <system-info> element.
+
+TIP
+If you want to customize the name of the element, for example to <envinfo>,
+but you want to keep the same class name, you can apply [HtmlTargetElement] 
+with the desired name, such as [HtmlTargetElement("Env-Info")].
+HTML tags are not case-sensitive, so you could use "Env-Info" or "env-info".
+
+Inject an HtmlEncoder into your Tag Helper so you can HTML-encode any data you write
+to the page. As you saw in chapter 18, you should always HTML-encode data you write to
+the page to avoid XSS vulnerabilities (and to ensure the data is displayed correctly).
+
+You’ve defined two properties on your Tag Helper, IncludeMachine and IncludeOS,
+which you’ll use to control which data is written to the page. These are decorated with
+a corresponding [HtmlAttributeName], which enables setting the properties from the
+Razor template. In Visual Studio, you’ll even get IntelliSense and type-checking for
+these values, as shown in figure 20.2.
+
+Figure 20.2 In Visual Studio, Tag Helpers are shown in a purple font, and you get 
+IntelliSense for properties decorated with [HtmlAttributeName].

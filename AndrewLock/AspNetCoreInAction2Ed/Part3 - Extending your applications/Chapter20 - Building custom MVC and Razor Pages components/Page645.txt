@@ -1,0 +1,53 @@
+Finally, we come to the Process() method. The Razor engine calls this method to
+execute the Tag Helper when it identifies the target element in a view template. The
+Process() method defines the type of tag to render (<div>), whether it should render
+a start and end tag (or a self-closing tag — it depends on the type of tag you’re
+rendering), and the HTML content of the <div>. You set the HTML content to be rendered
+inside the tag by calling Content.SetHtmlContent() on the provided instance of
+TagHelperOutput.
+
+WARNING
+Always HTML-encode your output before writing to your tag with
+SetHtmlContent(). Alternatively, pass unencoded input to SetContent(),
+and the output will be automatically HTML-encoded for you.
+
+Before you can use your new Tag Helper in a Razor template, you need to register it.
+You can do this in the _ViewImports.cshtml file, using the @addTagHelper directive and
+specifying the fully qualified name of the Tag Helper and the assembly. For example,
+@addTagHelper CustomTagHelpers.SystemInfoTagHelper, CustomTagHelpers
+Alternatively, you can add all the Tag Helpers from a given assembly by using the wildcard
+syntax, *, and specifying the assembly name:
+
+@addTagHelper *, CustomTagHelpers
+
+With your custom Tag Helper created and registered, you’re now free to use it in any
+of your Razor views, partial views, or layouts.
+
+TIP
+If you’re not seeing IntelliSense for your Tag Helper in Visual Studio,
+and the Tag Helper isn’t rendered in the bold font used by Visual Studio, then
+you probably haven’t registered your Tag Helpers correctly in _ViewImports.cshtml 
+using @addTagHelper.
+
+The SystemInfoTagHelper is an example of a Tag Helper that generates content, but
+you can also use Tag Helpers to control how existing elements are rendered. In the
+next section you’ll create a simple Tag Helper that can control whether or not an element
+is rendered, based on an HTML attribute.
+
+20.1.2 Creating a custom Tag Helper to conditionally hide elements
+
+If you want to control whether an element is displayed in a Razor template based on
+some C# variable, you’d typically wrap the element in a C# if statement:
+
+@{
+	var showContent = true;
+}
+@if(showContent)
+{
+	<p>The content to show</p>
+}
+
+Falling back to C# constructs like this can be useful, as it allows you to generate any
+markup you like. Unfortunately, it can be mentally disruptive having to switch back
+and forth between C# and HTML, and it makes it harder to use HTML editors that
+don’t understand Razor syntax.

@@ -1,0 +1,22 @@
+Building custom MVC and Razor Pages components
+
+This chapter covers
+
+• Creating custom Razor Tag Helpers
+• Using view components to create complex Razor views
+• Creating a custom DataAnnotations validation attribute
+• Replacing the DataAnnotations validation framework with an alternative
+
+In the previous chapter, you learned how to customize and extend some of the core
+systems in ASP.NET Core: configuration, dependency injection, and your middleware
+pipeline. These components form the basis of all ASP.NET Core apps. In this
+chapter we’re focusing on Razor Pages and MVC/API controllers. You’ll learn how
+to build custom components that work with Razor views. You’ll also learn how to
+build components that work with the validation framework used by both Razor
+Pages and API controllers.
+
+We’ll start by looking at Tag Helpers. In section 20.1 I’ll show you how to create
+two different Tag Helpers: one that generates HTML to describe the current
+machine, and one that lets you write if statements in Razor templates without having
+to use C#. These will give you the details you need to create your own custom Tag
+Helpers in your own apps if the need arises.

@@ -313,6 +313,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "07 - View Components", "07 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RazorPages", "MikeBrind\AspNetCoreRazorPagesInAction\07 - View Components\RazorPages\RazorPages.csproj", "{9030AF40-A67F-43FB-BCC8-3DE0CAB0A5EE}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Part3 - Extending your applications", "Part3 - Extending your applications", "{9C56C159-4FD5-4CCA-AF04-7FCAEC051F1F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Chapter20 - Building custom MVC and Razor Pages components", "Chapter20 - Building custom MVC and Razor Pages components", "{F5502E81-7F14-4FAD-B1ED-0CAF902CD762}"
+	ProjectSection(SolutionItems) = preProject
+		AndrewLock\AspNetCoreInAction2Ed\Part3 - Extending your applications\Chapter20 - Building custom MVC and Razor Pages components\Page640.txt = AndrewLock\AspNetCoreInAction2Ed\Part3 - Extending your applications\Chapter20 - Building custom MVC and Razor Pages components\Page640.txt
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -401,6 +408,8 @@ Global
 		{8F66E7C7-AE41-475E-827A-7D82425A5530} = {482A7CC1-FFF3-442D-B231-69BB1687E04C}
 		{E80C9E81-240F-46D3-B1FE-0AA966A3BB98} = {482A7CC1-FFF3-442D-B231-69BB1687E04C}
 		{9030AF40-A67F-43FB-BCC8-3DE0CAB0A5EE} = {E80C9E81-240F-46D3-B1FE-0AA966A3BB98}
+		{9C56C159-4FD5-4CCA-AF04-7FCAEC051F1F} = {C3D88FDB-EE3C-403B-B832-4FF71DAF29DC}
+		{F5502E81-7F14-4FAD-B1ED-0CAF902CD762} = {9C56C159-4FD5-4CCA-AF04-7FCAEC051F1F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5507A11F-FC14-46CA-B766-61BB183C82C7}

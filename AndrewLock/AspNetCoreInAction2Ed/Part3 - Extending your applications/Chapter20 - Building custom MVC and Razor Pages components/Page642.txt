@@ -1,0 +1,43 @@
+The Tag Helper is activated by the presence of the attribute and gets a chance to augment
+the <input> tag when rendering to HTML. The Input Tag Helper uses the
+name of the property to set the <input> tag’s name and id properties, the value of
+the model to set the value property, and the presence of attributes such as [Required]
+or [EmailAddress] to add attributes for validations:
+
+<input type="email" id="Input_Email" name="Input.Email"
+	value="test@example.com" data-val="true"
+	data-val-email="The Email Address field is not a valid e-mail address."
+	data-val-required="The Email Address field is required."
+	/>
+
+Tag Helpers help reduce the duplication in your code, or they can simplify common
+patterns. In this section I’ll show how you can create your own custom Tag Helpers.
+In section 20.1.1 you’ll create a system information Tag Helper, which prints
+details about the name and operating system of the server your app is running on.
+
+In section 20.1.2 you’ll create a Tag Helper that you can use to conditionally show or
+hide an element based on a C# Boolean property. In section 20.1.3 you’ll create a
+Tag Helper that reads the Razor content written inside the Tag Helper and transforms
+it.
+
+20.1.1 Printing environment information with a custom Tag Helper
+
+A common problem you may run into when you start running your web applications
+in production, especially if you’re using a server-farm setup, is working out which
+machine rendered the page you’re currently looking at. Similarly, when deploying frequently,
+it can be useful to know which version of the application is running. When I’m
+developing and testing, I sometimes like to add a little “info dump” at the bottom of
+my layouts so I can easily work out which server generated the current page, which
+environment it’s running in, and so on.
+
+In this section, I’m going to show you how to build a custom Tag Helper to output
+system information to your layout. You’ll be able to toggle the information it displays,
+but by default it will display the machine name and operating system on which the
+app is running, as shown in figure 20.1.
+
+You can call this Tag Helper from Razor by creating a <system-info> element in
+your template:
+
+<footer>
+	<system-info></system-info>
+</footer>

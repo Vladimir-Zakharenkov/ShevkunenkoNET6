@@ -1,0 +1,49 @@
+In section 20.2 you値l learn about a new Razor concept: view components. View
+components are a bit like partial views, but they can contain business logic and database
+access. For example, on an e-commerce site you might have a shopping cart, a
+dynamically populated menu, and a login widget, all on one page. Each of those sections
+is independent of the main page content and has its own logic and data-access
+needs. In an ASP.NET Core app using Razor Pages, you壇 implement each of those as
+a view component.
+
+In section 20.3 I値l show you how to create a custom validation attribute. As you saw
+in chapter 6, validation is a key responsibility of Razor Page handlers and action methods,
+and the DataAnnotations attributes provide a clean, declarative way of doing so.
+We previously only looked at the built-in attributes, but you値l often find you need to
+add attributes tailored to your app痴 domain. In section 20.3 you値l see how to create a
+simple validation attribute, and how to extend it to use services registered with the
+DI container.
+
+Throughout this book I致e mentioned that you can easily swap out core parts of
+the ASP.NET Core framework if you wish. In section 20.4 you値l do just that, by replacing
+the built-in attribute-based validation framework with a popular alternative, FluentValidation.
+This open source library allows you to separate your binding models
+from the validation rules, which makes building certain validation logic easier. Many
+people prefer this approach of separating concerns to the declarative approach of
+DataAnnotations.
+
+When you池e building pages with Razor Pages, one of the best productivity features
+is Tag Helpers, and in the next section you値l see how you can create your own.
+
+20.1 Creating a custom Razor Tag Helper
+
+In this section you値l learn how to create your own Tag Helpers, which allow you to
+customize your HTML output. You値l learn how to create Tag Helpers that add new
+elements to your HTML markup, as well as Tag Helpers that can be used to remove or
+customize existing markup. You値l also see that your custom Tag Helpers integrate
+with the tooling of your IDE to provide rich IntelliSense in the same way as the built-in
+Tag Helpers.
+
+In my opinion, Tag Helpers are one of the best additions to the venerable Razor
+template language in ASP.NET Core. They allow you to write Razor templates that are
+easier to read, as they require less switching between C# and HTML, and they augment
+your HTML tags, rather than replacing them (as opposed to the HTML Helpers used
+extensively in the previous version of ASP.NET).
+
+ASP.NET Core comes with a wide variety of Tag Helpers (see chapter 8), which will
+cover many of your day-to-day requirements, especially when it comes to building
+forms. For example, you can use the Input Tag Helper by adding an asp-for attribute
+to an <input> tag and passing a reference to a property on your PageModel, in this
+case Input.Email:
+
+<input asp-for="Input.Email" />

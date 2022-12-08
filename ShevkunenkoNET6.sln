@@ -318,6 +318,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Chapter20 - Building custom MVC and Razor Pages components", "Chapter20 - Building custom MVC and Razor Pages components", "{F5502E81-7F14-4FAD-B1ED-0CAF902CD762}"
 	ProjectSection(SolutionItems) = preProject
 		AndrewLock\AspNetCoreInAction2Ed\Part3 - Extending your applications\Chapter20 - Building custom MVC and Razor Pages components\Page640.txt = AndrewLock\AspNetCoreInAction2Ed\Part3 - Extending your applications\Chapter20 - Building custom MVC and Razor Pages components\Page640.txt
+		AndrewLock\AspNetCoreInAction2Ed\Part3 - Extending your applications\Chapter20 - Building custom MVC and Razor Pages components\Page641.txt = AndrewLock\AspNetCoreInAction2Ed\Part3 - Extending your applications\Chapter20 - Building custom MVC and Razor Pages components\Page641.txt
 	EndProjectSection
 EndProject
 Global

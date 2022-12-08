@@ -1,0 +1,50 @@
+You also call SuppressOutput(), which prevents any content inside the attributed element
+from being rendered. If RenderContent is true, you skip these steps and the
+content is rendered as normal.
+
+One other point of note is the overridden Order property. This controls the order
+in which Tag Helpers run when multiple Tag Helpers are applied to an element. By
+setting Order to int.MinValue, you ensure that IfTagHelper will run first, removing
+the element if required, before other Tag Helpers execute. There痴 generally no
+point running other Tag Helpers if the element is going to be removed from the
+page anyway.
+
+NOTE
+Remember to register your custom Tag Helpers in _ViewImports.cshtml
+with the @addTagHelper directive.
+
+With a simple HTML attribute, you can now conditionally render elements in Razor
+templates without having to fall back to C#. This Tag Helper can show and hide content
+without needing to know what the content is. In the next section we値l create a
+Tag Helper that does need to know the content.
+
+20.1.3 Creating a Tag Helper to convert Markdown to HTML
+
+The two Tag Helpers shown so far are agnostic to the content written inside the Tag
+Helper, but it can also be useful to create Tag Helpers that inspect, retrieve, and modify
+this content. In this section you値l see an example of one such Tag Helper that converts
+Markdown content written inside it into HTML.(1)
+
+DEFINITION
+Markdown is a commonly used text-based markup language that
+is easy to read but can also be converted into HTML. It is the common format
+used by README files on GitHub, and I use it to write blog posts, for example.
+For an introduction to Markdown, see the GitHub guide: 
+https://guides.github.com/features/mastering-markdown/.
+
+We値l use the popular Markdig library (https://github.com/xoofx/markdig) to create
+the Markdown Tag Helper. This library converts a string containing Markdown into
+an HTML string. You can install Markdig using Visual Studio by running 
+
+dotnet add package Markdig
+
+or by adding a <PackageReference> to your .csproj file:
+
+<PackageReference Include="Markdig" Version="0.22.0" />
+
+The Markdown Tag Helper that we値l create shortly can be used by adding <markdown>
+elements to your Razor Page, as shown in the following listing.
+
+(1)	The open source library WebAPIContrib.Core includes a similar tag helper, 
+	as well as other helpful utilities. You can find it on NuGet and GitHub at 
+	https://github.com/WebApiContrib/WebAPIContrib.Core.

@@ -1,0 +1,57 @@
+In this section you’ll create a simple Tag Helper to avoid the cognitive dissonance
+problem. You can apply this Tag Helper to existing elements to achieve the same
+result as shown previously, but without having to fall back to C#:
+
+@{
+	var showContent = true;
+}
+<p if="showContent">
+	The content to show
+</p>
+
+Instead of creating a new element, as you did for SystemInfoTagHelper (<systeminfo>),
+you’ll create a Tag Helper that you apply as an attribute to existing HTML elements.
+This Tag Helper does one thing: it controls the visibility of the element it’s
+attached to. If the value passed in the if attribute is true, the element and its content
+is rendered as normal. If the value passed is false, the Tag Helper removes the element
+and its content from the template. Here’s how you could achieve this.
+
+Listing 20.2 Creating an IfTagHelper to conditionally render elements
+
+//Setting the Attributes property ensures the Tag Helper is triggered by an if attribute.
+[HtmlTargetElement(Attributes = "if")]
+public class IfTagHelper : TagHelper
+{
+    //Binds the value of the if attribute to the RenderContent property
+    [HtmlAttributeName("if")]
+    public bool RenderContent { get; set; } = true;
+
+    //The Razor engine calls Process() to execute the Tag Helper.
+    public override void Process(TagHelperContext context, TagHelperOutput output)
+    {
+        //If the RenderContent property evaluates to false, removes the element
+        if (RenderContent == false)
+        {
+            //Sets the element the Tag Helper resides on to null, removing it from the page
+            output.TagName = null;
+
+            //Doesn’t render or evaluate the inner content of the element
+            output.SuppressOutput();
+        }
+    }
+
+    //Ensures this Tag Helper runs before any others attached to the element
+    public override int Order => int.MinValue;
+}
+
+Instead of a standalone <if> element, the Razor engine executes the IfTagHelper
+whenever it finds an element with an if attribute. This can be applied to any HTML
+element: <p>, <div>, <input>, whatever you need. You should define a Boolean property
+specifying whether you should render the content, which is bound to the value in
+the if attribute.
+
+The Process() function is much simpler here. If RenderContent is false, it sets
+the TagHelperOutput.TagName to null, which removes the element from the page.
+You also call SuppressOutput(), which prevents any content inside the attributed element
+from being rendered. If RenderContent is true, you skip these steps and the
+content is rendered as normal.

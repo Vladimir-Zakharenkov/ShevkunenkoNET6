@@ -14,34 +14,50 @@ Helper, SystemInfoTagHelper, which renders the system information to a <div>. Yo
 could easily extend this class if you wanted to display additional fields or add additional
 options.
 
+//Derives from the TagHelper base class
 public class SystemInfoTagHelper : TagHelper
 {
-private readonly HtmlEncoder _htmlEncoder;
-public SystemInfoTagHelper(HtmlEncoder htmlEncoder)
-{
-_htmlEncoder = htmlEncoder;
-}
-[HtmlAttributeName("add-machine")]
-public bool IncludeMachine { get; set; } = true;
-[HtmlAttributeName("add-os")]
-public bool IncludeOS { get; set; } = true;
-public override void Process(
-TagHelperContext context, TagHelperOutput output)
-{
-output.TagName = "div";
-output.TagMode = TagMode.StartTagAndEndTag;
-var sb = new StringBuilder();
-if (IncludeMachine)
-{
-sb.Append(" <strong>Machine</strong> ");
-sb.Append(_htmlEncoder.Encode(Environment.MachineName));
-}
-if (IncludeOS)
-{
-sb.Append(" <strong>OS</strong> ");
-sb.Append(
-_htmlEncoder.Encode(RuntimeInformation.OSDescription));
-}
-output.Content.SetHtmlContent(sb.ToString());
-}
+    //An HtmlEncoder is necessary when writing HTML content to the page.
+    private readonly HtmlEncoder _htmlEncoder;
+    public SystemInfoTagHelper(HtmlEncoder htmlEncoder)
+    {
+        _htmlEncoder = htmlEncoder;
+    }
+
+    //Decorating properties with HtmlAttributeName allows you to set their values from Razor markup.
+    [HtmlAttributeName("add-machine")]
+    public bool IncludeMachine { get; set; } = true;
+
+    //Decorating properties with HtmlAttributeName allows you to set their values from Razor markup.
+    [HtmlAttributeName("add-os")]
+    public bool IncludeOS { get; set; } = true;
+
+    //The main function called when an element is rendered
+    public override void Process(TagHelperContext context, TagHelperOutput output)
+    {
+        //Replaces the <systeminfo> element with a <div> element
+        output.TagName = "div";
+
+        //Renders both the <div> </div> start and end tag
+        output.TagMode = TagMode.StartTagAndEndTag;
+
+        var sb = new StringBuilder();
+
+        //If required, adds a <strong> element and the HTML-encoded machine name
+        if (IncludeMachine)
+        {
+            sb.Append(" <strong>Machine</strong> ");
+            sb.Append(_htmlEncoder.Encode(Environment.MachineName));
+        }
+
+        //If required, adds a <strong> element and the HTMLencoded OS name
+        if (IncludeOS)
+        {
+            sb.Append("<br /> <strong>OS</strong> ");
+            sb.Append(_htmlEncoder.Encode(RuntimeInformation.OSDescription));
+        }
+
+        //Sets the inner content of the <div> tag with the HTML-encoded value stored in the string builder
+        output.Content.SetHtmlContent(sb.ToString());
+    }
 }

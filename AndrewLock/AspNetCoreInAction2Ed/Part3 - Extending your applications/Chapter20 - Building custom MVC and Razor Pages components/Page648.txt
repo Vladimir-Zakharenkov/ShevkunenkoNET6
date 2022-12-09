@@ -1,0 +1,53 @@
+Listing 20.3 Using a Markdown Tag Helper in a Razor Page
+
+@page
+@model IndexModel
+
+<!-- The Markdown Tag Helper is added using the <markdown> element. -->
+<markdown>
+
+<!-- Titles can be created in Markdown using # to denote h1, ## to denote h2, and so on. -->
+## This is a markdown title
+
+This is a markdown list:
+
+<!-- Markdown converts simple lists to HTML <ul> elements. -->
+* Item 1
+* Item 2
+
+<!-- Razor content can be nested inside other Tag Helpers. -->
+<div if="showContent">
+	Content is shown when showContent is true
+</div>
+
+</markdown>
+
+The Markdown Tag Helper renders content with these steps:
+
+	1	Render any Razor content inside the Tag Helper. This includes executing any
+		nested Tag Helpers and C# code inside the Tag Helper. Listing 20.3 uses the
+		IfTagHelper, for example.
+
+	2	Convert the resulting string to HTML using the Markdig library.
+
+	3	Replace the content with the rendered HTML and remove the Tag Helper
+		<markdown> element.
+
+The following listing shows a simple approach to implementing a Markdown Tag
+Helper using Markdig. Markdig supports many additional extensions and features
+that you could enable, but the overall pattern of the Tag Helper would be the same.
+
+public class MarkdownTagHelper: TagHelper
+{
+public override async Task ProcessAsync(
+TagHelperContext context, TagHelperOutput output)
+{
+TagHelperContent markdownRazorContent = await
+output.GetChildContentAsync(NullHtmlEncoder.Default);
+string markdown =
+markdownRazorContent.GetContent(NullHtmlEncoder.Default);
+string html = Markdig.Markdown.ToHtml(markdown);
+output.Content.SetHtmlContent(html);
+output.TagName = null;
+}
+}

@@ -5,11 +5,21 @@
     var showContent = true;
 }
 
-<p if="showContent">
-    The content to show
-</p>
+<!-- The Markdown Tag Helper is added using the <markdown> element. -->
+<markdown>
 
+<!-- Titles can be created in Markdown using # to denote h1, ## to denote h2, and so on. -->
+## This is a markdown title
 
-<footer>
-    <system-info add-machine=false></system-info>
-</footer>
+This is a markdown list:
+
+<!-- Markdown converts simple lists to HTML <ul> elements. -->
+* Item 1
+* Item 2
+
+<!-- Razor content can be nested inside other Tag Helpers. -->
+<div if="showContent">
+	Content is shown when showContent is true
+</div>
+
+</markdown>

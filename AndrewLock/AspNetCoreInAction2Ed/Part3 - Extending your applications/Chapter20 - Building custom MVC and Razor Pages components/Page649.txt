@@ -1,0 +1,51 @@
+When rendered to HTML, the Markdown content in listing 20.3 (when the showContent
+variable is true) becomes:
+
+<h2>This is a markdown title</h2>
+<p>This is a markdown list:</p>
+<ul>
+<li>Item 1</li>
+<li>Item 2</li>
+</ul>
+<div>
+	Content is shown when showContent is true
+</div>
+
+	NOTE
+	In listing 20.4 we implemented ProcessAsync() instead of Process().
+	That is because we call the async method GetChildContentAsync(). You must
+	only call async methods from other async methods; otherwise you can get
+	issues such as thread starvation. For more details, see Microsoft’s “ASP.NET
+	Core Performance Best Practices”: http://mng.bz/KM7X.
+
+The Tag Helpers in this section represent a small sample of possible avenues you
+could explore, but they cover the two broad categories: Tag Helpers for rendering
+new content, and Tag Helpers for controlling the rendering of other elements.(2)
+
+Tag Helpers can be useful for providing small pieces of isolated, reusable functionality
+like this, but they’re not designed to provide larger, application-specific sections
+of an app or to make calls to business-logic services. Instead, you should use view 
+components, as you’ll see in the next section.
+
+20.2 View components: Adding logic to partial views
+
+In this section you’ll learn about view components. View components operate independently
+of the main Razor Page and can be used to encapsulate complex business
+logic. You can use view components to keep your main Razor Page focused on a single
+task, rendering the main content, instead of also being responsible for other sections
+of the page.
+
+If you think about a typical website, you’ll notice that they often have multiple
+independent dynamic sections in addition to the main content. Consider Stack Overflow,
+shown in figure 20.3, for example. As well as the main body of the page showing
+questions and answers, there’s a section showing the current logged-in user, a panel
+for blog posts and related items, and a section for job suggestions.
+
+Each of these sections is effectively independent of the main content. Each section
+contains business logic (deciding which posts or ads to show), database access (loading
+the details of the posts), and rendering logic for how to display the data. In chapter
+7 you saw that you can use layouts and partial views to split up the rendering of a
+view template into similar sections, but partial views aren’t a good fit for this example.
+
+(2)	For further details and examples, see Microsoft’s “Author Tag Helpers in ASP.NET Core” 
+	documentation at http://mng.bz/Idb0.

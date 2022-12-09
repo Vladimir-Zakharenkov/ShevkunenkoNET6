@@ -1,0 +1,24 @@
+Nevertheless, if you need an “island” of rich client-side interactivity in a single Razor
+Page, you can embed a Blazor component inside a Razor Page, as shown in the “Render
+components in a page or view with the Component Tag Helper” section of the
+“Prerender and integrate ASP.NET Core Razor components” documentation: http://
+mng.bz/PPen. You could also use Blazor components as a way to replace AJAX calls
+in your Razor Pages, as I show in my blog entry, “Replacing AJAX calls in Razor Pages
+with Razor Components and Blazor”: http://mng.bz/9MJj.
+
+If you don’t need the client-side interactivity of Blazor, view components are still the
+best option for isolated sections in Razor Pages. They interoperate cleanly with your
+Razor Pages, have no additional operational overhead, and use familiar concepts like
+layouts, partial views, and Tag Helpers. For more details on why you should continue
+to use view components, see my “Don't replace your View Components with Razor
+Components” blog entry: http://mng.bz/1rKq.
+
+In this section, you’ll see how to create a custom view component for the recipe app
+you built in previous chapters, as shown in figure 20.4. If the current user is logged in,
+the view component displays a panel with a list of links to the user’s recently created
+recipes. For unauthenticated users, the view component displays links to the login and
+register actions.
+
+Figure 20.4 The view component displays different content based on the currently
+logged-in user. It includes both business logic (determining which recipes to load
+from the database) and rendering logic (specifying how to display the data).

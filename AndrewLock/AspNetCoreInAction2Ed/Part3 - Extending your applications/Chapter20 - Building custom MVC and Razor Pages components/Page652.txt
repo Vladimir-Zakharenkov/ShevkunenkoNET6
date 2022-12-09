@@ -1,0 +1,56 @@
+This component is a great candidate for a view component as it contains database
+access and business logic (choosing which recipes to display), as well as rendering
+logic (deciding how the panel should be displayed).
+
+	TIP
+	Use partial views when you want to encapsulate the rendering of a specific
+	view model, or part of a view model. When you have rendering logic that
+	requires business logic or database access, or if the section is logically distinct
+	from the main page content, consider using a view component.
+
+You invoke view components directly from Razor views and layouts using a Tag Helperstyle
+syntax with a vc: prefix:
+
+<vc:my-recipes number-of-recipes="3">
+</vc:my-recipes>
+
+Custom view components typically derive from the ViewComponent base class and
+implement an InvokeAsync() method, as shown in listing 20.5. Deriving from this
+base class allows access to useful helper methods in much the same way that deriving
+from the ControllerBase class does for API controllers. Unlike API controllers, the
+parameters passed to InvokeAsync don’t come from model binding. Instead, you pass
+the parameters to the view component using properties on the Tag Helper element in
+your Razor view.
+
+Listing 20.5 A custom view component to display the current user’s recipes
+
+//Deriving from the ViewComponent base class provides useful methods like View().
+public class MyRecipesViewComponent : ViewComponent
+{
+	//You can use DI in a view component.
+	private readonly RecipeService _recipeService;
+	private readonly UserManager<ApplicationUser> _userManager;
+	public MyRecipesViewComponent(RecipeService recipeService,
+	UserManager<ApplicationUser> userManager)
+	{
+		_recipeService = recipeService;
+		_userManager = userManager;
+	}
+
+	//InvokeAsync renders the view component. It should return a Task<IViewComponentResult>.
+	public async Task<IViewComponentResult> InvokeAsync(int numberOfRecipes)
+	{
+		if(!User.Identity.IsAuthenticated)
+		{
+			//Calling View() will render a partial view with the provided name.
+			return View("Unauthenticated");
+		}
+	
+	//You can use async external services, allowing you to encapsulate logic in your business domain.
+	var userId = _userManager.GetUserId(HttpContext.User);
+	var recipes = await _recipeService.GetRecipesForUser(userId, numberOfRecipes);
+
+	//You can pass a view model to the partial view. Default.cshtml is used by default.
+	return View(recipes);
+	}
+}

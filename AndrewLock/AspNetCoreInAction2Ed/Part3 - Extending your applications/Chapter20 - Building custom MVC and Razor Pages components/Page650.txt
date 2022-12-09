@@ -1,0 +1,33 @@
+Figure 20.3 The Stack Overflow website has multiple sections that are independent of the
+main content, but which contain business logic and complex rendering logic. Each of these
+sections could be rendered as a view component in ASP.NET Core.
+
+Partial views let you encapsulate view rendering logic, but not business logic that’s independent
+of the main page content.
+
+Instead, view components provide this functionality, encapsulating both the business
+logic and rendering logic for displaying a small section of the page. You can use
+DI to provide access to a database context, and you can test view components independently
+of the view they generate, much like MVC and API controllers. Think of
+them a bit like mini-MVC controllers, or mini-Razor Pages, but you invoke them
+directly from a Razor view, instead of in response to an HTTP request.
+
+	TIP
+	View components are comparable to child actions from the previous version
+	of ASP.NET, in that they provide similar functionality. Child actions
+	don’t exist in ASP.NET Core.
+
+View components vs. Razor Components and Blazor
+
+In this book I am focusing on server-side rendered applications using Razor Pages
+and API applications using Web API controllers. .NET Core 3.0 introduced a completely
+new approach to building ASP.NET Core applications: Blazor. I don’t cover
+Blazor in this book, so I recommend reading Blazor in Action by Chris Sainty (Manning,
+2021).
+
+Blazor has two programming models, client-side and server-side, but both approaches
+use Blazor components (confusingly, officially called Razor components). Blazor components
+have a lot of parallels with view components, but they live in a fundamentally
+different world. Blazor components can interact with each other easily, but you can’t
+use them with Tag Helpers or view components, and it’s hard to combine them with
+Razor Page form posts.

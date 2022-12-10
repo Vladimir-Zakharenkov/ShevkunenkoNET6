@@ -1,0 +1,34 @@
+This custom view component handles all the logic you need to render a list of recipes
+when the user is logged in, or a different view if the user isn’t authenticated. The
+name of the view component is derived from the class name, like Tag Helpers. Alternatively,
+you can apply the [ViewComponent] attribute to the class and set a different
+name entirely.
+
+The InvokeAsync method must return a Task<IViewComponentResult>. This is
+similar to the way you can return IActionResult from an action method or a page
+handler, but it’s more restrictive; view components must render some sort of content,
+so you can’t return status codes or redirects. You’ll typically use the View() helper
+method to render a partial view template (as in the previous listing) though you can
+also return a string directly using the Content() helper method, which will HTMLencode
+the content and render it to the page directly.
+
+You can pass any number of parameters to the InvokeAsync method. The name of
+the parameters (in this case, numberOfRecipes) is converted to kebab-case and
+exposed as a property in the view component’s Tag Helper (<number-of-recipes>).
+You can provide these parameters when you invoke the view component from a view,
+and you’ll get IntelliSense support, as shown in figure 20.5.
+
+Figure 20.5 Visual Studio provides IntelliSense support for the method parameters of a view component’s
+InvokeAsync method. The parameter name, in this case numberOfRecipes, is converted to kebab-case for
+use as an attribute in the Tag Helper.
+
+View components have access to the current request and HttpContext. In listing 20.5
+you can see that we’re checking whether the current request was from an authenticated
+user. You can also see that we’ve used some conditional logic: if the user isn’t
+authenticated, we render the “Unauthenticated” Razor template; if they’re authenticated,
+we render the default Razor template and pass in the view models loaded from
+the database.
+
+	NOTE
+	If you don’t specify a specific Razor view template to use in the View()
+	function, view components use the template name “Default.cshtml”.

@@ -1,0 +1,40 @@
+The partial views for view components work similarly to other Razor partial views that
+you learned about in chapter 7, but they’re stored separately from them. You must
+create partial views for view components at one of these locations:
+
+	•	Views/Shared/Components/ComponentName/TemplateName
+	•	Pages/Shared/Components/ComponentName/TemplateName
+
+Both locations work, so for Razor Pages apps I typically use the Pages/ folder. For the
+view component in listing 20.5, for example, you’d create your view templates at
+
+	•	Pages/Shared/Components/MyRecipes/Default.cshtml
+	•	Pages/Shared/Components/MyRecipes/Unauthenticated.cshtml
+
+This was a quick introduction to view components, but it should get you a long way.
+View components are a simple way to embed pockets of isolated, complex logic in
+your Razor layouts. Having said that, be mindful of these caveats:
+
+•	View component classes must be public, non-nested, and non-abstract classes.
+•	Although they’re similar to MVC controllers, you can’t use filters with view
+	components.
+•	You can use layouts in your view components’ views to extract rendering logic
+	common to a specific view component. This layout may contain @sections, as
+	you saw in chapter 7, but these sections are independent of the main Razor
+	view’s layout.
+•	View components are isolated from the Razor Page they’re rendered in, so you
+	can’t, for example, define a @section in a Razor Page layout and then add that
+	content from a view component; the contexts are completely separate.
+•	When using the <vc:my-recipes> Tag Helper syntax to invoke your view component,
+	you must import it as a custom Tag Helper, as you saw in section 20.1.
+•	Instead of using the Tag Helper syntax, you may invoke the view component
+	from a view directly by using IViewComponentHelper Component, though I don’t
+	recommend using this syntax. For example,
+
+	@await Component.InvokeAsync("MyRecipes", new { numberOfRecipes = 3 })
+
+We’ve covered Tag Helpers and view components, which are both features of the
+Razor engine in ASP.NET Core. In the next section you’ll learn about a different, but
+related, topic: how to create a custom DataAnnotations attribute. If you’ve used previous
+versions of ASP.NET, this will be familiar, but ASP.NET Core has a couple of tricks
+up its sleeve to help you out.

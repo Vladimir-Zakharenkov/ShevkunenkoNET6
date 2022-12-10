@@ -1,0 +1,49 @@
+For Razor Pages binding-model validators, I create the validator as a nested class of
+the PageModel, in the same place as I create the InputModel, as I described in chapter 6. 
+That gives a class hierarchy in the Razor Page similar to the following:
+
+public class IndexPage : PageModel
+{
+	public class InputModel { }
+	public class InputModelValidator: AbstractValidator<InputModel> { }
+}
+
+That’s just my preference of course. You’re free to adopt another approach if you prefer.
+
+That brings us to the end of this chapter on custom Razor Pages components.
+When combined with the components in the previous chapter, you’ve got a great base
+for extending your ASP.NET Core applications to meet your needs. It’s a testament to
+ASP.NET Core’s design that you can swap out whole sections like the Validation framework
+entirely. If you don’t like how some part of the framework works, see if someone
+has written an alternative!
+
+Summary
+	•	With Tag Helpers, you can bind your data model to HTML elements, making
+		it easier to generate dynamic HTML. Tag Helpers can customize the elements
+		they’re attached to, add additional attributes, and customize how
+		they’re rendered to HTML. This can greatly reduce the amount of markup
+		you need to write.
+
+	•	The name of a Tag Helper class dictates the name of the element in the Razor
+		templates, so the SystemInfoTagHelper corresponds to the <system-info> element.
+		You can choose a different element name by adding the [HtmlTarget-
+		Element] attribute to your Tag Helper.
+
+	•	You can set properties on your Tag Helper object from Razor syntax by decorating
+		the property with an [HtmlAttributeName("name")] attribute and providing
+		a name. You can set these properties from Razor using HTML attributes;
+		<system-info name="value">, for example.
+
+	•	The TagHelperOutput parameter passed to the Process or ProcessAsync methods
+		control the HTML that’s rendered to the page. You can set the element
+		type with the TagName property and set the inner content using Content.Set-
+		Content() or Content.SetHtmlContent().
+
+	•	You can prevent inner Tag Helper content being processed by calling Supress-
+		Output(), and you can remove the element entirely by setting TagName=null.
+		This is useful if you only want to conditionally render elements to the response.
+
+	•	You can retrieve the contents of a Tag Helper by calling GetChildContent-
+		Async() on the TagHelperOutput parameter. You can then render this content
+		to a string by calling GetContent(). This will render any Razor expressions
+		and Tag Helpers to HTML, allowing you to manipulate the contents.

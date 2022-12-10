@@ -1,0 +1,55 @@
+3	Register your validators (such as the CurrencyConverterModelValidator from
+	listing 20.13) with the DI container. These can be registered manually, using any
+	scope you choose:
+
+	public void ConfigureServices(IServiceCollection services)
+	{
+		services.AddRazorPages()
+			.AddFluentValidation();
+
+		services.AddScoped<
+			IValidator<CurrencyConverterModelValidator>,
+			CurrencyConverterModelValidator>();
+	}
+
+	Alternatively, you can allow FluentValidation to automatically register all your
+	validators using the options shown in listing 20.15.
+
+For such a mature library, FluentValidation has relatively few configuration options to
+decipher. The following listing shows some of the options available; in particular, it
+shows how to automatically register all the custom validators in your application and
+how to disable DataAnnotations validation entirely.
+
+Listing 20.15 Configuring FluentValidation in an ASP.NET Core application
+
+public void ConfigureServices(IServiceCollection services)
+{
+	services.AddRazorPages()
+		.AddFluentValidation(opts =>
+			{
+			//Instead of manually registering validators, FluentValidation can auto-register them for you.
+			opts.RegisterValidatorsFromAssemblyContaining<Startup>();
+			
+			//Ensure that complex (nested) properties are validated, not just top-level properties.
+			opts.ImplicitlyValidateChildProperties = true;
+			
+			//FluentValidation has full localization support, but you can disable it if you don’t need it.
+			opts.LocalizationEnabled = false;
+
+			//Setting to false disables DataAnnotations validation completely for model binding.
+			opts.RunDefaultMvcValidationAfterFluentValidationExecutes
+				= false;
+	});
+}
+
+It’s important to understand that final point. If you don’t set RunDefaultMvcValidation-
+AfterFluentValidationExecutes to false, ASP.NET Core will run validation with
+both DataAnnotations and with FluentValidation. That may be useful if you’re in the
+process of migrating from one system to the other, but otherwise I recommend disabling
+it. Having your validation split between both places seems like it would be the
+worst of both worlds!
+
+One final thing to consider is where to put your validators in your solution. There
+are no technical requirements on this — if you’ve registered your validator with the DI
+container, it will be used correctly — so the choice is up to you. Personally, I prefer to
+place validators close to the models they’re validating.

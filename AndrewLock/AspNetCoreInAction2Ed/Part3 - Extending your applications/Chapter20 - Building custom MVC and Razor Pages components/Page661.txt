@@ -1,0 +1,44 @@
+Your first impression of this code might be that it’s quite verbose compared to
+listing 20.7 but remember that listing 20.7 used a custom validation attribute,
+[CurrencyCode]. The validation in listing 20.11 doesn’t require anything else—the
+logic implemented by the [CurrencyCode] attribute is right there in the validator,
+making it easy to reason about. The Must() method can be used to perform arbitrarily
+complex validations, without having the additional layers of indirection required by
+custom DataAnnotations attributes.
+
+On top of that, you’ll notice that you can only define validation rules that make
+sense for the property being validated. Previously, there was nothing to stop us applying
+the [CurrencyCode] attribute to the Quantity property; that’s just not possible
+with FluentValidation.
+
+Of course, just because you can write the custom [CurrencyCode] logic in-line
+doesn’t necessarily mean you have to. If a rule is used in multiple parts of your application,
+it may make sense to extract it into a helper class. The following listing shows
+how you could extract the currency code logic into an extension method, which can
+be used in multiple validators.
+
+Listing 20.12 An extension method for currency validation
+
+public static class ValidationExtensions
+{
+	//Creates an extension method that can be chained from RuleFor() for string properties
+	public static IRuleBuilderOptions<T, string> MustBeCurrencyCode<T>(this IRuleBuilder<T, string> ruleBuilder)
+	{
+		//Applies the same validation logic as before
+		return ruleBuilder
+			.Must(value => _allowedValues.Contains(value))
+			.WithMessage("Not a valid currency code");
+	}
+
+	//The currency code values to allow
+	private static readonly string[] _allowedValues = new []{ "GBP", "USD", "CAD", "EUR" };
+}
+
+You can then update your CurrencyConverterModelValidator to use the new extension
+method, removing the duplication in your validator and ensuring consistency
+across country-code fields:
+
+RuleFor(x => x.CurrencyTo)
+	.NotEmpty()
+	.Length(3)
+	.MustBeCurrencyCode();

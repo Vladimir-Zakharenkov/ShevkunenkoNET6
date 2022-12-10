@@ -1,0 +1,55 @@
+The main feature missing from this custom attribute is client-side validation. You’ve
+seen that the attribute works well on the server side, but if the user entered an invalid
+value, they wouldn’t be informed until after the invalid value had been sent to the
+server. That’s safe, and it’s as much as you need to do for security and data-consistency
+purposes, but client-side validation can improve the user experience by providing
+immediate feedback.
+
+You can implement client-side validation in several ways, but it’s heavily dependent
+on the JavaScript libraries you use to provide the functionality. Currently ASP.NET
+Core Razor templates rely on jQuery for client-side validation. See the “Custom clientside
+validation” section of Microsoft’s “Model validation in ASP.NET Core MVC and
+Razor Pages” documentation for an example of creating a jQuery Validation adapter
+for your attributes: http://mng.bz/Wd6g.
+
+Another improvement to your custom validation attribute would be to load the list
+of currencies from a DI service, such as an ICurrencyProvider. Unfortunately, you
+can’t use constructor DI in your CurrencyCodeAttribute as you can only pass constant
+values to the constructor of an Attribute in .NET. In chapter 13 we worked around
+this limitation for filters by using [TypeFilter] or [ServiceFilter], but there’s no
+such solution for ValidationAttribute.
+
+Instead, for validation attributes, you must use the Service Locator pattern. As I
+discussed in chapter 10, this antipattern is best avoided where possible, but unfortunately
+it’s necessary in this case. Instead of declaring an explicit dependency via a constructor,
+you must ask the DI container directly for an instance of the required service.
+
+Listing 20.9 shows how you could rewrite listing 20.8 to load the allowed currencies
+from an instance of ICurrencyProvider, instead of hardcoding the allowed values in
+the attribute’s constructor. The attribute calls the GetService<T>() method on ValidationContext
+to resolve an instance of ICurrencyProvider from the DI container.
+Note that ICurrencyProvider is a hypothetical service that would need to be registered
+in your application’s ConfigureServices() method in Startup.cs.
+
+Listing 20.9 Using the service-locator pattern to access services
+
+public class CurrencyCodeAttribute : ValidationAttribute
+{
+	protected override ValidationResult IsValid(object value, ValidationContext context)
+	{
+		//Retrieves an instance of ICurrencyProvider directly from the DI container
+		var provider = context.GetService<ICurrencyProvider>();
+
+		//Fetches the currency codes using the  provider
+		var allowedCodes = provider.GetCurrencies();
+
+		//Validates the property as before
+		var code = value as string;
+		if(code == null || !_allowedCodes.Contains(code))
+		{
+			return new ValidationResult("Not a valid currency code");
+		}
+
+		return ValidationResult.Success;
+	}
+}

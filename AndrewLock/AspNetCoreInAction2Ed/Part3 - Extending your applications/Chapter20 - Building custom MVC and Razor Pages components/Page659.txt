@@ -1,0 +1,52 @@
+	TIP
+	The generic GetService<T> method is an extension method available in
+	the Microsoft.Extensions.DependencyInjection namespace. As an alternative,
+	you can use the GetService(Type type) method.
+
+The default DataAnnotations validation system can be convenient due to its declarative
+nature, but this has trade-offs, as shown by the dependency injection problem
+above. Luckily, you can completely replace the validation system your application uses,
+as shown in the following section.
+
+20.4 Replacing the validation framework with FluentValidation
+
+In this section you’ll learn how to replace the DataAnnotations-based validation
+framework that’s used by default in ASP.NET Core. You’ll see the arguments for why
+you might want to do this and learn how to use a third-party alternative: FluentValidation.
+This open source project allows you to define the validation requirements of your models
+separately from the models themselves. This separation can make some types of validation
+easier and ensures each class in your application has a single responsibility.
+
+Validation is an important part of the model-binding process in ASP.NET Core. Up
+to now, we’ve been using DataAnnotations attributes applied to properties of your
+binding model to define your requirements. In section 20.3 we even created a custom
+validation attribute.
+
+By default, ASP.NET Core is configured to use these attributes to drive the validation
+portion of model binding. But the ASP.NET Core framework is very flexible and
+allows you to replace whole chunks of the framework if you like. The validation system
+is one such area that many people choose to replace.
+
+FluentValidation (https://fluentvalidation.net/) is a popular alternative validation
+framework for ASP.NET Core. It is a mature library, with roots going back well before
+ASP.NET Core was conceived of. With FluentValidation you write your validation code
+separately from your binding model code. This gives several advantages:
+
+	•	You’re not restricted to the limitations of Attributes, such as the dependency
+		injection problem we had to work around in listing 20.9.
+
+	•	It’s much easier to create validation rules that apply to multiple properties, such
+		as to ensure an EndDate property contains a later value than a StartDate property.
+		Achieving this with DataAnnotations attributes is possible, but difficult.
+
+	•	It’s generally easier to test FluentValidation validators than DataAnnotations
+		attributes.
+
+	•	The validation is strongly typed, compared to DataAnnotations attributes where
+		it’s possible to apply attributes in ways that don’t make sense, such as applying
+		an [EmailAddress] attribute to an int property, for example.
+
+	•	Separating your validation logic from the model itself arguably better conforms
+		to the single-responsibility-principle (SRP).(3)
+
+(3) The SRP is one of the SOLID design principles: https://en.wikipedia.org/wiki/SOLID.

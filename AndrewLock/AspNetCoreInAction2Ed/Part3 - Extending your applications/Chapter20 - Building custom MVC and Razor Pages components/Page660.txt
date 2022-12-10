@@ -1,0 +1,71 @@
+That final point is often given as a reason not to use FluentValidation: FluentValidation
+separates a binding model from its validation rules. Some people are happy to accept
+the limitations of DataAnnotations to keep the model and validation rules together.
+
+Before I show you how to add FluentValidation to your application, let’s see what
+FluentValidation validators look like.
+
+20.4.1 Comparing FluentValidation to DataAnnotations attributes
+
+To better understand the difference between the DataAnnotations approach and
+FluentValidation, we’ll convert the binding models from section 20.3 to use Fluent-
+Validation. The following listing shows what the binding model from listing 20.7
+would look like when used with FluentValidation. It is structurally identical but has no
+validation attributes.
+
+Listing 20.10 Currency converter initial binding model for use with FluentValidation
+
+public class CurrencyConverterModel
+{
+	public string CurrencyFrom { get; set; }
+	public string CurrencyTo { get; set; }
+	public decimal Quantity { get; set; }
+}
+
+In FluentValidation you define your validation rules in a separate class, with a class per
+model to be validated. Typically, these derive from the AbstractValidator<> base
+class, which provides a set of extension methods for defining your validation rules.
+
+The following listing shows a validator for the CurrencyConverterModel, which
+matches the validations added using attributes in listing 20.7. You create a set of validation
+rules for a property by calling RuleFor() and chaining method calls such as
+NotEmpty() from it. This style of method chaining is called a “fluent” interface, hence
+the name.
+
+Listing 20.11 A FluentValidation validator for the currency converter binding model
+
+//The validator inherits from AbstractValidator.
+public class CurrencyConverterModelValidator : AbstractValidator<CurrencyConverterModel>
+{
+	//Defines the static list of currency codes that are supported
+	private readonly string[] _allowedValues = new []{ "GBP", "USD", "CAD", "EUR" };
+
+	//You define validation rules in the validator’s constructor.
+	public InputValidator()
+	{
+		//RuleFor is used to add a new validation rule. The lambda syntax allows for strong typing.
+		RuleFor(x => x.CurrencyFrom)
+
+			//There are equivalent rules for common DataAnnotations validation attributes.
+			.NotEmpty()
+			.Length(3)
+
+			//You can easily add custom validation rules without having to create separate classes.
+			.Must(value => _allowedValues.Contains(value))
+			.WithMessage("Not a valid currency code");
+
+		RuleFor(x => x.CurrencyTo)
+			.NotEmpty()
+			Listing 20.10 Currency converter initial binding model for use with FluentValidation
+			Listing 20.11 A FluentValidation validator for the currency converter binding model
+			.Length(3)
+			.Must(value => _allowedValues.Contains(value))
+			.WithMessage("Not a valid currency code");
+
+		RuleFor(x => x.Quantity)
+			.NotNull()
+
+			//Thanks to strong typing, the rules available depend on the property being validated.
+			.InclusiveBetween(1, 1000);
+	}
+}

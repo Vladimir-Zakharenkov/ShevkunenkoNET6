@@ -1,0 +1,57 @@
+Listing 20.14 Using Must() to validate that two properties are different
+
+//The error message will be associated with the CurrencyTo property.
+RuleFor(x => x.CurrencyTo)
+	.NotEmpty()
+	.Length(3)
+	.MustBeCurrencyCode()
+
+	//The Must function passes the top-level model being validated and the current property.
+	.Must((InputModel model, string currencyTo) 
+
+		//Perform the validation — the currencies must be different.
+		=> currencyTo != model.CurrencyFrom)
+
+	//Use the provided message as the error message.
+	.WithMessage("Cannot convert currency to itself");
+
+Creating a validator like this is certainly possible with DataAnnotations attributes, but
+it requires far more ceremony than the FluentValidation equivalent and is generally
+harder to test. FluentValidation has many more features for making it easier to write
+and test your validators too:
+
+	•	Complex property validations — Validators can be applied to complex types, as well
+		as to the primitive types like string and int shown here in this section.
+
+	•	Custom property validators — In addition to simple extension methods, you can
+		create your own property validators for complex validation scenarios.
+
+	•	Collection rules—When types contain collections, such as List<T>, you can apply
+		validation to each item in the list, as well as to the overall collection.
+
+	•	RuleSets—You can create multiple collections of rules that can be applied to an
+		object in different circumstances. These can be especially useful if you’re using
+		FluentValidation in additional areas of your application.
+
+	•	Client-side validation — FluentValidation is a server-side framework, but it emits
+		the same attributes as DataAnnotations attributes to enable client-side validation
+		using jQuery.
+
+There are many more features in addition to these, so be sure to browse the documentation
+at https://docs.fluentvalidation.net/ for details. In the next section you’ll see
+how to add FluentValidation to your ASP.NET Core application.
+
+20.4.2 Adding FluentValidation to your application
+
+Replacing the whole validation system of ASP.NET Core sounds like a big step, but
+the FluentValidation library makes it easy to add to your application. Simply follow
+these steps:
+
+	1	Install the FluentValidation.AspNetCore NuGet package using Visual Studio’s
+		NuGet package manager via the CLI by running dotnet add package Fluent-
+		Validation.AspNetCore or by adding a <PackageReference> to your .csproj file:
+		<PackageReference Include="FluentValidation.AspNetCore" Version="9.3.0" />
+
+	2	Configure the FluentValidation library in the ConfigureServices method of
+		your Startup class by calling AddFluentValidation(). You can further configure
+		the library as shown in listing 20.15.

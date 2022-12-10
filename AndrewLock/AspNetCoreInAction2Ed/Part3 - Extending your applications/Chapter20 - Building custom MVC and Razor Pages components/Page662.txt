@@ -1,0 +1,44 @@
+Another advantage of the FluentValidation approach of using standalone validation
+classes is that they are created using dependency injection, so you can inject services
+into them. As an example, consider the [CurrencyCode] validation attribute from listing
+20.9, which used a service, ICurrencyProvider, from the DI container. This
+requires using service location to obtain an instance of ICurrencyProvider using an
+injected context object.
+
+With the FluentValidation library, you can just inject the ICurrencyProvider
+directly into your validator, as shown in the following listing. This requires fewer gymnastics
+to get the desired functionality and makes your validator’s dependencies
+explicit.
+
+Listing 20.13 Currency converter validator using dependency injection
+
+public class CurrencyConverterModelValidator : AbstractValidator<CurrencyConverterModel>
+{
+	//Injecting the service using standard constructor dependency injection
+	public CurrencyConverterModelValidator(ICurrencyProvider provider)
+	{
+		RuleFor(x => x.CurrencyFrom)
+			.NotEmpty()
+			.Length(3)
+			.Must(value => provider
+				.GetCurrencies()
+				.Contains(value))
+				.WithMessage("Not a valid currency code");
+
+		RuleFor(x => x.CurrencyTo)
+			.NotEmpty()
+			.Length(3)
+			//Using the injected service with an extension method
+			.MustBeCurrencyCode(provider.GetCurrencies());
+
+		RuleFor(x => x.Quantity)
+			.NotNull()
+			.InclusiveBetween(1, 1000);
+	}
+}
+
+The final feature I’ll show demonstrates how much easier it is to write validators that
+span multiple properties with FluentValidation. For example, imagine we want to
+validate that the value of CurrencyTo is different than CurrencyFrom. Using Fluent-
+Validation you can implement this with an overload of Must(), which provides both
+the model and the property being validated, as shown in the following listing.

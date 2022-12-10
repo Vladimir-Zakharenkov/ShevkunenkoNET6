@@ -1,0 +1,52 @@
+	•	View components are like partial views, but they allow you to use complex business
+		and rendering logic. You can use them for sections of a page, such as the
+		shopping cart, a dynamic navigation menu, or suggested articles.
+
+	•	Create a view component by deriving from the ViewComponent base class and
+		implementing InvokeAsync(). You can pass parameters to this function from
+		the Razor view template using HTML attributes, in a similar way to Tag Helpers.
+
+	•	View components can use DI, access the HttpContext, and render partial views.
+		The partial views should be stored in the Pages/Shared/Components/<Name>/
+		folder, where Name is the name of the view component. If not specified, view
+		components will look for a default view named Default.cshtml.
+
+	•	You can create a custom DataAnnotations attribute by deriving from Validation-
+		Attribute and overriding the IsValid method. You can use this to decorate
+		your binding model properties and perform arbitrary validation.
+
+	•	You can’t use constructor DI with custom validation attributes. If the validation
+		attribute needs access to services from the DI container, you must use the Service
+		Locator pattern to load them from the validation context, using the Get-
+		Service<T> method.
+
+	•	FluentValidation is an alternative validation system that can replace the default
+		DataAnnotations validation system. It is not based on attributes, which makes it
+		easier to write custom validations for your validation rules and makes those
+		rules easier to test.
+
+	•	To create a validator for a model, create a class derived from Abstract-
+		Validator<> and call RuleFor<>() in the constructor to add validation rules.
+		You can chain multiple requirements on RuleFor<>() in the same way that you
+		could add multiple DataAnnotations attributes to a model.
+
+	•	If you need to create a custom validation rule, you can use the Must() method
+		to specify a predicate. If you wish to re-use the validation rule across multiple
+		models, encapsulate the rule as an extension method, to reduce duplication.
+
+	•	To add FluentValidation to your application, install the FluentValidation.Asp-
+		NetCore NuGet package, call AddFluentValidation() after your call to Add-
+		RazorPages() or AddControllers(), and register your validators with the DI
+		container. This will add FluentValidation validations in addition to the built-in
+		DataAnnotations system.
+
+	•	To remove the DataAnnotations validation system and use FluentValidation
+		only, set the RunDefaultMvcValidationAfterFluentValidationExecutes option
+		to false in your call to AddFluentValidation(). Favor this approach where
+		possible, to avoid running validation methods from two different systems.
+
+	•	You can allow FluentValidation to automatically discover and register all the
+		validators in your application by calling RegisterValidatorsFromAssembly-
+		Containing<T>(), where T is a type in the assembly to scan. This means you
+		don’t have to register each validator in your application with the DI container
+		individually.

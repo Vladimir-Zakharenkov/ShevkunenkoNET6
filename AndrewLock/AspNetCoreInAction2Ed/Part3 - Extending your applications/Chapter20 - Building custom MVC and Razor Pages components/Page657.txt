@@ -1,0 +1,37 @@
+﻿ValidationContext to each attribute in turn. The context object contains details that
+you can use to validate the property.
+
+Of particular note is the ObjectInstance property. You can use this to access the
+top-level model being validated when you validate a sub-property. For example, if
+the CurrencyFrom property of the CurrencyConvertModel is being validated, you can
+access the top-level object from the ValidationAttribute as follows:
+
+var model = validationContext.ObjectInstance as CurrencyConverterModel;
+
+This can be useful if the validity of a property depends on the value of another property
+of the model. For example, you might want a validation rule that says that GBP is
+a valid value for CurrencyTo, except when CurrencyFrom is also GBP. The Object-
+Instance makes these sorts of comparison validations easy.
+
+	NOTE
+	Although using ObjectInstance makes it easy to make model-level
+	comparisons like these, it reduces the portability of your validation attribute.
+	In this case, you would only be able to use the attribute in the application that
+	defines CurrencyConverterModel.
+
+Within the IsValid method, you can cast the value provided to the required data
+type (in this case, string) and check against the list of allowed codes. If the code isn’t
+allowed, the attribute returns a ValidationResult with an error message indicating
+that there was a problem. If the code is allowed, ValidationResult.Success is
+returned, and the validation succeeds.
+
+Putting your attribute to the test in figure 20.6 shows that when CurrencyTo is an
+invalid value (£$%), the validation for the property fails and an error is added to the
+ModelState. You could do some tidying up of this attribute to let you set a custom
+message, to allow nulls, or to display the name of the property that’s invalid, but the
+important features are all there.
+
+Figure 20.6 The Watch window of Visual Studio showing the result of validation using the
+custom ValidationAttribute. The user has provided an invalid currencyTo value,
+£$%. Consequently, ModelState isn’t valid and contains a single error with the message
+“Not a valid currency code.”

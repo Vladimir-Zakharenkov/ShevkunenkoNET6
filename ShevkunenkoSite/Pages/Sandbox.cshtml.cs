@@ -7,6 +7,9 @@ namespace ShevkunenkoSite.Pages
     {
         public void OnGet()
         {
+            var message = HttpContext.Request.Host;
+
+            var t = "t";
         }
     }
 }

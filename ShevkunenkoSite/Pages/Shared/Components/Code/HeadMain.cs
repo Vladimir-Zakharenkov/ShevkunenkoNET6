@@ -6,6 +6,7 @@ public class HeadMain : ViewComponent
 
     public async Task<IViewComponentResult> InvokeAsync()
     {
+
         PageInfoModel pageInfoModel = await _pageInfoContext.PagesInfo.FirstAsync()!;
 
         return View(pageInfoModel);

@@ -1,10 +1,12 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ShevkunenkoSite.Models;
 
 public class PageInfoModel
 {
     [Display(Name = " PageInfoId :")]
+    [Column ("PageInfoId")]
     public Guid PageInfoModelId { get; set; }
 
     [Required(ErrorMessage = "Добавьте заголовок страницы")]
@@ -50,5 +52,8 @@ public class PageInfoModel
 
     [Required(ErrorMessage = "Необходимо ввести адрес страницы")]
     [Display(Name = "Адрес страницы:")]
-    public Uri PageLoc { get; set; } = new Uri("https://shevkunenko.site/index");
+    public string PageLoc { get; set; } = "/index";
+
+    public Guid BackgroundFileModelId { get; set; }
+    public BackgroundFileModel BackgroundFileModel { get; set; } = null!;
 }

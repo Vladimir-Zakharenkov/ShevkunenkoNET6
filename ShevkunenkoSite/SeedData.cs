@@ -1,4 +1,6 @@
-﻿namespace ShevkunenkoSite.Services;
+﻿using ShevkunenkoSite.Models;
+
+namespace ShevkunenkoSite.Services;
 
 //If you need to reset the database, then run this command in the ShevkunenkoSite.Services folder:
 //dotnet ef database --startup-project ..\ShevkunenkoSite  drop --force --context SiteDbContext
@@ -12,6 +14,19 @@ public static class SeedData
         if (context.Database.GetPendingMigrations().Any())
         {
             context.Database.Migrate();
+        }
+
+        if (!context.BackgroundFile.Any())
+        {
+            context.BackgroundFile.AddRange(
+                new BackgroundFileModel
+                {
+                    LeftBackground = "FotoPlenka.png",
+
+                    RightBackground = "FotoPlenka.png"
+                });
+
+            context.SaveChanges();
         }
 
         if (!context.PageInfo.Any())
@@ -47,8 +62,9 @@ public static class SeedData
                     "шевкуненко сергей юрьевич криминал",
 
                 PageLastmod = DateTime.Today,
+                PageLoc = "/index",
 
-                PageLoc = new Uri("https://shevkunenko.site/index")
+                BackgroundFileModelId = new("B457B4A0F8C04888E1F108DADAEED08C")
             }
             );
 

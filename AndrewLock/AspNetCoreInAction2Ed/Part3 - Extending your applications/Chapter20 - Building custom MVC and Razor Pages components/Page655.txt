@@ -1,0 +1,54 @@
+﻿20.3 Building a custom validation attribute
+
+In this section you’ll learn how to create a custom DataAnnotations validation attribute
+that specifies specific values a string property may take. You’ll then learn how
+you can expand the functionality to be more generic by delegating to a separate service
+that is configured in your DI controller. This will allow you to create custom domainspecific
+validations for your apps.
+
+We looked at model binding in chapter 6, where you saw how to use the built-in
+DataAnnotations attributes in your binding models to validate user input. These provide
+several built-in validations, such as
+
+	•	[Required] — The property isn’t optional and must be provided.
+	•	[StringLength(min, max)] — The length of the string value must be between
+		min and max characters.
+	•	[EmailAddress] — The value must have a valid email address format.
+
+But what if these attributes don’t meet your requirements? Consider the following listing,
+which shows a binding model from a currency converter application. The model
+contains three properties: the currency to convert from, the currency to convert to,
+and the quantity.
+
+Listing 20.6 Currency converter initial binding model
+
+public class CurrencyConverterModel
+{
+	[Required]
+	[StringLength(3, MinimumLength = 3)]
+	public string CurrencyFrom { get; set; }
+
+	[Required]
+	[StringLength(3, MinimumLength = 3)]
+	public string CurrencyTo { get; set; }
+
+	[Required]
+	[Range(1, 1000)]
+	public decimal Quantity { get; set; }
+}
+
+There’s some basic validation on this model, but during testing you identify a problem:
+users can enter any three-letter string for the CurrencyFrom and CurrencyTo
+properties. Users should only be able to choose a valid currency code, like "USD" or
+"GBP", but someone attacking your application could easily send "XXX" or "£$%".
+
+Assuming you support a limited set of currencies, say GBP, USD, EUR, and CAD,
+you could handle the validation in a few different ways. One way would be to validate
+the CurrencyFrom and CurrencyTo values within the Razor Page handler method,
+after model binding and attribute validation has already occurred.
+
+Another way would be to use a [RegularExpresssion] attribute to look for the
+allowed strings. The approach I’m going to take here is to create a custom Validation-
+Attribute. The goal is to have a custom validation attribute you can apply to the
+CurrencyFrom and CurrencyTo attributes, to restrict the range of valid values. This will
+look something like the following example.

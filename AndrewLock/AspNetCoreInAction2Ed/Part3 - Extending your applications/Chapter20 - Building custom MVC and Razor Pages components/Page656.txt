@@ -1,0 +1,56 @@
+Listing 20.7 Applying custom validation attributes to the binding model
+
+public class CurrencyConverterModel
+{
+	[Required]
+	[StringLength(3, MinimumLength = 3)]
+	[CurrencyCode("GBP", "USD", "CAD", "EUR")]
+	public string CurrencyFrom { get; set; }
+
+	[Required]
+	[StringLength(3, MinimumLength = 3)]
+	[CurrencyCode("GBP", "USD", "CAD", "EUR")]
+	public string CurrencyTo { get; set; }
+
+	[Required]
+	[Range(1, 1000)]
+	public decimal Quantity { get; set; }
+}
+
+Creating a custom validation attribute is simple; you can start with the Validation-
+Attribute base class, and you only have to override a single method. The next listing
+shows how you could implement CurrencyCodeAttribute to ensure that the currency
+codes provided match the expected values.
+
+Listing 20.8 Custom validation attribute for currency codes
+
+//Derives from ValidationAttribute to ensure your attribute is used during validation
+public class CurrencyCodeAttribute : ValidationAttribute
+{
+	//The attribute takes in an array of allowed currency codes.
+	private readonly string[] _allowedCodes;
+	public CurrencyCodeAttribute(params string[] allowedCodes)
+	{
+		_allowedCodes = allowedCodes;
+	}
+
+	//The IsValid method is passed the value to validate and a context object.
+	protected override ValidationResult IsValid(object value, ValidationContext context)
+	{
+		var code = value as string;
+
+		//If the value provided isn’t a string, is null, or isn’t an allowed code, then return an error.
+		if(code == null || !_allowedCodes.Contains(code))
+		{
+		return new ValidationResult("Not a valid currency code");
+		}
+
+		//Otherwise, return a success result.
+		return ValidationResult.Success;
+	}
+}
+
+Validation occurs in the action filter pipeline after model binding, before the action
+or Razor Page handler is executed. The validation framework calls IsValid() for
+each instance of ValidationAttribute on the model property being validated.
+The framework passes in value (the value of the property being validated) and the

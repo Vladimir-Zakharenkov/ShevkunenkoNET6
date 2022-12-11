@@ -1,41 +1,16 @@
 ﻿[ViewComponent]
 public class BackgroundFoto : ViewComponent
 {
-    private SiteDbContext _siteContext;
-    public BackgroundFoto(SiteDbContext siteContext)
+    private IBackgroundFotoRepository _backgroundFoto;
+    public BackgroundFoto(IBackgroundFotoRepository backgroundFoto)
     {
-        _siteContext = siteContext;
+        _backgroundFoto = backgroundFoto;
     }
 
     public async Task<IViewComponentResult> InvokeAsync()
     {
-        var pagePath = HttpContext.Request.Path.ToString();
+        BackgroundFileModel backgroundImage = await _backgroundFoto.GetBackgroundFotoByPathAsync(HttpContext.Request.Path.ToString().Trim('/'));
 
-        if (pagePath == null || pagePath == "/")
-        {
-            pagePath = "/Index";
-        }
-
-        PageInfoModel? pageInfo = await _siteContext.PageInfo
-            .Include(p => p.BackgroundFileModel)
-            .FirstOrDefaultAsync(p => p.PageLoc == pagePath);
-
-        if (pageInfo != null)
-        {
-            BackgroundFileModel? backgroundFile = await _siteContext.BackgroundFile
-                .FirstOrDefaultAsync(p => p.BackgroundFileModelId == pageInfo.BackgroundFileModelId);
-
-            return View(backgroundFile);
-        }
-        else
-        {
-            Guid indexPage = new("B457B4A0F8C04888E1F108DADAEED08C");
-
-            BackgroundFileModel? backgroundFile = await _siteContext.BackgroundFile
-                .FirstOrDefaultAsync(p => p.BackgroundFileModelId == indexPage);
-
-            return View(backgroundFile);
-
-        }
+        return View(backgroundImage);
     }
 }

@@ -1,6 +1,4 @@
-﻿using ShevkunenkoSite.Models;
-
-namespace ShevkunenkoSite.Services;
+﻿namespace ShevkunenkoSite.Services;
 
 //If you need to reset the database, then run this command in the ShevkunenkoSite.Services folder:
 //dotnet ef database --startup-project ..\ShevkunenkoSite  drop --force --context SiteDbContext
@@ -24,6 +22,12 @@ public static class SeedData
                     LeftBackground = "FotoPlenka.png",
 
                     RightBackground = "FotoPlenka.png"
+                },
+                new BackgroundFileModel
+                {
+                    LeftBackground = "biografy-left.png",
+
+                    RightBackground = "biografy-right.png"
                 });
 
             context.SaveChanges();
@@ -62,9 +66,10 @@ public static class SeedData
                     "шевкуненко сергей юрьевич криминал",
 
                 PageLastmod = DateTime.Today,
-                PageLoc = "/index",
 
-                BackgroundFileModelId = new("B457B4A0F8C04888E1F108DADAEED08C")
+                PageLoc = "Index",
+
+                BackgroundFileModelId = new("E073BDDD694F4818A0C308DADB48DCD9")
             }
             );
 

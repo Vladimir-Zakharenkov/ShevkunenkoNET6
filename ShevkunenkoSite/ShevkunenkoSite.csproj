@@ -34,8 +34,4 @@
 		<ProjectReference Include="..\ShevkunenkoSite.Services\ShevkunenkoSite.Services.csproj" />
 	</ItemGroup>
 
-	<ItemGroup>
-	  <Folder Include="wwwroot\images\Backgrounds\" />
-	</ItemGroup>
-
 </Project>

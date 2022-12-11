@@ -42,6 +42,7 @@ services.AddWebMarkupMin(
         .AddHttpCompression();
 
 services.AddScoped<IPageInfoRepository, PageInfoImplementation>();
+services.AddScoped<IBackgroundFotoRepository, BackGroundFotoImplementation>();
 
 WebApplication app = builder.Build();
 

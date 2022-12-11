@@ -7,9 +7,9 @@
     <vc:head-main />
     <vc:head-icons />
 
-    @await Html.PartialAsync("_HeadCSSPartial")
+    <partial name="_HeadCSSPartial" />
 
-    @await Html.PartialAsync("_HeadScriptsPartial")
+    <partial name="_HeadScriptsPartial" />
 
 </head>
 
@@ -17,7 +17,7 @@
 
     <div class="container-fluid container-fluid-1920">
 
-        @await Html.PartialAsync("_YandexReclamaHeadPartial")
+        <partial name="_YandexReclamaHeadPartial" />
 
         <div class="row text-center bg-light">
 
@@ -37,13 +37,13 @@
 
         </div>
 
-        @await Html.PartialAsync("_FooterPartial")
+        <partial name="_FooterPartial" />
 
     </div>
 
-    @await Html.PartialAsync("_YandexReclamaFooterPartial")
+    <partial name="_YandexReclamaFooterPartial" />
 
-    @await Html.PartialAsync("_FooterScriptsPartial")
+    <partial name="_FooterScriptsPartial" />
 
     @await RenderSectionAsync("Scripts", required: false)
 

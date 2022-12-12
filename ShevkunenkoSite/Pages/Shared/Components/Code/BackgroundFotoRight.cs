@@ -1,8 +1,8 @@
 ﻿[ViewComponent]
-public class BackgroundFoto : ViewComponent
+public class BackgroundFotoRight : ViewComponent
 {
-    private IBackgroundFotoRepository _backgroundFoto;
-    public BackgroundFoto(IBackgroundFotoRepository backgroundFoto)
+    private readonly IBackgroundFotoRepository _backgroundFoto;
+    public BackgroundFotoRight(IBackgroundFotoRepository backgroundFoto)
     {
         _backgroundFoto = backgroundFoto;
     }

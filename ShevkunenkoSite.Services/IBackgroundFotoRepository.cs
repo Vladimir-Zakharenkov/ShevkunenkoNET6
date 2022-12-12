@@ -1,6 +1,4 @@
-﻿using ShevkunenkoSite.Models;
-
-public interface IBackgroundFotoRepository
+﻿public interface IBackgroundFotoRepository
 {
     IQueryable<BackgroundFileModel> BackgroundFiles { get; }
 

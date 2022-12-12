@@ -1,15 +1,11 @@
-﻿using Microsoft.EntityFrameworkCore;
-using ShevkunenkoSite.Models;
-
-namespace ShevkunenkoSite.Services;
-
-public class BackGroundFotoImplementation : IBackgroundFotoRepository
+﻿public class BackGroundFotoImplementation : IBackgroundFotoRepository
 {
-    private SiteDbContext _siteContext;
+    private readonly SiteDbContext _siteContext;
     public BackGroundFotoImplementation(SiteDbContext siteContext)
     {
         _siteContext = siteContext;
     }
+
     public IQueryable<BackgroundFileModel> BackgroundFiles => _siteContext.BackgroundFile;
 
     public async Task<BackgroundFileModel> GetBackgroundFotoByPathAsync(string? pagePath)
@@ -19,33 +15,35 @@ public class BackGroundFotoImplementation : IBackgroundFotoRepository
             pagePath = "Index";
         }
 
-        var test = await _siteContext.PageInfo.Where(p => p.PageLoc == pagePath).AnyAsync();
+        bool isPageInDatabase = await _siteContext.PageInfo
+            .Where(p => p.PageLoc == pagePath)
+            .AnyAsync();
 
-        if (!test)
+        if (!isPageInDatabase)
         {
             pagePath += "/Index";
         }
 
-        PageInfoModel? pageInfo = await _siteContext.PageInfo
-           .Include(p => p.BackgroundFileModel)
-           .FirstOrDefaultAsync(p => p.PageLoc == pagePath);
+        isPageInDatabase = await _siteContext.PageInfo
+            .Where(p => p.PageLoc == pagePath)
+            .AnyAsync();
 
-        if (pageInfo != null)
+        if (isPageInDatabase)
         {
-            BackgroundFileModel? backgroundFile = await _siteContext.BackgroundFile
-                .FirstOrDefaultAsync(p => p.BackgroundFileModelId == pageInfo.BackgroundFileModelId);
+            PageInfoModel pageItem = await _siteContext.PageInfo
+                .FirstAsync(p => p.PageLoc == pagePath);
+
+            BackgroundFileModel backgroundFile = await _siteContext.BackgroundFile
+                .FirstAsync(p => p.BackgroundFileModelId == pageItem.BackgroundFileModelId);
 
             return backgroundFile;
         }
         else
         {
-            Guid indexPage = new("B40676297CC94D79A0C208DADB48DCD9");
-
-            BackgroundFileModel? backgroundFile = await _siteContext.BackgroundFile
-                .FirstOrDefaultAsync(p => p.BackgroundFileModelId == indexPage);
+            BackgroundFileModel backgroundFile = await _siteContext.BackgroundFile
+                .FirstAsync(p => p.LeftBackground == "FotoPlenka.png");
 
             return backgroundFile;
-
         }
     }
 }

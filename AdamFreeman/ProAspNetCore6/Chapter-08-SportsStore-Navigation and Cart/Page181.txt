@@ -1,0 +1,53 @@
+To see the effect of the category filtering, start ASP.NET Core and select a category 
+using the following URL, taking care to use an uppercase S for Soccer:
+
+http://localhost:5000/?category=Soccer
+
+You will see only the products in the Soccer category, as shown in Figure 8-1.
+
+Figure 8-1. Using the query string to filter by category
+
+Users won’t want to navigate to categories using URLs, but you can see how small 
+changes can have a big impact once the basic structure of an ASP.NET Core 
+application is in place.
+
+UNIT TEST: CATEGORY FILTERING
+
+I need a unit test to properly test the category filtering function to ensure that the filter can
+correctly generate products in a specified category. Here is the test method I added to the
+HomeControllerTests class:
+
+...
+[Fact]
+        public void Can_Filter_Products()
+        {
+            // Arrange
+            // - create the mock repository
+            Mock<IStoreRepository> mock = new Mock<IStoreRepository>();
+
+            mock.Setup(m => m.Products).Returns((new Product[] {
+                new Product {ProductID = 1, Name = "P1", Category = "Cat1"},
+                new Product {ProductID = 2, Name = "P2", Category = "Cat2"},
+                new Product {ProductID = 3, Name = "P3", Category = "Cat1"},
+                new Product {ProductID = 4, Name = "P4", Category = "Cat2"},
+                new Product {ProductID = 5, Name = "P5", Category = "Cat3"}
+            }).AsQueryable<Product>());
+
+            // Arrange - create a controller and make the page size 3 items
+            HomeController controller = new HomeController(mock.Object);
+            controller.PageSize = 3;
+
+            // Action
+            Product[] result = (controller.Index("Cat2", 1)?.ViewData.Model
+            as ProductsListViewModel ?? new()).Products.ToArray();
+
+            // Assert
+            Assert.Equal(2, result.Length);
+            Assert.True(result[0].Name == "P2" && result[0].Category == "Cat2");
+            Assert.True(result[1].Name == "P4" && result[1].Category == "Cat2");
+        }
+...
+
+This test creates a mock repository containing Product objects that belong to a range of categories.
+One specific category is requested using the action method, and the results are checked to ensure that
+the results are the right objects in the right order.

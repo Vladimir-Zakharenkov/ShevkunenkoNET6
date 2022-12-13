@@ -1,0 +1,66 @@
+UNIT TEST: UPDATING EXISTING UNIT TESTS
+
+I changed the signature of the Index action method, which will prevent some of 
+the existing unit test methods from compiling. To address this, I need to pass null as 
+the first parameter to the Index method in those unit tests that work with the controller. 
+For example, in the Can_Use_Repository test in the HomeControllerTests.cs file, 
+the action section of the unit test becomes as follows:
+
+...
+        [Fact]
+        public void Can_Use_Repository()
+        {
+            // Arrange
+            Mock<IStoreRepository> mock = new Mock<IStoreRepository>();
+
+            mock.Setup(m => m.Products).Returns((new Product[] {
+                new Product {ProductID = 1, Name = "P1"},
+                new Product {ProductID = 2, Name = "P2"}
+                }).AsQueryable<Product>());
+
+            HomeController controller = new HomeController(mock.Object);
+
+            // Act
+            ProductsListViewModel result =
+                controller.Index(null)?.ViewData.Model as ProductsListViewModel ?? new();
+
+            // Assert
+            Product[] prodArray = result.Products.ToArray();
+            Assert.True(prodArray.Length == 2);
+            Assert.Equal("P1", prodArray[0].Name);
+            Assert.Equal("P2", prodArray[1].Name);
+        }
+...
+
+By using null for the category argument, I receive all the Product objects that 
+the controller gets from the repository, which is the same situation I had before 
+adding the new parameter. I need to make the same change to the Can_Paginate and 
+Can_Send_Pagination_View_Model tests as well.
+
+...
+[Fact]
+        public void Can_Paginate()
+        {
+            // Arrange
+            Mock<IStoreRepository> mock = new Mock<IStoreRepository>();
+            mock.Setup(m => m.Products).Returns((new Product[] {
+                new Product {ProductID = 1, Name = "P1"},
+                new Product {ProductID = 2, Name = "P2"},
+                new Product {ProductID = 3, Name = "P3"},
+                new Product {ProductID = 4, Name = "P4"},
+                new Product {ProductID = 5, Name = "P5"}
+                }).AsQueryable<Product>());
+
+            HomeController controller = new HomeController(mock.Object);
+            controller.PageSize = 3;
+
+            // Act
+            ProductsListViewModel result =
+                controller.Index(null, 2)?.ViewData.Model as ProductsListViewModel ?? new();
+
+            // Assert
+            Product[] prodArray = result.Products.ToArray();
+            Assert.True(prodArray.Length == 2);
+            Assert.Equal("P4", prodArray[0].Name);
+            Assert.Equal("P5", prodArray[1].Name);
+        }

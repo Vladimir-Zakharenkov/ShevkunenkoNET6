@@ -1,0 +1,28 @@
+Table 8-1 describes the URL scheme that these routes represent. I explain the routing 
+system in detail in Chapter 13.
+
+Table 8-1. Route Summary
+
+URL				Leads To
+
+/				Lists the first page of products from all categories
+
+/Page2			Lists the specified page (in this case, page 2), showing items from all categories
+
+/Soccer			Shows the first page of items from a specific category (in this case, 
+				the Soccer category)
+
+/Soccer/Page2	Shows the specified page (in this case, page 2) of items from the specified 
+				category (in this case, Soccer)
+
+The ASP.NET Core routing system handles incoming requests from clients, but it also generates 
+outgoing URLs that conform to the URL scheme and that can be embedded in web pages. 
+By using the routing system both to handle incoming requests and to generate outgoing URLs, 
+I can ensure that all the URLs in the application are consistent.
+
+The IUrlHelper interface provides access to URL-generating functionality. I used this 
+interface and the Action method it defines in the tag helper I created in the previous chapter. 
+Now that I want to start generating more complex URLs, I need a way to receive additional 
+information from the view without having to add extra properties to the tag helper class. 
+Fortunately, tag helpers have a nice feature that allows properties with a common prefix 
+to be received all together in a single collection, as shown in Listing 8-4.

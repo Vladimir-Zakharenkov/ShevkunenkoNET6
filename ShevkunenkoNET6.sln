@@ -346,10 +346,17 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Chapter20 - Building custom
 		AndrewLock\AspNetCoreInAction2Ed\Part3 - Extending your applications\Chapter20 - Building custom MVC and Razor Pages components\Page666.txt = AndrewLock\AspNetCoreInAction2Ed\Part3 - Extending your applications\Chapter20 - Building custom MVC and Razor Pages components\Page666.txt
 	EndProjectSection
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Chapter-08", "Chapter-08", "{C840389F-2593-49AB-B687-AD1D9E5B1156}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Chapter-08-SportsStore-Navigation and Cart", "Chapter-08-SportsStore-Navigation and Cart", "{C840389F-2593-49AB-B687-AD1D9E5B1156}"
 	ProjectSection(SolutionItems) = preProject
-		AdamFreeman\ProAspNetCore6\Chapter-08\Page177.txt = AdamFreeman\ProAspNetCore6\Chapter-08\Page177.txt
-		AdamFreeman\ProAspNetCore6\Chapter-08\Page178.txt = AdamFreeman\ProAspNetCore6\Chapter-08\Page178.txt
+		AdamFreeman\ProAspNetCore6\Chapter-08-SportsStore-Navigation and Cart\Page177.txt = AdamFreeman\ProAspNetCore6\Chapter-08-SportsStore-Navigation and Cart\Page177.txt
+		AdamFreeman\ProAspNetCore6\Chapter-08-SportsStore-Navigation and Cart\Page178.txt = AdamFreeman\ProAspNetCore6\Chapter-08-SportsStore-Navigation and Cart\Page178.txt
+		AdamFreeman\ProAspNetCore6\Chapter-08-SportsStore-Navigation and Cart\Page179.txt = AdamFreeman\ProAspNetCore6\Chapter-08-SportsStore-Navigation and Cart\Page179.txt
+		AdamFreeman\ProAspNetCore6\Chapter-08-SportsStore-Navigation and Cart\Page180.txt = AdamFreeman\ProAspNetCore6\Chapter-08-SportsStore-Navigation and Cart\Page180.txt
+		AdamFreeman\ProAspNetCore6\Chapter-08-SportsStore-Navigation and Cart\Page181.txt = AdamFreeman\ProAspNetCore6\Chapter-08-SportsStore-Navigation and Cart\Page181.txt
+		AdamFreeman\ProAspNetCore6\Chapter-08-SportsStore-Navigation and Cart\Page182.txt = AdamFreeman\ProAspNetCore6\Chapter-08-SportsStore-Navigation and Cart\Page182.txt
+		AdamFreeman\ProAspNetCore6\Chapter-08-SportsStore-Navigation and Cart\Page183.txt = AdamFreeman\ProAspNetCore6\Chapter-08-SportsStore-Navigation and Cart\Page183.txt
+		AdamFreeman\ProAspNetCore6\Chapter-08-SportsStore-Navigation and Cart\Page184.txt = AdamFreeman\ProAspNetCore6\Chapter-08-SportsStore-Navigation and Cart\Page184.txt
+		AdamFreeman\ProAspNetCore6\Chapter-08-SportsStore-Navigation and Cart\Page185.txt = AdamFreeman\ProAspNetCore6\Chapter-08-SportsStore-Navigation and Cart\Page185.txt
 	EndProjectSection
 EndProject
 Global

@@ -346,6 +346,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Chapter20 - Building custom
 		AndrewLock\AspNetCoreInAction2Ed\Part3 - Extending your applications\Chapter20 - Building custom MVC and Razor Pages components\Page666.txt = AndrewLock\AspNetCoreInAction2Ed\Part3 - Extending your applications\Chapter20 - Building custom MVC and Razor Pages components\Page666.txt
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Chapter-08", "Chapter-08", "{C840389F-2593-49AB-B687-AD1D9E5B1156}"
+	ProjectSection(SolutionItems) = preProject
+		AdamFreeman\ProAspNetCore6\Chapter-08\Page177.txt = AdamFreeman\ProAspNetCore6\Chapter-08\Page177.txt
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -436,6 +441,7 @@ Global
 		{9030AF40-A67F-43FB-BCC8-3DE0CAB0A5EE} = {E80C9E81-240F-46D3-B1FE-0AA966A3BB98}
 		{9C56C159-4FD5-4CCA-AF04-7FCAEC051F1F} = {C3D88FDB-EE3C-403B-B832-4FF71DAF29DC}
 		{F5502E81-7F14-4FAD-B1ED-0CAF902CD762} = {9C56C159-4FD5-4CCA-AF04-7FCAEC051F1F}
+		{C840389F-2593-49AB-B687-AD1D9E5B1156} = {74C9DA5B-4F3F-42CE-BC38-4BECB38F1F39}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5507A11F-FC14-46CA-B766-61BB183C82C7}

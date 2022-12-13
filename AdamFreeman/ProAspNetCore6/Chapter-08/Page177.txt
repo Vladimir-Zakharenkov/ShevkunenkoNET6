@@ -12,24 +12,32 @@ See Chapter 1 for how to get help if you have problems running the examples.
 
 Adding Navigation Controls
 
-The SportsStore application will be more useful if customers can navigate products by category. I will do this
-in three phases.
-Enhance the Index action method in the HomeController class so that it can filter
-the Product objects in the repository
-Revisit and enhance the URL scheme
-Create a category list that will go into the sidebar of the site, highlighting the
-current category and linking to others
+The SportsStore application will be more useful if customers can navigate products by category. 
+I will do this in three phases.
+
+		Enhance the Index action method in the HomeController class so that it can filter
+		the Product objects in the repository
+
+		Revisit and enhance the URL scheme
+
+		Create a category list that will go into the sidebar of the site, highlighting the
+		current category and linking to others
+
 Filtering the Product List
-I am going to start by enhancing the view model class, ProductsListViewModel, which I added to the
-SportsStore project in the previous chapter. I need to communicate the current category to the view to
-render the sidebar, and this is as good a place to start as any. Listing 8-1 shows the changes I made to the
-ProductsListViewModel.cs file in the Models/ViewModels folder.
-Listing 8-1. Modifying the ProductsListViewModel.cs File in the SportsStore/Models/ViewModels Folder
+
+I am going to start by enhancing the view model class, ProductsListViewModel, which I added 
+to the SportsStore project in the previous chapter. I need to communicate the current category 
+to the view to render the sidebar, and this is as good a place to start as any. Listing 8-1 
+shows the changes I made to the ProductsListViewModel.cs file in the Models/ViewModels folder.
+
+Listing 8-1. Modifying the ProductsListViewModel.cs File 
+in the SportsStore/Models/ViewModels Folder
+
 namespace SportsStore.Models.ViewModels {
-public class ProductsListViewModel {
-public IEnumerable<Product> Products { get; set; }
-= Enumerable.Empty<Product>();
-public PagingInfo PagingInfo { get; set; } = new();
-public string? CurrentCategory { get; set; }
-}
+
+	public class ProductsListViewModel {
+		public IEnumerable<Product> Products { get; set; } = Enumerable.Empty<Product>();
+		public PagingInfo PagingInfo { get; set; } = new();
+		public string? CurrentCategory { get; set; }
+	}
 }

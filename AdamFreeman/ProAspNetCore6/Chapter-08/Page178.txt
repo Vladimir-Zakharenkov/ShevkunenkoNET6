@@ -1,0 +1,43 @@
+I added a property called CurrentCategory. The next step is to update the Home controller 
+so that the Index action method will filter Product objects by category and use the property 
+I added to the view model to indicate which category has been selected, as shown in Listing 8-2.
+
+Listing 8-2. Adding Category Support in the HomeController.cs File 
+in the SportsStore/Controllers Folder
+
+using Microsoft.AspNetCore.Mvc;
+using SportsStore.Models;
+using SportsStore.Models.ViewModels;
+
+namespace SportsStore.Controllers {
+	public class HomeController : Controller {
+		private IStoreRepository repository;
+		public int PageSize = 4;
+		public HomeController(IStoreRepository repo) {
+			repository = repo;
+		}
+
+		public ViewResult Index(string? category, int productPage = 1)
+			=> View(new ProductsListViewModel {
+				Products = repository.Products
+					.Where(p => category == null || p.Category == category)
+					.OrderBy(p => p.ProductID)
+					.Skip((productPage - 1) * PageSize)
+					.Take(PageSize),
+				PagingInfo = new PagingInfo {
+					CurrentPage = productPage,
+					ItemsPerPage = PageSize,
+					TotalItems = repository.Products.Count()
+			},
+			CurrentCategory = category
+		});
+	}
+}
+
+I made three changes to the action method. First, I added a parameter called category. 
+This category parameter is used by the second change in the listing, which is an enhancement 
+to the LINQ query: if category is not null, only those Product objects with a matching Category 
+property are selected. The last change is to set the value of the CurrentCategory property 
+I added to the ProductsListViewModel class. However, these changes mean that the value of 
+PagingInfo.TotalItems is incorrectly calculated because it doesn’t take the category 
+filter into account. I will fix this in a while.

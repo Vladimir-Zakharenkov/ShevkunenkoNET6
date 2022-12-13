@@ -349,6 +349,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Chapter-08", "Chapter-08", "{C840389F-2593-49AB-B687-AD1D9E5B1156}"
 	ProjectSection(SolutionItems) = preProject
 		AdamFreeman\ProAspNetCore6\Chapter-08\Page177.txt = AdamFreeman\ProAspNetCore6\Chapter-08\Page177.txt
+		AdamFreeman\ProAspNetCore6\Chapter-08\Page178.txt = AdamFreeman\ProAspNetCore6\Chapter-08\Page178.txt
 	EndProjectSection
 EndProject
 Global

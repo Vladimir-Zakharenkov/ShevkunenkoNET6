@@ -10,8 +10,8 @@ constructor to create the controller object that will process the HTTP request.
 This is known as dependency injection, and its approach allows the HomeController 
 object to access the application’s repository through the IStoreRepository 
 interface without knowing which implementation class has been configured. 
-I could reconfigure the service to use a different implementation class—one that
-doesn’t use Entity Framework Core, for example—and dependency injection means 
+I could reconfigure the service to use a different implementation class — one that
+doesn’t use Entity Framework Core, for example — and dependency injection means 
 that the controller will continue to work without changes.
 
 Note

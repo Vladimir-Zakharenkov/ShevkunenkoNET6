@@ -1,6 +1,4 @@
-﻿namespace ShevkunenkoSite.Services;
-
-//If you need to reset the database, then run this command in the ShevkunenkoSite.Services folder:
+﻿//If you need to reset the database, then run this command in the ShevkunenkoSite.Services folder:
 //dotnet ef database --startup-project ..\ShevkunenkoSite  drop --force --context SiteDbContext
 
 public static class SeedData

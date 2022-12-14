@@ -4,14 +4,21 @@ using WebMarkupMin.AspNetCore6;
 
 WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 
+ConfigurationManager configuration = builder.Configuration;
+
+IWebHostEnvironment environment = builder.Environment;
+
+configuration.Bind("ProjectData", new DataConfig());
+
 IServiceCollection services = builder.Services;
 
-// Add services to the container.
+#region Add services to the container.
+
 services.AddRazorPages();
 
 services.AddDbContext<SiteDbContext>(opts =>
 {
-    opts.UseSqlServer(builder.Configuration["ConnectionStrings:ShevkunenkoSite"]);
+    opts.UseSqlServer(configuration["ConnectionStrings:ShevkunenkoSite"]);
 });
 
 services.Configure<RazorViewEngineOptions>(options => options.PageViewLocationFormats.Add("/Pages/Shared/Partial/{0}" + RazorViewEngine.ViewExtension));
@@ -44,10 +51,17 @@ services.AddWebMarkupMin(
 services.AddScoped<IPageInfoRepository, PageInfoImplementation>();
 services.AddScoped<IBackgroundFotoRepository, BackGroundFotoImplementation>();
 
+#endregion
+
 WebApplication app = builder.Build();
 
-// Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
+IConfiguration config = app.Configuration;
+
+IWebHostEnvironment env = app.Environment;
+
+#region Configure the HTTP request pipeline.
+
+if (env.IsDevelopment())
 {
     app.UseExceptionHandler("/Error");
 
@@ -71,5 +85,8 @@ app.UseAuthorization();
 app.UseWebMarkupMin();
 
 app.MapRazorPages();
+
+#endregion
+
 
 app.Run();

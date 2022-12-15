@@ -301,6 +301,9 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SandBox", "SandBox\SandBox.csproj", "{B245C6B7-6FFB-40EC-BC5E-2A4C0D712E5F}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01 - Home", "01 - Home", "{8F66E7C7-AE41-475E-827A-7D82425A5530}"
+	ProjectSection(SolutionItems) = preProject
+		MikeBrind\AspNetCoreRazorPagesInAction\01 - Home\Page01.txt = MikeBrind\AspNetCoreRazorPagesInAction\01 - Home\Page01.txt
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "07 - View Components", "07 - View Components", "{E80C9E81-240F-46D3-B1FE-0AA966A3BB98}"
 	ProjectSection(SolutionItems) = preProject

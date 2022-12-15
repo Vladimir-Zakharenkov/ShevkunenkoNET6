@@ -1,0 +1,34 @@
+Figure 8-3. Using a view component
+
+Generating Category Lists
+
+I can now return to the navigation view component and generate a real set of categories. 
+I could build the HTML for the categories programmatically, as I did for the page tag helper, 
+but one of the benefits of working with view components is they can render Razor partial views. 
+That means I can use the view component to generate the list of components and then use 
+the more expressive Razor syntax to render the HTML that will display them. 
+The first step is to update the view component, as shown in Listing 8-8.
+
+Listing 8-8. Adding Categories in the NavigationMenuViewComponent.cs File 
+in the SportsStore/Components Folder
+
+using Microsoft.AspNetCore.Mvc;
+using SportsStore.Models;
+
+namespace SportsStore.Components {
+
+	public class NavigationMenuViewComponent : ViewComponent {
+		private IStoreRepository repository;
+
+		public NavigationMenuViewComponent(IStoreRepository repo) {
+			repository = repo;
+		}
+
+		public IViewComponentResult Invoke() {
+			return View(repository.Products
+				.Select(x => x.Category)
+				.Distinct()
+				.OrderBy(x => x));
+		}
+	}
+}

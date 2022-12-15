@@ -1,0 +1,68 @@
+The constructor defined in Listing 8-8 defines an IStoreRepository parameter. When ASP.NET Core
+needs to create an instance of the view component class, it will note the need to provide a value 
+for this parameter and inspect the configuration in the Program.cs file to determine which 
+implementation object should be used. This is the same dependency injection feature that I used 
+in the controller in Chapter 7, and it has the same effect, which is to allow the view component 
+to access data without knowing which repository implementation will be used, a feature I 
+describe in detail in Chapter 14.
+
+In the Invoke method, I use LINQ to select and order the set of categories in the repository 
+and pass them as the argument to the View method, which renders the default Razor partial view, 
+details of which are returned from the method using an IViewComponentResult object, a process 
+I describe in more detail in Chapter 24.
+
+UNIT TEST: GENERATING THE CATEGORY LIST
+
+The unit test for my ability to produce a category list is relatively simple. The goal is 
+to create a list that is sorted in alphabetical order and contains no duplicates, and 
+the simplest way to do this is to supply some test data that does have duplicate categories 
+and that is not in order, pass this to the tag helper class, and assert that the data has 
+been properly cleaned up. Here is the unit test, which I defined in a new class file 
+called NavigationMenuViewComponentTests.cs in the SportsStore.Tests project:
+
+using System.Collections.Generic;
+using System.Linq;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.AspNetCore.Mvc.ViewComponents;
+using Moq;
+using SportsStore.Components;
+using SportsStore.Models;
+using Xunit;
+
+namespace SportsStore.Tests
+{
+    public class NavigationMenuViewComponentTests
+    {
+        [Fact]
+        public void Can_Select_Categories()
+        {
+            // Arrange
+            Mock<IStoreRepository> mock = new Mock<IStoreRepository>();
+            mock.Setup(m => m.Products).Returns((new Product[] {
+                new Product {ProductID = 1, Name = "P1",
+                    Category = "Apples"},
+                new Product {ProductID = 2, Name = "P2",
+                    Category = "Apples"},
+                new Product {ProductID = 3, Name = "P3",
+                    Category = "Plums"},
+                new Product {ProductID = 4, Name = "P4",
+                    Category = "Oranges"},
+            }).AsQueryable<Product>());
+
+            NavigationMenuViewComponent target =
+                new NavigationMenuViewComponent(mock.Object);
+
+            // Act = get the set of categories
+            string[] results = ((IEnumerable<string>?)(target.Invoke()
+                as ViewViewComponentResult)?.ViewData?.Model
+                    ?? Enumerable.Empty<string>()).ToArray();
+
+            // Assert
+            Assert.True(Enumerable.SequenceEqual(new string[] { "Apples",
+                "Oranges", "Plums" }, results));
+        }
+    }
+}
+
+I created a mock repository implementation that contains repeating categories and categories that are
+not in order. I assert that the duplicates are removed and that alphabetical ordering is imposed.

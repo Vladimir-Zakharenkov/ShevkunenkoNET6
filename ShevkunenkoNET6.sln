@@ -375,6 +375,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "A First Look", "A First Loo
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RazorPages", "MikeBrind\AspNetCoreRazorPagesInAction\01 - Home\A First Look\RazorPages\RazorPages.csproj", "{461CC566-E278-4C47-9CBA-5B79F6E97D77}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "02 - ASP.NET Core", "02 - ASP.NET Core", "{A92DE3EE-FB66-447D-A84E-F6A3EB51BBFE}"
+	ProjectSection(SolutionItems) = preProject
+		MikeBrind\AspNetCoreRazorPagesInAction\02 - ASP.NET Core\Page01.txt = MikeBrind\AspNetCoreRazorPagesInAction\02 - ASP.NET Core\Page01.txt
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -472,6 +477,7 @@ Global
 		{C840389F-2593-49AB-B687-AD1D9E5B1156} = {74C9DA5B-4F3F-42CE-BC38-4BECB38F1F39}
 		{D5D24C09-6D6F-4695-9184-BB1E49F3B290} = {8F66E7C7-AE41-475E-827A-7D82425A5530}
 		{461CC566-E278-4C47-9CBA-5B79F6E97D77} = {D5D24C09-6D6F-4695-9184-BB1E49F3B290}
+		{A92DE3EE-FB66-447D-A84E-F6A3EB51BBFE} = {482A7CC1-FFF3-442D-B231-69BB1687E04C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5507A11F-FC14-46CA-B766-61BB183C82C7}

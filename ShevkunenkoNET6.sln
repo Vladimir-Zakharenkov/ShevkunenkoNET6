@@ -368,6 +368,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Chapter-08-SportsStore-Navi
 		AdamFreeman\ProAspNetCore6\Chapter-08-SportsStore-Navigation and Cart\Page191.txt = AdamFreeman\ProAspNetCore6\Chapter-08-SportsStore-Navigation and Cart\Page191.txt
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "A First Look", "A First Look", "{D5D24C09-6D6F-4695-9184-BB1E49F3B290}"
+	ProjectSection(SolutionItems) = preProject
+		MikeBrind\AspNetCoreRazorPagesInAction\01 - Home\A First Look\Page01.txt = MikeBrind\AspNetCoreRazorPagesInAction\01 - Home\A First Look\Page01.txt
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RazorPages", "MikeBrind\AspNetCoreRazorPagesInAction\01 - Home\A First Look\RazorPages\RazorPages.csproj", "{461CC566-E278-4C47-9CBA-5B79F6E97D77}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -426,6 +433,10 @@ Global
 		{9030AF40-A67F-43FB-BCC8-3DE0CAB0A5EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9030AF40-A67F-43FB-BCC8-3DE0CAB0A5EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9030AF40-A67F-43FB-BCC8-3DE0CAB0A5EE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{461CC566-E278-4C47-9CBA-5B79F6E97D77}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{461CC566-E278-4C47-9CBA-5B79F6E97D77}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{461CC566-E278-4C47-9CBA-5B79F6E97D77}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{461CC566-E278-4C47-9CBA-5B79F6E97D77}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -459,6 +470,8 @@ Global
 		{9C56C159-4FD5-4CCA-AF04-7FCAEC051F1F} = {C3D88FDB-EE3C-403B-B832-4FF71DAF29DC}
 		{F5502E81-7F14-4FAD-B1ED-0CAF902CD762} = {9C56C159-4FD5-4CCA-AF04-7FCAEC051F1F}
 		{C840389F-2593-49AB-B687-AD1D9E5B1156} = {74C9DA5B-4F3F-42CE-BC38-4BECB38F1F39}
+		{D5D24C09-6D6F-4695-9184-BB1E49F3B290} = {8F66E7C7-AE41-475E-827A-7D82425A5530}
+		{461CC566-E278-4C47-9CBA-5B79F6E97D77} = {D5D24C09-6D6F-4695-9184-BB1E49F3B290}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5507A11F-FC14-46CA-B766-61BB183C82C7}

@@ -1,0 +1,12 @@
+{
+  "profiles": {
+    "SportsStore.Tests": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "applicationUrl": "https://localhost:61938;http://localhost:61939"
+    }
+  }
+}

@@ -380,6 +380,25 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "02 - ASP.NET Core", "02 - A
 		MikeBrind\AspNetCoreRazorPagesInAction\02 - ASP.NET Core\Page01.txt = MikeBrind\AspNetCoreRazorPagesInAction\02 - ASP.NET Core\Page01.txt
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "03 - Razor Page Files", "03 - Razor Page Files", "{477FFA16-BD22-40A0-9C30-AE376C3E76A0}"
+	ProjectSection(SolutionItems) = preProject
+		MikeBrind\AspNetCoreRazorPagesInAction\03 - Razor Page Files\Page01.txt = MikeBrind\AspNetCoreRazorPagesInAction\03 - Razor Page Files\Page01.txt
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Examples", "MikeBrind\AspNetCoreRazorPagesInAction\03 - Razor Page Files\Examples\Examples.csproj", "{F4F62B76-05CD-460E-AC66-1BC169640966}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01-Razor Files", "01-Razor Files", "{A61EF402-BA05-4035-A133-0A6D0E96927E}"
+	ProjectSection(SolutionItems) = preProject
+		MikeBrind\AspNetCoreRazorPagesInAction\03 - Razor Page Files\01-Razor Files\Page01.txt = MikeBrind\AspNetCoreRazorPagesInAction\03 - Razor Page Files\01-Razor Files\Page01.txt
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "02-Partial Pages", "02-Partial Pages", "{981A8C48-804E-4289-9EA1-975543A42927}"
+	ProjectSection(SolutionItems) = preProject
+		MikeBrind\AspNetCoreRazorPagesInAction\03 - Razor Page Files\02-Partial Pages\Page01.txt = MikeBrind\AspNetCoreRazorPagesInAction\03 - Razor Page Files\02-Partial Pages\Page01.txt
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PartialDemo", "MikeBrind\AspNetCoreRazorPagesInAction\03 - Razor Page Files\02-Partial Pages\PartialDemo\PartialDemo.csproj", "{57076D0B-7AB8-4CE7-BE94-266DCE9D398F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -442,6 +461,14 @@ Global
 		{461CC566-E278-4C47-9CBA-5B79F6E97D77}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{461CC566-E278-4C47-9CBA-5B79F6E97D77}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{461CC566-E278-4C47-9CBA-5B79F6E97D77}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F4F62B76-05CD-460E-AC66-1BC169640966}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F4F62B76-05CD-460E-AC66-1BC169640966}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F4F62B76-05CD-460E-AC66-1BC169640966}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F4F62B76-05CD-460E-AC66-1BC169640966}.Release|Any CPU.Build.0 = Release|Any CPU
+		{57076D0B-7AB8-4CE7-BE94-266DCE9D398F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{57076D0B-7AB8-4CE7-BE94-266DCE9D398F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{57076D0B-7AB8-4CE7-BE94-266DCE9D398F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{57076D0B-7AB8-4CE7-BE94-266DCE9D398F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -478,6 +505,11 @@ Global
 		{D5D24C09-6D6F-4695-9184-BB1E49F3B290} = {8F66E7C7-AE41-475E-827A-7D82425A5530}
 		{461CC566-E278-4C47-9CBA-5B79F6E97D77} = {D5D24C09-6D6F-4695-9184-BB1E49F3B290}
 		{A92DE3EE-FB66-447D-A84E-F6A3EB51BBFE} = {482A7CC1-FFF3-442D-B231-69BB1687E04C}
+		{477FFA16-BD22-40A0-9C30-AE376C3E76A0} = {482A7CC1-FFF3-442D-B231-69BB1687E04C}
+		{F4F62B76-05CD-460E-AC66-1BC169640966} = {477FFA16-BD22-40A0-9C30-AE376C3E76A0}
+		{A61EF402-BA05-4035-A133-0A6D0E96927E} = {477FFA16-BD22-40A0-9C30-AE376C3E76A0}
+		{981A8C48-804E-4289-9EA1-975543A42927} = {477FFA16-BD22-40A0-9C30-AE376C3E76A0}
+		{57076D0B-7AB8-4CE7-BE94-266DCE9D398F} = {981A8C48-804E-4289-9EA1-975543A42927}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5507A11F-FC14-46CA-B766-61BB183C82C7}

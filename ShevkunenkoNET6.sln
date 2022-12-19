@@ -399,6 +399,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "02-Partial Pages", "02-Part
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PartialDemo", "MikeBrind\AspNetCoreRazorPagesInAction\03 - Razor Page Files\02-Partial Pages\PartialDemo\PartialDemo.csproj", "{57076D0B-7AB8-4CE7-BE94-266DCE9D398F}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "03-Layout Files", "03-Layout Files", "{76F4B4F7-118F-4108-87AF-DD53A62FBD42}"
+	ProjectSection(SolutionItems) = preProject
+		MikeBrind\AspNetCoreRazorPagesInAction\03 - Razor Page Files\03-Layout Files\Page01.txt = MikeBrind\AspNetCoreRazorPagesInAction\03 - Razor Page Files\03-Layout Files\Page01.txt
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -510,6 +515,7 @@ Global
 		{A61EF402-BA05-4035-A133-0A6D0E96927E} = {477FFA16-BD22-40A0-9C30-AE376C3E76A0}
 		{981A8C48-804E-4289-9EA1-975543A42927} = {477FFA16-BD22-40A0-9C30-AE376C3E76A0}
 		{57076D0B-7AB8-4CE7-BE94-266DCE9D398F} = {981A8C48-804E-4289-9EA1-975543A42927}
+		{76F4B4F7-118F-4108-87AF-DD53A62FBD42} = {477FFA16-BD22-40A0-9C30-AE376C3E76A0}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5507A11F-FC14-46CA-B766-61BB183C82C7}

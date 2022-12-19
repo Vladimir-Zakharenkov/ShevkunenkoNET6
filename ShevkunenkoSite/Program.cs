@@ -21,7 +21,9 @@ services.AddDbContext<SiteDbContext>(opts =>
     opts.UseSqlServer(configuration["ConnectionStrings:ShevkunenkoSite"]);
 });
 
-services.Configure<RazorViewEngineOptions>(options => options.PageViewLocationFormats.Add("/Pages/Shared/Partial/{0}" + RazorViewEngine.ViewExtension));
+services.Configure<RazorViewEngineOptions>(options => options.PageViewLocationFormats.Add("/Pages/Shared/Partials/{0}" + RazorViewEngine.ViewExtension));
+
+services.Configure<RazorViewEngineOptions>(options => options.PageViewLocationFormats.Add("/Pages/Shared/Layouts/{0}" + RazorViewEngine.ViewExtension));
 
 services.Configure<WebEncoderOptions>(options => options.TextEncoderSettings = new TextEncoderSettings(UnicodeRanges.All));
 
@@ -87,6 +89,5 @@ app.UseWebMarkupMin();
 app.MapRazorPages();
 
 #endregion
-
 
 app.Run();

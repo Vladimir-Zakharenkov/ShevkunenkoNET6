@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ShevkunenkoSite.Services.Migrations
 {
     [DbContext(typeof(SiteDbContext))]
-    partial class SiteDbContextModelSnapshot : ModelSnapshot
+    [Migration("20221220165312_AddImageFileModel")]
+    partial class AddImageFileModel
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -48,66 +50,37 @@ namespace ShevkunenkoSite.Services.Migrations
                         .HasColumnType("uniqueidentifier")
                         .HasColumnName("ImageFileId");
 
-                    b.Property<string>("IconFileName")
+                    b.Property<string>("ImageAlt")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("IconFileNameExtension")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<long>("IconFileSize")
-                        .HasColumnType("bigint");
-
-                    b.Property<long>("IconHeight")
-                        .HasColumnType("bigint");
-
-                    b.Property<string>("IconMimeType")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<long>("IconWidth")
-                        .HasColumnType("bigint");
-
-                    b.Property<string>("ImageAltTitle")
-                        .IsRequired()
-                        .HasMaxLength(40)
-                        .HasColumnType("nvarchar(40)");
 
                     b.Property<string>("ImageCaption")
                         .IsRequired()
-                        .HasMaxLength(40)
-                        .HasColumnType("nvarchar(40)");
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ImageContentUrl")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("ImageDescription")
                         .IsRequired()
-                        .HasMaxLength(300)
-                        .HasColumnType("nvarchar(300)");
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("ImageFileName")
+                    b.Property<int>("ImageHeight")
+                        .HasColumnType("int");
+
+                    b.Property<int>("ImageThumbnailHeight")
+                        .HasColumnType("int");
+
+                    b.Property<string>("ImageThumbnailUrl")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("ImageFileNameExtension")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("ImageThumbnailWidth")
+                        .HasColumnType("int");
 
-                    b.Property<long>("ImageFileSize")
-                        .HasColumnType("bigint");
-
-                    b.Property<long>("ImageHeight")
-                        .HasColumnType("bigint");
-
-                    b.Property<string>("ImageMimeType")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("ImagePath")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<long>("ImageWidth")
-                        .HasColumnType("bigint");
+                    b.Property<int>("ImageWidth")
+                        .HasColumnType("int");
 
                     b.HasKey("ImageId");
 

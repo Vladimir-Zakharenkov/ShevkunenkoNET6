@@ -1,6 +1,8 @@
 ﻿//If you need to reset the database, then run this command in the ShevkunenkoSite.Services folder:
 //dotnet ef database --startup-project ..\ShevkunenkoSite  drop --force --context SiteDbContext
 
+namespace ShevkunenkoSite;
+
 public static class SeedData
 {
     public static void EnsurePopulated(IApplicationBuilder app)
@@ -10,6 +12,51 @@ public static class SeedData
         if (context.Database.GetPendingMigrations().Any())
         {
             context.Database.Migrate();
+        }
+
+        if (!context.ImageFile.Any())
+        {
+            context.ImageFile.AddRange(
+                new ImageFileModel
+                {
+                    ImageCaption = "Изображение отсутствует",
+                    ImageDescription = "Изображение отсутствует",
+                    ImageAltTitle = "изображение отсутствует",
+                    ImagePath = "images/Common",
+                    ImageFileName = "no-image.png",
+                    ImageFileNameExtension = "png",
+                    ImageMimeType = "image/png",
+                    ImageFileSize = 232866,
+                    ImageWidth = 720,
+                    ImageHeight = 540,
+                    IconFileName = "no-image-300.png",
+                    IconFileNameExtension = "png",
+                    IconMimeType = "image/png",
+                    IconFileSize = 62541,
+                    IconWidth = 300,
+                    IconHeight = 300
+                },
+                new ImageFileModel
+                {
+                    ImageCaption = "Сайт памяти Сергея Шевкуненко",
+                    ImageDescription = "Сайт памяти Сергея Шевкуненко",
+                    ImageAltTitle = "сайт памяти Сергея Шевкуненко",
+                    ImagePath = "images/Common",
+                    ImageFileName = "index1.gif",
+                    ImageFileNameExtension = "gif",
+                    ImageMimeType = "image/gif",
+                    ImageFileSize = 588813,
+                    ImageWidth = 1122,
+                    ImageHeight = 480,
+                    IconFileName = "index1-300.gif",
+                    IconFileNameExtension = "gif",
+                    IconMimeType = "image/gif",
+                    IconFileSize = 48564,
+                    IconWidth = 300,
+                    IconHeight = 128
+                });
+
+            context.SaveChanges();
         }
 
         if (!context.BackgroundFile.Any())

@@ -53,4 +53,7 @@ public class PageInfoModel
 
     public Guid BackgroundFileModelId { get; set; }
     public BackgroundFileModel BackgroundFileModel { get; set; } = null!;
+
+    public Guid ImageFileModelId { get; set; }
+    public ImageFileModel ImageFileModel { get; set; } = null!;
 }

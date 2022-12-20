@@ -1,6 +1,8 @@
 ﻿//If you need to reset the database, then run this command in the ShevkunenkoSite.Services folder:
 //dotnet ef database --startup-project ..\ShevkunenkoSite  drop --force --context SiteDbContext
 
+using static System.Net.Mime.MediaTypeNames;
+
 namespace ShevkunenkoSite;
 
 public static class SeedData
@@ -114,7 +116,9 @@ public static class SeedData
 
                 PageLoc = "Index",
 
-                BackgroundFileModelId = new("E073BDDD694F4818A0C308DADB48DCD9")
+                BackgroundFileModelId = new("E073BDDD694F4818A0C308DADB48DCD9"),
+
+                ImageFileModelId = new("F718A63571D24BC21F4908DAE2B985EA")
             }
             );
 

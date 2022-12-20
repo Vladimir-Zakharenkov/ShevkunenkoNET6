@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ShevkunenkoSite.Services.Migrations
 {
     [DbContext(typeof(SiteDbContext))]
-    partial class SiteDbContextModelSnapshot : ModelSnapshot
+    [Migration("20221220182556_PageInfoRelImageFile")]
+    partial class PageInfoRelImageFile
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -43,7 +45,7 @@ namespace ShevkunenkoSite.Services.Migrations
 
             modelBuilder.Entity("ShevkunenkoSite.Models.ImageFileModel", b =>
                 {
-                    b.Property<Guid>("ImageFileModelId")
+                    b.Property<Guid>("ImageId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier")
                         .HasColumnName("ImageFileId");
@@ -109,7 +111,7 @@ namespace ShevkunenkoSite.Services.Migrations
                     b.Property<long>("ImageWidth")
                         .HasColumnType("bigint");
 
-                    b.HasKey("ImageFileModelId");
+                    b.HasKey("ImageId");
 
                     b.ToTable("ImageFile");
                 });
@@ -124,7 +126,10 @@ namespace ShevkunenkoSite.Services.Migrations
                     b.Property<Guid>("BackgroundFileModelId")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<Guid>("ImageFileModelId")
+                    b.Property<Guid>("ImageFileModelImageId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("ImageId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("PageDescription")
@@ -150,7 +155,7 @@ namespace ShevkunenkoSite.Services.Migrations
 
                     b.HasIndex("BackgroundFileModelId");
 
-                    b.HasIndex("ImageFileModelId");
+                    b.HasIndex("ImageFileModelImageId");
 
                     b.ToTable("PageInfo");
                 });
@@ -165,7 +170,7 @@ namespace ShevkunenkoSite.Services.Migrations
 
                     b.HasOne("ShevkunenkoSite.Models.ImageFileModel", "ImageFileModel")
                         .WithMany()
-                        .HasForeignKey("ImageFileModelId")
+                        .HasForeignKey("ImageFileModelImageId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 

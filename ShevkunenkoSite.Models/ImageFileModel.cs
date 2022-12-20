@@ -5,7 +5,7 @@ public class ImageFileModel
     [Key]
     [Display(Name = "Идентификатор картинки :")]
     [Column("ImageFileId")]
-    public Guid ImageId { get; set; }
+    public Guid ImageFileModelId { get; set; }
 
     [Required(ErrorMessage = "Введите название картинки")]
     [DataType(DataType.Text)]

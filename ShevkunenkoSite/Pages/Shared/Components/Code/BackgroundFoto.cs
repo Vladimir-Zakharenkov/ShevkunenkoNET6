@@ -10,13 +10,8 @@ public class BackgroundFoto : ViewComponent
     {
         PageInfoModel pageInfoModel = await _pageInfoContext.GetPageInfoByPathAsync(HttpContext.Request.Path.ToString()[1..].ToLower().Trim('/'));
 
-        if (left)
-        {
-            return View("BackgroundLeft", pageInfoModel);
-        }
-        else
-        {
-            return View("BackgroundRight", pageInfoModel);
-        }
+        return left
+            ? View("BackgroundFoto", pageInfoModel.BackgroundFileModel.LeftBackground)
+            : (IViewComponentResult)View("BackgroundFoto", pageInfoModel.BackgroundFileModel.RightBackground);
     }
 }

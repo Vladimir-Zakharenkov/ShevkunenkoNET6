@@ -1,4 +1,6 @@
-﻿[ViewComponent]
+﻿namespace ShevkunenkoSite.Pages.Shared.Components.Code;
+
+[ViewComponent]
 public class HeadMain : ViewComponent
 {
     private readonly IPageInfoRepository _pageInfoContext;

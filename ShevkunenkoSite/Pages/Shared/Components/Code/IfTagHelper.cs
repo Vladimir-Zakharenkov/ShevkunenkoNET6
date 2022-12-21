@@ -1,4 +1,7 @@
 ﻿//Setting the Attributes property ensures the Tag Helper is triggered by an if attribute.
+
+namespace ShevkunenkoSite.Pages.Shared.Components.Code;
+
 [HtmlTargetElement(Attributes = "if")]
 public class IfTagHelper : TagHelper
 {

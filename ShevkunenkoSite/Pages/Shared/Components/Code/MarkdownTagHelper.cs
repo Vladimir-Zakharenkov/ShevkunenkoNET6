@@ -1,4 +1,7 @@
 ﻿//The Markdown Tag Helper will use the <markdown> element.
+
+namespace ShevkunenkoSite.Pages.Shared.Components.Code;
+
 public class MarkdownTagHelper : TagHelper
 {
     public override async Task ProcessAsync(TagHelperContext context, TagHelperOutput output)

@@ -1,6 +1,4 @@
-﻿using ShevkunenkoSite.Models;
-
-namespace ShevkunenkoSite.Services;
+﻿namespace ShevkunenkoSite.Services;
 
 public class PageInfoImplementation : IPageInfoRepository
 {
@@ -16,7 +14,7 @@ public class PageInfoImplementation : IPageInfoRepository
     {
         if (pagePath == null || pagePath == String.Empty)
         {
-            pagePath = "Index";
+            pagePath = "index";
         }
 
         bool isPageInDatabase = await _siteContext.PageInfo
@@ -25,16 +23,18 @@ public class PageInfoImplementation : IPageInfoRepository
 
         if (!isPageInDatabase)
         {
-            pagePath += "/Index";
-        }
+            pagePath += "/index";
 
-        isPageInDatabase = await _siteContext.PageInfo
-            .Where(p => p.PageLoc == pagePath)
-            .AnyAsync();
+            isPageInDatabase = await _siteContext.PageInfo
+                .Where(p => p.PageLoc == pagePath)
+                .AnyAsync();
+        }
 
         if (isPageInDatabase)
         {
             PageInfoModel pageItem = await _siteContext.PageInfo
+                .Include(p => p.ImageFileModel)
+                .Include(p => p.BackgroundFileModel)
                 .FirstAsync(p => p.PageLoc == pagePath);
 
             return pageItem;
@@ -42,7 +42,9 @@ public class PageInfoImplementation : IPageInfoRepository
         else
         {
             PageInfoModel pageItem = await _siteContext.PageInfo
-                .FirstAsync(p => p.PageLoc == "Index");
+                .Include(p => p.ImageFileModel)
+                .Include(p => p.BackgroundFileModel)
+                .FirstAsync(p => p.PageLoc == "index");
 
             return pageItem;
         }

@@ -1,6 +1,8 @@
 ﻿using System.Runtime.InteropServices;
 using System.Text;
 
+namespace ShevkunenkoSite.Pages.Shared.Components.Code;
+
 //Derives from the TagHelper base class
 public class SystemInfoTagHelper : TagHelper
 {

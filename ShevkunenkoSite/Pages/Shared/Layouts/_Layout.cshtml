@@ -5,6 +5,7 @@
 <head>
 
     <vc:head-main />
+
     <vc:head-icons />
 
     <partial name="_HeadCSSPartial" />
@@ -15,13 +16,13 @@
 
 <body>
 
-    <div class="container-fluid container-fluid-1920">
+    <partial name="_YandexReclamaHeadPartial" />
 
-        <partial name="_YandexReclamaHeadPartial" />
+    <div class="container-fluid container-fluid-1920">
 
         <div class="row text-center bg-light">
 
-            <vc:background-foto-left />
+            <vc:background-foto left="false" />
 
             <main role="main" itemprop="mainContentOfPage" class="col-12 col-sm-9 pb-3 text-center m-auto shadw">
 
@@ -33,7 +34,7 @@
 
             </main>
 
-            <vc:background-foto-right />
+            <vc:background-foto left="true" />
 
         </div>
 

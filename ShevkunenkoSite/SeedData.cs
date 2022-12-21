@@ -114,7 +114,7 @@ public static class SeedData
 
                 PageLastmod = DateTime.Today,
 
-                PageLoc = "Index",
+                PageLoc = "index",
 
                 BackgroundFileModelId = new("E073BDDD694F4818A0C308DADB48DCD9"),
 

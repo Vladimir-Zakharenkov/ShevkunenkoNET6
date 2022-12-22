@@ -21,7 +21,7 @@ public static class SeedData
             context.IconFile.AddRange(
                 new IconFileModel
                 {
-                    IconPath = "/images/pageicons/main/",
+                    IconPath = "main",
                     IconFileName = "apple-touch-icon-57x57.png",
                     IconFileNameExtension = "png",
                     IconMimeType = "image/png",
@@ -33,7 +33,7 @@ public static class SeedData
                 },
                 new IconFileModel
                 {
-                    IconPath = "/images/pageicons/main/",
+                    IconPath = "main",
                     IconFileName = "apple-touch-icon-57x57-precomposed.png",
                     IconFileNameExtension = "png",
                     IconMimeType = "image/png",
@@ -45,7 +45,7 @@ public static class SeedData
                 },
                 new IconFileModel
                 {
-                    IconPath = "/images/pageicons/main/",
+                    IconPath = "main",
                     IconFileName = "apple-touch-icon-60x60.png",
                     IconFileNameExtension = "png",
                     IconMimeType = "image/png",
@@ -57,7 +57,7 @@ public static class SeedData
                 },
                 new IconFileModel
                 {
-                    IconPath = "/images/pageicons/main/",
+                    IconPath = "main",
                     IconFileName = "apple-touch-icon-60x60-precomposed.png",
                     IconFileNameExtension = "png",
                     IconMimeType = "image/png",
@@ -69,7 +69,7 @@ public static class SeedData
                 },
                 new IconFileModel
                 {
-                    IconPath = "/images/pageicons/main/",
+                    IconPath = "main",
                     IconFileName = "apple-touch-icon-72x72.png",
                     IconFileNameExtension = "png",
                     IconMimeType = "image/png",
@@ -81,7 +81,7 @@ public static class SeedData
                 },
                 new IconFileModel
                 {
-                    IconPath = "/images/pageicons/main/",
+                    IconPath = "main",
                     IconFileName = "apple-touch-icon-72x72-precomposed.png",
                     IconFileNameExtension = "png",
                     IconMimeType = "image/png",
@@ -93,7 +93,7 @@ public static class SeedData
                 },
                 new IconFileModel
                 {
-                    IconPath = "/images/pageicons/main/",
+                    IconPath = "main",
                     IconFileName = "apple-touch-icon-76x76.png",
                     IconFileNameExtension = "png",
                     IconMimeType = "image/png",
@@ -105,7 +105,7 @@ public static class SeedData
                 },
                 new IconFileModel
                 {
-                    IconPath = "/images/pageicons/main/",
+                    IconPath = "main",
                     IconFileName = "apple-touch-icon-76x76-precomposed.png",
                     IconFileNameExtension = "png",
                     IconMimeType = "image/png",
@@ -117,7 +117,7 @@ public static class SeedData
                 },
                 new IconFileModel
                 {
-                    IconPath = "/images/pageicons/main/",
+                    IconPath = "main",
                     IconFileName = "apple-touch-icon-114x114.png",
                     IconFileNameExtension = "png",
                     IconMimeType = "image/png",
@@ -129,7 +129,7 @@ public static class SeedData
                 },
                 new IconFileModel
                 {
-                    IconPath = "/images/pageicons/main/",
+                    IconPath = "main",
                     IconFileName = "apple-touch-icon-114x114-precomposed.png",
                     IconFileNameExtension = "png",
                     IconMimeType = "image/png",
@@ -141,7 +141,7 @@ public static class SeedData
                 },
                 new IconFileModel
                 {
-                    IconPath = "/images/pageicons/main/",
+                    IconPath = "main",
                     IconFileName = "apple-touch-icon-120x120.png",
                     IconFileNameExtension = "png",
                     IconMimeType = "image/png",
@@ -153,7 +153,7 @@ public static class SeedData
                 },
                 new IconFileModel
                 {
-                    IconPath = "/images/pageicons/main/",
+                    IconPath = "main",
                     IconFileName = "apple-touch-icon-120x120-precomposed.png",
                     IconFileNameExtension = "png",
                     IconMimeType = "image/png",
@@ -165,7 +165,7 @@ public static class SeedData
                 },
                 new IconFileModel
                 {
-                    IconPath = "/images/pageicons/main/",
+                    IconPath = "main",
                     IconFileName = "apple-touch-icon-144x144.png",
                     IconFileNameExtension = "png",
                     IconMimeType = "image/png",
@@ -177,7 +177,7 @@ public static class SeedData
                 },
                 new IconFileModel
                 {
-                    IconPath = "/images/pageicons/main/",
+                    IconPath = "main",
                     IconFileName = "apple-touch-icon-144x144-precomposed.png",
                     IconFileNameExtension = "png",
                     IconMimeType = "image/png",
@@ -189,7 +189,7 @@ public static class SeedData
                 },
                 new IconFileModel
                 {
-                    IconPath = "/images/pageicons/main/",
+                    IconPath = "main",
                     IconFileName = "apple-touch-icon-152x152.png",
                     IconFileNameExtension = "png",
                     IconMimeType = "image/png",
@@ -201,7 +201,7 @@ public static class SeedData
                 },
                 new IconFileModel
                 {
-                    IconPath = "/images/pageicons/main/",
+                    IconPath = "main",
                     IconFileName = "apple-touch-icon-152x152-precomposed.png",
                     IconFileNameExtension = "png",
                     IconMimeType = "image/png",
@@ -213,7 +213,7 @@ public static class SeedData
                 },
                 new IconFileModel
                 {
-                    IconPath = "/images/pageicons/main/",
+                    IconPath = "main",
                     IconFileName = "apple-touch-icon-167x167.png",
                     IconFileNameExtension = "png",
                     IconMimeType = "image/png",
@@ -225,7 +225,7 @@ public static class SeedData
                 },
                 new IconFileModel
                 {
-                    IconPath = "/images/pageicons/main/",
+                    IconPath = "main",
                     IconFileName = "apple-touch-icon-167x167-precomposed.png",
                     IconFileNameExtension = "png",
                     IconMimeType = "image/png",
@@ -237,7 +237,7 @@ public static class SeedData
                 },
                 new IconFileModel
                 {
-                    IconPath = "/images/pageicons/main/",
+                    IconPath = "main",
                     IconFileName = "apple-touch-icon-180x180.png",
                     IconFileNameExtension = "png",
                     IconMimeType = "image/png",
@@ -249,7 +249,7 @@ public static class SeedData
                 },
                 new IconFileModel
                 {
-                    IconPath = "/images/pageicons/main/",
+                    IconPath = "main",
                     IconFileName = "apple-touch-icon-180x180-precomposed.png",
                     IconFileNameExtension = "png",
                     IconMimeType = "image/png",
@@ -261,7 +261,7 @@ public static class SeedData
                 },
                 new IconFileModel
                 {
-                    IconPath = "/images/pageicons/main/",
+                    IconPath = "main",
                     IconFileName = "favicon.ico",
                     IconFileNameExtension = "ico",
                     IconMimeType = "image/x-icon",
@@ -273,7 +273,7 @@ public static class SeedData
                 },
                 new IconFileModel
                 {
-                    IconPath = "/images/pageicons/main/",
+                    IconPath = "main",
                     IconFileName = "icon-48.png",
                     IconFileNameExtension = "png",
                     IconMimeType = "image/png",
@@ -285,7 +285,7 @@ public static class SeedData
                 },
                 new IconFileModel
                 {
-                    IconPath = "/images/pageicons/main/",
+                    IconPath = "main",
                     IconFileName = "icon-96.png",
                     IconFileNameExtension = "png",
                     IconMimeType = "image/png",
@@ -297,7 +297,7 @@ public static class SeedData
                 },
                 new IconFileModel
                 {
-                    IconPath = "/images/pageicons/main/",
+                    IconPath = "main",
                     IconFileName = "icon-144.png",
                     IconFileNameExtension = "png",
                     IconMimeType = "image/png",
@@ -309,7 +309,7 @@ public static class SeedData
                 },
                 new IconFileModel
                 {
-                    IconPath = "/images/pageicons/main/",
+                    IconPath = "main",
                     IconFileName = "icon-192.png",
                     IconFileNameExtension = "png",
                     IconMimeType = "image/png",
@@ -321,7 +321,7 @@ public static class SeedData
                 },
                 new IconFileModel
                 {
-                    IconPath = "/images/pageicons/main/",
+                    IconPath = "main",
                     IconFileName = "icon-256.png",
                     IconFileNameExtension = "png",
                     IconMimeType = "image/png",
@@ -333,7 +333,7 @@ public static class SeedData
                 },
                 new IconFileModel
                 {
-                    IconPath = "/images/pageicons/main/",
+                    IconPath = "main",
                     IconFileName = "icon-384.png",
                     IconFileNameExtension = "png",
                     IconMimeType = "image/png",
@@ -345,7 +345,7 @@ public static class SeedData
                 },
                 new IconFileModel
                 {
-                    IconPath = "/images/pageicons/main/",
+                    IconPath = "main",
                     IconFileName = "icon-512.png",
                     IconFileNameExtension = "png",
                     IconMimeType = "image/png",
@@ -357,7 +357,7 @@ public static class SeedData
                 },
                 new IconFileModel
                 {
-                    IconPath = "/images/pageicons/main/",
+                    IconPath = "main",
                     IconFileName = "safari-pinned-tab.svg",
                     IconFileNameExtension = "svg",
                     IconMimeType = "image/svg+xml",

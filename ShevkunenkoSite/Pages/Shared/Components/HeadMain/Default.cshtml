@@ -14,3 +14,21 @@
 <meta name="HandheldFriendly" content="True" />
 <link rel="canonical" href="@DataConfig.ProjectSite@Model.PageInfo.PageLoc" />
 <meta itemprop=image content="@DataConfig.ProjectSite@Model.PageInfo.ImageFileModel.ImagePath/@Model.PageInfo.ImageFileModel.ImageFileName">
+
+@foreach (var p in Model.IconList)
+{
+    if (p.IconRel == "shortcut icon")
+    {
+        <link rel="shortcut icon" type="image/x-icon" href="/images/pageicons/@p.IconPath/@p.IconFileName" />
+    }
+    else if (p.IconRel == "mask-icon")
+    {
+        <link rel="mask-icon" type="image/svg+xml" href="/images/pageicons/@p.IconPath/@p.IconFileName" color="#fffff" />
+    }
+    else
+    {
+        string widthHeight = @p.IconWidth + "x" + @p.IconHeight;
+
+        <link rel="@p.IconRel" type="@p.IconType" sizes="@widthHeight" href="/images/pageicons/@p.IconPath/@p.IconFileName" />
+    }
+}

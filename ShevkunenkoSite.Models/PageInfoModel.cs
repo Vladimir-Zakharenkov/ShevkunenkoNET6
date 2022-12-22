@@ -51,6 +51,10 @@ public class PageInfoModel
     [Display(Name = "Адрес страницы:")]
     public string PageLoc { get; set; } = "/index";
 
+    [Required(ErrorMessage = "Необходимо ввести каталог с иконками")]
+    [Display(Name = "Каталог с иконками:")]
+    public string IconPath { get; set; } = "main";
+
     public Guid BackgroundFileModelId { get; set; }
     public BackgroundFileModel BackgroundFileModel { get; set; } = null!;
 

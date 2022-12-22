@@ -471,6 +471,8 @@ public static class SeedData
 
                 PageLoc = "index",
 
+                IconPath = "main",
+
                 BackgroundFileModelId = new("E073BDDD694F4818A0C308DADB48DCD9"),
 
                 ImageFileModelId = new("F718A63571D24BC21F4908DAE2B985EA")

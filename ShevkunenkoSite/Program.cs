@@ -54,6 +54,7 @@ services.AddWebMarkupMin(
 services.AddScoped<IPageInfoRepository, PageInfoImplementation>();
 services.AddScoped<IBackgroundFotoRepository, BackGroundFotoImplementation>();
 services.AddScoped<IIconFileRepository, IconFileImplementation>();
+services.AddScoped<IImageFileRepository, ImageFileImplementation>();
 
 #endregion
 

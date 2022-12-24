@@ -68,6 +68,10 @@ body {
   background-position: center;
 }
 
+.ten {
+  box-shadow: 0.5rem 0.4rem 0.4rem hsla(0deg, 0%, 0%, 0.6);
+}
+
 .rsy {
   max-height: 210px !important;
 }
@@ -85,4 +89,9 @@ body {
   content: "";
   position: absolute;
   z-index: -2;
+}
+
+.adp_img {
+  max-width: 96%;
+  border-radius: 1rem;
 }

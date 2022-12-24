@@ -34,4 +34,8 @@
 		<ProjectReference Include="..\ShevkunenkoSite.Services\ShevkunenkoSite.Services.csproj" />
 	</ItemGroup>
 
+	<ItemGroup>
+	  <Folder Include="wwwroot\images\manifest\main\" />
+	</ItemGroup>
+
 </Project>

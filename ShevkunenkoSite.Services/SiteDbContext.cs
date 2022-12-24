@@ -11,6 +11,10 @@ public class SiteDbContext : DbContext
         modelBuilder.Entity<PageInfoModel>()
             .Property(b => b.BrowserConfig)
             .HasDefaultValue("main.xml");
+
+        modelBuilder.Entity<PageInfoModel>()
+            .Property(b => b.Manifest)
+            .HasDefaultValue("main.json");
     }
 
     public DbSet<BackgroundFileModel> BackgroundFile => Set<BackgroundFileModel>();

@@ -55,9 +55,13 @@ public class PageInfoModel
     [Display(Name = "Каталог с иконками:")]
     public string IconPath { get; set; } = "main";
 
-    [Required(ErrorMessage = "Необходимо указать файл browserconfig")]
-    [Display(Name = "Файл browserconfig:")]
-    public string BrowserConfig { get; set; } = "main";
+    [Required(ErrorMessage = "Необходимо указать файл browserconfig.xml")]
+    [Display(Name = "Файл browserconfig.xml:")]
+    public string BrowserConfig { get; set; } = "main.xml";
+
+    [Required(ErrorMessage = "Необходимо указать файл manifest.json")]
+    [Display(Name = "Файл manifest.json:")]
+    public string Manifest { get; set; } = "main.json";
 
     public Guid BackgroundFileModelId { get; set; }
     public BackgroundFileModel BackgroundFileModel { get; set; } = null!;

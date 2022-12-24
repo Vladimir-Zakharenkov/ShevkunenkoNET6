@@ -6,6 +6,13 @@ public class SiteDbContext : DbContext
 
     public DbSet<PageInfoModel> PageInfo => Set<PageInfoModel>();
 
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    {
+        modelBuilder.Entity<PageInfoModel>()
+            .Property(b => b.BrowserConfig)
+            .HasDefaultValue("main.xml");
+    }
+
     public DbSet<BackgroundFileModel> BackgroundFile => Set<BackgroundFileModel>();
 
     public DbSet<ImageFileModel> ImageFile => Set<ImageFileModel>();

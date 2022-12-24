@@ -13,7 +13,7 @@
 <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, maximum-scale=1.0" />
 <meta name="HandheldFriendly" content="True" />
 <link rel="canonical" href="@DataConfig.ProjectSite@Model.PageInfo.PageLoc" />
-<meta itemprop=image content="@DataConfig.ProjectSite@Model.PageInfo.ImageFileModel.ImagePath/@Model.PageInfo.ImageFileModel.ImageFileName">
+<meta itemprop="image" content="@DataConfig.ProjectSite@Model.PageInfo.ImageFileModel.ImagePath/@Model.PageInfo.ImageFileModel.ImageFileName">
 
 @foreach (var p in Model.IconList)
 {
@@ -32,3 +32,10 @@
         <link rel="@p.IconRel" type="@p.IconType" sizes="@widthHeight" href="/images/pageicons/@p.IconPath/@p.IconFileName" />
     }
 }
+
+<meta name="msapplication-config" content="/browserconfigs/@Model.PageInfo.BrowserConfig" />
+<meta name="application-name" lang="ru" content="@Model.PageInfo.PageTitle" />
+<meta name="msapplication-tooltip" content="@Model.PageInfo.PageTitle" />
+<meta name="msapplication-TileImage" content="/images/browserconfig/@Model.PageInfo.IconPath/ms-icon-144x144.png" />
+<meta name="msapplication-TileColor" content="#ffffff" />
+<meta name="theme-color" content="#fffffff" />

@@ -15,6 +15,10 @@ public class SiteDbContext : DbContext
         modelBuilder.Entity<PageInfoModel>()
             .Property(b => b.Manifest)
             .HasDefaultValue("main.json");
+
+        modelBuilder.Entity<PageInfoModel>()
+            .Property(b => b.OgType)
+            .HasDefaultValue("website");
     }
 
     public DbSet<BackgroundFileModel> BackgroundFile => Set<BackgroundFileModel>();

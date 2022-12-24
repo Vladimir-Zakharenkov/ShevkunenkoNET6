@@ -63,6 +63,10 @@ public class PageInfoModel
     [Display(Name = "Файл manifest.json:")]
     public string Manifest { get; set; } = "main.json";
 
+    [Required(ErrorMessage = "Необходимо указать og:type")]
+    [Display(Name = "og:type")]
+    public string OgType { get; set; } = "website";
+
     public Guid BackgroundFileModelId { get; set; }
     public BackgroundFileModel BackgroundFileModel { get; set; } = null!;
 

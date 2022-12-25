@@ -397,7 +397,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "02-Partial Pages", "02-Part
 		MikeBrind\AspNetCoreRazorPagesInAction\03 - Razor Page Files\02-Partial Pages\Page01.txt = MikeBrind\AspNetCoreRazorPagesInAction\03 - Razor Page Files\02-Partial Pages\Page01.txt
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PartialDemo", "MikeBrind\AspNetCoreRazorPagesInAction\03 - Razor Page Files\02-Partial Pages\PartialDemo\PartialDemo.csproj", "{57076D0B-7AB8-4CE7-BE94-266DCE9D398F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PartialDemo", "MikeBrind\AspNetCoreRazorPagesInAction\03 - Razor Page Files\02-Partial Pages\PartialDemo\PartialDemo.csproj", "{57076D0B-7AB8-4CE7-BE94-266DCE9D398F}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "03-Layout Files", "03-Layout Files", "{76F4B4F7-118F-4108-87AF-DD53A62FBD42}"
 	ProjectSection(SolutionItems) = preProject

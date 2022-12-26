@@ -1,5 +1,6 @@
 ﻿global using Microsoft.AspNetCore.Mvc;
 global using Microsoft.EntityFrameworkCore;
+global using ShevkunenkoSite;
 global using ShevkunenkoSite.Pages;
 global using ShevkunenkoSite.Services;
 global using ShevkunenkoSite.Models;

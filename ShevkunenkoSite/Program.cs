@@ -1,5 +1,4 @@
 using Microsoft.Extensions.WebEncoders;
-using ShevkunenkoSite;
 using System.Text.Unicode;
 using WebMarkupMin.AspNetCore6;
 
@@ -14,6 +13,8 @@ configuration.Bind("ProjectData", new DataConfig());
 IServiceCollection services = builder.Services;
 
 #region Add services to the container.
+
+services.AddControllersWithViews();
 
 services.AddRazorPages();
 
@@ -90,6 +91,8 @@ app.UseRouting();
 app.UseAuthorization();
 
 app.UseWebMarkupMin();
+
+app.MapDefaultControllerRoute();
 
 app.MapRazorPages();
 

@@ -298,8 +298,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShevkunenkoSite.Models", "S
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShevkunenkoSite.Tests", "ShevkunenkoSite.Tests\ShevkunenkoSite.Tests.csproj", "{6CB062C1-A416-414C-8441-5AD259DDE2F3}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SandBox", "SandBox\SandBox.csproj", "{B245C6B7-6FFB-40EC-BC5E-2A4C0D712E5F}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01 - Home", "01 - Home", "{8F66E7C7-AE41-475E-827A-7D82425A5530}"
 	ProjectSection(SolutionItems) = preProject
 		MikeBrind\AspNetCoreRazorPagesInAction\01 - Home\Page01.txt = MikeBrind\AspNetCoreRazorPagesInAction\01 - Home\Page01.txt
@@ -414,6 +412,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "03-Layout Files", "03-Layou
 		MikeBrind\AspNetCoreRazorPagesInAction\03 - Razor Page Files\03-Layout Files\Page01.txt = MikeBrind\AspNetCoreRazorPagesInAction\03 - Razor Page Files\03-Layout Files\Page01.txt
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVC-SandBox", "MVC-SandBox\MVC-SandBox.csproj", "{A4087B5D-6042-4AB2-9213-11BA2FBCEBBB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -464,10 +464,6 @@ Global
 		{6CB062C1-A416-414C-8441-5AD259DDE2F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6CB062C1-A416-414C-8441-5AD259DDE2F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6CB062C1-A416-414C-8441-5AD259DDE2F3}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B245C6B7-6FFB-40EC-BC5E-2A4C0D712E5F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B245C6B7-6FFB-40EC-BC5E-2A4C0D712E5F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B245C6B7-6FFB-40EC-BC5E-2A4C0D712E5F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B245C6B7-6FFB-40EC-BC5E-2A4C0D712E5F}.Release|Any CPU.Build.0 = Release|Any CPU
 		{9030AF40-A67F-43FB-BCC8-3DE0CAB0A5EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{9030AF40-A67F-43FB-BCC8-3DE0CAB0A5EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9030AF40-A67F-43FB-BCC8-3DE0CAB0A5EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -484,6 +480,10 @@ Global
 		{57076D0B-7AB8-4CE7-BE94-266DCE9D398F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{57076D0B-7AB8-4CE7-BE94-266DCE9D398F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{57076D0B-7AB8-4CE7-BE94-266DCE9D398F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A4087B5D-6042-4AB2-9213-11BA2FBCEBBB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A4087B5D-6042-4AB2-9213-11BA2FBCEBBB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A4087B5D-6042-4AB2-9213-11BA2FBCEBBB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A4087B5D-6042-4AB2-9213-11BA2FBCEBBB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

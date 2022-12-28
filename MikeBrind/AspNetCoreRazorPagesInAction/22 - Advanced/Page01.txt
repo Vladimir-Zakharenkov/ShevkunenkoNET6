@@ -1,0 +1,15 @@
+Advanced concepts and scenarios in Razor Pages
+
+This section offers coverage of some more advanced concepts that apply to working 
+with the Razor Pages framework. Currently the list of topics covered are:
+
+•	Dependency Injection
+•	Creating Custom Tag Helpers
+•	Filters in Razor Pages
+•	Areas in Razor Pages
+•	Customising Route Conventions
+•	Custom Route Constraints
+•	Parameter Transformers For Routes
+•	Razor Class Libraries
+•	Rendering Partial Pages To A String
+•	Custom Model Binder in Razor Pages

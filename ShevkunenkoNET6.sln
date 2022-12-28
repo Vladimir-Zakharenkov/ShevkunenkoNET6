@@ -412,7 +412,37 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "03-Layout Files", "03-Layou
 		MikeBrind\AspNetCoreRazorPagesInAction\03 - Razor Page Files\03-Layout Files\Page01.txt = MikeBrind\AspNetCoreRazorPagesInAction\03 - Razor Page Files\03-Layout Files\Page01.txt
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVC-SandBox", "MVC-SandBox\MVC-SandBox.csproj", "{A4087B5D-6042-4AB2-9213-11BA2FBCEBBB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MVC-SandBox", "MVC-SandBox\MVC-SandBox.csproj", "{A4087B5D-6042-4AB2-9213-11BA2FBCEBBB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "22 - Advanced", "22 - Advanced", "{EE14E805-5236-499E-B932-2C38A196F61B}"
+	ProjectSection(SolutionItems) = preProject
+		MikeBrind\AspNetCoreRazorPagesInAction\22 - Advanced\Page01.txt = MikeBrind\AspNetCoreRazorPagesInAction\22 - Advanced\Page01.txt
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01 - Dependency Injection", "01 - Dependency Injection", "{0A81F2AB-3928-4703-A2E4-7C307CC935A0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "02 - Creating Custom Tag Helpers", "02 - Creating Custom Tag Helpers", "{7EC75C58-A163-4B09-BA5F-37F4F7735FB8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "03 - Filters in Razor Pages", "03 - Filters in Razor Pages", "{1553F085-B82A-4C8F-8A0E-D57A9DCEAA5B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "04 - Areas in Razor Pages", "04 - Areas in Razor Pages", "{AABFB60B-E566-4AC0-8399-EB0E20110513}"
+	ProjectSection(SolutionItems) = preProject
+		MikeBrind\AspNetCoreRazorPagesInAction\22 - Advanced\04 - Areas in Razor Pages\Page01.txt = MikeBrind\AspNetCoreRazorPagesInAction\22 - Advanced\04 - Areas in Razor Pages\Page01.txt
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "05 - Customising Route Conventions", "05 - Customising Route Conventions", "{E5F93850-5D22-4602-8A61-E9B2A82366C3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "06 - Custom Route Constraints", "06 - Custom Route Constraints", "{4F43905E-1E0D-4456-B231-B422A936D143}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "07 - Parameter Transformers For Routes", "07 - Parameter Transformers For Routes", "{721C2201-DE2F-4869-A279-E44F3220C5A4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "08 - Razor Class Libraries", "08 - Razor Class Libraries", "{AA99EA02-661F-4A68-9C58-4037AF0F0867}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "09 - Rendering Partial Pages To A String", "09 - Rendering Partial Pages To A String", "{C8021D75-C41D-4933-8F0D-0822022A3C65}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "10 - Custom Model Binder in Razor Pages", "10 - Custom Model Binder in Razor Pages", "{8A20110A-BA03-4787-B391-D0C8DCE3FB10}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RP-SandBox", "RP-SandBox\RP-SandBox.csproj", "{E66162A4-DC14-4D1E-B8D3-ABFF6358B231}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -484,6 +514,10 @@ Global
 		{A4087B5D-6042-4AB2-9213-11BA2FBCEBBB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A4087B5D-6042-4AB2-9213-11BA2FBCEBBB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A4087B5D-6042-4AB2-9213-11BA2FBCEBBB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E66162A4-DC14-4D1E-B8D3-ABFF6358B231}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E66162A4-DC14-4D1E-B8D3-ABFF6358B231}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E66162A4-DC14-4D1E-B8D3-ABFF6358B231}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E66162A4-DC14-4D1E-B8D3-ABFF6358B231}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -526,6 +560,17 @@ Global
 		{981A8C48-804E-4289-9EA1-975543A42927} = {477FFA16-BD22-40A0-9C30-AE376C3E76A0}
 		{57076D0B-7AB8-4CE7-BE94-266DCE9D398F} = {981A8C48-804E-4289-9EA1-975543A42927}
 		{76F4B4F7-118F-4108-87AF-DD53A62FBD42} = {477FFA16-BD22-40A0-9C30-AE376C3E76A0}
+		{EE14E805-5236-499E-B932-2C38A196F61B} = {482A7CC1-FFF3-442D-B231-69BB1687E04C}
+		{0A81F2AB-3928-4703-A2E4-7C307CC935A0} = {EE14E805-5236-499E-B932-2C38A196F61B}
+		{7EC75C58-A163-4B09-BA5F-37F4F7735FB8} = {EE14E805-5236-499E-B932-2C38A196F61B}
+		{1553F085-B82A-4C8F-8A0E-D57A9DCEAA5B} = {EE14E805-5236-499E-B932-2C38A196F61B}
+		{AABFB60B-E566-4AC0-8399-EB0E20110513} = {EE14E805-5236-499E-B932-2C38A196F61B}
+		{E5F93850-5D22-4602-8A61-E9B2A82366C3} = {EE14E805-5236-499E-B932-2C38A196F61B}
+		{4F43905E-1E0D-4456-B231-B422A936D143} = {EE14E805-5236-499E-B932-2C38A196F61B}
+		{721C2201-DE2F-4869-A279-E44F3220C5A4} = {EE14E805-5236-499E-B932-2C38A196F61B}
+		{AA99EA02-661F-4A68-9C58-4037AF0F0867} = {EE14E805-5236-499E-B932-2C38A196F61B}
+		{C8021D75-C41D-4933-8F0D-0822022A3C65} = {EE14E805-5236-499E-B932-2C38A196F61B}
+		{8A20110A-BA03-4787-B391-D0C8DCE3FB10} = {EE14E805-5236-499E-B932-2C38A196F61B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5507A11F-FC14-46CA-B766-61BB183C82C7}

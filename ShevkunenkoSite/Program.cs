@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.Extensions.WebEncoders;
 using System.Text.Unicode;
 using WebMarkupMin.AspNetCore6;
@@ -17,6 +18,12 @@ IServiceCollection services = builder.Services;
 services.AddControllersWithViews();
 
 services.AddRazorPages();
+
+services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+    .AddCookie(options =>
+    {
+        options.LoginPath = new PathString("/Admin/Login");
+    });
 
 services.AddDbContext<SiteDbContext>(opts =>
 {
@@ -85,6 +92,8 @@ app.UseHsts();
 app.UseHttpsRedirection();
 
 app.UseStaticFiles();
+
+app.UseAuthentication();
 
 app.UseRouting();
 

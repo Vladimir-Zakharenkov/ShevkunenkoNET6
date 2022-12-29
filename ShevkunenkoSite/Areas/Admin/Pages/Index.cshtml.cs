@@ -1,12 +1,9 @@
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.RazorPages;
+namespace ShevkunenkoSite.Areas.Admin.Pages;
 
-namespace ShevkunenkoSite.Areas.Admin.Pages
+[Authorize]
+public class IndexModel : PageModel
 {
-    public class IndexModel : PageModel
+    public void OnGet()
     {
-        public void OnGet()
-        {
-        }
     }
 }

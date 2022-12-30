@@ -19,6 +19,12 @@ services.AddControllersWithViews();
 
 services.AddRazorPages();
 
+services.AddRazorPages(options =>
+{
+    options.Conventions.AuthorizeAreaPage("Admin", "/Index");
+    options.Conventions.AuthorizeAreaFolder("Admin", "/DBCRUD");
+});
+
 services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
     .AddCookie(options =>
     {

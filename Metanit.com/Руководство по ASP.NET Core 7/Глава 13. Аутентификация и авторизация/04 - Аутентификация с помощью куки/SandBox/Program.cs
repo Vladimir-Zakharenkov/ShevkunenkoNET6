@@ -15,6 +15,7 @@ var people = new List<Person>
 // аутентификация с помощью куки
 builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
     .AddCookie(options => options.LoginPath = "/login");
+
 builder.Services.AddAuthorization();
 
 var app = builder.Build();
@@ -54,6 +55,7 @@ app.MapPost("/login", async (string? returnUrl, HttpContext context) =>
 {
     // получаем из формы email и пароль
     var form = context.Request.Form;
+
     // если email и/или пароль не установлены, посылаем статусный код ошибки 400
     if (!form.ContainsKey("email") || !form.ContainsKey("password"))
         return Results.BadRequest("Email и/или пароль не установлены");
@@ -63,12 +65,15 @@ app.MapPost("/login", async (string? returnUrl, HttpContext context) =>
 
     // находим пользователя 
     Person? person = people.FirstOrDefault(p => p.Email == email && p.Password == password);
+
     // если пользователь не найден, отправляем статусный код 401
     if (person is null) return Results.Unauthorized();
 
     var claims = new List<Claim> { new Claim(ClaimTypes.Name, person.Email) };
+
     // создаем объект ClaimsIdentity
-    ClaimsIdentity claimsIdentity = new ClaimsIdentity(claims, "Cookies");
+    ClaimsIdentity claimsIdentity = new (claims, "Cookies");
+
     // установка аутентификационных куки
     await context.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, new ClaimsPrincipal(claimsIdentity));
     return Results.Redirect(returnUrl ?? "/");

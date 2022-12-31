@@ -26,4 +26,6 @@ public class SiteDbContext : DbContext
     public DbSet<ImageFileModel> ImageFile => Set<ImageFileModel>();
 
     public DbSet<IconFileModel> IconFile => Set<IconFileModel>();
+
+    public DbSet<AccessModel> Access => Set<AccessModel>();
 }

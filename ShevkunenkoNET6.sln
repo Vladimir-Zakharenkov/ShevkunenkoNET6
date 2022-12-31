@@ -444,6 +444,33 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "10 - Custom Model Binder in
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RP-SandBox", "RP-SandBox\RP-SandBox.csproj", "{E66162A4-DC14-4D1E-B8D3-ABFF6358B231}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AspNetCore.Docs", "AspNetCore.Docs", "{BBF39DE0-3616-4AF3-B079-5D6914BE2879}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "aspnetcore", "aspnetcore", "{6EABA62E-2D66-41C4-825B-A8F6765B8A30}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "security", "security", "{0A756E4C-DDCF-44B1-9A50-425770429ED1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "authentication", "authentication", "{1FFF88A9-BC76-41D7-A7EC-093835E9289D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "identity", "identity", "{3BCD658C-BD83-4297-8F46-A5C43014827E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "sample", "sample", "{2896D091-5468-4515-B7B2-F24AD6196849}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApp1", "AspNetCore.Docs\aspnetcore\security\authentication\identity\sample\WebApp1\WebApp1.csproj", "{300668EA-6B89-4C96-A80F-E0FBE6F87CAD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Metanit.com", "Metanit.com", "{6455067E-203E-44C7-9FF1-C0448FDF7BFB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Руководство по ASP.NET Core 7", "Руководство по ASP.NET Core 7", "{8E6EC6D2-33A2-4425-BFE2-30DDEDDE162C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Глава 13. Аутентификация и авторизация", "Глава 13. Аутентификация и авторизация", "{2E3DAEFB-A706-46C4-AD5D-3DDF6AA987A7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "04 - Аутентификация с помощью куки", "04 - Аутентификация с помощью куки", "{2F741277-242B-40D0-86B0-CC008C1C0971}"
+	ProjectSection(SolutionItems) = preProject
+		Metanit.com\Руководство по ASP.NET Core 7\Глава 13. Аутентификация и авторизация\04 - Аутентификация с помощью куки\Page01.txt = Metanit.com\Руководство по ASP.NET Core 7\Глава 13. Аутентификация и авторизация\04 - Аутентификация с помощью куки\Page01.txt
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SandBox", "Metanit.com\Руководство по ASP.NET Core 7\Глава 13. Аутентификация и авторизация\04 - Аутентификация с помощью куки\SandBox\SandBox.csproj", "{88100625-6871-4133-A00F-339EE7BB656D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -518,6 +545,14 @@ Global
 		{E66162A4-DC14-4D1E-B8D3-ABFF6358B231}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E66162A4-DC14-4D1E-B8D3-ABFF6358B231}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E66162A4-DC14-4D1E-B8D3-ABFF6358B231}.Release|Any CPU.Build.0 = Release|Any CPU
+		{300668EA-6B89-4C96-A80F-E0FBE6F87CAD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{300668EA-6B89-4C96-A80F-E0FBE6F87CAD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{300668EA-6B89-4C96-A80F-E0FBE6F87CAD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{300668EA-6B89-4C96-A80F-E0FBE6F87CAD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{88100625-6871-4133-A00F-339EE7BB656D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{88100625-6871-4133-A00F-339EE7BB656D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{88100625-6871-4133-A00F-339EE7BB656D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{88100625-6871-4133-A00F-339EE7BB656D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -571,6 +606,16 @@ Global
 		{AA99EA02-661F-4A68-9C58-4037AF0F0867} = {EE14E805-5236-499E-B932-2C38A196F61B}
 		{C8021D75-C41D-4933-8F0D-0822022A3C65} = {EE14E805-5236-499E-B932-2C38A196F61B}
 		{8A20110A-BA03-4787-B391-D0C8DCE3FB10} = {EE14E805-5236-499E-B932-2C38A196F61B}
+		{6EABA62E-2D66-41C4-825B-A8F6765B8A30} = {BBF39DE0-3616-4AF3-B079-5D6914BE2879}
+		{0A756E4C-DDCF-44B1-9A50-425770429ED1} = {6EABA62E-2D66-41C4-825B-A8F6765B8A30}
+		{1FFF88A9-BC76-41D7-A7EC-093835E9289D} = {0A756E4C-DDCF-44B1-9A50-425770429ED1}
+		{3BCD658C-BD83-4297-8F46-A5C43014827E} = {1FFF88A9-BC76-41D7-A7EC-093835E9289D}
+		{2896D091-5468-4515-B7B2-F24AD6196849} = {3BCD658C-BD83-4297-8F46-A5C43014827E}
+		{300668EA-6B89-4C96-A80F-E0FBE6F87CAD} = {2896D091-5468-4515-B7B2-F24AD6196849}
+		{8E6EC6D2-33A2-4425-BFE2-30DDEDDE162C} = {6455067E-203E-44C7-9FF1-C0448FDF7BFB}
+		{2E3DAEFB-A706-46C4-AD5D-3DDF6AA987A7} = {8E6EC6D2-33A2-4425-BFE2-30DDEDDE162C}
+		{2F741277-242B-40D0-86B0-CC008C1C0971} = {2E3DAEFB-A706-46C4-AD5D-3DDF6AA987A7}
+		{88100625-6871-4133-A00F-339EE7BB656D} = {2F741277-242B-40D0-86B0-CC008C1C0971}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5507A11F-FC14-46CA-B766-61BB183C82C7}

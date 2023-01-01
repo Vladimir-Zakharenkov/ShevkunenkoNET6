@@ -6,4 +6,5 @@ public class AccessImplementation : IAccessRepository
     public AccessImplementation(SiteDbContext siteContext) => _siteContext = siteContext;
 
     public IQueryable<AccessModel> Accesses => _siteContext.Access;
+
 }

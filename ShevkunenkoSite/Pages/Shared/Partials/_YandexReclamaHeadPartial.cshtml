@@ -1,26 +1,37 @@
-﻿
-<div class="row justify-content-center rsy">
+﻿@{
+    var message = Context.Request.Host.ToString().ToLower();
 
-    <!-- Yandex.RTB R-A-1648952-1 -->
-    <div id="yandex_rtb_R-A-1648952-1" class="col-12 col-lg-6"></div>
-    <script>
-        window.yaContextCb.push(() => {
-            Ya.Context.AdvManager.render({
-                renderTo: 'yandex_rtb_R-A-1648952-1',
-                blockId: 'R-A-1648952-1'
-            })
-        })</script>
+    if (!message.Contains("shevkunenko.site"))
+    {
+        <div>
+        </div>
+    }
+    else
+    {
+        <div class="row justify-content-center rsy">
 
-    <!-- Yandex.RTB R-A-1648952-2 -->
-    <div id="yandex_rtb_R-A-1648952-2" class="d-none col-lg-6 d-lg-inline-block"></div>
-    <script>
-        window.yaContextCb.push(() => {
-            Ya.Context.AdvManager.render({
-                renderTo: 'yandex_rtb_R-A-1648952-2',
-                blockId: 'R-A-1648952-2'
-            })
-        })</script>
+            <!-- Yandex.RTB R-A-1648952-1 -->
+            <div id="yandex_rtb_R-A-1648952-1" class="col-12 col-lg-6"></div>
+            <script>
+                window.yaContextCb.push(() => {
+                    Ya.Context.AdvManager.render({
+                        renderTo: 'yandex_rtb_R-A-1648952-1',
+                        blockId: 'R-A-1648952-1'
+                    })
+                })</script>
 
-</div>
+            <!-- Yandex.RTB R-A-1648952-2 -->
+            <div id="yandex_rtb_R-A-1648952-2" class="d-none col-lg-6 d-lg-inline-block"></div>
+            <script>
+                window.yaContextCb.push(() => {
+                    Ya.Context.AdvManager.render({
+                        renderTo: 'yandex_rtb_R-A-1648952-2',
+                        blockId: 'R-A-1648952-2'
+                    })
+                })</script>
 
-<hr class="liniya" />
+        </div>
+
+        <hr class="liniya" />
+    }
+}

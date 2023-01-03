@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authentication;
 using System.Security.Claims;
+using System.Collections.Immutable;
 
 namespace ShevkunenkoSite.Areas.Admin.Pages;
 
@@ -32,7 +33,7 @@ public class LoginModel : PageModel
 
                 Authenticate(access.Email); // аутентификация
 
-                return RedirectToPage("/Index", new { area = "Admin" });
+                return RedirectToPage("Index", new { area = "Admin" });
             }
             else
             {

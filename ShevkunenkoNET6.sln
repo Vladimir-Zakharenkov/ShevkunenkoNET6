@@ -469,7 +469,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "04 - Аутентифика
 		Metanit.com\Руководство по ASP.NET Core 7\Глава 13. Аутентификация и авторизация\04 - Аутентификация с помощью куки\Page01.txt = Metanit.com\Руководство по ASP.NET Core 7\Глава 13. Аутентификация и авторизация\04 - Аутентификация с помощью куки\Page01.txt
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SandBox", "Metanit.com\Руководство по ASP.NET Core 7\Глава 13. Аутентификация и авторизация\04 - Аутентификация с помощью куки\SandBox\SandBox.csproj", "{88100625-6871-4133-A00F-339EE7BB656D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SandBox", "Metanit.com\Руководство по ASP.NET Core 7\Глава 13. Аутентификация и авторизация\04 - Аутентификация с помощью куки\SandBox\SandBox.csproj", "{88100625-6871-4133-A00F-339EE7BB656D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Introduction to Authentication with ASP.NET Core", "Introduction to Authentication with ASP.NET Core", "{CFBBA80C-0D2B-4FFF-9E13-6526D7196B53}"
+	ProjectSection(SolutionItems) = preProject
+		AndrewLock\Introduction to Authentication with ASP.NET Core\Page001.txt = AndrewLock\Introduction to Authentication with ASP.NET Core\Page001.txt
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -616,6 +621,7 @@ Global
 		{2E3DAEFB-A706-46C4-AD5D-3DDF6AA987A7} = {8E6EC6D2-33A2-4425-BFE2-30DDEDDE162C}
 		{2F741277-242B-40D0-86B0-CC008C1C0971} = {2E3DAEFB-A706-46C4-AD5D-3DDF6AA987A7}
 		{88100625-6871-4133-A00F-339EE7BB656D} = {2F741277-242B-40D0-86B0-CC008C1C0971}
+		{CFBBA80C-0D2B-4FFF-9E13-6526D7196B53} = {7CABF0E9-17DB-4713-BC8F-291256460378}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5507A11F-FC14-46CA-B766-61BB183C82C7}

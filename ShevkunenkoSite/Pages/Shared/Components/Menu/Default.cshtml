@@ -1,168 +1,296 @@
-﻿<nav class="navbar sticky-top navbar-expand-md navbar-light bg-light mt-1 mb-3 py-1 rounded-3 shadw">
+﻿@{
+    var message = Context.Request.Path.ToString().ToLower();
 
-    <div class="container-fluid">
+    if (!message.Contains("admin"))
+    {
+        <nav class="navbar sticky-top navbar-expand-md navbar-light bg-light mt-1 mb-3 py-1 rounded-3 shadw">
 
-        <a class="navbar-brand text-black pe-2 me-2" asp-page="/Donate" title="Помочь сайту">
-            <span class="donate shadw px-2 border border-2 rounded-1">Donate</span>
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#siteNav" aria-controls="siteNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+            <div class="container-fluid">
 
-        <div class="collapse navbar-collapse" id="siteNav">
-
-            <ul class="navbar-nav mb-3 mb-md-0" itemprop="breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList">
-
-                <li class="nav-item dropdown donate shadw px-1 py-1 py-md-0 me-3 border border-2 rounded-1 custom" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-
-                    <a class="nav-link dropdown-toggle p-0" href="#" id="Site" role="button" data-bs-toggle="dropdown" aria-expanded="false" itemprop="item">
-                        <span itemprop="name">Сайт</span>
-                        <meta itemprop="position" content="1">
-                    </a>
-
-                    <ul class="dropdown-menu border-0 p-0 rounded-3" aria-labelledby="Site" itemscope itemtype="http://schema.org/BreadcrumbList">
-
-                        <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-                            <a class="dropdown-item shadw lh-sm mt-2 p-1" asp-page="/Navigation" itemprop="item">
-                                <span class="fs-5" itemprop="name">Главные разделы</span>
-                                <meta itemprop="position" content="1">
-                            </a>
-                        </li>
-
-                        <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-                            <a class="dropdown-item shadw lh-sm mt-2 p-1" href="https://shevkunenko.ru/raznoe.htm" itemprop="item">
-                                <span class="fs-5" itemprop="name">Разное</span>
-                                <meta itemprop="position" content="2">
-                            </a>
-                        </li>
-
-                        <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-                            <a class="dropdown-item shadw lh-sm mt-2 p-1" asp-page="/Filmy-i-Knigi" itemprop="item">
-                                <span class="fs-5" itemprop="name">Фильмы и Книги</span>
-                                <meta itemprop="position" content="3">
-                            </a>
-                        </li>
-
-                        <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-                            <a class="dropdown-item shadw lh-sm mt-2 p-1" asp-page="/DBCRUD/Index" itemprop="item">
-                                <span class="fs-5" itemprop="name">Админ</span>
-                                <meta itemprop="position" content="4">
-                            </a>
-                        </li>
-
-                    </ul>
-
-                </li>
-
-                <li class="nav-item dropdown donate shadw px-1 py-1 py-md-0 me-3 border border-2 rounded-1 custom" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-
-                    <a class="nav-link dropdown-toggle p-0" href="#" id="Biografy" role="button" data-bs-toggle="dropdown" aria-expanded="false" itemprop="item">
-                        <span itemprop="name">Биография</span>
-                        <meta itemprop="position" content="2">
-                    </a>
-
-                    <ul class="dropdown-menu border-0 p-0 rounded-3" aria-labelledby="Biografy" itemscope itemtype="http://schema.org/BreadcrumbList">
-
-                        <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-                            <a class="dropdown-item shadw lh-sm mt-2 p-1" asp-page="/Biografy" itemprop="item">
-                                <span class="fs-5" itemprop="name">Биография</span>
-                                <meta itemprop="position" content="1">
-                            </a>
-                        </li>
-
-                        <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-                            <a class="dropdown-item shadw lh-sm mt-2 p-1" href="https://shevkunenko.ru/pressa/index.htm" itemprop="item">
-                                <span class="fs-5" itemprop="name">Пресса</span>
-                                <meta itemprop="position" content="2">
-                            </a>
-                        </li>
-
-                        <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-                            <a class="dropdown-item shadw lh-sm mt-2 p-1" href="https://shevkunenko.ru/csfilm/album1.htm" itemprop="item">
-                                <span class="fs-5" itemprop="name">Фото</span>
-                                <meta itemprop="position" content="3">
-                            </a>
-                        </li>
-
-                    </ul>
-
-                </li>
-
-                <li class="nav-item dropdown donate shadw px-1 py-1 py-md-0 me-3 border border-2 rounded-1 custom" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-
-                    <a class="nav-link dropdown-toggle p-0" href="#" id="Movies" role="button" data-bs-toggle="dropdown" aria-expanded="false" itemprop="item">
-                        <span itemprop="name">Фильмы</span>
-                        <meta itemprop="position" content="3">
-                    </a>
-
-                    <ul class="dropdown-menu border-0 p-0 rounded-3" aria-labelledby="Movies" itemscope itemtype="http://schema.org/BreadcrumbList">
-
-                        <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-                            <a class="dropdown-item shadw lh-sm mt-2 p-1 disabled" href="#" itemprop="item">
-                                <span class="fs-5" itemprop="name">Сестра музыканта</span>
-                                <meta itemprop="position" content="1">
-                            </a>
-                        </li>
-
-                        <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-                            <a class="dropdown-item shadw lh-sm mt-2 p-1" href="https://shevkunenko.ru/online/50_online.htm" itemprop="item">
-                                <span class="fs-5" itemprop="name">50 на 50</span>
-                                <meta itemprop="position" content="2">
-                            </a>
-                        </li>
-
-                        <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-                            <a class="dropdown-item shadw lh-sm mt-2 p-1" asp-page="/Filmy/Rybakov/Kortik" itemprop="item">
-                                <span class="fs-5" itemprop="name">Кортик</span>
-                                <meta itemprop="position" content="3">
-                            </a>
-                        </li>
-
-                        <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-                            <a class="dropdown-item shadw lh-sm mt-2 p-1" href="https://shevkunenko.ru/bpfilm/index.htm" itemprop="item">
-                                <span class="fs-5" itemprop="name">Бронзовая птица</span>
-                                <meta itemprop="position" content="4">
-                            </a>
-                        </li>
-
-                        <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-                            <a class="dropdown-item shadw lh-sm mt-2 p-1" href="https://shevkunenko.ru/pefilm.htm" itemprop="item">
-                                <span class="fs-5 pe-1" itemprop="name">Пропавшая экспедиция</span>
-                                <meta itemprop="position" content="5">
-                            </a>
-                        </li>
-
-                        <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-                            <a class="dropdown-item shadw lh-sm mt-2 p-1" asp-page="/Video-o-Shevkunenko/Index" itemprop="item">
-                                <span class="fs-5" itemprop="name">Телепрограммы о Сергее</span>
-                                <meta itemprop="position" content="6">
-                            </a>
-                        </li>
-
-                        <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-                            <a class="dropdown-item shadw lh-sm mt-2 p-1" asp-page="/Znakomye-o-Shevkunenko/Index" itemprop="item">
-                                <span class="fs-5" itemprop="name">Знакомые о Сергее</span>
-                                <meta itemprop="position" content="7">
-                            </a>
-                        </li>
-
-                    </ul>
-
-                </li>
-
-            </ul>
-
-            <div class="navbar-nav">
-                <a class="nav-link" href="#" title="Соцсети">
-                    <div class="ya-share2 " data-curtain data-size="m" data-limit="0" data-more-button-type="long" data-services="vkontakte,facebook,odnoklassniki,telegram,twitter,whatsapp,moimir,skype"></div>
+                <a class="navbar-brand text-black pe-2 me-2" asp-page="/Donate" title="Помочь сайту">
+                    <span class="donate shadw px-2 border border-2 rounded-1">Donate</span>
                 </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#siteNav" aria-controls="siteNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="siteNav">
+
+                    <ul class="navbar-nav mb-3 mb-md-0" itemprop="breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList">
+
+                        <li class="nav-item dropdown donate shadw px-1 py-1 py-md-0 me-3 border border-2 rounded-1 custom" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+
+                            <a class="nav-link dropdown-toggle p-0" href="#" id="Site" role="button" data-bs-toggle="dropdown" aria-expanded="false" itemprop="item">
+                                <span itemprop="name">Сайт</span>
+                                <meta itemprop="position" content="1">
+                            </a>
+
+                            <ul class="dropdown-menu border-0 p-0 rounded-3" aria-labelledby="Site" itemscope itemtype="http://schema.org/BreadcrumbList">
+
+                                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                                    <a class="dropdown-item shadw lh-sm mt-2 p-1" asp-page="/Navigation" itemprop="item">
+                                        <span class="fs-5" itemprop="name">Главные разделы</span>
+                                        <meta itemprop="position" content="1">
+                                    </a>
+                                </li>
+
+                                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                                    <a class="dropdown-item shadw lh-sm mt-2 p-1" href="https://shevkunenko.ru/raznoe.htm" itemprop="item">
+                                        <span class="fs-5" itemprop="name">Разное</span>
+                                        <meta itemprop="position" content="2">
+                                    </a>
+                                </li>
+
+                                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                                    <a class="dropdown-item shadw lh-sm mt-2 p-1" asp-page="/Filmy-i-Knigi" itemprop="item">
+                                        <span class="fs-5" itemprop="name">Фильмы и Книги</span>
+                                        <meta itemprop="position" content="3">
+                                    </a>
+                                </li>
+
+                                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                                    <a class="dropdown-item shadw lh-sm mt-2 p-1" asp-page="/DBCRUD/Index" itemprop="item">
+                                        <span class="fs-5" itemprop="name">Админ</span>
+                                        <meta itemprop="position" content="4">
+                                    </a>
+                                </li>
+
+                            </ul>
+
+                        </li>
+
+                        <li class="nav-item dropdown donate shadw px-1 py-1 py-md-0 me-3 border border-2 rounded-1 custom" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+
+                            <a class="nav-link dropdown-toggle p-0" href="#" id="Biografy" role="button" data-bs-toggle="dropdown" aria-expanded="false" itemprop="item">
+                                <span itemprop="name">Биография</span>
+                                <meta itemprop="position" content="2">
+                            </a>
+
+                            <ul class="dropdown-menu border-0 p-0 rounded-3" aria-labelledby="Biografy" itemscope itemtype="http://schema.org/BreadcrumbList">
+
+                                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                                    <a class="dropdown-item shadw lh-sm mt-2 p-1" asp-page="/Biografy" itemprop="item">
+                                        <span class="fs-5" itemprop="name">Биография</span>
+                                        <meta itemprop="position" content="1">
+                                    </a>
+                                </li>
+
+                                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                                    <a class="dropdown-item shadw lh-sm mt-2 p-1" href="https://shevkunenko.ru/pressa/index.htm" itemprop="item">
+                                        <span class="fs-5" itemprop="name">Пресса</span>
+                                        <meta itemprop="position" content="2">
+                                    </a>
+                                </li>
+
+                                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                                    <a class="dropdown-item shadw lh-sm mt-2 p-1" href="https://shevkunenko.ru/csfilm/album1.htm" itemprop="item">
+                                        <span class="fs-5" itemprop="name">Фото</span>
+                                        <meta itemprop="position" content="3">
+                                    </a>
+                                </li>
+
+                            </ul>
+
+                        </li>
+
+                        <li class="nav-item dropdown donate shadw px-1 py-1 py-md-0 me-3 border border-2 rounded-1 custom" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+
+                            <a class="nav-link dropdown-toggle p-0" href="#" id="Movies" role="button" data-bs-toggle="dropdown" aria-expanded="false" itemprop="item">
+                                <span itemprop="name">Фильмы</span>
+                                <meta itemprop="position" content="3">
+                            </a>
+
+                            <ul class="dropdown-menu border-0 p-0 rounded-3" aria-labelledby="Movies" itemscope itemtype="http://schema.org/BreadcrumbList">
+
+                                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                                    <a class="dropdown-item shadw lh-sm mt-2 p-1 disabled" href="#" itemprop="item">
+                                        <span class="fs-5" itemprop="name">Сестра музыканта</span>
+                                        <meta itemprop="position" content="1">
+                                    </a>
+                                </li>
+
+                                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                                    <a class="dropdown-item shadw lh-sm mt-2 p-1" href="https://shevkunenko.ru/online/50_online.htm" itemprop="item">
+                                        <span class="fs-5" itemprop="name">50 на 50</span>
+                                        <meta itemprop="position" content="2">
+                                    </a>
+                                </li>
+
+                                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                                    <a class="dropdown-item shadw lh-sm mt-2 p-1" asp-page="/Filmy/Rybakov/Kortik" itemprop="item">
+                                        <span class="fs-5" itemprop="name">Кортик</span>
+                                        <meta itemprop="position" content="3">
+                                    </a>
+                                </li>
+
+                                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                                    <a class="dropdown-item shadw lh-sm mt-2 p-1" href="https://shevkunenko.ru/bpfilm/index.htm" itemprop="item">
+                                        <span class="fs-5" itemprop="name">Бронзовая птица</span>
+                                        <meta itemprop="position" content="4">
+                                    </a>
+                                </li>
+
+                                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                                    <a class="dropdown-item shadw lh-sm mt-2 p-1" href="https://shevkunenko.ru/pefilm.htm" itemprop="item">
+                                        <span class="fs-5 pe-1" itemprop="name">Пропавшая экспедиция</span>
+                                        <meta itemprop="position" content="5">
+                                    </a>
+                                </li>
+
+                                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                                    <a class="dropdown-item shadw lh-sm mt-2 p-1" asp-page="/Video-o-Shevkunenko/Index" itemprop="item">
+                                        <span class="fs-5" itemprop="name">Телепрограммы о Сергее</span>
+                                        <meta itemprop="position" content="6">
+                                    </a>
+                                </li>
+
+                                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                                    <a class="dropdown-item shadw lh-sm mt-2 p-1" asp-page="/Znakomye-o-Shevkunenko/Index" itemprop="item">
+                                        <span class="fs-5" itemprop="name">Знакомые о Сергее</span>
+                                        <meta itemprop="position" content="7">
+                                    </a>
+                                </li>
+
+                            </ul>
+
+                        </li>
+
+                    </ul>
+
+                    <div class="navbar-nav">
+                        <a class="nav-link" href="#" title="Соцсети">
+                            <div class="ya-share2 " data-curtain data-size="m" data-limit="0" data-more-button-type="long" data-services="vkontakte,facebook,odnoklassniki,telegram,twitter,whatsapp,moimir,skype"></div>
+                        </a>
+                    </div>
+
+                    <div class="ya-site-form ya-site-form_inited_no" data-bem="{&quot;action&quot;:&quot;https://yandex.ru/search/site/&quot;,&quot;arrow&quot;:false,&quot;bg&quot;:&quot;transparent&quot;,&quot;fontsize&quot;:14,&quot;fg&quot;:&quot;#000000&quot;,&quot;language&quot;:&quot;ru&quot;,&quot;logo&quot;:&quot;rb&quot;,&quot;publicname&quot;:&quot;Поиск по shevkunenko.site&quot;,&quot;suggest&quot;:true,&quot;target&quot;:&quot;_self&quot;,&quot;tld&quot;:&quot;ru&quot;,&quot;type&quot;:3,&quot;usebigdictionary&quot;:false,&quot;searchid&quot;:2633068,&quot;input_fg&quot;:&quot;#000000&quot;,&quot;input_bg&quot;:&quot;#ffffff&quot;,&quot;input_fontStyle&quot;:&quot;normal&quot;,&quot;input_fontWeight&quot;:&quot;normal&quot;,&quot;input_placeholder&quot;:&quot;поиск по сайту&quot;,&quot;input_placeholderColor&quot;:&quot;#000000&quot;,&quot;input_borderColor&quot;:&quot;#7f9db9&quot;}"><form action="https://yandex.ru/search/site/" method="get" target="_self" accept-charset="utf-8"><input type="hidden" name="searchid" value="2633068" /><input type="hidden" name="l10n" value="ru" /><input type="hidden" name="reqenc" value="" /><input type="search" name="text" value="" /><input type="submit" value="Найти" /></form></div>
+                    <script type="text/javascript">(function (w, d, c) { var s = d.createElement('script'), h = d.getElementsByTagName('script')[0], e = d.documentElement; if ((' ' + e.className + ' ').indexOf(' ya-page_js_yes ') === -1) { e.className += ' ya-page_js_yes'; } s.type = 'text/javascript'; s.async = true; s.charset = 'utf-8'; s.src = (d.location.protocol === 'https:' ? 'https:' : 'http:') + '//site.yandex.net/v2.0/js/all.js'; h.parentNode.insertBefore(s, h); (w[c] || (w[c] = [])).push(function () { Ya.Site.Form.init() }) })(window, document, 'yandex_site_callbacks');</script>
+
+                </div>
+
             </div>
 
-            <div class="ya-site-form ya-site-form_inited_no" data-bem="{&quot;action&quot;:&quot;https://yandex.ru/search/site/&quot;,&quot;arrow&quot;:false,&quot;bg&quot;:&quot;transparent&quot;,&quot;fontsize&quot;:14,&quot;fg&quot;:&quot;#000000&quot;,&quot;language&quot;:&quot;ru&quot;,&quot;logo&quot;:&quot;rb&quot;,&quot;publicname&quot;:&quot;Поиск по shevkunenko.site&quot;,&quot;suggest&quot;:true,&quot;target&quot;:&quot;_self&quot;,&quot;tld&quot;:&quot;ru&quot;,&quot;type&quot;:3,&quot;usebigdictionary&quot;:false,&quot;searchid&quot;:2633068,&quot;input_fg&quot;:&quot;#000000&quot;,&quot;input_bg&quot;:&quot;#ffffff&quot;,&quot;input_fontStyle&quot;:&quot;normal&quot;,&quot;input_fontWeight&quot;:&quot;normal&quot;,&quot;input_placeholder&quot;:&quot;поиск по сайту&quot;,&quot;input_placeholderColor&quot;:&quot;#000000&quot;,&quot;input_borderColor&quot;:&quot;#7f9db9&quot;}"><form action="https://yandex.ru/search/site/" method="get" target="_self" accept-charset="utf-8"><input type="hidden" name="searchid" value="2633068" /><input type="hidden" name="l10n" value="ru" /><input type="hidden" name="reqenc" value="" /><input type="search" name="text" value="" /><input type="submit" value="Найти" /></form></div>
-            <script type="text/javascript">(function (w, d, c) { var s = d.createElement('script'), h = d.getElementsByTagName('script')[0], e = d.documentElement; if ((' ' + e.className + ' ').indexOf(' ya-page_js_yes ') === -1) { e.className += ' ya-page_js_yes'; } s.type = 'text/javascript'; s.async = true; s.charset = 'utf-8'; s.src = (d.location.protocol === 'https:' ? 'https:' : 'http:') + '//site.yandex.net/v2.0/js/all.js'; h.parentNode.insertBefore(s, h); (w[c] || (w[c] = [])).push(function () { Ya.Site.Form.init() }) })(window, document, 'yandex_site_callbacks');</script>
+        </nav>
+    }
+    else
+    {
+        <nav class="navbar sticky-top navbar-expand-md navbar-light bg-light mt-1 mb-3 py-1 rounded-3 shadw">
 
-        </div>
+            <div class="container-fluid">
 
-    </div>
+                <a class="navbar-brand text-black pe-2 me-2" asp-page="/Index" title="На сайт">
+                    <span class="donate shadw px-2 border border-2 rounded-1">Сайт</span>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#siteNav" aria-controls="siteNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
 
-</nav>
+                <div class="collapse navbar-collapse" id="siteNav">
+
+                    <ul class="navbar-nav mb-3 mb-md-0" itemprop="breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList">
+
+                        <li class="nav-item dropdown donate shadw px-1 py-1 py-md-0 me-3 border border-2 rounded-1 custom" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+
+                            <a class="nav-link dropdown-toggle p-0" href="#" id="Images" role="button" data-bs-toggle="dropdown" aria-expanded="false" itemprop="item">
+                                <span itemprop="name">Картинки</span>
+                                <meta itemprop="position" content="1">
+                            </a>
+
+                            <ul class="dropdown-menu border-0 p-0 rounded-3" aria-labelledby="Images" itemscope itemtype="http://schema.org/BreadcrumbList">
+
+                                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                                    <a class="dropdown-item shadw lh-sm mt-2 p-1" asp-page="/DBCRUD/Image-Add-Update" itemprop="item">
+                                        <span class="fs-5" itemprop="name">Добавить</span>
+                                        <meta itemprop="position" content="1">
+                                    </a>
+                                </li>
+
+                                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                                    <a class="dropdown-item shadw lh-sm mt-2 p-1" asp-page="/DBCRUD/Image-List" itemprop="item">
+                                        <span class="fs-5" itemprop="name">Список</span>
+                                        <meta itemprop="position" content="2">
+                                    </a>
+                                </li>
+
+                                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                                    <a class="dropdown-item shadw lh-sm mt-2 p-1" asp-page="/DBCRUD/Image-Icons" itemprop="item">
+                                        <span class="fs-5" itemprop="name">Иконки</span>
+                                        <meta itemprop="position" content="3">
+                                    </a>
+                                </li>
+
+                            </ul>
+
+                        </li>
+
+                    </ul>
+
+                    <ul class="navbar-nav mb-3 mb-md-0" itemprop="breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList">
+
+                        <li class="nav-item dropdown donate shadw px-1 py-1 py-md-0 me-3 border border-2 rounded-1 custom" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+
+                            <a class="nav-link dropdown-toggle p-0" href="#" id="Images" role="button" data-bs-toggle="dropdown" aria-expanded="false" itemprop="item">
+                                <span itemprop="name">Фильмы</span>
+                                <meta itemprop="position" content="1">
+                            </a>
+
+                            <ul class="dropdown-menu border-0 p-0 rounded-3" aria-labelledby="Images" itemscope itemtype="http://schema.org/BreadcrumbList">
+
+                                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                                    <a class="dropdown-item shadw lh-sm mt-2 p-1" asp-page="/DBCRUD/Movie-Add-Update" itemprop="item">
+                                        <span class="fs-5" itemprop="name">Добавить</span>
+                                        <meta itemprop="position" content="1">
+                                    </a>
+                                </li>
+
+                                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                                    <a class="dropdown-item shadw lh-sm mt-2 p-1" asp-page="/DBCRUD/Movie-List" itemprop="item">
+                                        <span class="fs-5" itemprop="name">Список</span>
+                                        <meta itemprop="position" content="2">
+                                    </a>
+                                </li>
+
+                            </ul>
+
+                        </li>
+
+                    </ul>
+
+                    <ul class="navbar-nav mb-3 mb-md-0" itemprop="breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList">
+
+                        <li class="nav-item dropdown donate shadw px-1 py-1 py-md-0 me-3 border border-2 rounded-1 custom" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+
+                            <a class="nav-link dropdown-toggle p-0" href="#" id="Images" role="button" data-bs-toggle="dropdown" aria-expanded="false" itemprop="item">
+                                <span itemprop="name">Страницы</span>
+                                <meta itemprop="position" content="1">
+                            </a>
+
+                            <ul class="dropdown-menu border-0 p-0 rounded-3" aria-labelledby="Images" itemscope itemtype="http://schema.org/BreadcrumbList">
+
+                                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                                    <a class="dropdown-item shadw lh-sm mt-2 p-1" asp-page="/DBCRUD/Page-Add-Update" itemprop="item">
+                                        <span class="fs-5" itemprop="name">Добавить</span>
+                                        <meta itemprop="position" content="1">
+                                    </a>
+                                </li>
+
+                                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                                    <a class="dropdown-item shadw lh-sm mt-2 p-1" asp-page="/DBCRUD/Page-List" itemprop="item">
+                                        <span class="fs-5" itemprop="name">Список</span>
+                                        <meta itemprop="position" content="2">
+                                    </a>
+                                </li>
+
+                            </ul>
+
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+        </nav>
+    }
+}

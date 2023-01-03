@@ -11,4 +11,5 @@ global using Microsoft.AspNetCore.Razor.TagHelpers;
 global using ShevkunenkoSite.Pages.Shared.Components;
 global using ShevkunenkoSite.Models.ViewModels;
 global using Microsoft.AspNetCore.Authorization;
+global using ShevkunenkoSite.Areas.Admin.Pages.DBCRUD;
 

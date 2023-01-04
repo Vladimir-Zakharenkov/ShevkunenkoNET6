@@ -3,11 +3,11 @@
 
     if (!message.Contains("admin"))
     {
-        <nav class="navbar sticky-top navbar-expand-md navbar-light bg-light mt-1 mb-3 py-1 rounded-3 shadw">
+        <nav role="navigation" class="navbar sticky-top navbar-expand-md navbar-light bg-light mt-1 mb-3 py-1 rounded-3 shadw">
 
             <div class="container-fluid">
 
-                <a class="navbar-brand text-black pe-2 me-2" asp-page="/Donate" title="Помочь сайту">
+                <a class="navbar-brand text-black pe-2 me-2" asp-area="" asp-page="/Donate" title="Помочь сайту">
                     <span class="donate shadw px-2 border border-2 rounded-1">Donate</span>
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#siteNav" aria-controls="siteNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -49,7 +49,7 @@
                                 </li>
 
                                 <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-                                    <a class="dropdown-item shadw lh-sm mt-2 p-1" asp-page="/DBCRUD/Index" itemprop="item">
+                                    <a class="dropdown-item shadw lh-sm mt-2 p-1" asp-page="/Admin/Index" itemprop="item">
                                         <span class="fs-5" itemprop="name">Админ</span>
                                         <meta itemprop="position" content="4">
                                     </a>
@@ -174,22 +174,63 @@
     }
     else
     {
-        <nav class="navbar sticky-top navbar-expand-md navbar-light bg-light mt-1 mb-3 py-1 rounded-3 shadw">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">Navbar</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Features</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Pricing</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Dropdown link
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <li><a class="dropdown-item" href="#">Action</a></li>
+                                <li><a class="dropdown-item" href="#">Another action</a></li>
+                                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+
+
+        @*<nav role ="navigation" class="navbar sticky-top navbar-expand-md navbar-light bg-light mt-1 mb-3 py-1 rounded-3 shadw">
 
             <div class="container-fluid">
 
-                <a class="navbar-brand text-black pe-2 me-2" asp-page="/Index" title="На сайт">
+                <a class="navbar-brand text-black pe-2 me-2 fs-6" asp-area="" asp-page="/Index" title="На сайт">
                     <span class="donate shadw px-2 border border-2 rounded-1">Сайт</span>
                 </a>
+
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#siteNav" aria-controls="siteNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
                 <div class="collapse navbar-collapse" id="siteNav">
 
+
+
+
+
+
+
                     <ul class="navbar-nav mb-3 mb-md-0" itemprop="breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList">
 
-                        <li class="nav-item dropdown donate shadw px-1 py-1 py-md-0 me-3 border border-2 rounded-1 custom" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                       <li class="nav-item dropdown donate shadw px-1 py-1 py-md-0 me-3 border border-2 rounded-1 custom" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
 
                             <a class="nav-link dropdown-toggle p-0" href="#" id="Images" role="button" data-bs-toggle="dropdown" aria-expanded="false" itemprop="item">
                                 <span itemprop="name">Картинки</span>
@@ -198,22 +239,22 @@
 
                             <ul class="dropdown-menu border-0 p-0 rounded-3" aria-labelledby="Images" itemscope itemtype="http://schema.org/BreadcrumbList">
 
-                                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-                                    <a class="dropdown-item shadw lh-sm mt-2 p-1" asp-page="/DBCRUD/Image-Add-Update" itemprop="item">
+                                <li itemprop="itemListElement" itemscope itemtype="http:schema.org/ListItem">
+                                    <a class="dropdown-item shadw lh-sm mt-2 p-1" asp-area="Admin" asp-page="/DBCRUD/Image-Add-Update" itemprop="item">
                                         <span class="fs-5" itemprop="name">Добавить</span>
                                         <meta itemprop="position" content="1">
                                     </a>
                                 </li>
 
                                 <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-                                    <a class="dropdown-item shadw lh-sm mt-2 p-1" asp-page="/DBCRUD/Image-List" itemprop="item">
+                                    <a class="dropdown-item shadw lh-sm mt-2 p-1" asp-area="Admin" asp-page="/DBCRUD/Image-List" itemprop="item">
                                         <span class="fs-5" itemprop="name">Список</span>
                                         <meta itemprop="position" content="2">
                                     </a>
                                 </li>
 
                                 <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-                                    <a class="dropdown-item shadw lh-sm mt-2 p-1" asp-page="/DBCRUD/Image-Icons" itemprop="item">
+                                    <a class="dropdown-item shadw lh-sm mt-2 p-1" asp-area="Admin" asp-page="/DBCRUD/Image-Icons" itemprop="item">
                                         <span class="fs-5" itemprop="name">Иконки</span>
                                         <meta itemprop="position" content="3">
                                     </a>
@@ -222,6 +263,7 @@
                             </ul>
 
                         </li>
+
 
                     </ul>
 
@@ -291,6 +333,6 @@
 
             </div>
 
-        </nav>
+        </nav>*@
     }
 }

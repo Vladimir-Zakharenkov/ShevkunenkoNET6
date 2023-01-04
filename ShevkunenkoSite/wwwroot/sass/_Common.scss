@@ -34,3 +34,18 @@
 .ten {
     box-shadow: .5rem .4rem .4rem hsla(0,0%,0%,.6);
 }
+
+.donate {
+    display: inline-block;
+    width: contain;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1rem;
+    border: 1px solid rgba(0,0,0,0.15) !important;
+    background: rgba(0,0,0,0.03) !important;
+    transition: all .3s ease-in-out;
+}
+
+.donate:hover, .donate span:hover {
+    color: darkred;
+    border-color: darkred !important;
+}

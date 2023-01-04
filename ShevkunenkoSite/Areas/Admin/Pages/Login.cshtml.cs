@@ -18,7 +18,7 @@ public class LoginModel : PageModel
     {
     }
 
-    public async Task<IActionResult> OnPostAsync()
+    public async Task<IActionResult> OnPostAsync(string returnUrl)
     {
         if (ModelState.IsValid)
         {
@@ -33,7 +33,9 @@ public class LoginModel : PageModel
 
                 Authenticate(access.Email); // аутентификация
 
-                return RedirectToPage("Index", new { area = "Admin" });
+                //returnUrl = "/Admin";
+
+                return Redirect(returnUrl);
             }
             else
             {

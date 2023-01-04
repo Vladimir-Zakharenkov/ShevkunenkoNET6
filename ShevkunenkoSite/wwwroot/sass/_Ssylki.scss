@@ -1,0 +1,8 @@
+﻿a:active, .dropdown:active {
+    position: relative;
+    top: 4px;
+}
+
+.dropdown a:active {
+    top: 0;
+}

@@ -72,6 +72,21 @@ body {
   box-shadow: 0.5rem 0.4rem 0.4rem hsla(0deg, 0%, 0%, 0.6);
 }
 
+.donate {
+  display: inline-block;
+  width: contain;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 1rem;
+  border: 1px solid rgba(0, 0, 0, 0.15) !important;
+  background: rgba(0, 0, 0, 0.03) !important;
+  transition: all 0.3s ease-in-out;
+}
+
+.donate:hover, .donate span:hover {
+  color: darkred;
+  border-color: darkred !important;
+}
+
 .rsy {
   max-height: 210px !important;
 }
@@ -94,4 +109,13 @@ body {
 .adp_img {
   max-width: 96%;
   border-radius: 1rem;
+}
+
+a:active, .dropdown:active {
+  position: relative;
+  top: 4px;
+}
+
+.dropdown a:active {
+  top: 0;
 }

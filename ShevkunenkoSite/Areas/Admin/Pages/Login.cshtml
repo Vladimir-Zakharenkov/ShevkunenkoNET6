@@ -1,13 +1,22 @@
 ﻿@page
 @model LoginModel
 
+@{
+    var retUrl = HttpContext.Request.Query["ReturnUrl"].ToString();
+
+    if (string.IsNullOrEmpty(retUrl))
+    {
+        retUrl = "/Admin";
+    }
+}
+
 <div class="row">
 
     <div class="col col-sm-6 col-lg-4 col-xl-3 col-xxl-3 d-block mx-auto px-2">
 
         <h1>Вход на сайт</h1>
 
-        <form method="post" asp-page-handler="OnPostAsync">
+        <form method="post" role="form" asp-page-handler="OnPostAsync" asp-route-returnurl="@retUrl">
 
             <label for="locInput" asp-for="Access.Email" class="form-label text-primary fs-5"></label>
             <input id="locInput" asp-for="Access.Email" class="form-control" />

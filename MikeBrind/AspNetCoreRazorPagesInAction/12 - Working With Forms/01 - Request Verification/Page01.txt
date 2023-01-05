@@ -1,0 +1,172 @@
+Request Verification
+
+Request Verification in ASP.NET Razor Pages is a mechanism designed to prevent possible 
+Cross Site Request Forgery attacks, also referred to by the acronyms XSRF and CSRF.
+
+During a CSRF attack, a malicious user will use the credentials of an authenticated user 
+to perform some action on a web site to their benefit. The canonical example used 
+to illustrate this type of attack involves online banking.
+
+When you log into your bank account online, your browser receives an authentication 
+cookie which is then passed back to the banking site each time you make a request, 
+keeping you logged in. The authentication cookie will have a predetermined life. 
+It may be session-based, which means it could be valid for a period of time after 
+you have closed the online banking's browser tab without using the banking application's 
+log out feature and not having closed your browser.
+
+While this cookie is still valid, you find yourself on another site that initiates 
+a form post to your banking site that makes a transfer from your account to another. 
+This form post is authenticated by your cookie and the banking site honours 
+the transaction because it failed to verify where the request came from.
+
+The prevention mechanism provided by the ASP.NET framework for this type of attack 
+involves verifying that any POST request made to a Razor page originates 
+from a form on the same site.
+
+The form tag helper injects a hidden form field named __RequestVerificationToken 
+at the end of every form with an encrypted value representing the token. This value 
+is also sent to the browser in a samesite cookie. The presence of both of these items 
+and their values are validated when ASP.NET Core processes a POST request. 
+If verification fails, the framework returns an HTTP status code of 400, 
+signifying a Bad Request.
+
+Opting Out
+
+This behaviour is baked into the Razor Pages framework. However, it is possible 
+to turn off anti-forgery token verification. This can be done globally in Program.cs 
+(.NET 6 onwards) or the ConfigureServices method in Startup:
+
+builder.Services.AddRazorPages().AddRazorPagesOptions(o =>
+{
+    o.Conventions.ConfigureFilter(new IgnoreAntiforgeryTokenAttribute());
+});
+
+Or you can bypass the checks by adding the IgnoreAntiforgeryTokenAttribute 
+to the relevant PageModel class (not a handler method):
+
+[IgnoreAntiforgeryToken(Order = 1001)]
+public class IndexModel : PageModel
+{
+    public void OnPost()
+    {
+    }
+}
+
+The ValidateAntiForgeryToken attribute which is applied by default has an order of 1000, 
+therefore the IgnoreAntiforgeryToken attribute needs a higher order number to be activated.
+
+Alternatively, you can turn off token validation globally as above, and then selectively 
+apply token validation on a case by case basis by decorating the appropriate PageModel 
+class with the ValidateAntiForgeryToken attribute (applying the same logic to the Order 
+value as previously):
+
+[ValidateAntiForgeryToken(Order = 1000)]
+public class IndexModel : PageModel
+{
+    public void OnPost()
+    {
+    }
+}
+
+The ValidateAntiForgeryToken attribute has an upper case "F" in its name, 
+whereas the IgnoreAntiforgeryToken has a lower case "f". This is by design.
+
+Choosing to opt out of Antiforgery validation using these methods does not prevent 
+the generation of the hidden field or the cookie. All it does is to skip the 
+verification process.
+
+If, in addition to disabling request verification, you want to prevent the hidden 
+form field being rendered, pass false to the antiforgery attribute in the form 
+tag helper:
+
+<form asp-antiforgery="false" method="post">
+
+Note: this action on its own does not disable request verification.
+
+Generally, there is no good reason to disable request verification. If you want your 
+site to accept POST requests from external domains, the recommended solution 
+is to use a Web API controller instead.
+
+Configuration
+
+Configuration
+
+Option                          Description                         Default Value
+
+Cookie                          Provides access to configuring      If a value for the cookie name is not 
+                                aspects of the cookie               specified, a unique value will be 
+                                                                    generated prefixed with 
+                                                                    .AspNetCore.Antiforgery. 
+
+FormFieldName                   The name used for the hidden        __RequestVerificationToken 
+                                form field
+
+HeaderName                      The name used for the request       RequestVerificationToken 
+                                header
+
+SuppressXFrameOptionsHeader     If set to true, the X-Frame-Options 'false' 
+                                header will not be set. By default, 
+                                it is set with the value SAMEORIGIN
+
+You can configure these options in Programs.cs (.NET 6) or the ConfigureServices method 
+in Startup. The following example changes the header name from RequestVerificationToken 
+to XSRF-TOKEN:
+
+builder.Services.AddAntiforgery(o => o.HeaderName = "XSRF-TOKEN");
+
+AJAX Post Requests And JSON
+
+It is easy to forget about the anti-forgery token when crafting a POST request made with AJAX. 
+If you omit the value from the request, the server will return a 400 Bad Request result.
+
+For most requests, you have a choice whether to include the value as a form field or 
+a request header, but if you want to post your data as JSON via AJAX, you have to send 
+the token as part of the headers because ASP.NET Core does not parse JSON looking for 
+the verification token. Here's how you might achieve that using jQuery's $.ajax method:
+
+var postSubmit = $.ajax({
+    type: "POST",
+    headers: { "RequestVerificationToken": $('input[name="__RequestVerificationToken"]').val() },
+    url: "/yourformhandler",
+    data: JSON.stringify({ ... }),
+    contentType: "application/json"
+}).done(function(response){
+    //...
+});
+
+A form is not necessarily needed for an AJAX POST request. However, you need 
+to generate an antiforgery token so that you can pass its value with the request. 
+You can do by either including an empty form element with the method set to post:
+
+<form method="post"></form>
+
+or you can use the AntiForgeryToken HTML helper:
+
+@Html.AntiForgeryToken()
+
+Both of these approaches will result in the __RequestVerificationToken hidden 
+field being added to the page. If you prefer not to have a form or even a hidden field, 
+you can inject the IAntiforgery interface into the page itself, and use its 
+GetAndStoreTokens method to generate the token:
+
+@page
+@model LearnRazorPages.Pages.IndexModel
+@inject IAntiforgery antiforgery
+@{
+    var token = antiforgery.GetAndStoreTokens(HttpContext).RequestToken;
+}
+...
+<script>
+$(function(){
+    ...
+    $post("/yourformhandler", {name1: param1, __RequestVerificationToken: '@token'});
+});
+
+Note that you will need to add a using directive to bring the Microsoft.AspNetCore.Antiforgery 
+namespace into scope so that the IAntiforgery type is resolved:
+
+@using Microsoft.AspNetCore.Antiforgery
+
+You can do this in the page itself, or you can add it to the ViewImports file 
+to make the namespace available to all pages that it affects.
+            	

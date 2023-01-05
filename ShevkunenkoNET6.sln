@@ -489,6 +489,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "02 - Uploading Files in Raz
 		MikeBrind\AspNetCoreRazorPagesInAction\12 - Working With Forms\02 - Uploading Files in Razor Pages\Page01.txt = MikeBrind\AspNetCoreRazorPagesInAction\12 - Working With Forms\02 - Uploading Files in Razor Pages\Page01.txt
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "03 - Working With Checkboxes", "03 - Working With Checkboxes", "{F7903447-DBAB-4A0C-928A-D540C86F2ED9}"
+	ProjectSection(SolutionItems) = preProject
+		MikeBrind\AspNetCoreRazorPagesInAction\12 - Working With Forms\03 - Working With Checkboxes\Page01.txt = MikeBrind\AspNetCoreRazorPagesInAction\12 - Working With Forms\03 - Working With Checkboxes\Page01.txt
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -638,6 +643,7 @@ Global
 		{6EFA663F-6E48-4FBB-8D87-3A326A86E74A} = {482A7CC1-FFF3-442D-B231-69BB1687E04C}
 		{38029ED7-14EA-4984-89E1-09637DDDFD9A} = {6EFA663F-6E48-4FBB-8D87-3A326A86E74A}
 		{48EE6A88-2255-48F5-9F08-9FA58565A843} = {6EFA663F-6E48-4FBB-8D87-3A326A86E74A}
+		{F7903447-DBAB-4A0C-928A-D540C86F2ED9} = {6EFA663F-6E48-4FBB-8D87-3A326A86E74A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5507A11F-FC14-46CA-B766-61BB183C82C7}

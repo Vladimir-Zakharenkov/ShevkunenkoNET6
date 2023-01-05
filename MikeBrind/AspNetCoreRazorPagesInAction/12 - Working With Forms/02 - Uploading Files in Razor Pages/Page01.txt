@@ -1,0 +1,62 @@
+Uploading Files in Razor Pages
+
+For the most part, you will use forms to capture data from the user as simple string, 
+numeric, datetime or boolean values. Forms can also be used to upload files. 
+Successful file uploading has three basic requirements:
+
+1. The form must use the post method
+
+2. The form must have an enctype attribute set to multipart/form-data
+
+3. The uploaded file must map to an IFormFile data type
+
+Upload and save to folder
+
+The following code features a very simple page called UploadFile.cshtml 
+with a form for uploading a file:
+
+@page
+@model UploadFileModel
+@{
+}
+<form method="post" enctype="multipart/form-data">
+    <input type="file" asp-for="Upload" />
+    <input type="submit" />
+</form>
+
+The form has the correct enctype and the action is post, satisfying the first 
+two requirements. The third requirement is satisfied in the page model class 
+for the page:
+
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.RazorPages;
+using System.IO;
+using System.Threading.Tasks;
+namespace RazorPagesForms.Pages
+{
+    public class UploadFileModel : PageModel
+    {
+        private IHostingEnvironment _environment;
+        public UploadFileModel(IHostingEnvironment environment)
+        {
+            _environment = environment;
+        }
+        [BindProperty]
+        public IFormFile Upload { get; set; }
+        public async Task OnPostAsync()
+        {
+            var file = Path.Combine(_environment.ContentRootPath, "uploads", Upload.FileName);
+            using (var fileStream = new FileStream(file, FileMode.Create))
+            {
+                await Upload.CopyToAsync(fileStream);
+            }
+        }
+    }
+}
+
+An IFormFile is added as a public property to the to the page model. It is decorated with 
+the BindProperty attribute, to ensure that it participates in model binding. The property 
+is given the same name as the name attribute on the file input in the form - "Upload" 
+which ensures that model binding will copy the contents of the upload to the public property.

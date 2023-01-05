@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace ShevkunenkoSite.Areas.Admin.Pages.DBCRUD;
 
+[BindProperties]
 public class Image_Add_UpdateModel : PageModel
 {
     private readonly IImageFileRepository _imageContext;

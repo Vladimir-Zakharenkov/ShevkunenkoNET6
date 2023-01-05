@@ -7,50 +7,51 @@
 
             <div class="container-fluid">
 
-                <a class="navbar-brand text-black pe-2 me-2" asp-area="" asp-page="/Donate" title="Помочь сайту">
-                    <span class="donate shadw px-2 border border-2 rounded-1">Donate</span>
+                <a class="navbar-brand text-black pe-2 me-2" asp-area="" asp-page="/Index" title="shevkunenko.site">
+                    <span class="px-2 border border-2 rounded-1 donate shadw">Сайт</span>
                 </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#siteNav" aria-controls="siteNav" aria-expanded="false" aria-label="Toggle navigation">
+
+                <button class="navbar-toggler p-0" type="button" data-bs-toggle="collapse" data-bs-target="#siteNav" aria-controls="siteNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
-                <div class="collapse navbar-collapse" id="siteNav">
+                <div class="collapse navbar-collapse mt-2 mt-md-0" id="siteNav">
 
                     <ul class="navbar-nav mb-3 mb-md-0" itemprop="breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList">
 
-                        <li class="nav-item dropdown donate shadw px-1 py-1 py-md-0 me-3 border border-2 rounded-1 custom" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                        <li class="dropdown shadw donate px-1 py-1 py-md-0 me-3 border border-2 rounded-1" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
 
                             <a class="nav-link dropdown-toggle p-0" href="#" id="Site" role="button" data-bs-toggle="dropdown" aria-expanded="false" itemprop="item">
-                                <span itemprop="name">Сайт</span>
+                                <span itemprop="name">Разделы</span>
                                 <meta itemprop="position" content="1">
                             </a>
 
-                            <ul class="dropdown-menu border-0 p-0 rounded-3" aria-labelledby="Site" itemscope itemtype="http://schema.org/BreadcrumbList">
+                            <ul class="dropdown-menu bg-transparent border-0 mt-0 mt-md-2" aria-labelledby="Site" itemscope itemtype="http://schema.org/BreadcrumbList">
 
-                                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-                                    <a class="dropdown-item shadw lh-sm mt-2 p-1" asp-page="/Navigation" itemprop="item">
-                                        <span class="fs-5" itemprop="name">Главные разделы</span>
+                                <li class="bg-light p-0 border border-2 rounded-1 mb-0 mb-md-1" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                                    <a class="dropdown-item shadw donate border border-2 rounded-1" asp-area="" asp-page="/" itemprop="item">
+                                        <span itemprop="name">Главные разделы</span>
                                         <meta itemprop="position" content="1">
                                     </a>
                                 </li>
 
-                                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-                                    <a class="dropdown-item shadw lh-sm mt-2 p-1" href="https://shevkunenko.ru/raznoe.htm" itemprop="item">
-                                        <span class="fs-5" itemprop="name">Разное</span>
+                                <li class="bg-light p-0 border border-2 rounded-1 mb-0 mb-md-1" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                                    <a class="dropdown-item shadw donate border border-2 rounded-1" href="https://shevkunenko.ru/raznoe.htm" itemprop="item">
+                                        <span itemprop="name">Разное</span>
                                         <meta itemprop="position" content="2">
                                     </a>
                                 </li>
 
-                                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-                                    <a class="dropdown-item shadw lh-sm mt-2 p-1" asp-page="/Filmy-i-Knigi" itemprop="item">
-                                        <span class="fs-5" itemprop="name">Фильмы и Книги</span>
+                                <li class="bg-light p-0 border border-2 rounded-1 mb-0 mb-md-1" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                                    <a class="dropdown-item shadw donate border border-2 rounded-1" asp-area="" asp-page="/Filmy-i-Knigi" itemprop="item">
+                                        <span itemprop="name">Фильмы и Книги</span>
                                         <meta itemprop="position" content="3">
                                     </a>
                                 </li>
 
-                                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-                                    <a class="dropdown-item shadw lh-sm mt-2 p-1" asp-page="/Admin/Index" itemprop="item">
-                                        <span class="fs-5" itemprop="name">Админ</span>
+                                <li class="bg-light p-0 border border-2 rounded-1 mb-0 mb-md-1" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                                    <a class="dropdown-item shadw donate border border-2 rounded-1" asp-area="Admin" asp-page="/Index" itemprop="item">
+                                        <span itemprop="name">Админ</span>
                                         <meta itemprop="position" content="4">
                                     </a>
                                 </li>
@@ -66,25 +67,25 @@
                                 <meta itemprop="position" content="2">
                             </a>
 
-                            <ul class="dropdown-menu border-0 p-0 rounded-3" aria-labelledby="Biografy" itemscope itemtype="http://schema.org/BreadcrumbList">
+                            <ul class="dropdown-menu bg-transparent border-0 mt-0 mt-md-2" aria-labelledby="Site" itemscope itemtype="http://schema.org/BreadcrumbList">
 
-                                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-                                    <a class="dropdown-item shadw lh-sm mt-2 p-1" asp-page="/Biografy" itemprop="item">
-                                        <span class="fs-5" itemprop="name">Биография</span>
+                                <li class="bg-light p-0 border border-2 rounded-1 mb-0 mb-md-1" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                                    <a class="dropdown-item shadw donate border border-2 rounded-1" asp-page="/Biografy" itemprop="item">
+                                        <span itemprop="name">Биография</span>
                                         <meta itemprop="position" content="1">
                                     </a>
                                 </li>
 
-                                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-                                    <a class="dropdown-item shadw lh-sm mt-2 p-1" href="https://shevkunenko.ru/pressa/index.htm" itemprop="item">
-                                        <span class="fs-5" itemprop="name">Пресса</span>
+                                <li class="bg-light p-0 border border-2 rounded-1 mb-0 mb-md-1" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                                    <a class="dropdown-item shadw donate border border-2 rounded-1" href="https://shevkunenko.ru/pressa/index.htm" itemprop="item">
+                                        <span itemprop="name">Пресса</span>
                                         <meta itemprop="position" content="2">
                                     </a>
                                 </li>
 
-                                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-                                    <a class="dropdown-item shadw lh-sm mt-2 p-1" href="https://shevkunenko.ru/csfilm/album1.htm" itemprop="item">
-                                        <span class="fs-5" itemprop="name">Фото</span>
+                                <li class="bg-light p-0 border border-2 rounded-1 mb-0 mb-md-1" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                                    <a class="dropdown-item shadw donate border border-2 rounded-1" href="https://shevkunenko.ru/csfilm/album1.htm" itemprop="item">
+                                        <span itemprop="name">Фото</span>
                                         <meta itemprop="position" content="3">
                                     </a>
                                 </li>
@@ -100,53 +101,53 @@
                                 <meta itemprop="position" content="3">
                             </a>
 
-                            <ul class="dropdown-menu border-0 p-0 rounded-3" aria-labelledby="Movies" itemscope itemtype="http://schema.org/BreadcrumbList">
+                            <ul class="dropdown-menu bg-transparent border-0 mt-0 mt-md-2" aria-labelledby="Site" itemscope itemtype="http://schema.org/BreadcrumbList">
 
-                                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-                                    <a class="dropdown-item shadw lh-sm mt-2 p-1 disabled" href="#" itemprop="item">
-                                        <span class="fs-5" itemprop="name">Сестра музыканта</span>
+                                <li class="bg-light p-0 border border-2 rounded-1 mb-0 mb-md-1" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                                    <a class="dropdown-item shadw donate border border-2 rounded-1" href="#" itemprop="item">
+                                        <span itemprop="name">Сестра музыканта</span>
                                         <meta itemprop="position" content="1">
                                     </a>
                                 </li>
 
-                                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-                                    <a class="dropdown-item shadw lh-sm mt-2 p-1" href="https://shevkunenko.ru/online/50_online.htm" itemprop="item">
-                                        <span class="fs-5" itemprop="name">50 на 50</span>
+                                <li class="bg-light p-0 border border-2 rounded-1 mb-0 mb-md-1" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                                    <a class="dropdown-item shadw donate border border-2 rounded-1" href="https://shevkunenko.ru/online/50_online.htm" itemprop="item">
+                                        <span itemprop="name">50 на 50</span>
                                         <meta itemprop="position" content="2">
                                     </a>
                                 </li>
 
-                                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-                                    <a class="dropdown-item shadw lh-sm mt-2 p-1" asp-page="/Filmy/Rybakov/Kortik" itemprop="item">
-                                        <span class="fs-5" itemprop="name">Кортик</span>
+                                <li class="bg-light p-0 border border-2 rounded-1 mb-0 mb-md-1" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                                    <a class="dropdown-item shadw donate border border-2 rounded-1" asp-page="/Filmy/Rybakov/Kortik" itemprop="item">
+                                        <span itemprop="name">Кортик</span>
                                         <meta itemprop="position" content="3">
                                     </a>
                                 </li>
 
-                                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-                                    <a class="dropdown-item shadw lh-sm mt-2 p-1" href="https://shevkunenko.ru/bpfilm/index.htm" itemprop="item">
-                                        <span class="fs-5" itemprop="name">Бронзовая птица</span>
+                                <li class="bg-light p-0 border border-2 rounded-1 mb-0 mb-md-1" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                                    <a class="dropdown-item shadw donate border border-2 rounded-1" href="https://shevkunenko.ru/bpfilm/index.htm" itemprop="item">
+                                        <span itemprop="name">Бронзовая птица</span>
                                         <meta itemprop="position" content="4">
                                     </a>
                                 </li>
 
-                                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-                                    <a class="dropdown-item shadw lh-sm mt-2 p-1" href="https://shevkunenko.ru/pefilm.htm" itemprop="item">
-                                        <span class="fs-5 pe-1" itemprop="name">Пропавшая экспедиция</span>
+                                <li class="bg-light p-0 border border-2 rounded-1 mb-0 mb-md-1" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                                    <a class="dropdown-item shadw donate border border-2 rounded-1" href="https://shevkunenko.ru/pefilm.htm" itemprop="item">
+                                        <span itemprop="name">Пропавшая экспедиция</span>
                                         <meta itemprop="position" content="5">
                                     </a>
                                 </li>
 
-                                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-                                    <a class="dropdown-item shadw lh-sm mt-2 p-1" asp-page="/Video-o-Shevkunenko/Index" itemprop="item">
-                                        <span class="fs-5" itemprop="name">Телепрограммы о Сергее</span>
+                                <li class="bg-light p-0 border border-2 rounded-1 mb-0 mb-md-1" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                                    <a class="dropdown-item shadw donate border border-2 rounded-1" asp-page="/Video-o-Shevkunenko/Index" itemprop="item">
+                                        <span itemprop="name">Телепрограммы о Сергее</span>
                                         <meta itemprop="position" content="6">
                                     </a>
                                 </li>
 
-                                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-                                    <a class="dropdown-item shadw lh-sm mt-2 p-1" asp-page="/Znakomye-o-Shevkunenko/Index" itemprop="item">
-                                        <span class="fs-5" itemprop="name">Знакомые о Сергее</span>
+                                <li class="bg-light p-0 border border-2 rounded-1 mb-0 mb-md-1" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                                    <a class="dropdown-item shadw donate border border-2 rounded-1" asp-page="/Znakomye-o-Shevkunenko/Index" itemprop="item">
+                                        <span itemprop="name">Знакомые о Сергее</span>
                                         <meta itemprop="position" content="7">
                                     </a>
                                 </li>
@@ -174,88 +175,48 @@
     }
     else
     {
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="#">Navbar</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Features</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Pricing</a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Dropdown link
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                <li><a class="dropdown-item" href="#">Action</a></li>
-                                <li><a class="dropdown-item" href="#">Another action</a></li>
-                                <li><a class="dropdown-item" href="#">Something else here</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-
-
-
-        @*<nav role ="navigation" class="navbar sticky-top navbar-expand-md navbar-light bg-light mt-1 mb-3 py-1 rounded-3 shadw">
+        <nav role="navigation" class="navbar sticky-top navbar-expand-md navbar-light bg-light mt-1 mb-3 py-1 rounded-3 shadw">
 
             <div class="container-fluid">
 
-                <a class="navbar-brand text-black pe-2 me-2 fs-6" asp-area="" asp-page="/Index" title="На сайт">
-                    <span class="donate shadw px-2 border border-2 rounded-1">Сайт</span>
+                <a class="navbar-brand text-black pe-2 me-2" asp-area="" asp-page="/Index" title="shevkunenko.site">
+                    <span class="px-2 border border-2 rounded-1 donate shadw">Сайт</span>
                 </a>
 
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#siteNav" aria-controls="siteNav" aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler p-0" type="button" data-bs-toggle="collapse" data-bs-target="#siteNav" aria-controls="siteNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
-                <div class="collapse navbar-collapse" id="siteNav">
-
-
-
-
-
-
+                <div class="collapse navbar-collapse mt-2 mt-md-0" id="siteNav">
 
                     <ul class="navbar-nav mb-3 mb-md-0" itemprop="breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList">
 
-                       <li class="nav-item dropdown donate shadw px-1 py-1 py-md-0 me-3 border border-2 rounded-1 custom" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                        <li class="dropdown shadw donate px-1 py-1 py-md-0 me-3 border border-2 rounded-1" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
 
                             <a class="nav-link dropdown-toggle p-0" href="#" id="Images" role="button" data-bs-toggle="dropdown" aria-expanded="false" itemprop="item">
                                 <span itemprop="name">Картинки</span>
                                 <meta itemprop="position" content="1">
                             </a>
 
-                            <ul class="dropdown-menu border-0 p-0 rounded-3" aria-labelledby="Images" itemscope itemtype="http://schema.org/BreadcrumbList">
+                            <ul class="dropdown-menu bg-transparent border-0 mt-0 mt-md-2" aria-labelledby="Images" itemscope itemtype="http://schema.org/BreadcrumbList">
 
-                                <li itemprop="itemListElement" itemscope itemtype="http:schema.org/ListItem">
-                                    <a class="dropdown-item shadw lh-sm mt-2 p-1" asp-area="Admin" asp-page="/DBCRUD/Image-Add-Update" itemprop="item">
-                                        <span class="fs-5" itemprop="name">Добавить</span>
+                                <li class="bg-light p-0 border border-2 rounded-1 mb-0 mb-md-1" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                                    <a class="dropdown-item shadw donate border border-2 rounded-1" asp-area="Admin" asp-page="/DBCRUD/Image-Add-Update" itemprop="item">
+                                        <span itemprop="name">Добавить</span>
                                         <meta itemprop="position" content="1">
                                     </a>
                                 </li>
 
-                                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-                                    <a class="dropdown-item shadw lh-sm mt-2 p-1" asp-area="Admin" asp-page="/DBCRUD/Image-List" itemprop="item">
-                                        <span class="fs-5" itemprop="name">Список</span>
+                                <li class="bg-light p-0 border border-2 rounded-1 mb-0 mb-md-1" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                                    <a class="dropdown-item shadw donate border border-2 rounded-1" asp-area="Admin" asp-page="/DBCRUD/Image-List" itemprop="item">
+                                        <span itemprop="name">Список</span>
                                         <meta itemprop="position" content="2">
                                     </a>
                                 </li>
 
-                                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-                                    <a class="dropdown-item shadw lh-sm mt-2 p-1" asp-area="Admin" asp-page="/DBCRUD/Image-Icons" itemprop="item">
-                                        <span class="fs-5" itemprop="name">Иконки</span>
+                                <li class="bg-light p-0 border border-2 rounded-1 mb-0 mb-md-1" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                                    <a class="dropdown-item shadw donate border border-2 rounded-1" asp-area="Admin" asp-page="/DBCRUD/Image-Icons" itemprop="item">
+                                        <span itemprop="name">Иконки</span>
                                         <meta itemprop="position" content="3">
                                     </a>
                                 </li>
@@ -264,30 +225,29 @@
 
                         </li>
 
-
                     </ul>
 
                     <ul class="navbar-nav mb-3 mb-md-0" itemprop="breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList">
 
-                        <li class="nav-item dropdown donate shadw px-1 py-1 py-md-0 me-3 border border-2 rounded-1 custom" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                        <li class="dropdown shadw donate px-1 py-1 py-md-0 me-3 border border-2 rounded-1" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
 
                             <a class="nav-link dropdown-toggle p-0" href="#" id="Images" role="button" data-bs-toggle="dropdown" aria-expanded="false" itemprop="item">
                                 <span itemprop="name">Фильмы</span>
                                 <meta itemprop="position" content="1">
                             </a>
 
-                            <ul class="dropdown-menu border-0 p-0 rounded-3" aria-labelledby="Images" itemscope itemtype="http://schema.org/BreadcrumbList">
+                            <ul class="dropdown-menu bg-transparent border-0 mt-0 mt-md-2" aria-labelledby="Images" itemscope itemtype="http://schema.org/BreadcrumbList">
 
-                                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-                                    <a class="dropdown-item shadw lh-sm mt-2 p-1" asp-page="/DBCRUD/Movie-Add-Update" itemprop="item">
-                                        <span class="fs-5" itemprop="name">Добавить</span>
+                                <li class="bg-light p-0 border border-2 rounded-1 mb-0 mb-md-1" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                                    <a class="dropdown-item shadw donate border border-2 rounded-1" asp-page="/DBCRUD/Movie-Add-Update" itemprop="item">
+                                        <span itemprop="name">Добавить</span>
                                         <meta itemprop="position" content="1">
                                     </a>
                                 </li>
 
-                                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-                                    <a class="dropdown-item shadw lh-sm mt-2 p-1" asp-page="/DBCRUD/Movie-List" itemprop="item">
-                                        <span class="fs-5" itemprop="name">Список</span>
+                                <li class="bg-light p-0 border border-2 rounded-1 mb-0 mb-md-1" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                                    <a class="dropdown-item shadw donate border border-2 rounded-1" asp-page="/DBCRUD/Movie-List" itemprop="item">
+                                        <span itemprop="name">Список</span>
                                         <meta itemprop="position" content="2">
                                     </a>
                                 </li>
@@ -300,25 +260,25 @@
 
                     <ul class="navbar-nav mb-3 mb-md-0" itemprop="breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList">
 
-                        <li class="nav-item dropdown donate shadw px-1 py-1 py-md-0 me-3 border border-2 rounded-1 custom" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                        <li class="dropdown shadw donate px-1 py-1 py-md-0 me-3 border border-2 rounded-1" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
 
                             <a class="nav-link dropdown-toggle p-0" href="#" id="Images" role="button" data-bs-toggle="dropdown" aria-expanded="false" itemprop="item">
                                 <span itemprop="name">Страницы</span>
                                 <meta itemprop="position" content="1">
                             </a>
 
-                            <ul class="dropdown-menu border-0 p-0 rounded-3" aria-labelledby="Images" itemscope itemtype="http://schema.org/BreadcrumbList">
+                            <ul class="dropdown-menu bg-transparent border-0 mt-0 mt-md-2" aria-labelledby="Images" itemscope itemtype="http://schema.org/BreadcrumbList">
 
-                                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-                                    <a class="dropdown-item shadw lh-sm mt-2 p-1" asp-page="/DBCRUD/Page-Add-Update" itemprop="item">
-                                        <span class="fs-5" itemprop="name">Добавить</span>
+                                <li class="bg-light p-0 border border-2 rounded-1 mb-0 mb-md-1" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                                    <a class="dropdown-item shadw donate border border-2 rounded-1" asp-page="/DBCRUD/Page-Add-Update" itemprop="item">
+                                        <span itemprop="name">Добавить</span>
                                         <meta itemprop="position" content="1">
                                     </a>
                                 </li>
 
-                                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-                                    <a class="dropdown-item shadw lh-sm mt-2 p-1" asp-page="/DBCRUD/Page-List" itemprop="item">
-                                        <span class="fs-5" itemprop="name">Список</span>
+                                <li class="bg-light p-0 border border-2 rounded-1 mb-0 mb-md-1" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                                    <a class="dropdown-item shadw donate border border-2 rounded-1" asp-page="/DBCRUD/Page-List" itemprop="item">
+                                        <span itemprop="name">Список</span>
                                         <meta itemprop="position" content="2">
                                     </a>
                                 </li>
@@ -333,6 +293,6 @@
 
             </div>
 
-        </nav>*@
+        </nav>
     }
 }

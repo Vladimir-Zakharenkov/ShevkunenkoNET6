@@ -20,7 +20,7 @@ else
             </div>
 
             <div class="col">
-                <a asp-page="Image-Icons" class="btn btn btn-outline-primary py-1 shadw">КАРТИНКИ</a>
+                <a asp-area="Admin" asp-page="/DBCRUD/Image-Icons" class="btn btn btn-outline-primary py-1 shadw">КАРТИНКИ</a>
             </div>
 
         </div>
@@ -59,9 +59,9 @@ else
                             <td scope="col" class="d-none d-md-table-cell text-start">@image.ImageCaption</td>
                             <td scope="col" class="d-md-none d-lg-table-cell text-start">@image.ImageWidth</td>
                             <td scope="col" class="d-md-none d-lg-table-cell text-start">@image.ImageHeight</td>
-                            <td scope="col" title="Информация"><a asp-page="Image-Details" asp-route-imageid="@image.ImageFileModelId" class="btn btn-outline-primary py-1 px-1 shadw">Info</a></td>
-                            <td scope="col" title="Редактировать"><a asp-page="Image-Add-Update" asp-route-imageid="@image.ImageFileModelId" class="btn btn-outline-success py-1 px-1 shadw">Edit</a></td>
-                            <td scope="col" title="Удалить"><a asp-page="Image-Delete" asp-route-imageid="@image.ImageFileModelId" class="btn btn-outline-danger py-1 px-1 shadw">Del</a></td>
+                            <td scope="col" title="Информация"><a asp-area="Admin" asp-page="/DBCRUD/Image-Details" asp-route-imageid="@image.ImageFileModelId" class="btn btn-outline-primary py-1 px-1 shadw">Info</a></td>
+                            <td scope="col" title="Редактировать"><a asp-area="Admin" asp-page="/DBCRUD/Image-Add-Update" asp-route-imageid="@image.ImageFileModelId" class="btn btn-outline-success py-1 px-1 shadw">Edit</a></td>
+                            <td scope="col" title="Удалить"><a asp-area="Admin" asp-page="/DBCRUD/Image-Delete" asp-route-imageid="@image.ImageFileModelId" class="btn btn-outline-danger py-1 px-1 shadw">Del</a></td>
                         </tr>
                     }
 

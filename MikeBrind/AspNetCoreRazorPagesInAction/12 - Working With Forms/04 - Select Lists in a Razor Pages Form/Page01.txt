@@ -325,7 +325,7 @@ picture02.png
 If you are using a SelectList, you can specify the property to be used for grouping 
 in the constructor:
 
-ublic SelectList Staff { get; set; }
+public SelectList Staff { get; set; }
 [BindProperty]
 public int SelectedStaffId { get; set; }
 public void OnGet()

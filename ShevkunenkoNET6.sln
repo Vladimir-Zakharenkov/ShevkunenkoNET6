@@ -499,6 +499,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "04 - Select Lists in a Razo
 		MikeBrind\AspNetCoreRazorPagesInAction\12 - Working With Forms\04 - Select Lists in a Razor Pages Form\Page01.txt = MikeBrind\AspNetCoreRazorPagesInAction\12 - Working With Forms\04 - Select Lists in a Razor Pages Form\Page01.txt
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "05 - Working With Radio Buttons", "05 - Working With Radio Buttons", "{31C82A43-6B5D-40B3-8EFB-E21E61546DED}"
+	ProjectSection(SolutionItems) = preProject
+		MikeBrind\AspNetCoreRazorPagesInAction\12 - Working With Forms\05 - Working With Radio Buttons\Page01.txt = MikeBrind\AspNetCoreRazorPagesInAction\12 - Working With Forms\05 - Working With Radio Buttons\Page01.txt
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -650,6 +655,7 @@ Global
 		{48EE6A88-2255-48F5-9F08-9FA58565A843} = {6EFA663F-6E48-4FBB-8D87-3A326A86E74A}
 		{F7903447-DBAB-4A0C-928A-D540C86F2ED9} = {6EFA663F-6E48-4FBB-8D87-3A326A86E74A}
 		{244AEC04-9816-4F18-8B9B-DB4F4D73B0E0} = {6EFA663F-6E48-4FBB-8D87-3A326A86E74A}
+		{31C82A43-6B5D-40B3-8EFB-E21E61546DED} = {6EFA663F-6E48-4FBB-8D87-3A326A86E74A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5507A11F-FC14-46CA-B766-61BB183C82C7}

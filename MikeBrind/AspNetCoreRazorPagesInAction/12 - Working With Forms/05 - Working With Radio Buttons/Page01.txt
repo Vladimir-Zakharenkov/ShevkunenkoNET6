@@ -1,0 +1,115 @@
+Working With Radio Buttons in ASP.NET Razor Pages
+
+The radio button control is designed to support the selection of only one of a mutually 
+exclusive set of predefined options.
+
+Radio Basics
+
+The radio control is rendered in HTML by setting the type attribute in an input 
+element to radio:
+
+<input type="radio" />
+
+This appears in most browsers as a small disc or circle: . When it is selected, 
+the disc acquires a dot: . This state is indicated in HTML by the presence of 
+a checked attribute on the element:
+
+<input type="radio" checked>
+
+You can also provide a value to the checked attribute. Any of the following are 
+considered valid values according to the HTML 5 spec:
+
+<input type="radio" checked="">
+<input type="radio" checked="checked">
+<input type="radio" checked="CHECKED">
+
+Most browsers will set the state of the radio to selected based solely on the presence 
+of the checked attribute, regardless of the value passed to it, so even the following 
+will result in the radio being selected:
+
+<input type="radio" checked="false">
+
+However, this will fail HTML5 validation testing.
+
+Note that if you pass a Razor expression to the checked attribute that evaluates 
+to anything other than true, the checked attribute will not be rendered at all.
+
+Radio button options are grouped together and become mutually exclusive when 
+the same value is assigned to the name attribute to multiple controls:
+
+<input type="radio" name="gender" value="Male" />
+<input type="radio" name="gender" value="Female" />
+<input type="radio" name="gender" value="Unspecified" />
+
+Only one can be selected at any one time:
+
+•Male
+ Female
+ Unspecified
+
+ The only way to deselect a particular value is to select an alternative value 
+ within the same group.
+
+ Razor Radio Buttons
+
+Razor offers two ways to generate radio buttons. The recommended approach is to use 
+the input tag helper. When creating a radio button, you must provide the value 
+of one of the predefined options to the value attribute.
+
+public class IndexModel : PageModel
+{
+    [BindProperty]
+    public string Gender { get; set; };
+    public string[] Genders = new[] { "Male", "Female", "Unspecified" };}
+    ...
+}
+
+<form method="post">
+    @foreach (var gender in Model.Genders)
+    {
+        <input type="radio" asp-for="Gender" value="@gender" />@gender<br />
+    }
+    <input type="submit"/>
+</form>
+
+The property name passed to the asp-for attribute is used for the values of both 
+the id and name attributes. Using the pattern above will result in multiple 
+elements with the same id property value:
+
+<input type="radio" value="Male" id="Gender" name="Gender" />Male<br />
+<input type="radio" value="Female" id="Gender" name="Gender" />Female<br />
+<input type="radio" value="Unspecified" id="Gender" name="Gender" />Unspecified<br />
+
+You can override this behaviour by supplying your own unique id value for each element:
+
+@foreach (var gender in Model.Genders)
+{
+    <input type="radio" asp-for="Gender" value="@gender" id="Gender@(gender)" />@gender<br />
+}
+
+The alternative way to generate radio buttons is to use the PageModel's Html property, 
+which has two helper methods related to radio button generation - Html.RadioButton 
+and its strongly typed partner, Html.RadioButtonFor:
+
+<form method="post">
+    @foreach (var gender in Model.Genders)
+    {
+        @Html.RadioButtonFor(model => model.Gender, gender) @gender<br />
+    }
+    <input type="submit"/>
+</form>
+
+These methods are primarily added to enable easier migration from traditional MVC to ASP.NET Core.
+
+Default Values And Required Fields
+
+You can specify that the property that the selected value should be bound to is Required:
+
+[BindProperty, Required]
+public string Gender { get; set; };
+
+This will prevent the form being submitted if you are using unobstrusive validation. 
+You can also force a value to be selected by setting a default value for the property:
+
+[BindProperty, Required]
+public string Gender { get; set; } = "Unspecified";

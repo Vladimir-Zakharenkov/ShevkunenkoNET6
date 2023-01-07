@@ -1,0 +1,29 @@
+﻿@page
+@model SandBox.Pages.SelectListBasicsModel
+@{
+    Layout = null;
+
+    var form = HttpContext.Request.Method.ToString();
+
+    if (HttpContext.Request.Method == "POST")
+    {
+        form = HttpContext.Request.Form["number"];
+    }
+}
+
+<form method="post">
+
+    <select name="number">
+        <option value="">Select a number</option>
+        <option value="1">One</option>
+        <option value="2">Two</option>
+        <option value="3">Three</option>
+    </select>
+
+    <input type="submit" value="SEND" />
+
+    <br />
+
+</form>
+
+<p>@form</p>

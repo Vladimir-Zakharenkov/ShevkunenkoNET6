@@ -504,6 +504,17 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "05 - Working With Radio But
 		MikeBrind\AspNetCoreRazorPagesInAction\12 - Working With Forms\05 - Working With Radio Buttons\Page01.txt = MikeBrind\AspNetCoreRazorPagesInAction\12 - Working With Forms\05 - Working With Radio Buttons\Page01.txt
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SandBox", "MikeBrind\AspNetCoreRazorPagesInAction\12 - Working With Forms\04 - Select Lists in a Razor Pages Form\SandBox\SandBox.csproj", "{9A473D01-23DA-414C-B51C-DCFFC2D32836}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Глава 02. Основы в ASP.NET Core", "Глава 02. Основы в ASP.NET Core", "{31037D39-B076-4977-90AB-0204F9790B19}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "07 - Отправка форм", "07 - Отправка форм", "{B6A35CC7-706B-4624-93A4-8767EBC5FF63}"
+	ProjectSection(SolutionItems) = preProject
+		Metanit.com\Руководство по ASP.NET Core 7\Глава 02. Основы в ASP.NET Core\07 - Отправка форм\Page01.txt = Metanit.com\Руководство по ASP.NET Core 7\Глава 02. Основы в ASP.NET Core\07 - Отправка форм\Page01.txt
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SandBox", "Metanit.com\Руководство по ASP.NET Core 7\Глава 02. Основы в ASP.NET Core\07 - Отправка форм\SandBox\SandBox.csproj", "{4F04C744-3DF1-4A0A-A8B7-FE29E3EE8F06}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -586,6 +597,14 @@ Global
 		{88100625-6871-4133-A00F-339EE7BB656D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{88100625-6871-4133-A00F-339EE7BB656D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{88100625-6871-4133-A00F-339EE7BB656D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9A473D01-23DA-414C-B51C-DCFFC2D32836}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9A473D01-23DA-414C-B51C-DCFFC2D32836}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9A473D01-23DA-414C-B51C-DCFFC2D32836}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9A473D01-23DA-414C-B51C-DCFFC2D32836}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4F04C744-3DF1-4A0A-A8B7-FE29E3EE8F06}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4F04C744-3DF1-4A0A-A8B7-FE29E3EE8F06}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4F04C744-3DF1-4A0A-A8B7-FE29E3EE8F06}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4F04C744-3DF1-4A0A-A8B7-FE29E3EE8F06}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -656,6 +675,10 @@ Global
 		{F7903447-DBAB-4A0C-928A-D540C86F2ED9} = {6EFA663F-6E48-4FBB-8D87-3A326A86E74A}
 		{244AEC04-9816-4F18-8B9B-DB4F4D73B0E0} = {6EFA663F-6E48-4FBB-8D87-3A326A86E74A}
 		{31C82A43-6B5D-40B3-8EFB-E21E61546DED} = {6EFA663F-6E48-4FBB-8D87-3A326A86E74A}
+		{9A473D01-23DA-414C-B51C-DCFFC2D32836} = {244AEC04-9816-4F18-8B9B-DB4F4D73B0E0}
+		{31037D39-B076-4977-90AB-0204F9790B19} = {8E6EC6D2-33A2-4425-BFE2-30DDEDDE162C}
+		{B6A35CC7-706B-4624-93A4-8767EBC5FF63} = {31037D39-B076-4977-90AB-0204F9790B19}
+		{4F04C744-3DF1-4A0A-A8B7-FE29E3EE8F06} = {B6A35CC7-706B-4624-93A4-8767EBC5FF63}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5507A11F-FC14-46CA-B766-61BB183C82C7}

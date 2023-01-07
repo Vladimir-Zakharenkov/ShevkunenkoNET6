@@ -21,7 +21,8 @@ public class Image_Add_UpdateModel : PageModel
 
     public List<SelectListItem> Options { get; set; } = null!;
 
-    public async Task<IActionResult> OnGetAsync(Guid? imageId)
+    public IActionResult OnGet(Guid? imageId)
     {
+        return Page();
     }
 }

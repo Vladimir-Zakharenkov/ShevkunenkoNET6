@@ -3,16 +3,11 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace SandBox.Pages
 {
-    public class SelectListBasicsModel : PageModel
+    public class UsingEnumerationModel : PageModel
     {
-        [BindProperty]
-        public int Number { get; set; }
+        public DayOfWeek DayOfWeek { get; set; }
 
         public void OnGet()
-        {
-        }
-
-        public void OnPost()
         {
         }
     }

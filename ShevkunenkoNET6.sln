@@ -504,7 +504,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "05 - Working With Radio But
 		MikeBrind\AspNetCoreRazorPagesInAction\12 - Working With Forms\05 - Working With Radio Buttons\Page01.txt = MikeBrind\AspNetCoreRazorPagesInAction\12 - Working With Forms\05 - Working With Radio Buttons\Page01.txt
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SandBox", "MikeBrind\AspNetCoreRazorPagesInAction\12 - Working With Forms\04 - Select Lists in a Razor Pages Form\SandBox\SandBox.csproj", "{9A473D01-23DA-414C-B51C-DCFFC2D32836}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SandBox", "MikeBrind\AspNetCoreRazorPagesInAction\12 - Working With Forms\04 - Select Lists in a Razor Pages Form\SandBox\SandBox.csproj", "{9A473D01-23DA-414C-B51C-DCFFC2D32836}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Глава 02. Основы в ASP.NET Core", "Глава 02. Основы в ASP.NET Core", "{31037D39-B076-4977-90AB-0204F9790B19}"
 EndProject
@@ -513,7 +513,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "07 - Отправка фо�
 		Metanit.com\Руководство по ASP.NET Core 7\Глава 02. Основы в ASP.NET Core\07 - Отправка форм\Page01.txt = Metanit.com\Руководство по ASP.NET Core 7\Глава 02. Основы в ASP.NET Core\07 - Отправка форм\Page01.txt
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SandBox", "Metanit.com\Руководство по ASP.NET Core 7\Глава 02. Основы в ASP.NET Core\07 - Отправка форм\SandBox\SandBox.csproj", "{4F04C744-3DF1-4A0A-A8B7-FE29E3EE8F06}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SandBox", "Metanit.com\Руководство по ASP.NET Core 7\Глава 02. Основы в ASP.NET Core\07 - Отправка форм\SandBox\SandBox.csproj", "{4F04C744-3DF1-4A0A-A8B7-FE29E3EE8F06}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "HerbertSchildt", "HerbertSchildt", "{2CCD8249-A864-45B8-90FF-EE6A59B3A7DF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CSharp4", "CSharp4", "{C68E9FBC-79AA-4513-B50C-A89E27B380D3}"
+	ProjectSection(SolutionItems) = preProject
+		HerbertSchildt\CSharp4\Herbert Schildt - C# 4.0 The Complete Reference - 2010.pdf = HerbertSchildt\CSharp4\Herbert Schildt - C# 4.0 The Complete Reference - 2010.pdf
+		HerbertSchildt\CSharp4\Герберт  Шилдт - C# 4.0. Полное руководство - 2011.pdf = HerbertSchildt\CSharp4\Герберт  Шилдт - C# 4.0. Полное руководство - 2011.pdf
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -679,6 +687,7 @@ Global
 		{31037D39-B076-4977-90AB-0204F9790B19} = {8E6EC6D2-33A2-4425-BFE2-30DDEDDE162C}
 		{B6A35CC7-706B-4624-93A4-8767EBC5FF63} = {31037D39-B076-4977-90AB-0204F9790B19}
 		{4F04C744-3DF1-4A0A-A8B7-FE29E3EE8F06} = {B6A35CC7-706B-4624-93A4-8767EBC5FF63}
+		{C68E9FBC-79AA-4513-B50C-A89E27B380D3} = {2CCD8249-A864-45B8-90FF-EE6A59B3A7DF}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5507A11F-FC14-46CA-B766-61BB183C82C7}

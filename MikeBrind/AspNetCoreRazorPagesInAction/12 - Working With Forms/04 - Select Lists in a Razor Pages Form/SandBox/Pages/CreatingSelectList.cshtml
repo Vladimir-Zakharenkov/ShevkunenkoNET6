@@ -1,0 +1,24 @@
+﻿@page
+@model SandBox.Pages.CreatingSelectListModel
+@{
+    Layout = null;
+
+    var form = HttpContext.Request.Method.ToString();
+
+    if (HttpContext.Request.Method == "POST")
+    {
+        form = HttpContext.Request.Form["some"];
+    }
+}
+
+<form method="post">
+
+    <select name="some" asp-items="Model.Options"></select>
+
+    <input type="submit" value="SEND" />
+
+    <br />
+
+</form>
+
+<p>@form</p>

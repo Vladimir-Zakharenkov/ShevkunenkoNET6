@@ -1,0 +1,24 @@
+﻿@page
+@model SandBox.Pages.MapDataToColOfSelectListItemModel
+@{
+    Layout = null;
+
+    var form = HttpContext.Request.Method.ToString();
+
+    if (HttpContext.Request.Method == "POST")
+    {
+        form = HttpContext.Request.Form["authorid"];
+    }
+}
+
+<form method="post">
+
+    <select name="authorid" asp-items="Model.Options"></select>
+
+    <input type="submit" value="SEND" />
+
+    <br />
+
+</form>
+
+<p>@form</p>

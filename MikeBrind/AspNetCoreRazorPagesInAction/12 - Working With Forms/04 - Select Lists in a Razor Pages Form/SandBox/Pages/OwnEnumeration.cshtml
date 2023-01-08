@@ -1,0 +1,30 @@
+﻿@page
+@model SandBox.Pages.OwnEnumerationModel
+@{
+    Layout = null;
+
+    var form = HttpContext.Request.Method.ToString();
+
+    var form2 = Model.Rate;
+
+    if (HttpContext.Request.Method == "POST")
+    {
+        form = HttpContext.Request.Form["Rate"];
+
+        form2 = Model.Rate;
+    }
+}
+
+<form method="post">
+
+    <select asp-for="Rate" asp-items="Html.GetEnumSelectList<Rating>()">
+        <option value="">Choose a day</option>
+    </select>
+
+    <input type="submit" value="SEND" />
+
+    <br />
+
+</form>
+
+<p>@form2</p>

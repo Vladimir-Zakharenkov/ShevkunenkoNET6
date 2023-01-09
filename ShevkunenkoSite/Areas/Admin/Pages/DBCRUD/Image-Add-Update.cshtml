@@ -1,4 +1,27 @@
 ﻿@page
 @model Image_Add_UpdateModel
+
 @{
+    Model.ImageItem = null!;
 }
+
+}
+
+<div class="row">
+
+    <hr class="liniya" />
+
+    @if (Model.ImageItem.ImageFileModelId != Guid.Empty)
+    {
+        <h1 class="fs-3 text_shadow">Изменить данные картинки</h1>
+
+        <vc:image-view file-name="@Model.ImageItem.ImageFileName" css-class="adp_img ten" is-icon="false" />
+    }
+    else
+    {
+        <h1 class="fs-3 text_shadow">Добавить картинку</h1>
+    }
+
+    <hr class="liniya" />
+
+</div>

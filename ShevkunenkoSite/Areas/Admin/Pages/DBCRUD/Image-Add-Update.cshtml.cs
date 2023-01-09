@@ -1,4 +1,6 @@
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.EntityFrameworkCore;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace ShevkunenkoSite.Areas.Admin.Pages.DBCRUD;
 
@@ -21,8 +23,25 @@ public class Image_Add_UpdateModel : PageModel
 
     public List<SelectListItem> Options { get; set; } = null!;
 
-    public IActionResult OnGet(Guid? imageId)
+
+    public async Task<IActionResult> OnGet(Guid? imageId)
     {
-        return Page();
+        if (imageId.HasValue)
+        {
+            ImageItem = await _imageContext.ImageFiles.FirstOrDefaultAsync(i => i.ImageFileModelId == imageId);
+
+            if (ImageItem == null)
+            {
+                return RedirectToPage("/DBCRUD/Image-List", new { area = "Admin" });
+            }
+
+            return Page();
+        }
+        else
+        {
+            ImageItem = new();
+
+            return Page();
+        }
     }
 }

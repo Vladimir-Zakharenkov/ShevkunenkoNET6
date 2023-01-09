@@ -10,7 +10,7 @@ public class Image_Add_UpdateModel : PageModel
     private readonly IImageFileRepository _imageContext;
     public Image_Add_UpdateModel(IImageFileRepository imageContext) => _imageContext = imageContext;
 
-    public ImageFileModel? ImageItem { get; set; }
+    public ImageFileModel ImageItem { get; set; } = null!;
 
     [Display(Name = "Новый каталог :")]
     public string NewImagePath { get; set; } = string.Empty;
@@ -24,11 +24,11 @@ public class Image_Add_UpdateModel : PageModel
     public List<SelectListItem> Options { get; set; } = null!;
 
 
-    public async Task<IActionResult> OnGet(Guid? imageId)
+    public async Task<IActionResult> OnGetAsync(Guid? imageId)
     {
         if (imageId.HasValue)
         {
-            ImageItem = await _imageContext.ImageFiles.FirstOrDefaultAsync(i => i.ImageFileModelId == imageId);
+            ImageItem = await _imageContext.ImageFiles.FirstAsync(i => i.ImageFileModelId == imageId);
 
             if (ImageItem == null)
             {

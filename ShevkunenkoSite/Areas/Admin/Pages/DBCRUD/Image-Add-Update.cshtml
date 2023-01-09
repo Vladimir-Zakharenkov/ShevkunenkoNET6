@@ -12,6 +12,8 @@
     {
         <h1 class="fs-3 text_shadow">Изменить данные картинки</h1>
 
+        <hr class="liniya" />
+
         <vc:image-view file-name="@Model.ImageItem.ImageFileName" css-class="adp_img ten" is-icon="false" />
     }
     else
@@ -20,5 +22,29 @@
     }
 
     <hr class="liniya" />
+
+    <form method="post" asp-page-handler="OnPostAsync" enctype="multipart/form-data">
+
+        <input asp-for="ImageItem.ImageFileModelId" type="hidden" />
+
+        <label for="ImageCaptionInput" asp-for="ImageItem.ImageCaption" class="form-label text-primary fs-5 fw-bold"></label>
+        <input id="ImageCaptionInput" asp-for="ImageItem.ImageCaption" class="form-control text-center" aria-describedby="ImageCaptionInputHelpBlock" />
+        <div id="ImageCaptionInputHelpBlock" class="form-text">
+            «caption» и «name» для Microdata - <span class="text-danger">обязательное поле</span>
+        </div>
+        <span asp-validation-for="ImageItem.ImageCaption" class="text-danger"></span>
+
+        <hr class="liniya" />
+
+        <label for="ImageDescriptionInput" asp-for="ImageItem.ImageDescription" class="form-label text-primary fs-5 fw-bold"></label>
+        <textarea id="ImageDescriptionInput" asp-for="ImageItem.ImageDescription" class="form-control text-center" rows="1" aria-describedby="ImageDescriptionInputHelpBlock"></textarea>
+        <div id="ImageDescriptionInputHelpBlock" class="form-text">
+            «description» для Microdata - <span class="text-danger">обязательное поле</span>
+        </div>
+        <span asp-validation-for="ImageItem.ImageDescription" class="text-danger"></span>
+
+        <hr class="liniya" />
+
+    </form>
 
 </div>

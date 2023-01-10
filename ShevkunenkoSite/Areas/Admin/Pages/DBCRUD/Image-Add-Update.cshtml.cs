@@ -1,7 +1,4 @@
 using Microsoft.AspNetCore.Mvc.Rendering;
-using Microsoft.Extensions.Options;
-using System.Linq;
-using static System.Net.Mime.MediaTypeNames;
 
 namespace ShevkunenkoSite.Areas.Admin.Pages.DBCRUD;
 
@@ -12,8 +9,6 @@ public class Image_Add_UpdateModel : PageModel
     public Image_Add_UpdateModel(IImageFileRepository imageContext) => _imageContext = imageContext;
 
     public ImageFileModel ImageItem { get; set; } = null!;
-
-    public string[] AllDirInImages = Directory.GetDirectories(Directory.GetCurrentDirectory() + "\\wwwroot\\images");
 
     public List<SelectListItem> ImageDirectories { get; set; } =
         Directory.GetDirectories(Directory.GetCurrentDirectory() + "\\wwwroot\\images")
@@ -26,17 +21,14 @@ public class Image_Add_UpdateModel : PageModel
 
     public string SelectedTag { get; set; } = string.Empty;
 
-    //[Display(Name = "Новый каталог :")]
-    //public string NewImagePath { get; set; } = string.Empty;
+    [Display(Name = "Новый каталог :")]
+    public string NewImagePath { get; set; } = string.Empty;
 
+    [Required(ErrorMessage = "Выберите файл картинки")]
+    public IFormFile ImageFormFile { get; set; } = null!;
 
-
-    //public IFormFile ImageFormFile { get; set; } = null!;
-
-    //public IFormFile IconFormFile { get; set; } = null!;
-
-    //public string[] AllDirInImagesFolder = Directory.GetDirectories(Directory.GetCurrentDirectory() + "\\wwwroot\\images");
-
+    [Required(ErrorMessage = "Выберите файл иконки")]
+    public IFormFile IconFormFile { get; set; } = null!;
 
     public async Task<IActionResult> OnGetAsync(Guid? imageId)
     {

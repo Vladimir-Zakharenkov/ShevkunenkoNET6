@@ -2,23 +2,33 @@
 @model Image_Add_UpdateModel
 
 @{
+    bool mode;
+
+    if (Model.ImageItem.ImageFileModelId == Guid.Empty)
+    {
+        mode = true;
+    }
+    else
+    {
+        mode = false;
+    }
 }
 
 <div class="row">
 
     <hr class="liniya" />
 
-    @if (Model.ImageItem.ImageFileModelId != Guid.Empty)
+    @if (mode)
+    {
+        <h1 class="fs-3 text_shadow">Добавить картинку</h1>
+    }
+    else
     {
         <h1 class="fs-3 text_shadow">Изменить данные картинки</h1>
 
         <hr class="liniya" />
 
         <vc:image-view file-name="@Model.ImageItem.ImageFileName" css-class="adp_img ten" is-icon="false" />
-    }
-    else
-    {
-        <h1 class="fs-3 text_shadow">Добавить картинку</h1>
     }
 
     <hr class="liniya" />
@@ -50,16 +60,68 @@
         <div id="ImageAltTitleInputHelpBlock" class="form-text col-12">
             «alt» и «title» для тега «img» - <span class="text-danger">по умолчанию равно свойству «caption»</span>
         </div>
-        <span asp-validation-for="ImageItem.ImageAltTitle" class="text-danger"></span>
 
         <hr class="liniya" />
 
-        <label asp-for="ImageItem.ImagePath" class="form-label text-primary fs-5 fw-bold"></label>
-        <select asp-for="SelectedTag" asp-items="Model.ImageDirectories">
-            <option value="">Выберите каталог</option>
-        </select>
+        @if (mode)
+        {
+            <label asp-for="ImageItem.ImagePath" class="form-label text-primary fs-5 fw-bold"></label>
+            <select asp-for="SelectedTag" asp-items="Model.ImageDirectories">
+                <option value="">Выберите каталог</option>
+            </select>
 
-        <hr class="liniya" />
+            <hr class="liniya" />
+
+            <label for="NewImagePathInput" asp-for="NewImagePath" class="form-label text-primary fs-5 fw-bold"></label>
+            <input id="NewImagePathInput" asp-for="NewImagePath" class="form-control text-center" aria-describedby="NewImagePathInputHelpBlock" />
+            <div id="NewImagePathInputHelpBlock" class="form-text col-12">
+                добавить новый каталог для картинки
+            </div>
+
+            <hr class="liniya" />
+
+            <label for="ImageFormFileInput" asp-for="ImageFormFile" class="form-label text-primary fs-5">Файл картинки&nbsp;:</label>
+            <input id="ImageFormFileInput" type="file" asp-for="ImageFormFile" class="form-control" aria-describedby="ImageFormFileInputHelpBlock" />
+            <div id="ImageFormFileInputHelpBlock" class="form-text">
+                <span>выбрать файл - </span>
+                <span class="text-danger">обязательное поле</span>
+            </div>
+            @if (HttpContext.Request.Method == "POST")
+            {
+                <span asp-validation-for="ImageFormFile" class="text-danger"></span>
+            }
+
+            <hr class="liniya" />
+
+            <label for="IconFormFileInput" asp-for="IconFormFile" class="form-label text-primary fs-5">Иконка картинки&nbsp;:</label>
+            <input id="IconFormFileInput" type="file" asp-for="IconFormFile" class="form-control" aria-describedby="IconFormFileInputHelpBlock" />
+            <div id="IconFormFileInputHelpBlock" class="form-text">
+                <span>выбрать файл - </span>
+                <span class="text-danger">обязательное поле</span>
+            </div>
+            @if (HttpContext.Request.Method == "POST")
+            {
+                <span asp-validation-for="IconFormFile" class="text-danger"></span>
+            }
+
+            <hr class="liniya" />
+        }
+
+        <div class="text-center">
+
+            @if (mode)
+            {
+                <button type="submit" class="btn btn-outline-success m-2 text-center shadw">ДОБАВИТЬ</button>
+            }
+            else
+            {
+                <button type="submit" class="btn btn-outline-success m-2 text-center shadw">ИЗМЕНИТЬ</button>
+            }
+
+            <a asp-area="Admin" asp-page="/DBCRUD/Image-List" class="btn btn-outline-danger m-2 shadw">ОТМЕНИТЬ</a>
+
+        </div>
+
 
     </form>
 

@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc.Rendering;
-using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Options;
+using System.Linq;
 using static System.Net.Mime.MediaTypeNames;
 
 namespace ShevkunenkoSite.Areas.Admin.Pages.DBCRUD;
@@ -12,16 +13,29 @@ public class Image_Add_UpdateModel : PageModel
 
     public ImageFileModel ImageItem { get; set; } = null!;
 
-    [Display(Name = "Новый каталог :")]
-    public string NewImagePath { get; set; } = string.Empty;
+    public string[] AllDirInImages = Directory.GetDirectories(Directory.GetCurrentDirectory() + "\\wwwroot\\images");
 
-    public IFormFile ImageFormFile { get; set; } = null!;
+    public List<SelectListItem> ImageDirectories { get; set; } =
+        Directory.GetDirectories(Directory.GetCurrentDirectory() + "\\wwwroot\\images")
+        .Select(a => new SelectListItem
+        {
+            Value = a[(Directory.GetDirectories(Directory.GetCurrentDirectory() + "\\wwwroot\\images")[0].IndexOf("images") + 7)..],
+            Text = a[(Directory.GetDirectories(Directory.GetCurrentDirectory() + "\\wwwroot\\images")[0].IndexOf("images") + 7)..]
+        })
+        .ToList();
 
-    public IFormFile IconFormFile { get; set; } = null!;
+    public string SelectedTag { get; set; } = string.Empty;
 
-    public string[] AllDirInImagesFolder = Directory.GetDirectories(Directory.GetCurrentDirectory() + "\\wwwroot\\images");
+    //[Display(Name = "Новый каталог :")]
+    //public string NewImagePath { get; set; } = string.Empty;
 
-    public List<SelectListItem> Options { get; set; } = null!;
+
+
+    //public IFormFile ImageFormFile { get; set; } = null!;
+
+    //public IFormFile IconFormFile { get; set; } = null!;
+
+    //public string[] AllDirInImagesFolder = Directory.GetDirectories(Directory.GetCurrentDirectory() + "\\wwwroot\\images");
 
 
     public async Task<IActionResult> OnGetAsync(Guid? imageId)
@@ -34,6 +48,8 @@ public class Image_Add_UpdateModel : PageModel
             {
                 return RedirectToPage("/DBCRUD/Image-List", new { area = "Admin" });
             }
+
+            SelectedTag = ImageItem.ImagePath[7..];
 
             return Page();
         }

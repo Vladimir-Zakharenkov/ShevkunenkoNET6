@@ -45,6 +45,22 @@
 
         <hr class="liniya" />
 
+        <label for="ImageAltTitleInput" asp-for="ImageItem.ImageAltTitle" class="form-label text-primary fs-5 fw-bold"></label>
+        <input id="ImageAltTitleInput" asp-for="ImageItem.ImageAltTitle" class="form-control text-center" aria-describedby="ImageAltTitleInputHelpBlock" />
+        <div id="ImageAltTitleInputHelpBlock" class="form-text col-12">
+            «alt» и «title» для тега «img» - <span class="text-danger">по умолчанию равно свойству «caption»</span>
+        </div>
+        <span asp-validation-for="ImageItem.ImageAltTitle" class="text-danger"></span>
+
+        <hr class="liniya" />
+
+        <label asp-for="ImageItem.ImagePath" class="form-label text-primary fs-5 fw-bold"></label>
+        <select asp-for="SelectedTag" asp-items="Model.ImageDirectories">
+            <option value="">Выберите каталог</option>
+        </select>
+
+        <hr class="liniya" />
+
     </form>
 
 </div>
